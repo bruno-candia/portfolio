@@ -48,13 +48,9 @@ body:
       label: Acceptance Criteria
       options:
         - label: 'The feature must be responsive.'
-          value: responsive
         - label: 'Must pass all existing tests.'
-          value: pass_tests
         - label: 'Must include tests for new behaviors.'
-          value: include_tests
         - label: 'Must include updated documentation.'
-          value: update_docs
 
   - type: textarea
     attributes:
@@ -67,11 +63,8 @@ body:
       label: Priority
       options:
         - label: 'Low'
-          value: low
         - label: 'Medium'
-          value: medium
         - label: 'High'
-          value: high
     validations:
       required: true
 
