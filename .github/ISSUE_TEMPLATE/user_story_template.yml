@@ -48,9 +48,9 @@ body:
     attributes:
       label: Prioridade
       options:
-        - label: 'Baixa'
-        - label: 'Média'
-        - label: 'Alta'
+        - 'Baixa'
+        - 'Média'
+        - 'Alta'
     validations:
       required: true
 
