@@ -1,0 +1,75 @@
+name: Feature Request
+description: Propose a new feature for the portfolio project
+labels: ['feature']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This template is for proposing new features for the portfolio. Use this form to detail the functionality you want to add to the project.
+        
+        Before opening a new request, please check if a similar feature already exists or has been proposed by searching the issues.
+
+        If you need help with any existing feature, you can:
+        - Create a discussion in the "Help" section.
+        - Refer to the project documentation.
+
+  - type: input
+    attributes:
+      label: Feature Name
+      description: A short and descriptive title for the proposed feature.
+      placeholder: 'Music API Integration'
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Detailed Description
+      description: A detailed description of what the feature should accomplish and how it fits into the project.
+      placeholder: 'Describe here what the feature should do, including any specific interfaces or expected behaviors.'
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Motivation and Context
+      description: Explain why this feature is important for the project and in what context it will be used.
+      placeholder: 'This feature is important because...'
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Acceptance Criteria
+        List the criteria that the implementation of this feature must meet to be considered complete.
+
+  - type: checkboxes
+    attributes:
+      label: Acceptance Criteria
+      options:
+        - 'The feature must be responsive.'
+        - 'Must pass all existing tests.'
+        - 'Must include tests for new behaviors.'
+        - 'Must include updated documentation.'
+
+  - type: textarea
+    attributes:
+      label: Potential Challenges
+      description: Describe any challenges or complications that may arise during the development of this feature.
+      placeholder: 'Potential challenges include integration with external APIs, performance issues, etc.'
+
+  - type: dropdown
+    attributes:
+      label: Priority
+      options:
+        - 'Low'
+        - 'Medium'
+        - 'High'
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Additional Information
+      description: Any other information that may help better understand the proposal.
+      placeholder: 'Additional information like links to external resources, examples from other projects, etc.'
