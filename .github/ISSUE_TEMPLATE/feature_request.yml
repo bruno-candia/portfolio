@@ -47,10 +47,10 @@ body:
     attributes:
       label: Acceptance Criteria
       options:
-        - 'The feature must be responsive.'
-        - 'Must pass all existing tests.'
-        - 'Must include tests for new behaviors.'
-        - 'Must include updated documentation.'
+        - label: 'The feature must be responsive.'
+        - label: 'Must pass all existing tests.'
+        - label: 'Must include tests for new behaviors.'
+        - label: 'Must include updated documentation.'
 
   - type: textarea
     attributes:
