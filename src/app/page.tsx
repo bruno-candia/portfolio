@@ -1,5 +1,19 @@
-import styles from './page.module.css'
+import Link from 'next/link'
+import { useState } from 'react'
 
-export default function Home() {
-  return <h1 className={styles.description}>Ola mundo</h1>
+export default function Page() {
+  const [count, setCount] = useState(0)
+  return (
+    <div>
+      <h1>{count}</h1>
+      <Link
+        href="/about"
+        onClick={() => {
+          setCount((prv) => prv + 1)
+        }}
+      >
+        About
+      </Link>
+    </div>
+  )
 }
