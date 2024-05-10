@@ -1,5 +1,10 @@
-import styles from './page.module.css'
+import Link from 'next/link'
 
-export default function Home() {
-  return <h1 className={styles.description}>Ola mundo</h1>
+export default function Page() {
+  return (
+    <div>
+      <h1>Home</h1>
+      <Link href="/about">About</Link>
+    </div>
+  )
 }
