@@ -36,14 +36,17 @@ jobs:
         with:
           node-version: '21'
 
+      - name: Install pnpm
+        run: npm install -g pnpm
+
       - name: Install Dependencies
-        run: npm ci
+        run: pnpm install
 
       - name: Run Linter
-        run: npm run lint
+        run: pnpm run lint
 
       - name: Run Security Analysis (ESLint Plugin Security)
-        run: npm audit
+        run: pnpm audit
 
       - name: Finalize Job
         run: echo "Security Scan Complete!"
@@ -65,14 +68,17 @@ jobs:
         with:
           node-version: '21'
 
+      - name: Install pnpm
+        run: npm install -g pnpm
+
       - name: Install Dependencies
-        run: npm ci
+        run: pnpm install
 
       - name: Run Linter
-        run: npm run lint
+        run: pnpm run lint
 
       - name: Run Unit Tests
-        run: npm run test
+        run: pnpm run test
 
       - name: Publish Test Results
         uses: actions/upload-artifact@v2
@@ -81,7 +87,7 @@ jobs:
           path: test-results
 
       - name: Build Project
-        run: npm run build
+        run: pnpm run build
 
       - name: Finalize Job
         run: echo "Build & Validation Complete!"
@@ -107,9 +113,12 @@ jobs:
         with:
           node-version: '21'
 
+      - name: Install pnpm
+        run: npm install -g pnpm
+
       - name: Deploy to Vercel (Development)
         run: |
-          npm install -g vercel
+          pnpm install -g vercel
           vercel --prod --token $VERCEL_TOKEN --org-id $VERCEL_ORG_ID --project-id $VERCEL_PROJECT_ID --scope development
 
       - name: Finalize Job
@@ -136,9 +145,12 @@ jobs:
         with:
           node-version: '21'
 
+      - name: Install pnpm
+        run: npm install -g pnpm
+
       - name: Deploy to Vercel (Production)
         run: |
-          npm install -g vercel
+          pnpm install -g vercel
           vercel --prod --token $VERCEL_TOKEN --org-id $VERCEL_ORG_ID --project-id $VERCEL_PROJECT_ID --scope production
 
       - name: Finalize Job
