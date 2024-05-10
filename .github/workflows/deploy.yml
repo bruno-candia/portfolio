@@ -105,16 +105,18 @@ jobs:
       - name: Initialize Job
         run: echo "Initializing Deployment to Development..."
 
-      - name: Checkout Repository
-        uses: actions/checkout@v2
-
       - name: Install Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '21'
 
       - name: Install pnpm
-        run: npm install -g pnpm
+        run: |
+          npm install -g pnpm
+          pnpm setup
+
+      - name: Checkout Repository
+        uses: actions/checkout@v2
 
       - name: Deploy to Vercel (Development)
         run: |
@@ -136,10 +138,7 @@ jobs:
     steps:
       - name: Initialize Job
         run: echo "Initializing Deployment to Production..."
-
-      - name: Checkout Repository
-        uses: actions/checkout@v2
-
+      
       - name: Install Node.js
         uses: actions/setup-node@v3
         with:
@@ -147,6 +146,9 @@ jobs:
 
       - name: Install pnpm
         run: npm install -g pnpm
+
+      - name: Checkout Repository
+        uses: actions/checkout@v2
 
       - name: Deploy to Vercel (Production)
         run: |
