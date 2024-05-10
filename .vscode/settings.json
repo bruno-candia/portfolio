@@ -1,5 +1,6 @@
 {
-  "cSpell.words": [
-    "dtect"
-  ]
+  "cSpell.words": ["dtect"],
+  "yaml.schemas": {
+    "https://json.schemastore.org/github-workflow.json": "file:///c%3A/Users/bruno/Desktop/www/portfolio/.github/workflows/deploy.yml"
+  }
 }
