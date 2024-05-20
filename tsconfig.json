@@ -27,7 +27,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "vitest.setup.mjs",
-    "vitest.config.mjs"
+    "src/styles/tokens/hexaUI"
   ],
   "exclude": ["node_modules"]
 }
