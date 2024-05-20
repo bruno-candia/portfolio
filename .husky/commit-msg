@@ -2,21 +2,4 @@
 
 . "$(dirname -- "$0")/_/husky.sh"
 
-COMMIT_MESSAGE=$(cat "$1")
-
-IS_MERGE=$(echo "$COMMIT_MESSAGE" | grep -qE '^Merge ' && echo true || echo false)
-
-HAS_TICKETS=$(echo "$COMMIT_MESSAGE" | grep -qE '\[PORT-[0-9]+\]' && echo true || echo false)
-
-if [ "$IS_MERGE" = true ]; then
-  echo "ℹ️ Merge commit detected, skipping ticket verification."
-  npx --no -- commitlint --edit "${1}"
-  exit 0
-fi
-
-if [ "$HAS_TICKETS" = false ]; then
-  printf "❌ Error: The commit message must include at least one ticket (PORT).\n"
-  exit 1
-fi
-
 npx --no -- commitlint --edit "${1}"

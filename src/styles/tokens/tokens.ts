@@ -1430,14 +1430,13 @@ export const myTokens = {
   },
   fonts: {
     'font-family': {
-      Barlow: 'Barlow',
-      'Work Sans': 'Work Sans',
+      'Space Grotesk': 'Space Grotesk',
     },
     'font-weight': {
-      medium: 500,
+      light: 300,
       normal: 400,
+      medium: 500,
       semibold: 600,
-      tight: 100,
     },
   },
   measure: {
