@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { Space_Grotesk as spaceGrotesk } from 'next/font/google'
-import { ThemeProvider } from '../providers/ThemeProvider'
+import './global.css'
 
 const inter = spaceGrotesk({ subsets: ['latin'] })
 
@@ -16,9 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <ThemeProvider>
-        <body className={inter.className}>{children}</body>
-      </ThemeProvider>
+      <body className={inter.className}>{children}</body>
     </html>
   )
 }

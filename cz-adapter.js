@@ -1,4 +1,4 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires
+/* eslint-disable @typescript-eslint/no-var-requires */
 const { prompt } = require('enquirer')
 
 async function prompter(cz, commit) {
@@ -58,11 +58,30 @@ async function prompter(cz, commit) {
   const formattedScope = scope ? `(${scope})` : ''
 
   const lowercaseDescription = description.toLowerCase()
+
+  const icons = {
+    feat: '✨',
+    fix: '🐛',
+    test: '✅',
+    chore: '🔧',
+    refactor: '♻️',
+    ci: '👷',
+    perf: '⚡️',
+    build: '🏗️',
+    revert: '⏪',
+  }
+
+  const icon = icons[type] || ''
+
   const commitMessage = `${type}${formattedScope}: ${lowercaseDescription}`
 
-  console.log(commitMessage)
+  commit(commitMessage, () => {
+    const finalCommitMessage = `${icon} ${commitMessage}`
+    console.log(finalCommitMessage)
 
-  commit(commitMessage)
+    const { execSync } = require('child_process')
+    execSync(`git commit --amend -m "${finalCommitMessage}" --no-edit`)
+  })
 }
 
 module.exports = {
