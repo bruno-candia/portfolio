@@ -1,11 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Satisfy&family=Space+Grotesk:wght@300..700&display=swap');
+
 :root {
   --bg-primary-default: #000000;
   --bg-primary-hover: #000000;
   --bg-primary-pressed: #000000;
 
-  --bg-button-secondary-default: #ffffffff;
-  --bg-button-secondary-hover: #ffff00ff;
-  --bg-button-secondary-pressed: #ffff00ff;
+  --bg-button-primary-default: #000000;
+  --bg-button-primary-hover: #000000;
+  --bg-button-primary-pressed: #000000;
+
+  --bg-button-secondary-default: #771edc;
+  --bg-button-secondary-hover: #781EDC;
+  --bg-button-secondary-pressed: #781EDC;
 
   --bg-button-tertiary-default: #14141414;
   --bg-button-tertiary-hover: #ffff00ff;
@@ -87,15 +93,17 @@
   --font-weight-medium: 500;
   --font-weight-bold: 600;
 
-  --font-family-default: 'Space Grotesk', sans-serif, "SF Pro Text", "SF Pro Icons", "AOS Icons", "Helvetica Neue", Helvetica, Arial, sans-serif, system-ui;;
+  --font-family-default: 'Space Grotesk', sans-serif, "SF Pro Text", "SF Pro Icons", "AOS Icons", "Helvetica Neue", Helvetica, Arial, sans-serif, system-ui;
+  --font-family-secondary: "Satisfy", cursive, sans-serif, "SF Pro Text", "SF Pro Icons", "AOS Icons", "Helvetica Neue", Helvetica, Arial, sans-serif, system-ui;
+  --font-family-tertiary: "Gloria Hallelujah", cursive, sans-serif, "SF Pro Text", "SF Pro Icons", "AOS Icons", "Helvetica Neue", Helvetica, Arial, sans-serif, system-ui;
 
   --bg-square-size: 40px;
   --bg-line-color: color-mix(in lch, canvasText 15%, hsl(0 0% 100% / 0.25));
 
-  --font-size-large: 4.854rem;
-  --font-size-title-1: 2.854rem;
-  --font-size-title-2: 1.854rem;
-  --font-size-paragraph: 0.854rem;
+  --font-size-large: 3rem;
+  --font-size-title-1: 2rem;
+  --font-size-title-2: 1.5rem;
+  --font-size-paragraph: 1rem;
 
 }
 
@@ -136,7 +144,7 @@ body {
     background: linear-gradient(90deg, var(--bg-line-color) 1px, transparent 1px 
     var(--bg-square-size)) 50% 50% / var(--bg-square-size) var(--bg-square-size), 
     linear-gradient(var(--bg-line-color) 1px, transparent 1px var(--bg-square-size)) 
-    50% 50% / var(--bg-square-size) var(--bg-square-size);
+    50% 40.3% / var(--bg-square-size) var(--bg-square-size);
     mask: linear-gradient(-25deg, transparent 65%, white);
     top: 0;
     transform-style: flat;
