@@ -10,6 +10,7 @@ export default defineConfig({
     },
   },
   test: {
+    setupFiles: './vitest.setup.ts',
     include: ['**/*.{test,spec}.?(c|m)[jt]s?(x)'],
     environment: 'jsdom',
     exclude: [
