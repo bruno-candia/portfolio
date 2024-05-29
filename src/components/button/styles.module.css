@@ -1,4 +1,4 @@
-.containerButton{
+.containerButton {
   -webkit-tap-highlight-color: transparent;
   -webkit-appearance: button;
   appearance: button;
@@ -12,6 +12,8 @@
   overflow: hidden;
   position: relative;
   text-transform: capitalize;
+  min-width: 7.2606rem;
+
 
   &:disabled {
     cursor: default;
@@ -28,33 +30,22 @@
 
 .primaryButton {
   font-family: var(--font-family-tertiary);
-  --bg: radial-gradient(
-    40% 50% at center 100%,
-    hsl(268, 76%, 49%),
-    transparent
-  ),
-  radial-gradient(
-    80% 100% at center 120%,
-    hsl(268, 76%, 49%),
-    transparent
-  ),
-  hsl(268, 76%, 56%);
+  --bg: radial-gradient(40% 50% at center 100%, hsl(268, 76%, 49%), transparent),
+    radial-gradient(80% 100% at center 120%, hsl(268, 76%, 49%), transparent),
+    hsl(268, 76%, 56%);
   background: var(--bg);
-  box-shadow:
-  0 0 3em 0.1em hsl(268 76% 49% / 0.75);
+  box-shadow: 0 0 3em 0.1em hsl(268 76% 49% / 0.75);
   transition: all 0.5s;
-
 
   &:active {
     scale: 1;
   }
 
-  &:hover{
+  &:hover {
     box-shadow:
-		0 0 3em 0.5em hsl(268 76% 49% / 0.75),
-		0 0.05em 0 0 hsl(260 97% 80%) inset,
-		0 -0.05em 0 0 hsl(260 97% 60%) inset;
-
+      0 0 3em 0.5em hsl(268 76% 49% / 0.75),
+      0 0.05em 0 0 hsl(260 97% 80%) inset,
+      0 -0.05em 0 0 hsl(260 97% 60%) inset;
   }
 
   &:before {
@@ -63,21 +54,19 @@
     inset: -0.25em;
     z-index: -1;
     border: 0.25em solid hsl(260 97% 50% / 0.5);
-    border-radius: 100px;
+    border-radius: 6.25rem;
     opacity: 1;
     transition: opacity 2.5s;
   }
 }
 
-
-.secondaryButton{
+.secondaryButton {
   font-family: var(--font-family-default);
   background-color: #000;
   border: 2px solid #fff;
   background-image: none;
   -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
   mask-image: radial-gradient(#000, #fff);
-
 
   &:hover {
     transform: scale(1.1);
