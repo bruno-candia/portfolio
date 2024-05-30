@@ -1,15 +1,39 @@
-import type { Metadata } from 'next'
-import { Inter as FontSans } from 'next/font/google'
-import './globals.css'
+import type { Metadata, Viewport } from 'next'
+import {
+  Space_Grotesk as FontSans,
+  Permanent_Marker as PermanentMarker,
+  Gloria_Hallelujah as GloriaHallelujah,
+} from 'next/font/google'
+import '@/styles/globals.css'
 import { siteConfig } from '@/config/site'
+import { ThemeProvider } from '@/providers/theme-provider'
+import clsx from 'clsx'
 
 const fontSans = FontSans({
   subsets: ['latin'],
   variable: '--font-sans',
 })
 
+const gloriaHallelujah = GloriaHallelujah({
+  subsets: ['latin'],
+  variable: '--font-sans',
+  weight: '400',
+})
+
+const permanentMarker = PermanentMarker({
+  subsets: ['latin'],
+  variable: '--font-sans',
+  weight: '400',
+})
 interface RootLayoutProps {
   children: React.ReactNode
+}
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: 'white' },
+    { media: '(prefers-color-scheme: dark)', color: 'black' },
+  ],
 }
 
 export const metadata: Metadata = {
@@ -26,10 +50,6 @@ export const metadata: Metadata = {
     },
   ],
   creator: 'Bruno Costa',
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: 'white' },
-    { media: '(prefers-color-scheme: dark)', color: 'black' },
-  ],
   openGraph: {
     type: 'website',
     locale: 'pt_BR',
@@ -50,13 +70,23 @@ export const metadata: Metadata = {
     shortcut: '/favicon-16x16.png',
     apple: '/apple-touch-icon.png',
   },
-  manifest: `${siteConfig.url}/site.webmanifest`,
+  // manifest: `${siteConfig.url}/site.webmanifest`,
 }
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={fontSans.variable}>{children}</body>
+    <html lang="pt" suppressHydrationWarning>
+      <body
+        className={clsx(
+          fontSans.variable,
+          gloriaHallelujah.variable,
+          permanentMarker.variable,
+        )}
+      >
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   )
 }
