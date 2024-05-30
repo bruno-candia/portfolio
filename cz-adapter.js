@@ -46,16 +46,7 @@ async function prompter(cz, commit) {
     type: 'input',
     name: 'scope',
     message:
-      'Inform the scope of this change (home, cart, last-orders, etc) [optional]:',
-  })
-
-  const { ticketGITHUB } = await prompt({
-    type: 'input',
-    name: 'ticketGITHUB',
-    message: 'Inform the GITHUB ticket (Sub-imp, sub-task, etc) Ex: 1234',
-    validate(value) {
-      return /^[0-9]+$/.test(value) ? true : 'Please enter only numbers'
-    },
+      'Inform the scope of this change (header, home, contact, etc) [optional]:',
   })
 
   const { description } = await prompt({
@@ -64,12 +55,10 @@ async function prompter(cz, commit) {
     message: 'Enter a short description:',
   })
 
-  const formattedParentGITHUB = ticketGITHUB ? `[PORT-${ticketGITHUB}]` : ''
   const formattedScope = scope ? `(${scope})` : ''
 
-  const githubInfo = `${formattedParentGITHUB}`
   const lowercaseDescription = description.toLowerCase()
-  const commitMessage = `${type}${formattedScope}: ${githubInfo ? githubInfo + ' ' : ''}${lowercaseDescription}`
+  const commitMessage = `${type}${formattedScope}: ${lowercaseDescription}`
 
   console.log(commitMessage)
 
