@@ -18,7 +18,11 @@
   --border: hsl(240, 5.9%, 90%);
   --input: hsl(240, 5.9%, 90%);
   --ring: hsl(240, 5%, 64.9%);
+
   --radius: 0.5rem;
+  --gold: 255, 215, 0;
+  --night: 0, 0, 255;
+  --white: hsl(0, 0%, 100%);
 }
 
 .dark {
