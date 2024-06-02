@@ -50,15 +50,12 @@ describe('ModeToggle', () => {
     renderWithThemeProvider(<ModeToggle />)
     const button = screen.getByRole('switch')
 
-    // Initial state
     expect(button).toHaveAttribute('aria-checked', 'false')
 
-    // Click to change to light theme
     fireEvent.click(button)
     await waitFor(() => expect(button).toHaveAttribute('aria-checked', 'true'))
     await waitFor(() => expect(setThemeSpy).toHaveBeenCalledWith('light'))
 
-    // Click to change back to dark theme
     fireEvent.click(button)
     await waitFor(() => expect(button).toHaveAttribute('aria-checked', 'false'))
     await waitFor(() => expect(setThemeSpy).toHaveBeenCalledWith('dark'))
