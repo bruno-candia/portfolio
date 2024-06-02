@@ -1,0 +1,220 @@
+.buttonBase{
+  padding: 0 .75rem;
+  background: transparent;
+}
+
+.small{
+  font-size: .75rem;
+  letter-spacing: .0625rem;
+}
+
+.normal{
+  font-size: .875rem;
+  letter-spacing: .0625rem;
+}
+
+.large{
+  font-size: 1rem;
+  letter-spacing: .0625rem;
+}
+
+.default{
+  border-radius: 20px 5px 20px 5px/5px 20px 5px 20px;
+  font-family: var(--font-family-tertiary);
+  cursor: pointer;
+  border: 2px solid transparent;
+
+  &:hover{
+  border: 2px solid var(--foreground);
+  animation: draw 750ms ease-in-out forwards;
+  }
+}
+
+
+@keyframes draw {
+  0% {
+    clip-path: polygon(
+      min(8%, 13px) min(8%, 13px),
+      calc(100% - min(8%, 13px)) min(8%, 13px),
+      calc(100% - min(8%, 13px)) calc(100% - min(8%, 13px)),
+      min(8%, 13px) calc(100% - min(8%, 13px)),
+      min(8%, 13px) min(8%, 13px),
+
+      0 0,
+      0 0,
+      0 0,
+
+      0 0,
+      0 0,
+      0 0,
+      0 0,
+      0 0,
+
+      0 0,
+      0 0,
+      0 0,
+      0 0,
+      0 0,
+
+      0 0,
+      0 0,
+      0 0,
+      0 0
+    );
+  }
+
+  0.1% {
+    clip-path: polygon(
+      min(8%, 13px) min(8%, 13px),
+      calc(100% - min(8%, 13px)) min(8%, 13px),
+      calc(100% - min(8%, 13px)) calc(100% - min(8%, 13px)),
+      min(8%, 13px) calc(100% - min(8%, 13px)),
+      min(8%, 13px) min(8%, 13px),
+
+      0 0,
+      0 0,
+      0 min(8%, 13px),
+
+      min(8%, 13px) min(8%, 13px),
+      0 0,
+      0 0,
+      0 0,
+      calc(100% - min(8%, 13px)) calc(100% - min(8%, 13px)),
+
+      calc(100% - min(8%, 13px)) calc(100% - min(8%, 13px)),
+      100% 100%,
+      100% 100%,
+      calc(100% - min(8%, 13px)) calc(100% - min(8%, 13px)),
+      min(8%, 13px) calc(100% - min(8%, 13px)),
+
+      min(8%, 13px) calc(100% - min(8%, 13px)),
+      0 100%,
+      0 100%,
+      min(8%, 13px) calc(100% - min(8%, 13px))
+    );
+  }
+
+  23.9% {
+    clip-path: polygon(
+      min(8%, 13px) min(8%, 13px),
+      calc(100% - min(8%, 13px)) min(8%, 13px),
+      calc(100% - min(8%, 13px)) calc(100% - min(8%, 13px)),
+      min(8%, 13px) calc(100% - min(8%, 13px)),
+      min(8%, 13px) min(8%, 13px),
+
+      0 0,
+      100% 0,
+      calc(100% - min(8%, 13px)) min(8%, 13px),
+
+      calc(100% - min(8%, 13px)) 0,
+      100% 0,
+      100% 0,
+      calc(100% - min(8%, 13px)) min(8%, 13px),
+      calc(100% - min(8%, 13px)) calc(100% - min(8%, 13px)),
+
+      calc(100% - min(8%, 13px)) calc(100% - min(8%, 13px)),
+      100% 100%,
+      100% 100%,
+      calc(100% - min(8%, 13px)) calc(100% - min(8%, 13px)),
+      min(8%, 13px) calc(100% - min(8%, 13px)),
+
+      min(8%, 13px) calc(100% - min(8%, 13px)),
+      0 100%,
+      0 100%,
+      min(8%, 13px) calc(100% - min(8%, 13px))
+    );
+  }
+
+  50% {
+    clip-path: polygon(
+      min(8%, 13px) min(8%, 13px),
+      calc(100% - min(8%, 13px)) min(8%, 13px),
+      calc(100% - min(8%, 13px)) calc(100% - min(8%, 13px)),
+      min(8%, 13px) calc(100% - min(8%, 13px)),
+      min(8%, 13px) min(8%, 13px),
+
+      0 0,
+      100% 0,
+      calc(100% - min(8%, 13px)) min(8%, 13px),
+
+      calc(100% - min(8%, 13px)) calc(100% - min(8%, 13px)),
+      100% 100%,
+      100% 0,
+      calc(100% - min(8%, 13px)) min(8%, 13px),
+      calc(100% - min(8%, 13px)) calc(100% - min(8%, 13px)),
+
+      calc(100% - min(8%, 13px)) calc(100% - min(8%, 13px)),
+      100% 100%,
+      100% 100%,
+      calc(100% - min(8%, 13px)) calc(100% - min(8%, 13px)),
+      min(8%, 13px) calc(100% - min(8%, 13px)),
+
+      min(8%, 13px) calc(100% - min(8%, 13px)),
+      0 100%,
+      0 100%,
+      min(8%, 13px) calc(100% - min(8%, 13px))
+    );
+  }
+
+  73.9% {
+    clip-path: polygon(
+      min(8%, 13px) min(8%, 13px),
+      calc(100% - min(8%, 13px)) min(8%, 13px),
+      calc(100% - min(8%, 13px)) calc(100% - min(8%, 13px)),
+      min(8%, 13px) calc(100% - min(8%, 13px)),
+      min(8%, 13px) min(8%, 13px),
+
+      0 0,
+      100% 0,
+      calc(100% - min(8%, 13px)) min(8%, 13px),
+
+      calc(100% - min(8%, 13px)) calc(100% - min(8%, 13px)),
+      100% 100%,
+      100% 0,
+      calc(100% - min(8%, 13px)) min(8%, 13px),
+      calc(100% - min(8%, 13px)) calc(100% - min(8%, 13px)),
+
+      min(8%, 13px) calc(100% - min(8%, 13px)),
+      0 100%,
+      100% 100%,
+      calc(100% - min(8%, 13px)) calc(100% - min(8%, 13px)),
+      min(8%, 13px) calc(100% - min(8%, 13px)),
+
+      min(8%, 13px) calc(100% - min(8%, 13px)),
+      0 100%,
+      0 100%,
+      min(8%, 13px) calc(100% - min(8%, 13px))
+    );
+  }
+
+  100% {
+    clip-path: polygon(
+      min(8%, 13px) min(8%, 13px),
+      calc(100% - min(8%, 13px)) min(8%, 13px),
+      calc(100% - min(8%, 13px)) calc(100% - min(8%, 13px)),
+      min(8%, 13px) calc(100% - min(8%, 13px)),
+      min(8%, 13px) min(8%, 13px),
+
+      0 0,
+      100% 0,
+      calc(100% - min(8%, 13px)) min(8%, 13px),
+
+      calc(100% - min(8%, 13px)) calc(100% - min(8%, 13px)),
+      100% 100%,
+      100% 0,
+      calc(100% - min(8%, 13px)) min(8%, 13px),
+      calc(100% - min(8%, 13px)) calc(100% - min(8%, 13px)),
+
+      min(8%, 13px) calc(100% - min(8%, 13px)),
+      0 100%,
+      100% 100%,
+      calc(100% - min(8%, 13px)) calc(100% - min(8%, 13px)),
+      min(8%, 13px) calc(100% - min(8%, 13px)),
+
+      min(8%, 13px) min(8%, 13px),
+      0 0,
+      0 100%,
+      min(8%, 13px) calc(100% - min(8%, 13px))
+    );
+  }
+}
