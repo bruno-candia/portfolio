@@ -3,6 +3,8 @@
 import { useTheme } from 'next-themes'
 import styles from './styles.module.css'
 import { useEffect, useState } from 'react'
+import { Icons } from '../icons'
+import { Button } from '../button'
 
 export default function ModeToggle() {
   const { setTheme } = useTheme()
@@ -22,15 +24,15 @@ export default function ModeToggle() {
 
   return (
     <div className={`${styles.wrapper} ${clicked ? styles.clicked : ''} `}>
-      <button
+      <Button
         className={styles.theme_toggle}
         onClick={handleClick}
         aria-checked={clicked}
         role="switch"
       >
-        <div className={styles.icon} id={styles.sun}></div>
-        <div className={styles.icon} id={styles.moon}></div>
-      </button>
+        <Icons.sun className={styles.icon} id={styles.sun} />
+        <Icons.moon className={styles.icon} id={styles.moon} />
+      </Button>
     </div>
   )
 }

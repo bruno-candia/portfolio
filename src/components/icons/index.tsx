@@ -1,6 +1,11 @@
+import MoonIcon from '../../../public/moon'
+import SunIcon from '../../../public/sun'
+
 type IconProps = React.HTMLAttributes<SVGElement>
 
 export const Icons = {
+  moon: (props: IconProps) => <MoonIcon {...props} />,
+  sun: (props: IconProps) => <SunIcon {...props} />,
   logo: (props: IconProps) => (
     <svg
       {...props}

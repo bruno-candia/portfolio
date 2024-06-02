@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from 'next'
 import {
-  Space_Grotesk as FontSans,
+  Space_Grotesk as SpaceGrotesk,
   Permanent_Marker as PermanentMarker,
   Gloria_Hallelujah as GloriaHallelujah,
 } from 'next/font/google'
@@ -9,20 +9,20 @@ import { siteConfig } from '@/config/site'
 import { ThemeProvider } from '@/providers/theme-provider'
 import clsx from 'clsx'
 
-const fontSans = FontSans({
+const spaceGrotesk = SpaceGrotesk({
   subsets: ['latin'],
-  variable: '--font-sans',
+  variable: '--font-space',
 })
 
 const gloriaHallelujah = GloriaHallelujah({
   subsets: ['latin'],
-  variable: '--font-sans',
+  variable: '--font-gloria',
   weight: '400',
 })
 
 const permanentMarker = PermanentMarker({
   subsets: ['latin'],
-  variable: '--font-sans',
+  variable: '--font-permanent',
   weight: '400',
 })
 interface RootLayoutProps {
@@ -78,7 +78,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
     <html lang="pt" suppressHydrationWarning>
       <body
         className={clsx(
-          fontSans.variable,
+          spaceGrotesk.variable,
           gloriaHallelujah.variable,
           permanentMarker.variable,
         )}
