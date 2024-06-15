@@ -48,7 +48,7 @@
   },
   "settings": {
     "react": {
-      "version": "dtect"
+      "version": "detect"
     },
     "import/parsers": {
       "[require.resolve('@typescript-eslint/parser')]": [".ts", ".tsx", ".d.ts"]
