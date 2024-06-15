@@ -1,15 +1,29 @@
-import { defineConfig } from 'vitest/config'
+import { defineConfig, UserConfig } from 'vitest/config'
 import path from 'node:path'
 import react from '@vitejs/plugin-react'
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react()] as UserConfig['plugins'],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
     },
   },
   test: {
+    onConsoleLog(log) {
+      if (
+        log.includes('ReactDOM.render is no longer supported in React 18') ||
+        log.includes(
+          'unmountComponentAtNode is deprecated and will be removed',
+        ) ||
+        log.includes(
+          'ReactDOMTestUtils.act is deprecated in favor of React.act',
+        )
+      ) {
+        return false
+      }
+      return true
+    },
     setupFiles: './vitest.setup.ts',
     include: ['**/*.{test,spec}.?(c|m)[jt]s?(x)'],
     environment: 'jsdom',
