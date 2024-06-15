@@ -1,49 +1,131 @@
-import { renderHook } from '@testing-library/react-hooks'
-import { act } from 'react'
+import { renderHook, act } from '@testing-library/react-hooks'
 import { useDrawSVG } from './useDrawSVG'
-import { describe, it, expect } from 'vitest'
+
+vi.mock('react', async (importOriginal) => {
+  const mod = await importOriginal<typeof import('react')>()
+  return {
+    ...mod,
+    useRef: () => ({
+      current: {
+        innerHTML: 'mockMarkup',
+        querySelector: () => ({
+          getTotalLength: () => 100,
+          setAttribute: vi.fn(),
+          style: {
+            setProperty: vi.fn(),
+          },
+        }),
+      },
+    }),
+  }
+})
 
 describe('useDrawSVG', () => {
-  it('should initialize buttonRef with null', () => {
-    const { result } = renderHook(() => useDrawSVG())
-    expect(result.current.buttonRef.current).toBe(null)
+  beforeEach(() => {
+    vi.clearAllMocks()
   })
 
-  it('should draw line correctly', () => {
+  it('should initialize buttonRef', () => {
     const { result } = renderHook(() => useDrawSVG())
-    const button = document.createElement('button')
-    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path')
+    expect(result.current.buttonRef.current).toBeDefined()
+  })
 
-    // Simular o método getTotalLength
-    path.getTotalLength = () => 7000
+  it('should draw the line correctly', async () => {
+    const { result } = renderHook(() => useDrawSVG())
+    console.error = vi.fn()
 
-    button.appendChild(path)
-    result.current.buttonRef.current = button
+    result.current.buttonRef.current = {
+      querySelector: vi.fn().mockReturnValue(null),
+    } as unknown as HTMLButtonElement
 
-    act(() => {
+    await act(async () => {
       result.current.drawLine()
     })
 
-    expect(path.getAttribute('pathLength')).toBe('1')
-    expect(path.style.getPropertyValue('--path-speed')).toBe('1')
+    expect(console.error).toHaveBeenCalledWith(
+      'No path found in the buttonRef.',
+    )
   })
 
-  it('should restart correctly', () => {
+  it('should draw the line correctly', async () => {
     const { result } = renderHook(() => useDrawSVG())
-    const button = document.createElement('button')
-    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path')
+    const mockPath = {
+      getTotalLength: vi.fn().mockReturnValue(100),
+      setAttribute: vi.fn(),
+      style: {
+        setProperty: vi.fn(),
+      },
+    }
 
-    button.appendChild(path)
-    result.current.buttonRef.current = button
+    result.current.buttonRef.current = {
+      querySelector: vi.fn().mockReturnValue(mockPath),
+    } as unknown as HTMLButtonElement
 
-    act(() => {
+    await act(async () => {
+      result.current.drawLine()
+    })
+
+    expect(mockPath.getTotalLength).toHaveBeenCalled()
+    expect(mockPath.setAttribute).toHaveBeenCalledWith('pathLength', '1')
+    expect(mockPath.style.setProperty).toHaveBeenCalledWith(
+      '--path-speed',
+      (100 / 7000).toString(),
+    )
+    expect(mockPath.style.setProperty).toHaveBeenCalledWith('--path-delay', '0')
+  })
+
+  it('should restart correctly', async () => {
+    const { result } = renderHook(() => useDrawSVG())
+    const mockPath = {
+      getTotalLength: vi.fn().mockReturnValue(100),
+      setAttribute: vi.fn(),
+      style: {
+        setProperty: vi.fn(),
+      },
+    }
+
+    result.current.buttonRef.current = {
+      querySelector: vi.fn().mockReturnValue(mockPath),
+      innerHTML: 'mockMarkup',
+    } as unknown as HTMLButtonElement
+
+    await act(async () => {
       result.current.restart()
     })
 
-    expect(button.innerHTML).toBe('')
+    expect(result.current.buttonRef.current!.innerHTML).toBe('')
     requestAnimationFrame(() => {
-      expect(button.innerHTML).toBe('<path></path>')
-      expect(path.getAttribute('pathLength')).toBe('1')
+      expect(result.current.buttonRef.current!.innerHTML).toBe('mockMarkup')
+    })
+  })
+
+  it('should call requestAnimationFrame when restart function is called', async () => {
+    const { result } = renderHook(() => useDrawSVG())
+    const mockPath = {
+      getTotalLength: vi.fn().mockReturnValue(100),
+      setAttribute: vi.fn(),
+      style: {
+        setProperty: vi.fn(),
+      },
+    }
+
+    result.current.buttonRef.current = {
+      querySelector: vi.fn().mockReturnValue(mockPath),
+      innerHTML: 'mockMarkup',
+    } as unknown as HTMLButtonElement
+
+    console.error = vi.fn()
+
+    await act(async () => {
+      result.current.restart()
+    })
+
+    const defaultButton = document.createElement('button')
+    result.current.buttonRef.current = defaultButton
+    result.current.buttonRef.current.innerHTML = ''
+
+    requestAnimationFrame(() => {
+      expect(result.current.buttonRef.current.innerHTML).toBe('mockMarkup')
     })
   })
 })

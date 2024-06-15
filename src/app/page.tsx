@@ -1,5 +1,6 @@
 import Button from '@/components/button'
 import ModeToggle from '@/components/mode-toggle'
+import ScribbledButton from '@/components/scribbled-button/scribbled-button'
 
 export default function Page() {
   return (
@@ -12,6 +13,7 @@ export default function Page() {
     >
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
         <ModeToggle />
+        <ScribbledButton>Bruno</ScribbledButton>
         <Button>Bruno</Button>
       </div>
       <div

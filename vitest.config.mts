@@ -10,6 +10,20 @@ export default defineConfig({
     },
   },
   test: {
+    onConsoleLog(log) {
+      if (
+        log.includes('ReactDOM.render is no longer supported in React 18') ||
+        log.includes(
+          'unmountComponentAtNode is deprecated and will be removed',
+        ) ||
+        log.includes(
+          'ReactDOMTestUtils.act is deprecated in favor of React.act',
+        )
+      ) {
+        return false
+      }
+      return true
+    },
     setupFiles: './vitest.setup.ts',
     include: ['**/*.{test,spec}.?(c|m)[jt]s?(x)'],
     environment: 'jsdom',

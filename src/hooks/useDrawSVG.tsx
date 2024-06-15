@@ -1,33 +1,32 @@
 import { useRef } from 'react'
 
 export function useDrawSVG() {
-  const buttonRef = useRef<HTMLButtonElement | null>(null)
+  const defaultButton = document.createElement('button')
+  defaultButton.innerHTML = 'Default Button Content'
+  const buttonRef = useRef<HTMLButtonElement>(defaultButton)
 
   function drawLine() {
-    const PATH = buttonRef.current?.querySelector('path')
-    if (PATH) {
-      const PX_PER_SEC = 7000
-      let DELAY = 0
-      const LEN = Math.ceil(PATH.getTotalLength())
-      const SPEED = LEN / PX_PER_SEC
-      PATH.setAttribute('pathLength', '1')
-      PATH.style.setProperty('--path-speed', SPEED.toString())
-      if (DELAY) PATH.style.setProperty('--path-delay', DELAY.toString())
-      DELAY += SPEED
+    const path = buttonRef.current.querySelector('path')
+    if (path) {
+      const pxPerSec = 7000
+      const len = Math.ceil(path.getTotalLength())
+      const speed = len / pxPerSec
+      path.setAttribute('pathLength', '1')
+      path.style.setProperty('--path-speed', speed.toString())
+      path.style.setProperty('--path-delay', '0')
+    } else {
+      console.error('No path found in the buttonRef.')
     }
   }
 
   const restart = () => {
-    if (buttonRef.current) {
-      const MARKUP = buttonRef.current.innerHTML
-      buttonRef.current.innerHTML = ''
-      requestAnimationFrame(() => {
-        if (buttonRef.current) {
-          buttonRef.current.innerHTML = MARKUP
-          drawLine()
-        }
-      })
-    }
+    const markup = buttonRef.current.innerHTML
+    console.log(markup)
+    buttonRef.current.innerHTML = ''
+    requestAnimationFrame(() => {
+      buttonRef.current.innerHTML = markup
+      drawLine()
+    })
   }
 
   return { buttonRef, drawLine, restart }
