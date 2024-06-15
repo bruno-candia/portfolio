@@ -1,7 +1,7 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const { prompt } = require('enquirer')
 
-async function prompter(cz, commit) {
+async function prompter(_, commit) {
   const { type } = await prompt([
     {
       type: 'select',

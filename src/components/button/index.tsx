@@ -1,21 +1,16 @@
-import { ButtonHTMLAttributes } from 'react'
+import { ButtonHTMLAttributes, ReactNode } from 'react'
 import styles from './styles.module.css'
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'default'
-
-  size?: 'small' | 'normal' | 'large'
-  className?: string
+interface ButtonRootProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  children: ReactNode
 }
 
-export default function Button({
-  className = '',
-  variant = 'default',
-  size = 'normal',
-  ...props
-}: ButtonProps) {
-  const classNames = `${styles.buttonBase} ${styles[variant]} ${styles[size]} ${className}`
-  return <button className={classNames} {...props} />
-}
+export default function Button({ children, ...props }: ButtonRootProps) {
+  const classNames = `${styles.buttonBase} ${styles.primary} `
 
-export { Button }
+  return (
+    <button className={classNames} {...props}>
+      {children}
+    </button>
+  )
+}

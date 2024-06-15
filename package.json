@@ -2,6 +2,9 @@
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
+  "license": "UNLICENSED",
+  "author": "Bruno Costa",
+  "description": "My personal portfolio",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -27,7 +30,8 @@
     "@commitlint/config-conventional": "^19.2.2",
     "@svgr/webpack": "^8.1.0",
     "@testing-library/jest-dom": "^6.4.5",
-    "@testing-library/react": "^15.0.7",
+    "@testing-library/react": "^15.0.6",
+    "@testing-library/react-hooks": "^8.0.1",
     "@types/node": "^20.12.13",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
@@ -56,6 +60,7 @@
     "lint-staged": "^15.2.5",
     "prettier": "3.2.5",
     "typescript": "^5.4.5",
+    "vite": "^5.3.1",
     "vitest": "^1.6.0"
   },
   "config": {
