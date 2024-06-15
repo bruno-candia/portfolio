@@ -1,9 +1,11 @@
 import MoonIcon from '../../../public/moon'
+import Scrawl from '../../../public/scrawl'
 import SunIcon from '../../../public/sun'
 
 type IconProps = React.HTMLAttributes<SVGElement>
 
 export const Icons = {
+  scrawl: (props: IconProps) => <Scrawl {...props} />,
   moon: (props: IconProps) => <MoonIcon {...props} />,
   sun: (props: IconProps) => <SunIcon {...props} />,
   logo: (props: IconProps) => (

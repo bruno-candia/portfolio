@@ -4,43 +4,22 @@
   text-decoration: none;
   font-family: var(--font-family-tertiary);
   cursor: pointer;
-  font-weight: 800;
-}
-
-.small{
-  font-size: .75rem;
-  letter-spacing: .0625rem;
-}
-
-.normal{
   font-size: .875rem;
   letter-spacing: .0625rem;
 }
 
-.large{
-  font-size: 1rem;
-  letter-spacing: .0625rem;
-}
-
-.primary{
-  background-color: var(--tertiary);
-  color: var(--primary);
-  border-radius: var(--drawn-border);
-  border: 2px solid var(--primary)
-}
-
-.secondary{
+.scribble{
   padding: 0;
   border: 0;
-  width: 5rem;
-  height: 100%;
   color: var(--popover);
 
   & svg{
+    margin: 0 auto;
     padding: 0;
     position: absolute;
-    top: -3px;
-    right: 0;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     z-index: -1;
 
     & path{

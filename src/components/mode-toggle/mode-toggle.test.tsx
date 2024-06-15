@@ -1,5 +1,4 @@
 import { render, screen, fireEvent, waitFor } from '@testing-library/react'
-import '@testing-library/jest-dom'
 import { ThemeProvider, useTheme } from 'next-themes'
 import ModeToggle from '@/components/mode-toggle'
 import vi, { describe, it, expect, beforeEach, vi as vitest } from 'vitest'
