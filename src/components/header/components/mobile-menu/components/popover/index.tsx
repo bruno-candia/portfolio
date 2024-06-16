@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import MobileLanguageSwitcher from '../../../mobile-language-switcher'
+import LanguageSwitcher from '../../../language-switcher'
 import styles from './styles.module.css'
 import Button from '@/components/button'
 import ThemeSwitcher from '../../../theme-switcher'
@@ -24,7 +24,7 @@ function Popover() {
           </div>
         </div>
       </div>
-      <MobileLanguageSwitcher />
+      <LanguageSwitcher />
       <section>
         <ul>
           <li>

@@ -3,12 +3,11 @@ import styles from './styles.module.css'
 
 function LanguageSwitcher() {
   return (
-    <section className={styles.wrapperLanguageSwitcher}>
+    <section className={styles.wrapper}>
       <div>
-        <div className={styles.mobileLanguageSwitcher}>
-          <fieldset
-            className={`${styles.languageSwitcherRoot} ${styles.languageSwitcherComponent}`}
-          >
+        <div className={styles.container}>
+          <p>Language</p>
+          <fieldset className={`${styles.root} ${styles.component}`}>
             <legend className={styles.srOnly}>Select display language:</legend>
             <span style={{ height: '100%' }}>
               <input

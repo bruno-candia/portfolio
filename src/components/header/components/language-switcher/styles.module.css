@@ -1,33 +1,41 @@
-.wrapperLanguageSwitcher{
+.wrapper{
   &>div{
     padding: 0;
     margin: 0;
   }
 }
 
-.mobileLanguageSwitcher{
+.container{
   font-family: var(--font-family-tertiary);
+  padding: 0 var(--half-gap);
+  height: 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   transition: var(--transition);
   color: var(--primary-foreground);
 
   & p {
-    font-weight: 400;
+    color: var(--primary);
   }
 
-  & .languageSwitcherRoot{
+  & .root{
     display: flex;
     box-shadow: 0 0 0 1px var(--muted-foreground);
     border-radius: 9999px;
-    height: 2rem;
+    height: 32px;
     width: -moz-fit-content;
     width: fit-content;
     padding: 0;
     border: 0;
-    align-items: center;
+  }
+
+  & .component{
+    transform: translateX(8px);
   }
 }
 
-.languageSwitcherRoot :is(.srOnly){
+.root :is(.srOnly){
   position: absolute;
   width: 1px;
   height: 1px;
@@ -40,7 +48,7 @@
 }
 
 
-.languageSwitcherRoot input{
+.root input{
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -50,23 +58,40 @@
   position: absolute;
 }
 
-.languageSwitcherRoot input:checked ~ label {
+.root input:checked ~ label {
   box-shadow: 0 0 0 2px var(--secondary-foreground);
   color:  var(--secondary-foreground);
   background: transparent;
   font-weight: 900;
 }
 
-.languageSwitcherRoot label {
-  display: flex;
+.root label {
+  font-size: 12px;
+  font-weight: 500;
   border-radius: 9999px;
+  display: flex;
   align-items: center;
   justify-content: center;
   background: none;
-  height: 2rem;
-  padding: 0 .75rem;
+  height: 32px;
+  width: 32px;
   margin: 0;
   cursor: pointer;
   position: relative;
   transition: background .1s ease;
+  color: var(--muted-foreground);
+}
+
+
+@media (min-width: 1150px) {
+  .container{
+    & p {
+      display: none;
+    }
+
+
+  & .component{
+    transform: translateX(0px);
+  }
+  }
 }
