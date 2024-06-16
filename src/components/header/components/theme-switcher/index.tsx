@@ -32,14 +32,23 @@ export default function ThemeSwitcher() {
   if (!mounted) return null
 
   return (
-    <div
-      className={`${styles.wrapper} ${clicked ? styles.clicked : ''}`}
-      data-navigation-header
-    >
-      <button className={styles.theme_toggle} onClick={handleClick}>
-        <Icons.sun className={`${styles.icon}`} id={styles.sun} />
-        <Icons.moon className={`${styles.icon}`} id={styles.moon} />
-      </button>
+    <div className={styles.wrapper}>
+      <div>
+        <div className={styles.container}>
+          <p>Theme</p>
+          <div className={`${styles.Root} ${styles.Component}`}>
+            <div
+              className={`${styles.buttonContainer} ${clicked ? styles.clicked : ''}`}
+              data-navigation-header
+            >
+              <button className={styles.theme_toggle} onClick={handleClick}>
+                <Icons.sun className={`${styles.icon}`} id={styles.sun} />
+                <Icons.moon className={`${styles.icon}`} id={styles.moon} />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }

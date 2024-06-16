@@ -1,4 +1,4 @@
-.navSecond{
+.navSecond {
   --gap-between-logo-and-nav: 0px;
   width: auto;
   display: none;
@@ -9,7 +9,7 @@
   --gap-between-logo-and-nav: 32px;
 }
 
-.navigationMenuRoot{
+.navigationMenuRoot {
   --indicator-height: 10px;
   --arrow-offset: -10px;
   --content-width: -16px;
@@ -29,7 +29,7 @@
   width: 100%;
 }
 
-.navigationMenuList{
+.navigationMenuList {
   display: flex;
   justify-content: center;
   list-style: none;
@@ -37,20 +37,21 @@
   padding: 0;
   position: relative;
 
-  &>li{
+  & > li {
     display: flex;
     align-items: center;
     justify-content: center;
   }
 }
 
-.navigationMenuLink{
+.navigationMenuLink {
   font-family: var(--font-family-tertiary);
   display: block;
   text-decoration: none;
 }
 
-.navigationMenuTrigger,.navigationMenuLink {
+.navigationMenuTrigger,
+.navigationMenuLink {
   outline: none;
   -webkit-user-select: none;
   user-select: none;
@@ -63,39 +64,38 @@
   line-height: 1;
   cursor: pointer;
   transition-property: color;
-  transition-duration: .2s;
+  transition-duration: 0.2s;
   transition-timing-function: ease;
 
-  &:hover{
+  &:hover {
     color: var(--secondary);
     background: var(--secondary-foreground);
   }
 }
 
-.navigationMenuTrigger{
+.navigationMenuTrigger {
   display: flex;
   align-items: center;
   gap: 4px;
 }
 
-.navigationMenuContent{
+.navigationMenuContent {
   pointer-events: none;
   position: absolute !important;
   top: 0;
   left: 0;
   opacity: 0;
-  animation-duration: .25s;
+  animation-duration: 0.25s;
   animation-timing-function: ease;
 }
 
-
 @media (min-width: 1151px) {
   .navSecond {
-      display: flex;
-      flex: 1 1;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      background-color: transparent;
+    display: flex;
+    flex: 1 1;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: transparent;
   }
 }

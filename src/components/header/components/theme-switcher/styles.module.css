@@ -1,4 +1,57 @@
-.wrapper {
+
+.wrapper{
+  padding: calc(1.5rem / 2);
+  padding-bottom: 0;
+  position: relative;
+
+  & > div {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+
+.container{
+  font-family: var(--font-family-tertiary);
+  padding: 0 var(--half-gap);
+  height: 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: var(--transition);
+  color: var(--primary-foreground);
+
+  & p {
+    color: var(--primary);
+  }
+
+  & .root{
+    display: flex;
+    width: -moz-fit-content;
+    width: fit-content;
+    padding: 0;
+    border: 0;
+  }
+
+  & .component{
+    transform: translateX(8px);
+  }
+}
+
+.root :is(.srOnly){
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+
+.buttonContainer {
   width: 2rem;
   height: 2rem;
   overflow: hidden;
@@ -43,4 +96,20 @@
 
 .clicked #moon {
   transform: translateY(500%);
+}
+
+@media (min-width: 1150px) {
+  .wrapper {
+    padding: 0;
+  }
+
+  .container {
+    & p {
+      display: none;
+    }
+
+    & .component {
+      transform: translateX(0px);
+    }
+  }
 }

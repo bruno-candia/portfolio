@@ -3,8 +3,9 @@
 import { useState } from 'react'
 import styles from './styles.module.css'
 import Popover from './components/popover'
+import { IMobileMenuProps } from '@/types/mobile'
 
-function MobileMenu() {
+function MobileMenu({ items }: IMobileMenuProps) {
   const [isExpanded, setIsExpanded] = useState<boolean>(false)
 
   function handleExpand() {
@@ -23,7 +24,7 @@ function MobileMenu() {
         <div className={styles.toggleBar} data-position="top"></div>
         <div className={styles.toggleBar} data-position="bottom"></div>
       </button>
-      {isExpanded && <Popover />}
+      {isExpanded && <Popover items={items} />}
     </div>
   )
 }

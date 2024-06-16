@@ -7,24 +7,24 @@ interface DocsConfig {
 export const navigationConfig: DocsConfig = {
   mainNav: [
     {
-      title: 'Documentation',
-      href: '/docs',
+      title: 'About me',
+      href: '#about-me',
     },
     {
-      title: 'Components',
-      href: '/docs/components/accordion',
+      title: 'My content',
+      href: '#my-content',
     },
     {
-      title: 'Themes',
-      href: '/themes',
+      title: 'My lab',
+      href: '#my-lab',
     },
     {
-      title: 'Examples',
-      href: '/examples',
+      title: 'Experiences',
+      href: '/experiences',
     },
     {
-      title: 'Blocks',
-      href: '/blocks',
+      title: 'Jobs & History',
+      href: '/jobs-and-history',
     },
   ],
 }
