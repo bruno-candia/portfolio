@@ -8,6 +8,7 @@ import '@/styles/globals.css'
 import { siteConfig } from '@/config/site'
 import { ThemeProvider } from '@/providers/theme-provider'
 import clsx from 'clsx'
+import Header from '@/components/header'
 
 const spaceGrotesk = SpaceGrotesk({
   subsets: ['latin'],
@@ -84,6 +85,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         )}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <Header />
           {children}
         </ThemeProvider>
       </body>

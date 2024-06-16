@@ -1,0 +1,114 @@
+.wrapper{
+  --transition: background .1s ease, color .1s ease, box-shadow .2s ease;
+  --half-gap: calc(1.5rem / 2);
+  position: fixed;
+  inset: 0;
+  overflow-y: scroll;
+  top: calc(4rem - .0625rem);
+  background: var(--background);
+  display: flex;
+  flex-direction: column;
+  padding: calc(1.5rem / 2);
+
+  & section{
+    padding: calc( 1.5rem / 2);
+    position: relative;
+    border-bottom: 1px solid var(--border);
+  }
+
+  & .cta{
+    border-bottom: none !important;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 0 calc( 1.5rem / 2);
+  }
+
+  & button{
+    background: none;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    padding: 0 var(--half-gap);
+    text-align: left;
+    margin: 0;
+    font-size: 16px;
+    font-weight: 400;
+    transition: var(--transition);
+  }
+}
+
+.navigationListItemLink{
+  font-family: var(--font-family-tertiary);
+  flex-direction: row;
+  justify-content: flex-start;
+  color: var(--primary);
+  line-height: 125%;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  height: 48px;
+  text-decoration: none;
+  gap: 8px;
+  padding: 0 var(--half-gap);
+  border-radius: 6px;
+  position: relative;
+  transition: var(--transition);
+
+  &:hover{
+    background: var(--muted);
+  }
+}
+
+.wrapperThemeSwitcher{
+  padding: calc(1.5rem / 2);
+  position: relative;
+
+}
+
+.containerThemeSwitcher{
+  &>div{
+    padding: 0;
+    margin: 0;
+  }
+}
+
+
+.mobileThemeSwitcher{
+  font-family: var(--font-family-tertiary);
+  padding: 0 var(--half-gap);
+  height: 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: var(--transition);
+  color: var(--primary-foreground);
+
+  & p {
+    color: var(--primary);
+  }
+
+  & .themeSwitcherRoot{
+    display: flex;
+    width: -moz-fit-content;
+    width: fit-content;
+    padding: 0;
+    border: 0;
+  }
+
+  & .themeSwitcherComponent{
+    transform: translateX(8px);
+  }
+}
+
+.themeSwitcherRoot :is(.srOnly){
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}

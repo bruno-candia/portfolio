@@ -1,52 +1,18 @@
-import Link from 'next/link'
-import styles from '../../styles.module.css'
+import Logo from '@/components/logo'
+import styles from './styles.module.css'
+import MobileMenu from '../mobile-menu'
+import DesktopMenu from '../desktop-menu'
 
-export default function Navigation() {
+function Navigation() {
   return (
-    <nav aria-label="principal menu" className={styles.is_desktop}>
-      <ul className={styles.navigation_list}>
-        <li className={styles.navigation_item}>
-          <Link
-            className={styles.navigation_link}
-            href="#about-me"
-            id="about-me"
-          >
-            Sobre Mim
-          </Link>
-        </li>
-        <li className={styles.navigation_item}>
-          <Link
-            className={styles.navigation_link}
-            href="#my-content"
-            id="my-content"
-          >
-            Meu Conteúdo
-          </Link>
-        </li>
-        <li className={styles.navigation_item}>
-          <Link className={styles.navigation_link} href="#my-lab" id="my-lab">
-            Meu Lab
-          </Link>
-        </li>
-        <li className={styles.navigation_item}>
-          <Link
-            className={styles.navigation_link}
-            href="#experiences"
-            id="experiences"
-          >
-            Experiências
-          </Link>
-        </li>
-        <li className={styles.navigation_item}>
-          <Link
-            className={styles.navigation_link}
-            href="#jobs-and-history"
-            id="jobs-and-history"
-          >
-            Trabalhos & História
-          </Link>
-        </li>
-      </ul>
-    </nav>
+    <div className={styles.navFirst}>
+      <div>
+        <Logo />
+        <MobileMenu />
+      </div>
+      <DesktopMenu />
+    </div>
   )
 }
+
+export default Navigation

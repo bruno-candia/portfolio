@@ -1,21 +1,9 @@
-.container {
+.contextMenuButton{
   display: flex;
-  align-items: center;
-  gap: 0.75rem;
-
-  &:hover{
-    text-decoration: none;
+  padding: .25rem;
+  margin: -0.25rem;
+  border-radius: .375rem;
+  & svg {
+    fill: var(--foreground);
   }
-
-  &:focus{
-    text-decoration: none;
-  }
-}
-
-.brand-name{
-  font-family: var(--font-family-secondary);
-  font-size: var(--font-size-title-2);
-  font-weight: var(--font-weight-bold);
-  letter-spacing: -1.5px;
-  text-wrap: nowrap;
 }

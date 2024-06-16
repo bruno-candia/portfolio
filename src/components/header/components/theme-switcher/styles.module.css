@@ -1,6 +1,6 @@
 .wrapper {
-  width: 35px;
-  height: 35px;
+  width: 2rem;
+  height: 2rem;
   overflow: hidden;
   display: flex;
   border-radius: 6px;
@@ -18,13 +18,12 @@
   transition: background 0.2s;
   justify-content: center;
   cursor: pointer;
-  border-radius: var(--drawn-border);
 }
 
 .icon{
   position: absolute;
-  height: 1.25rem;
-  width: 1.25rem;
+  height: 2rem;
+  width: 2rem;
   border-radius: 50%;
   opacity: 1;
   transition: transform 0.6s ease-in-out;
@@ -44,13 +43,4 @@
 
 .clicked #moon {
   transform: translateY(500%);
-}
-
-.theme_toggle[aria-checked="false"]{
-  border:solid 2px hsl(240, 5.9%, 90%);
-}
-
-
-.theme_toggle[aria-checked="true"]{
-  border:solid 2px hsl(240, 3.7%, 15.9%);
 }

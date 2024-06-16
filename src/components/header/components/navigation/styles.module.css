@@ -1,0 +1,30 @@
+.navFirst{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+
+.navFirst>div:first-of-type{
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: auto;
+}
+
+
+@media screen and (max-width: 1150px) {
+  .navFirst{
+    min-height: 4rem;
+  }
+
+  .navFirst>div:first-of-type{
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+}
