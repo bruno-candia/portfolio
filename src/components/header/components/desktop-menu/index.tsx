@@ -1,12 +1,14 @@
 import Link from 'next/link'
 import styles from './styles.module.css'
 import { MainNavItem } from '@/types/nav'
+import { useTranslations } from 'next-intl'
 
 export interface IDesktopMenuProps {
   items: MainNavItem[]
 }
 
 function DesktopMenu({ items }: IDesktopMenuProps) {
+  const t = useTranslations('Navigation')
   return (
     items.length && (
       <div className={styles.navSecond}>
@@ -18,14 +20,14 @@ function DesktopMenu({ items }: IDesktopMenuProps) {
           <div style={{ position: 'relative' }}>
             <ul className={styles.navigationMenuList}>
               {items.map((item) => (
-                <li key={item.title}>
+                <li key={item.id}>
                   <Link
                     href={item.href}
                     data-active="false"
                     className={styles.navigationMenuLink}
                     scroll={false}
                   >
-                    {item.title}
+                    {t(`${item.id}`)}
                   </Link>
                 </li>
               ))}

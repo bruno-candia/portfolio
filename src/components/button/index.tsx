@@ -9,7 +9,7 @@ function Button({ children }: IButtonProps) {
   return (
     <button
       role="button"
-      className={`${styles.baseBtn}  ${styles.textWrapper} ${styles.btn} ${styles.invertBtn}`}
+      className={`${styles.baseBtn} ${styles.resetBtn} ${styles.textWrapper} ${styles.btn} ${styles.invertBtn}`}
       data-button
       data-prefix="false"
       data-suffix="false"

@@ -3,8 +3,10 @@ import ThemeSwitcher from './components/theme-switcher'
 import Navigation from './components/navigation'
 import styles from './styles.module.css'
 import Button from '../button'
+import { useTranslations } from 'next-intl'
 
 function Header() {
+  const t = useTranslations('Navigation')
   return (
     <div className={`${styles.wrapper}`} data-navigation-header>
       <header className={styles.container}>
@@ -12,7 +14,7 @@ function Header() {
         <div className={styles.navThird}>
           <div className={styles.navRight}>
             <LanguageSwitcher />
-            <Button>Contato</Button>
+            <Button>{t('contact')}</Button>
           </div>
           <ThemeSwitcher />
         </div>
