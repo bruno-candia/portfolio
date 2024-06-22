@@ -1,9 +1,9 @@
-.btn[data-button]:not(.btnShape) {
+.btn:not(.btnShape) {
   padding: 1rem 1.5rem;
   height: 2rem;
 }
 
-.btn[data-button] {
+.btn {
   border-radius: 1.25rem;
   font-family: var(--font-family-tertiary);
   color: var(--primary);
