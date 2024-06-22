@@ -1,5 +1,5 @@
 import { ReactNode } from 'react'
-import styles from '../../styles.module.css'
+import styles from '../../dropdown.module.css'
 
 interface DropdownContentProps {
   children: ReactNode

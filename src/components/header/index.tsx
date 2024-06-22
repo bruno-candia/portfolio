@@ -1,7 +1,7 @@
 import LanguageSwitcher from './components/language-switcher'
 import ThemeSwitcher from './components/theme-switcher'
 import Navigation from './components/navigation'
-import styles from './styles.module.css'
+import styles from './header.module.css'
 import Button from '../button'
 import { useTranslations } from 'next-intl'
 

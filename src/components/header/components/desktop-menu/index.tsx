@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import styles from './styles.module.css'
+import styles from './desktop-menu.module.css'
 import { MainNavItem } from '@/types/nav'
 import { useTranslations } from 'next-intl'
 

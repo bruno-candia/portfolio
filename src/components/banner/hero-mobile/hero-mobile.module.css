@@ -1,0 +1,174 @@
+.wrapper {
+  --grid-rows: 2;
+  --grid-columns: 1;
+  --sm-height: fit-content;
+  display: none !important;
+  z-index: 2;
+  border-bottom: none !important;
+  --width: clamp(
+    calc(var(--min-width) - var(--guide-width)),
+    calc(
+      var(--grid-system-width) - var(--guide-width) -
+        (var(--horizontal-margin) * 2)
+    ),
+    calc(var(--max-width) - var(--guide-width))
+  );
+  width: var(--width);
+  height: var(--height);
+  display: grid;
+  position: relative;
+  --column-width: calc(var(--width) / var(--grid-columns));
+  --row-height: calc(var(--height) / var(--grid-rows));
+  grid-template-columns: repeat(var(--grid-columns), var(--column-width));
+  grid-template-rows: repeat(var(--grid-rows), var(--row-height));
+}
+
+.container {
+  --grid-rows: 2;
+  --grid-columns: 1;
+  --sm-height: fit-content;
+  --sm-grid-row: auto;
+  --sm-grid-column: auto;
+  --sm-cell-rows: auto;
+  --sm-cell-columns: auto;
+  overflow: hidden;
+  z-index: 2;
+  margin-bottom: var(--guide-width);
+  margin-right: var(--guide-width);
+  grid-row: var(--grid-row);
+  grid-column: var(--grid-column);
+  display: var(--block-display);
+  padding: var(--cell-padding) 0;
+
+  & > div {
+    height: 100%;
+  }
+}
+
+.content {
+  --stack-flex: initial;
+  --stack-direction: column;
+  --stack-align: center;
+  --stack-justify: center;
+  --stack-padding: 0px;
+  --sm-stack-gap: 24px;
+  --md-stack-gap: 32px;
+  --lg-stack-gap: 32px;
+  --xl-stack-gap: 32px;
+
+  display: flex;
+  flex-direction: var(--stack-direction, column);
+  align-items: var(--stack-align, stretch);
+  justify-content: var(--stack-justify, flex-start);
+  flex: var(--stack-flex, initial);
+  gap: var(--stack-gap, 0);
+
+  & h2{
+    color: var(--quaternary-foreground);
+  }
+}
+
+.textWrapper {
+  --text-size: 0.875rem;
+  --text-line-height: 1.25rem;
+  --text-letter-spacing: initial;
+  --text-weight: 600;
+  --text-align: center;
+  font-size: clamp(24px, 3.75vw, 48px);
+  margin: 0;
+  text-align: start;
+  font-weight: 600;
+  line-height: 2rem;
+  text-wrap: balance;
+}
+
+.description{
+    color: var(--muted-foreground);
+    max-width: 100%;
+    text-wrap: balance;
+    font-family: var(--font-family-tertiary);
+    line-height: 1.125rem;
+}
+
+.badgeGroup{
+  display: flex;
+  gap: 1rem;
+}
+
+@media screen and (min-width: 961px) {
+  .wrapper {
+    --cell-padding: 48px;
+    --grid-divider-gap: calc(140px - var(--cell-padding));
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 768px) {
+  .wrapper {
+    --cell-padding: 40px;
+    --grid-divider-gap: calc(120px - var(--cell-padding));
+  }
+
+  .container {
+    --grid-row: var(--smd-grid-row, var(--md-grid-row, var(--sm-grid-row)));
+    --grid-column: var(
+      --smd-grid-column,
+      var(--md-grid-column, var(--sm-grid-column))
+    );
+    --cell-rows: var(--smd-cell-rows, var(--md-cell-rows, var(--sm-cell-rows)));
+    --cell-columns: var(
+      --smd-cell-columns,
+      var(--md-cell-columns, var(--sm-cell-columns))
+    );
+    --block-display: var(--smd-block-display);
+  }
+}
+
+@media (max-width: 600px) {
+  .wrapper {
+    display: grid !important;
+  }
+
+  .textWrapper {
+    font-size: 1.5rem;
+    letter-spacing: -0.96px;
+  }
+
+  .content {
+    gap: .5rem;
+    --stack-direction: var(--sm-stack-direction);
+    --stack-align: var(--sm-stack-align);
+    --stack-justify: var(--sm-stack-justify);
+    --stack-padding: var(--sm-stack-padding);
+    --stack-gap: var(--sm-stack-gap);
+  }
+}
+
+
+@media (max-width: 768px) {
+  .description {
+      font-size: 14px;
+  }
+}
+
+@media (max-width: 520px) {
+  .textWrapper {
+    max-width: 360px;
+  }
+}
+
+
+@media screen and (max-width: 400px) {
+  .wrapper {
+    --cell-padding: 24px;
+    --grid-divider-gap: calc(72px - var(--cell-padding));
+  }
+
+  .container {
+    --grid-row: var(--xs-grid-row, var(--sm-grid-row));
+    --grid-column: var(--xs-grid-column, var(--sm-grid-column));
+    --block-display: var(--xs-block-display, var(--sm-block-display));
+    --cell-rows: var(--xs-cell-rows, var(--sm-cell-rows));
+    --cell-columns: var(--xs-cell-columns, var(--sm-cell-columns));
+  }
+}
+

@@ -1,7 +1,7 @@
 // src/components/collapse/index.tsx
 import Link from 'next/link'
 import CaretDown from 'public/caret-down'
-import styles from './styles.module.css'
+import styles from './collapse.module.css'
 import { useState } from 'react'
 
 interface ICollapseProps {

@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import styles from './styles.module.css'
+import styles from './skeleton.module.css'
 
 interface ISkeletonProps extends React.HTMLAttributes<HTMLDivElement> {
   className?: string

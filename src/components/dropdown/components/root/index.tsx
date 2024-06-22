@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
 
-import styles from '../../styles.module.css'
+import styles from '../../dropdown.module.css'
 import CaretDown from 'public/caret-down'
 
 interface DropdownProps {

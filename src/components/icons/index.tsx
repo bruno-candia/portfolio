@@ -3,10 +3,12 @@ import MoonIcon from '../../../public/moon'
 import Scrawl from '../../../public/scrawl'
 import SunIcon from '../../../public/sun'
 import USAFlag from 'public/usa-flag'
+import MeIcon from 'public/me'
 
 type IconProps = React.HTMLAttributes<SVGElement>
 
 export const Icons = {
+  me: (props: IconProps) => <MeIcon {...props} />,
   scrawl: (props: IconProps) => <Scrawl {...props} />,
   brazilFlag: (props: IconProps) => <BrazilFlag {...props} />,
   usaFlag: (props: IconProps) => <USAFlag {...props} />,

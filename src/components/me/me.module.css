@@ -1,0 +1,30 @@
+.myPhoto {
+  max-width: 19.6875rem;
+  max-height: 19.6875rem;
+  background-color: var(--black);
+  box-shadow: var(--quaternary-foreground) calc(0.125rem/2) calc(0.125rem/2) calc(0.25rem/2);
+  border-radius: 50%;
+  fill: var(--white);
+  display: flex;
+  overflow: hidden;
+  position: relative;
+
+  & svg {
+    position: absolute;
+    max-height: 19.6875rem;
+    height: 90%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    top: 60%;
+    left: 50%;
+    object-fit: cover;
+  }
+}
+
+
+@media screen and (max-width: 1150px) {
+  .myPhoto {
+    max-width: 2rem;
+    max-height: 2rem;
+  }
+}

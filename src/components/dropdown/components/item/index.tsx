@@ -1,6 +1,6 @@
 import { ElementType } from 'react'
 import Link from 'next/link'
-import styles from '../../styles.module.css'
+import styles from '../../dropdown.module.css'
 
 export interface DropdownItemProps {
   page: string

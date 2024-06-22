@@ -1,12 +1,10 @@
-.navFirst{
+.navFirst {
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 
-
-.navFirst>div:first-of-type{
+.navFirst > div:first-of-type {
   margin-right: auto;
   display: flex;
   align-items: center;
@@ -14,13 +12,19 @@
   width: auto;
 }
 
+.avatar {
+  display: none;
+}
 
 @media screen and (max-width: 1150px) {
-  .navFirst{
+  .navFirst {
     min-height: 4rem;
   }
+  .avatar {
+    display: flex;
+  }
 
-  .navFirst>div:first-of-type{
+  .navFirst > div:first-of-type {
     margin-right: auto;
     display: flex;
     align-items: center;

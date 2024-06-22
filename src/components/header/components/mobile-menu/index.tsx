@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import styles from './styles.module.css'
+import styles from './mobile-menu.module.css'
 import Popover from './components/popover'
 import { IMobileMenuProps } from '@/types/mobile'
 

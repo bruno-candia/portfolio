@@ -1,0 +1,35 @@
+.badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .25rem;
+  font-family: var(--font-family-tertiary);
+  font-size: 2.8125vw;
+  line-height: 1rem;
+  padding: 0;
+  margin: 0;
+
+  &::before {
+    content: "";
+    display: inline-block;
+    width: .4375rem;
+    height: .4375rem;
+    border-radius: 50%;
+    background-color: var(--quaternary-foreground);
+  }
+
+  &[data-active="false"] {
+    color: var(--muted-foreground);
+
+    &::before {
+      background-color: var(--muted-foreground);
+    }
+  }
+}
+
+
+@media screen and (min-width: 425px) {
+  .badge {
+    font-size: .75rem;
+  }
+}

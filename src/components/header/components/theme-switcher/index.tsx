@@ -1,7 +1,7 @@
 'use client'
 
 import { useTheme } from 'next-themes'
-import styles from './styles.module.css'
+import styles from './theme-switcher.module.css'
 import { useEffect, useState } from 'react'
 import { Icons } from '@/components/icons'
 import { Skeleton } from '@/components/skeleton'

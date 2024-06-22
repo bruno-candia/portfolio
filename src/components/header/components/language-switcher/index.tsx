@@ -1,7 +1,7 @@
 'use client'
 
 import { Icons } from '@/components/icons'
-import styles from './styles.module.css'
+import styles from './language-switcher.module.css'
 import { useLocale, useTranslations } from 'next-intl'
 import { useRouter, usePathname } from 'next/navigation'
 import { ChangeEvent, useTransition } from 'react'

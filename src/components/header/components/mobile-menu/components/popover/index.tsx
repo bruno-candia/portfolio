@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import LanguageSwitcher from '../../../language-switcher'
-import styles from './styles.module.css'
+import styles from './popover.module.css'
 import Button from '@/components/button'
 import ThemeSwitcher from '../../../theme-switcher'
 import { IMobileMenuProps } from '@/types/mobile'
