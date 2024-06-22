@@ -1,11 +1,11 @@
 import { render, screen } from '@testing-library/react'
-import Page from '@/app/page'
+import Page from '@/app/[locale]/page'
 import '@testing-library/jest-dom'
 
 describe('Page', () => {
   it('should render ModeToggle component within Page', () => {
     render(<Page />)
-    const button = screen.getByRole('switch')
-    expect(button).toBeInTheDocument()
+    const div = screen.getByText('Text')
+    expect(div).toBeInTheDocument()
   })
 })

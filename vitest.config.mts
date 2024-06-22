@@ -7,6 +7,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
+      public: path.resolve(__dirname, 'public'),
     },
   },
   test: {
@@ -35,8 +36,10 @@ export default defineConfig({
       '**/.{idea,git,cache,output,temp}/**',
       '**/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build,eslint,prettier}.config.*',
       '**/assets/**',
-      '**/i18n/**',
+      '**/src/i18n.ts',
+      '**/src/middleware.ts',
       '**/config/**',
+      '**/src/app/**/layout.tsx',
     ],
     globals: true,
     coverage: {
@@ -48,9 +51,10 @@ export default defineConfig({
         '**/mocks/**/*',
         '**/styles/**',
         '**/providers/**',
-        '**/src/app/layout.tsx',
+        '**/src/app/**/layout.tsx',
         '**/assets/**',
-        '**/i18n/**',
+        '**/src/i18n.ts',
+        '**/src/middleware.ts',
         '**/config/**',
       ],
       all: true,

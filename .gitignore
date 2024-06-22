@@ -33,6 +33,9 @@ yarn-error.log*
 .turbo
 
 # scripts
-scripts/check-pnpm*
+/scripts
 
 .contentlayer
+
+# Million Lint
+.million

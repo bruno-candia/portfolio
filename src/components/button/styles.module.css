@@ -1,60 +1,64 @@
-.buttonBase{
-  position: relative;
-  background: transparent;
-  text-decoration: none;
+.btn[data-button]:not(.btnShape) {
+  padding: 1rem 1.5rem;
+  height: 2rem;
+}
+
+.btn[data-button] {
+  border-radius: 1.25rem;
   font-family: var(--font-family-tertiary);
-  cursor: pointer;
-  font-weight: 800;
-}
-
-.small{
-  font-size: .75rem;
-  letter-spacing: .0625rem;
-}
-
-.normal{
-  font-size: .875rem;
-  letter-spacing: .0625rem;
-}
-
-.large{
-  font-size: 1rem;
-  letter-spacing: .0625rem;
-}
-
-.primary{
-  background-color: var(--tertiary);
   color: var(--primary);
-  border-radius: var(--drawn-border);
-  border: 2px solid var(--primary)
+  box-shadow: 0 0 0 1px var(--muted-foreground);
+  cursor: pointer;
+  max-width: 100%;
+  justify-content: center;
+  align-items: center;
+  transition-property: border-color, background, color, transform, box-shadow;
+  transition-duration: .15s;
+  transition-timing-function: ease;
+  line-height: 1rem;
+  height: 2rem;
+
+  &:hover{
+    color: var(--primary-foreground);
+    background: var(--primary);
+  }
 }
 
-.secondary{
+.btn {
+  --x-padding: 10px;
+  display: flex;
+}
+
+.btnBase {
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  background: none;
+  transform: translateZ(0);
+}
+
+.resetBtn {
+  outline: none;
+  margin: 0;
   padding: 0;
   border: 0;
-  width: 5rem;
-  height: 100%;
-  color: var(--popover);
-
-  & svg{
-    padding: 0;
-    position: absolute;
-    top: -3px;
-    right: 0;
-    z-index: -1;
-
-    & path{
-      stroke: var(--foreground);
-      --end: 1.025;
-      stroke-dasharray: var(--end);
-      stroke-dashoffset: var(--end);
-      animation: draw calc(var(--path-speed) * 1s) calc(var(--path-delay, 0) * 1s) ease-in forwards;
-    }
-  }
+  box-sizing: border-box;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
-@keyframes draw {
-  to {
-    stroke-dashoffset: 0;
-  }
+.textWrapper{
+  font-family: var(--font-family-default);
+  margin: 0;
+  color: var(--primary);
+  font-size: .875rem;
+  font-weight: 400;
+  text-transform: inherit;
+  text-align: inherit;
 }
+

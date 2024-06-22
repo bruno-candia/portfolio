@@ -1,8 +1,10 @@
 import { Icons } from '@/components/icons'
+import { Url } from 'next/dist/shared/lib/router/router'
 
 export interface NavItem {
+  id: string
   title: string
-  href?: string
+  href: Url
   disabled?: boolean
   external?: boolean
   icon?: keyof typeof Icons

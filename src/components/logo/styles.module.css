@@ -1,0 +1,9 @@
+.contextMenuButton{
+  display: flex;
+  padding: .25rem;
+  margin: -0.25rem;
+  border-radius: .375rem;
+  & svg {
+    fill: var(--foreground);
+  }
+}

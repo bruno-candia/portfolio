@@ -1,0 +1,58 @@
+.mobileMenu{
+  z-index: 9999;
+}
+
+.mobileMenuToggle{
+  cursor: pointer;
+  pointer-events: all;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  border: .0625rem solid var(--primary);
+  position: relative;
+  color: var(--primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  transition: background-color .2s ease;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  transition: box-shadow .2s ease;
+}
+
+
+.toggleBar{
+  width: .875rem;
+  height: .0938rem;
+  background-color: var(--primary);
+  position: absolute;
+  transition-property: transform;
+  transition-duration: .16s;
+  transition-timing-function: cubic-bezier(.31,.05,.43,1.02);
+
+
+  &[data-position=top]{
+    transform: translateY(-3.5px);
+  }
+
+  &[data-position=bottom]{
+    transform: translateY(3.5px);
+  }
+}
+
+.mobileMenuToggle[data-expanded=true] .toggleBar[data-position=top] {
+  transform: translateY(0) rotate(45deg) scaleX(1.1);
+}
+
+
+.mobileMenuToggle[data-expanded=true] .toggleBar[data-position=bottom] {
+  transform: translateY(0) rotate(-45deg) scaleX(1.1);
+}
+
+@media (min-width: 1151px) {
+  #mobileMenuToggle { display: none; }
+}

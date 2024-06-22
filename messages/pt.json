@@ -1,0 +1,16 @@
+{
+  "LocaleSwitcher": {
+    "title": "Idioma",
+    "legend": "Selecione o idioma de visualização",
+    "label-english": "Língua inglesa",
+    "label-portuguese": "Língua portuguesa"
+  },
+  "Navigation": {
+    "about-me": "Sobre mim",
+    "my-content": "Meu conteúdo",
+    "my-lab": "Meu laboratório",
+    "experiences": "Experiencias",
+    "jobs-and-history": "Trabalhos & História",
+    "contact": "Contato"
+  }
+}

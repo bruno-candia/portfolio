@@ -1,0 +1,113 @@
+.navigationCollapse{
+  border: none !important;
+
+
+  & h3>button{
+    transition: var(--transition);
+    padding: 0 var(--half-gap);
+    font-size: 16px;
+    font-weight: 400;
+    border-radius: 6px;
+    & span {
+      color: var(--primary);
+    }
+  }
+}
+
+.collapse{
+  text-align: left;
+  border-top: 1px solid #333;
+  border-bottom: 1px solid #333;
+}
+
+.collapseText{
+  --text-color: var(--primary);
+  --text-size: 1rem;
+  --text-line-height: 1.5rem;
+  --text-letter-spacing: initial;
+  --text-weight: 500;
+}
+
+.collapseBtn{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--primary-foreground);
+  cursor: pointer;
+  width: 100%;
+  outline-color: var(--secondary);
+  color: var(--muted);
+
+  &>span{
+    padding: 1.5rem 0;
+  }
+}
+
+.collapseBtn, .collapseBtn>span{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.collapseTitle{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.collapseTitle.collapseSmall{
+  padding: .75rem 0;
+}
+
+.collapseIcon{
+  display: flex;
+  transition: transform .2s ease;
+  color: var(--secondary-foreground);
+
+  &.collapseOpen{
+    transform: rotate(-180deg);
+  }
+}
+
+.collapseOpen{
+  display: flex;
+  transition: transform .2s ease;
+  color: var(--secondary);
+}
+
+.collapseContent{
+  background-color: var(--border);
+  font-size: 16px;
+  line-height: 26px;
+  overflow-y: hidden;
+  will-change: height;
+  transition: height .2s ease;
+
+  &>div{
+    overflow-y: auto;
+    max-height: 60vh;
+  }
+}
+
+.navigationListItemLink{
+  flex-direction: row;
+  justify-content: flex-start;
+  color: var(--muted);
+  line-height: 125%;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  height: 48px;
+  text-decoration: none;
+  gap: 8px;
+  padding: 0 var(--half-gap);
+  border-radius: 6px;
+  position: relative;
+  transition: var(--transition);
+}
+
+@media screen and (max-height: 780px) {
+  .collapseContent {
+      max-height: 55vh;
+  }
+}

@@ -4,10 +4,13 @@ import {
   Permanent_Marker as PermanentMarker,
   Gloria_Hallelujah as GloriaHallelujah,
 } from 'next/font/google'
+import { NextIntlClientProvider } from 'next-intl'
+import { getMessages } from 'next-intl/server'
 import '@/styles/globals.css'
 import { siteConfig } from '@/config/site'
 import { ThemeProvider } from '@/providers/theme-provider'
 import clsx from 'clsx'
+import Header from '@/components/header'
 
 const spaceGrotesk = SpaceGrotesk({
   subsets: ['latin'],
@@ -27,6 +30,7 @@ const permanentMarker = PermanentMarker({
 })
 interface RootLayoutProps {
   children: React.ReactNode
+  params: { locale: string }
 }
 
 export const viewport: Viewport = {
@@ -73,9 +77,13 @@ export const metadata: Metadata = {
   // manifest: `${siteConfig.url}/site.webmanifest`,
 }
 
-export default function RootLayout({ children }: RootLayoutProps) {
+export default async function RootLayout({
+  children,
+  params: { locale },
+}: RootLayoutProps) {
+  const messages = await getMessages()
   return (
-    <html lang="pt" suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning>
       <body
         className={clsx(
           spaceGrotesk.variable,
@@ -83,9 +91,12 @@ export default function RootLayout({ children }: RootLayoutProps) {
           permanentMarker.variable,
         )}
       >
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          {children}
-        </ThemeProvider>
+        <NextIntlClientProvider messages={messages}>
+          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+            <Header />
+            {children}
+          </ThemeProvider>
+        </NextIntlClientProvider>
       </body>
     </html>
   )
