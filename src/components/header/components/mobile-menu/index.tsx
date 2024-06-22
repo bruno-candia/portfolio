@@ -13,13 +13,18 @@ function MobileMenu({ items }: IMobileMenuProps) {
   }
 
   return (
-    <div className={styles.mobileMenu} id={styles.mobileMenuToggle}>
+    <div
+      className={styles.mobileMenu}
+      id={styles.mobileMenuToggle}
+      data-testid={MobileMenu.name}
+    >
       <button
         aria-label={`${isExpanded ? 'Open' : 'Close'} Menu`}
         className={styles.mobileMenuToggle}
         type="button"
         data-expanded={isExpanded}
         onClick={handleExpand}
+        ata-testid={`${MobileMenu.name}-button`}
       >
         <div className={styles.toggleBar} data-position="top"></div>
         <div className={styles.toggleBar} data-position="bottom"></div>

@@ -9,18 +9,19 @@ import { useTranslations } from 'next-intl'
 function Popover({ items }: IMobileMenuProps) {
   const t = useTranslations('Navigation')
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.wrapper} data-testid={Popover.name}>
       <section className={styles.cta}>
         <Button>{t('contact')}</Button>
       </section>
       <ThemeSwitcher />
       <LanguageSwitcher />
       {items.length && (
-        <section>
+        <section data-testid={`${Popover.name}-section`}>
           <ul>
             {items.map((item) => (
               <li key={item.id}>
                 <Link
+                  data-testid={`${Popover.name}-link-${item.id}`}
                   className={styles.navigationListItemLink}
                   href={item.href}
                   data-active="false"

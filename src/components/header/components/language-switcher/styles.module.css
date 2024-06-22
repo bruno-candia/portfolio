@@ -82,6 +82,11 @@
 }
 
 @media (min-width: 1150px) {
+
+  .skeletonTitle{
+    display: none;
+  }
+
   .container {
     & p {
       display: none;
@@ -92,3 +97,5 @@
     }
   }
 }
+
+

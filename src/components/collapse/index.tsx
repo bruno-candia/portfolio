@@ -1,3 +1,4 @@
+// src/components/collapse/index.tsx
 import Link from 'next/link'
 import CaretDown from 'public/caret-down'
 import styles from './styles.module.css'
@@ -5,34 +6,39 @@ import { useState } from 'react'
 
 interface ICollapseProps {
   text: string
-  itens: Array<{
+  items: Array<{
     title: string
     href: string
   }>
 }
 
-function Collapse({ text, itens }: ICollapseProps) {
+function Collapse({ text, items }: ICollapseProps) {
   const [isOpen, setIsOpen] = useState<string>('')
 
   function handleCollapse() {
     setIsOpen(isOpen === '' ? 'collapseOpen' : '')
   }
+
   return (
     <div
       className={`${styles.collapse} ${styles.navigationCollapse}`}
-      data-version="v1"
+      data-testid={`${Collapse.name}-container`}
     >
       <h3 className={`textWrapper ${styles.collapseText}`} data-version="v1">
         <button
           className={`resetBtn ${styles.collapseBtn}`}
           id="collapse-button"
           type="button"
-          aria-expanded="true"
+          aria-expanded={isOpen === 'collapseOpen'}
           onClick={handleCollapse}
+          data-testid={`${Collapse.name}-button`}
         >
           <span className={`${styles.collapseTitle} ${styles.collapseSmall}`}>
             {text}
-            <span className={`${styles.collapseIcon} ${styles[isOpen]}`}>
+            <span
+              className={`${styles.collapseIcon} ${styles[isOpen]}`}
+              data-testid={`${Collapse.name}-icon`}
+            >
               <CaretDown />
             </span>
           </span>
@@ -42,14 +48,19 @@ function Collapse({ text, itens }: ICollapseProps) {
         className={styles.collapseContent}
         aria-labelledby="collapse-button"
         style={{ height: isOpen ? '96px' : '0px' }}
+        data-testid={`${Collapse.name}-content`}
       >
         <div>
           <ul>
-            {itens.map((item) => (
-              <li key={`${item.title} - ${item.href}`}>
+            {items.map((item) => (
+              <li
+                key={`${item.title} - ${item.href}`}
+                data-testid={`${Collapse.name}-item`}
+              >
                 <Link
                   className={styles.navigationListItemLink}
                   href={item.href}
+                  data-testid={`${Collapse.name}-link-${item.title}`}
                 >
                   {item.title}
                 </Link>

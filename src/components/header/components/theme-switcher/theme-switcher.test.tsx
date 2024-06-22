@@ -1,68 +1,69 @@
-import { render, screen, fireEvent, waitFor } from '@testing-library/react'
-import { ThemeProvider, useTheme } from 'next-themes'
-
-import vi, { describe, it, expect, beforeEach, vi as vitest } from 'vitest'
-import { ReactNode } from 'react'
+import { describe, it, expect, vi, beforeEach } from 'vitest'
+import { render, fireEvent, screen } from '@testing-library/react'
 import ThemeSwitcher from '.'
+import '@testing-library/jest-dom'
+import { useTheme } from 'next-themes'
+import { UseThemeProps } from 'next-themes/dist/types'
 
-const renderWithThemeProvider = (ui: ReactNode) => {
-  return render(<ThemeProvider>{ui}</ThemeProvider>)
-}
-
-vitest.mock('next-themes', () => ({
-  useTheme: vitest.fn(),
-  ThemeProvider: ({ children }: { children: ReactNode }) => (
-    <div>{children}</div>
-  ),
+vi.mock('next-themes', () => ({
+  useTheme: vi.fn(() => ({
+    setTheme: vi.fn(),
+    theme: undefined,
+  })),
 }))
 
-describe('ModeToggle', () => {
+describe('ThemeSwitcher Component', () => {
   beforeEach(() => {
-    localStorage.clear()
-    const setTheme = vitest.fn()
-    ;(useTheme as vi.Mock).mockReturnValue({
-      setTheme,
-      theme: 'dark',
-      themes: [],
+    vi.clearAllMocks()
+  })
+
+  it('renders the loading state initially', () => {
+    vi.mocked(useTheme).mockImplementation(
+      () =>
+        ({
+          setTheme: vi.fn(),
+          theme: undefined,
+        }) as unknown as UseThemeProps,
+    )
+
+    render(<ThemeSwitcher />)
+    expect(screen.getByTestId('ThemeSwitcher-Loading')).toBeInTheDocument()
+  })
+
+  it('renders the main UI when mounted', async () => {
+    vi.mocked(useTheme).mockImplementation(
+      () =>
+        ({
+          setTheme: vi.fn(),
+          theme: 'dark',
+        }) as unknown as UseThemeProps,
+    )
+
+    render(<ThemeSwitcher />)
+    expect(screen.getByTestId('ThemeSwitcher')).toBeInTheDocument()
+    expect(
+      screen.queryByTestId('ThemeSwitcher-Loading'),
+    ).not.toBeInTheDocument()
+  })
+
+  it('toggles theme on button click', async () => {
+    const setThemeMock = vi.fn()
+    vi.mocked(useTheme).mockImplementation(
+      () =>
+        ({
+          setTheme: setThemeMock,
+          theme: 'light',
+        }) as unknown as UseThemeProps,
+    )
+
+    render(<ThemeSwitcher />)
+    fireEvent.click(screen.getByRole('button'))
+    await vi.waitFor(() => {
+      expect(setThemeMock).toHaveBeenCalledWith('dark')
     })
-  })
-
-  it('should render without crashing', () => {
-    renderWithThemeProvider(<ThemeSwitcher />)
-    const button = screen.getByRole('switch')
-    expect(button).toBeInTheDocument()
-  })
-
-  it('should have correct initial state', () => {
-    renderWithThemeProvider(<ThemeSwitcher />)
-    const button = screen.getByRole('switch')
-    expect(button).toHaveAttribute('aria-checked', 'false')
-  })
-
-  it('should toggle theme and state when clicked', async () => {
-    const setThemeSpy = vitest.fn()
-    ;(useTheme as vi.Mock).mockReturnValue({
-      setTheme: setThemeSpy,
-      theme: 'dark',
-      themes: [],
+    fireEvent.click(screen.getByRole('button'))
+    await vi.waitFor(() => {
+      expect(setThemeMock).toHaveBeenCalledWith('light')
     })
-
-    renderWithThemeProvider(<ThemeSwitcher />)
-    const button = screen.getByRole('switch')
-
-    expect(button).toHaveAttribute('aria-checked', 'false')
-
-    fireEvent.click(button)
-    await waitFor(() => expect(setThemeSpy).toHaveBeenCalledWith('light'))
-
-    fireEvent.click(button)
-    await waitFor(() => expect(setThemeSpy).toHaveBeenCalledWith('dark'))
-  })
-
-  it('should have accessible attributes', () => {
-    renderWithThemeProvider(<ThemeSwitcher />)
-    const button = screen.getByRole('switch')
-    expect(button).toHaveAttribute('role', 'switch')
-    expect(button).toHaveAttribute('aria-checked', 'false')
   })
 })

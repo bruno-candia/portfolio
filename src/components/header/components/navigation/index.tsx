@@ -6,7 +6,7 @@ import { navigationConfig } from '@/config/navigation'
 
 function Navigation() {
   return (
-    <div className={styles.navFirst}>
+    <div className={styles.navFirst} data-testid={Navigation.name}>
       <div>
         <Logo />
         <MobileMenu items={navigationConfig.mainNav} />

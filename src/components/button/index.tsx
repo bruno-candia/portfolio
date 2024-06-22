@@ -10,10 +10,7 @@ function Button({ children }: IButtonProps) {
     <button
       role="button"
       className={`${styles.baseBtn} ${styles.resetBtn} ${styles.textWrapper} ${styles.btn} ${styles.invertBtn}`}
-      data-button
-      data-prefix="false"
-      data-suffix="false"
-      data-version="1"
+      data-testid={`${Button.name}`}
     >
       {children}
     </button>

@@ -7,8 +7,13 @@ import { useTranslations } from 'next-intl'
 
 function Header() {
   const t = useTranslations('Navigation')
+
   return (
-    <div className={`${styles.wrapper}`} data-navigation-header>
+    <div
+      className={`${styles.wrapper}`}
+      data-navigation-header
+      data-testid={`${Header.name}`}
+    >
       <header className={styles.container}>
         <Navigation />
         <div className={styles.navThird}>

@@ -4,6 +4,7 @@ import { useTheme } from 'next-themes'
 import styles from './styles.module.css'
 import { useEffect, useState } from 'react'
 import { Icons } from '@/components/icons'
+import { Skeleton } from '@/components/skeleton'
 
 export default function ThemeSwitcher() {
   const { setTheme, theme } = useTheme()
@@ -29,14 +30,14 @@ export default function ThemeSwitcher() {
     setClicked(!clicked)
   }
 
-  if (!mounted) return null
+  if (!mounted) return <Loading />
 
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.wrapper} data-testid={`${ThemeSwitcher.name}`}>
       <div>
         <div className={styles.container}>
           <p>Theme</p>
-          <div className={`${styles.Root} ${styles.Component}`}>
+          <div className={`${styles.root} ${styles.component}`}>
             <div
               className={`${styles.buttonContainer} ${clicked ? styles.clicked : ''}`}
               data-navigation-header
@@ -45,6 +46,30 @@ export default function ThemeSwitcher() {
                 <Icons.sun className={`${styles.icon}`} id={styles.sun} />
                 <Icons.moon className={`${styles.icon}`} id={styles.moon} />
               </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function Loading() {
+  return (
+    <div
+      className={styles.wrapper}
+      data-testid={`${ThemeSwitcher.name}-${Loading.name}`}
+    >
+      <div>
+        <div className={styles.container}>
+          <Skeleton
+            width="3.25rem"
+            height="2rem"
+            className={styles.skeletonTitle}
+          />
+          <div className={`${styles.root} ${styles.component}`}>
+            <div className={`${styles.buttonContainer}`}>
+              <Skeleton width="2rem" height="2rem" />
             </div>
           </div>
         </div>

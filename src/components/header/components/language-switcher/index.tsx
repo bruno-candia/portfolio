@@ -5,7 +5,7 @@ import styles from './styles.module.css'
 import { useLocale, useTranslations } from 'next-intl'
 import { useRouter, usePathname } from 'next/navigation'
 import { ChangeEvent, useTransition } from 'react'
-import clsx from 'clsx'
+import { Skeleton } from '@/components/skeleton'
 
 function LanguageSwitcher() {
   const locale = useLocale()
@@ -14,16 +14,24 @@ function LanguageSwitcher() {
   const [isPending, startTransition] = useTransition()
   const pathname = usePathname()
 
+  if (isPending) {
+    return <Loading />
+  }
+
   function onSelectChange(event: ChangeEvent<HTMLInputElement>) {
     const nextLocale = event.target.value
+    console.log(
+      `Changing locale from ${locale} to ${nextLocale}. Pathname: ${pathname}`,
+    )
     startTransition(() => {
+      console.log('Transitioning...')
       const newPathname = pathname.replace(`/${locale}`, `/${nextLocale}`)
       router.replace(newPathname)
     })
   }
 
   return (
-    <section className={styles.wrapper}>
+    <section className={styles.wrapper} data-testid={LanguageSwitcher.name}>
       <div>
         <div className={styles.container}>
           <p>{t('title')}</p>
@@ -37,12 +45,9 @@ function LanguageSwitcher() {
                 value="pt"
                 onChange={onSelectChange}
                 checked={locale === 'pt'}
-                disabled={isPending}
+                data-testid={`${LanguageSwitcher.name}-portuguese`}
               />
               <label
-                className={clsx(
-                  isPending && 'transition-opacity [&:disabled]:opacity-30',
-                )}
                 htmlFor="mobile-language-switch-portuguese"
                 title={t('label-portuguese')}
               >
@@ -57,12 +62,9 @@ function LanguageSwitcher() {
                 value="en"
                 onChange={onSelectChange}
                 checked={locale === 'en'}
-                disabled={isPending}
+                data-testid={`${LanguageSwitcher.name}-english`}
               />
               <label
-                className={clsx(
-                  isPending && 'transition-opacity [&:disabled]:opacity-30',
-                )}
                 htmlFor="mobile-language-switch-english"
                 title={t('label-english')}
               >
@@ -70,6 +72,28 @@ function LanguageSwitcher() {
               </label>
             </span>
           </fieldset>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function Loading() {
+  return (
+    <section
+      className={styles.wrapper}
+      data-testid={`${LanguageSwitcher.name}-${Loading.name}`}
+    >
+      <div>
+        <div className={styles.container}>
+          <Skeleton
+            width="3.25rem"
+            height="2rem"
+            className={styles.skeletonTitle}
+          />
+          <div>
+            <Skeleton width="4rem" height="2rem" />
+          </div>
         </div>
       </div>
     </section>

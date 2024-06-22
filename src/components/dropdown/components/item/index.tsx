@@ -11,8 +11,13 @@ export interface DropdownItemProps {
 function DropdownItem({ description, page, icon: Icon }: DropdownItemProps) {
   const title = `Maincore ${page[0].toUpperCase() + page.substring(1)}`
   return (
-    <li>
-      <Link className={styles.dropdown_item} href={page} scroll={false}>
+    <li data-testid={`${DropdownItem.name}`}>
+      <Link
+        className={styles.dropdown_item}
+        href={page}
+        scroll={false}
+        data-testid={`${DropdownItem.name}-link-${page}`}
+      >
         <div className={styles.item}>
           <span className={styles.title}>{title}</span>
           <span className={styles.description}>{description}</span>
@@ -20,7 +25,7 @@ function DropdownItem({ description, page, icon: Icon }: DropdownItemProps) {
         <div>
           {Icon && (
             <Icon
-              data-testid="dropdown-icon"
+              data-testid={`${DropdownItem.name}-icon`}
               size={32}
               weight="fill"
               color="rgba(24, 74, 140, 1)"

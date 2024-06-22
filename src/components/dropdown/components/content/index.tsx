@@ -6,7 +6,14 @@ interface DropdownContentProps {
 }
 
 function DropdownContent({ children }: DropdownContentProps) {
-  return <ul className={styles.dropdown_content}>{children}</ul>
+  return (
+    <ul
+      data-testid={`${DropdownContent.name}`}
+      className={styles.dropdown_content}
+    >
+      {children}
+    </ul>
+  )
 }
 
 export default DropdownContent

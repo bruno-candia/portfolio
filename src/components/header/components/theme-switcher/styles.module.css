@@ -103,6 +103,10 @@
     padding: 0;
   }
 
+  .skeletonTitle{
+    display: none;
+  }
+
   .container {
     & p {
       display: none;
