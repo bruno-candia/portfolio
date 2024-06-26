@@ -1,20 +1,9 @@
 import { Icons } from '../icons'
 import styles from './me.module.css'
 
-interface IMeProps {
-  width: string
-  height: string
-}
-
-function Me({ width, height }: IMeProps) {
+function Me() {
   return (
-    <div
-      className={styles.myPhoto}
-      style={{
-        width: `${width}vw`,
-        height: `${height}vw`,
-      }}
-    >
+    <div className={styles.myPhoto}>
       <Icons.me className={styles.icon} />
     </div>
   )

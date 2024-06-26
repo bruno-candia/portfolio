@@ -5,7 +5,7 @@ import SunIcon from '../../../public/sun'
 import USAFlag from 'public/usa-flag'
 import MeIcon from 'public/me'
 
-type IconProps = React.HTMLAttributes<SVGElement>
+export type IconProps = React.HTMLAttributes<SVGElement> & { width?: string }
 
 export const Icons = {
   me: (props: IconProps) => <MeIcon {...props} />,
@@ -27,12 +27,42 @@ export const Icons = {
   twitter: (props: IconProps) => (
     <svg
       {...props}
-      height="23"
-      viewBox="0 0 1200 1227"
       width="23"
+      viewBox="0 0 1200 1227"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.137 519.284H714.163ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.854V687.828Z" />
+    </svg>
+  ),
+  linkedin: (props: IconProps) => (
+    <svg
+      {...props}
+      width="25"
+      viewBox="0 0 25 25"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M16.6001 8.05493C18.1914 8.05493 19.7175 8.68707 20.8427 9.81229C21.968 10.9375 22.6001 12.4636 22.6001 14.0549V21.0549H18.6001V14.0549C18.6001 13.5245 18.3894 13.0158 18.0143 12.6407C17.6392 12.2656 17.1305 12.0549 16.6001 12.0549C16.0697 12.0549 15.561 12.2656 15.1859 12.6407C14.8108 13.0158 14.6001 13.5245 14.6001 14.0549V21.0549H10.6001V14.0549C10.6001 12.4636 11.2322 10.9375 12.3575 9.81229C13.4827 8.68707 15.0088 8.05493 16.6001 8.05493Z"
+        stroke="#781EDC"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M6.6001 9.05493H2.6001V21.0549H6.6001V9.05493Z"
+        stroke="#781EDC"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M4.6001 6.05493C5.70467 6.05493 6.6001 5.1595 6.6001 4.05493C6.6001 2.95036 5.70467 2.05493 4.6001 2.05493C3.49553 2.05493 2.6001 2.95036 2.6001 4.05493C2.6001 5.1595 3.49553 6.05493 4.6001 6.05493Z"
+        stroke="#781EDC"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
     </svg>
   ),
   gitHub: (props: IconProps) => (
@@ -128,8 +158,6 @@ export const Icons = {
   spinner: (props: IconProps) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"

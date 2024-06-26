@@ -12,5 +12,14 @@
     "experiences": "Experiences",
     "jobs-and-history": "Jobs & History",
     "contact": "Contact"
+  },
+  "Banner": {
+    "Badge": {
+      "senior-software-developer": "Senior Software Developer",
+      "tech-lead": "Tech Lead",
+      "designer": "Designer"
+    },
+    "title": "Senior Software /Developer",
+    "description": "I’m a software developer with a passion for building web applications and solving problems."
   }
 }

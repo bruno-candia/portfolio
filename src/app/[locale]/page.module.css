@@ -1,23 +1,14 @@
 .wrapper {
-  --stack-flex: initial;
-  --stack-direction: column;
-  --stack-align: stretch;
-  --stack-justify: flex-start;
-  --sm-stack-padding: 16px 0px;
-  --md-stack-padding: 32px 0px;
-  --lg-stack-padding: 90px 0px;
-  --xl-stack-padding: 90px 0px;
-  --stack-gap: 0px;
-  --grid-cell-padding: 48px;
-  --grid-cell-padding-intro: 135px 0 90px 0;
   --shadow-small: 0px 1px 2px 0px rgba(0, 0, 0, 0.04);
+  --stack-padding: 2rem 0;
   overflow: hidden;
+  height: 300vh;
 
   display: flex;
-  flex-direction: var(--stack-direction, column);
-  align-items: var(--stack-align, stretch);
-  justify-content: var(--stack-justify, flex-start);
-  flex: var(--stack-flex, initial);
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  flex: initial;
   gap: var(--stack-gap, 0);
   padding: var(--stack-padding, 0);
 }
@@ -31,7 +22,7 @@
 
 .content {
   --min-width: 250px;
-  --max-width: 1080px;
+  --max-width: 1024px;
   --guide-width: 1px;
   --horizontal-margin: 2rem;
   --grid-system-width: 100vw;
@@ -42,45 +33,22 @@
   min-width: var(--min-width);
   margin-top: var(--guide-width);
   margin-left: var(--guide-width);
-
-  &:before {
-    position: absolute;
-    inset: 0;
-    left: calc(-1 * var(--guide-width));
-    top: calc(-1 * var(--guide-width));
-    content: "";
-    border: var(--guide-width) solid var(--guide-color);
-    pointer-events: none;
-  }
 }
 
 @media screen and (min-width: 1201px) {
   .wrapper {
-    --stack-padding: 5.625rem 0;
+    --stack-padding: 2rem 0;
   }
 }
 
 @media screen and (min-width: 961px) and (max-width: 1200px) {
-  .wrapper {
-    --grid-cell-padding: 40px;
-    --grid-cell-padding-intro: 120px 0 80px 0;
-    --stack-padding: 5.625rem 0;
-  }
-}
-
-@media screen and (min-width: 601px) and (max-width: 960px) {
-  .wrapper {
-    --grid-cell-padding: 24px;
-    --grid-cell-padding-intro: 48px 24px;
-    --stack-padding: 2rem 0;
+  .content {
+    --max-width: 768px;
   }
 }
 
 @media screen and (max-width: 600px) {
   .wrapper {
-    --stack-direction: column;
-    --stack-align: stretch;
-    --stack-justify: flex-start;
     --stack-padding: 1rem 0;
     --stack-gap: 0px;
   }

@@ -19,7 +19,7 @@ function Header() {
         <div className={styles.navThird}>
           <div className={styles.navRight}>
             <LanguageSwitcher />
-            <Button>{t('contact')}</Button>
+            <Button variant="primary">{t('contact')}</Button>
           </div>
           <ThemeSwitcher />
         </div>

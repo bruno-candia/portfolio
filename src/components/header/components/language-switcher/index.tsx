@@ -20,11 +20,7 @@ function LanguageSwitcher() {
 
   function onSelectChange(event: ChangeEvent<HTMLInputElement>) {
     const nextLocale = event.target.value
-    console.log(
-      `Changing locale from ${locale} to ${nextLocale}. Pathname: ${pathname}`,
-    )
     startTransition(() => {
-      console.log('Transitioning...')
       const newPathname = pathname.replace(`/${locale}`, `/${nextLocale}`)
       router.replace(newPathname)
     })

@@ -1,8 +1,9 @@
 .myPhoto {
-  max-width: 19.6875rem;
-  max-height: 19.6875rem;
+  width: 18.75rem;
+  height: 18.75rem;
   background-color: var(--black);
-  box-shadow: var(--quaternary-foreground) calc(0.125rem/2) calc(0.125rem/2) calc(0.25rem/2);
+  box-shadow: calc(0.25rem / 2) calc(0.25rem / 2) calc(0.25rem / 2)
+    var(--quaternary-foreground);
   border-radius: 50%;
   fill: var(--white);
   display: flex;
@@ -11,18 +12,33 @@
 
   & svg {
     position: absolute;
-    max-height: 19.6875rem;
     height: 90%;
-    transform: translate(-50%, -50%);
     width: auto;
     top: 60%;
     left: 50%;
+    transform: translate(-50%, -50%);
     object-fit: cover;
   }
 }
 
-
 @media screen and (max-width: 1150px) {
+  .myPhoto {
+    width: 17.5rem;
+    height: 17.5rem;
+  }
+}
+
+@media screen and (min-width: 961px) {
+  .wrapper {
+    --cell-padding: 32px;
+  }
+
+  .textWrapper {
+    line-height: normal;
+  }
+}
+
+@media screen and (max-width: 768px) {
   .myPhoto {
     max-width: 2rem;
     max-height: 2rem;

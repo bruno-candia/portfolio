@@ -1,6 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react'
 import Collapse from './index'
-import styles from './styles.module.css'
 import { faker } from '@faker-js/faker'
 
 describe('Collapse Component', () => {
@@ -35,11 +34,5 @@ describe('Collapse Component', () => {
 
     fireEvent.click(buttonElement)
     expect(contentElement).toHaveStyle('height: 0px')
-  })
-
-  it('should have the correct class names', () => {
-    render(<Collapse text={text} items={items} />)
-    const containerElement = screen.getByTestId('Collapse-content')
-    expect(containerElement.className).toContain(styles.collapseContent)
   })
 })

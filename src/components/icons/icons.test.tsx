@@ -11,7 +11,6 @@ describe('Icons component', () => {
   it('renders the twitter icon correctly', () => {
     const { container } = render(<Icons.twitter />)
     expect(container.querySelector('svg')).toBeInTheDocument()
-    expect(container.querySelector('svg')).toHaveAttribute('height', '23')
     expect(container.querySelector('svg')).toHaveAttribute('width', '23')
   })
 

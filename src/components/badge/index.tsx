@@ -7,7 +7,11 @@ interface IBadgeProps {
 
 function Badge({ title, isActive }: IBadgeProps) {
   return (
-    <span data-active={isActive} className={styles.badge}>
+    <span
+      data-testid={Badge.name}
+      data-active={isActive}
+      className={styles.badge}
+    >
       <p>{title}</p>
     </span>
   )

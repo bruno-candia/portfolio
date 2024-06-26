@@ -11,7 +11,7 @@ function Navigation() {
       <div>
         <Logo />
         <div className={styles.avatar}>
-          <Me width="10" height="10" />
+          <Me />
         </div>
         <MobileMenu items={navigationConfig.mainNav} />
       </div>

@@ -20,9 +20,6 @@
   .navFirst {
     min-height: 4rem;
   }
-  .avatar {
-    display: flex;
-  }
 
   .navFirst > div:first-of-type {
     margin-right: auto;
@@ -30,5 +27,12 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .avatar {
+    display: flex;
   }
 }

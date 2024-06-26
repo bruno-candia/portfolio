@@ -1,3 +1,122 @@
-.wrapper{
-  overflow: hidden;
+.wrapper {
+  --width: clamp(
+    calc(var(--min-width) - var(--guide-width)),
+    calc(
+      var(--grid-system-width) - var(--guide-width) -
+        (var(--horizontal-margin) * 2)
+    ),
+    calc(var(--max-width) - var(--guide-width))
+  );
+  width: var(--width);
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--cell-padding) 0;
+
+  & > div:first-child {
+    height: 100%;
+  }
+
+  & > div:last-child {
+    justify-self: flex-end;
+    margin-right: 1rem;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  flex: initial;
+
+
+  & h2 span::after{
+    color: var(--quaternary-foreground) !important;
+  }
+}
+
+.textWrapper {
+  font-size: clamp(24px, 3.75vw, 48px);
+  margin: 0;
+  text-align: start;
+  font-weight: 600;
+  text-wrap: balance;
+  line-height: 3.25rem;
+  margin-top: .5rem;
+  text-transform: uppercase;
+}
+
+.description {
+  color: var(--muted-foreground);
+  max-width: 100%;
+  text-wrap: balance;
+  margin: 0.5rem 0 3rem 0;
+  font-family: var(--font-family-tertiary);
+}
+
+.badgeGroup {
+  display: flex;
+  gap: 1rem;
+}
+
+.socialCta {
+  display: flex;
+  gap: 1rem;
+}
+
+.socialCta a {
+  display: flex;
+  align-items: center;
+}
+
+
+@media screen and (max-width: 961px) {
+  .wrapper {
+    --cell-padding: 32px;
+  }
+
+  .textWrapper {
+    line-height: normal;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .textWrapper {
+    max-width: 360px;
+    font-size: 1.5rem;
+    letter-spacing: -0.96px;
+    line-height: 1.75rem;
+  }
+
+  .description {
+    font-size: 14px;
+    line-height: 1.125rem;
+    margin-bottom: 2rem;
+  }
+
+  .container {
+    display: flex;
+
+    & > div:last-child {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .content {
+    gap: 0.5rem;
+    --stack-padding: var(--sm-stack-padding);
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .wrapper {
+    --cell-padding: 24px;
+  }
 }
