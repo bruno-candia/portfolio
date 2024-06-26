@@ -11,7 +11,9 @@ function Popover({ items }: IMobileMenuProps) {
   return (
     <div className={styles.wrapper} data-testid={Popover.name}>
       <section className={styles.cta}>
-        <Button>{t('contact')}</Button>
+        <Button variant="primary" data-testid={`${Popover.name}-button`}>
+          {t('contact')}
+        </Button>
       </section>
       <ThemeSwitcher />
       <LanguageSwitcher />
