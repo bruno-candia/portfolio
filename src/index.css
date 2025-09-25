@@ -1,7 +1,8 @@
 body {
   font-family: "Gloria Hallelujah", cursive;
+  color: #797979;
   background: white;
-  background-size: 100% 1.2rem;
+  background-size: 100% 2rem;
   background-image: -webkit-linear-gradient(#eee 0.05em, transparent 0.05em);
   background-image: -moz-linear-gradient(#eee 0.05em, transparent 0.05em);
   background-image: linear-gradient(#eee 0.05em, transparent 0.05em);
