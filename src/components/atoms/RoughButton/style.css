@@ -1,0 +1,24 @@
+.rough-button {
+  position: relative;
+  padding: 12px 24px;
+  transition: all 200ms;
+  color: #797979;
+}
+
+.rough-button:hover {
+  transform: translate(2px, -2px);
+}
+
+.rough-button__svg {
+  fill: #797979;
+  stroke: #797979;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.rough-button__content {
+  position: relative;
+}
