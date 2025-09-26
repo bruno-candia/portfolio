@@ -2,7 +2,7 @@
 
 .sidebar {
   cursor: pointer;
-
+  z-index: 3;
   position: absolute;
   top: 0;
   right: 0;

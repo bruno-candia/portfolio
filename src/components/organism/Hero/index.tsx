@@ -5,29 +5,31 @@ import { RoughButton } from "@/components/atoms/RoughButton";
 
 export function Hero() {
   return (
-    <div id="about">
+    <section id="about">
       <div className="hero__content">
-        <p>Ola :)</p>
+        <p>Hello Wold :)</p>
         <h1>
           Me chamo <br />
-          Bruno Candia
+          <span>BRUNO CANDIA</span>
         </h1>
         <h2>
           SOU&nbsp;<span>ENGENHEIRO DE SOFTWARE</span>
         </h2>
         <div className="description">
-          <img className="hero__rocket" src={Rocket} alt="" />
-          <p>
-            "We are all time travellers, journeying together into the future.
-            But let us work together to make that future a place we want to
-            visit. Be brave, be curious, be determined, overcome the odds." —
-            Stephen Hawking
-          </p>
+          <blockquote>
+            <p>
+              "Somos todos viajantes do tempo, viajando juntos rumo ao futuro.
+              Mas vamos trabalhar juntos para fazer desse futuro um lugar que
+              desejamos visitar. Sejam corajosos, sejam curiosos, sejam
+              determinados, superem as adversidades."
+            </p>
+          </blockquote>
+          <p> — Stephen Hawking</p>
         </div>
 
         <RoughButton className="hero_cta">Baixar CSV</RoughButton>
       </div>
       <img className="hero__me" src={Me} alt="" />
-    </div>
+    </section>
   );
 }
