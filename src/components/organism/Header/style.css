@@ -1,0 +1,34 @@
+header {
+  display: flex;
+  padding: 24px;
+  align-items: center;
+}
+
+header img {
+  width: 40px;
+}
+
+.logo {
+  display: flex;
+  font-family: "Caveat", cursive;
+  font-size: 38px;
+  letter-spacing: -4px;
+}
+
+.desktop-menu {
+  display: none;
+}
+
+@media (min-width: 1025px) {
+  .desktop-menu {
+    display: block;
+  }
+}
+
+@media (min-width: 768px) {
+  header {
+    display: flex;
+    padding: 24px 92px;
+    align-items: center;
+  }
+}

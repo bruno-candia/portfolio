@@ -8,7 +8,8 @@ body {
   background-image: linear-gradient(#eee 0.05em, transparent 0.05em);
 }
 
-@media (min-width: 481px) {
+
+@media (min-width: 768px) {
   body {
     background-image: -webkit-linear-gradient(
         0deg,

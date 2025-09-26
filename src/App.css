@@ -2,7 +2,7 @@
   --menu-size: 100px;
 }
 
-.menu {
+.sidebar {
   cursor: pointer;
 
   position: absolute;
@@ -21,12 +21,12 @@
   transition: width 1s, height 1s;
 }
 
-.menu:hover {
+.sidebar:hover {
   height: var(--menu-size);
   width: var(--menu-size);
 }
 
-.menu[data-open="open"] {
+.sidebar[data-open="open"] {
   cursor: auto;
   height: 100vmin;
   width: 100vmin;
@@ -34,7 +34,7 @@
   pointer-events: none;
 }
 
-.menu__paper-ear {
+.sidebar__paper-ear {
   pointer-events: auto;
   cursor: pointer;
   position: absolute;
@@ -49,12 +49,12 @@
   z-index: 8;
 }
 
-.menu__paper-ear::after {
+.sidebar__paper-ear::after {
   display: block;
   content: "↓";
 }
 
-.menu__off-canvas {
+.sidebar__off-canvas {
   position: absolute;
   bottom: 50%;
   left: -50%;
@@ -67,12 +67,12 @@
   transform: rotate(45deg);
 }
 
-.menu[data-open="open"] a,
-.menu[data-open="open"] .menu__paper-ear {
+.sidebar[data-open="open"] a,
+.sidebar[data-open="open"] .menu__paper-ear {
   pointer-events: all;
 }
 
-.menu__container {
+.sidebar__container {
   position: absolute;
   bottom: -25%;
   left: 25%;
@@ -82,15 +82,21 @@
   overflow: hidden;
 }
 
-.menu__container img {
+.sidebar__container img {
   position: absolute;
   top: 20px;
   right: 120px;
   min-width: 200px;
 }
 
+@media (min-width: 1025px) {
+  .sidebar {
+    visibility: hidden;
+  }
+}
+
 @media (min-width: 768px) and (max-width: 1024px) {
-  .menu[data-open="open"] {
+  .sidebar[data-open="open"] {
     cursor: auto;
     height: 60vmin;
     width: 60vmin;
@@ -98,7 +104,7 @@
     pointer-events: none;
   }
 
-  .menu__container img {
+  .sidebar__container img {
     position: absolute;
     top: 20px;
     right: 110px;
@@ -107,7 +113,7 @@
 }
 
 @media (min-width: 636px) and (max-width: 767px) {
-  .menu[data-open="open"] {
+  .sidebar[data-open="open"] {
     cursor: auto;
     height: 80vmin;
     width: 80vmin;
@@ -115,7 +121,7 @@
     pointer-events: none;
   }
 
-  .menu__container img {
+  .sidebar__container img {
     position: absolute;
     top: 20px;
     right: 110px;
@@ -124,7 +130,7 @@
 }
 
 @media (min-width: 425px) and (max-width: 635px) {
-  .menu[data-open="open"] {
+  .sidebar[data-open="open"] {
     cursor: auto;
     height: 90vmin;
     width: 90vmin;
@@ -132,7 +138,7 @@
     pointer-events: none;
   }
 
-  .menu__container img {
+  .sidebar__container img {
     position: absolute;
     top: 20px;
     right: 110px;
@@ -141,7 +147,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .menu__content ul li {
+  .sidebar__content ul li {
     transition: none;
     background-size: 100% 100%, 100% 100%;
   }

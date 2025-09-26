@@ -6,7 +6,7 @@ interface IMobileNavigation {
 
 export function MobileNavigation({ anchors }: IMobileNavigation) {
   return (
-    <nav className="menu__content">
+    <nav className="sidebar__content">
       <ul>
         {anchors.map((anchor) => (
           <li key={anchor.link}>

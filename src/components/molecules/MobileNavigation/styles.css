@@ -1,42 +1,8 @@
-.menu__content ul {
+.sidebar__content ul {
   position: absolute;
   text-align: left;
   white-space: nowrap;
   right: 0;
   padding: 11px 20px;
   line-height: 2;
-}
-
-.menu__content ul li {
-  font-weight: bolder;
-  background: linear-gradient(
-      104deg,
-      rgba(130, 255, 173, 0) 0.9%,
-      rgba(130, 255, 173, 1.25) 2.4%,
-      rgba(130, 255, 173, 0.5) 5.8%,
-      rgba(130, 255, 173, 0.1) 93%,
-      rgba(130, 255, 173, 0.7) 96%,
-      rgba(130, 255, 173, 0) 98%
-    ),
-    linear-gradient(
-      183deg,
-      rgba(130, 255, 173, 0) 0%,
-      rgba(130, 255, 173, 0.3) 7.9%,
-      rgba(130, 255, 173, 0) 15%
-    );
-  box-decoration-break: clone;
-  -webkit-box-decoration-break: clone;
-  text-shadow: none;
-  padding: 0 10px;
-  margin: 0;
-  border-radius: 7.5px;
-  background-repeat: no-repeat;
-  background-position: 0 0, 0 0;
-  background-size: 0% 100%, 0% 100%;
-  transition: background-size 450ms ease, text-shadow 250ms ease;
-}
-
-.menu__content ul li:hover,
-.menu__content ul li:focus-within {
-  background-size: 100% 100%, 100% 100%;
 }

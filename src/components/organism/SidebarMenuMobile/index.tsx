@@ -12,16 +12,16 @@ export function SidebarMenuMobile() {
   }
 
   return (
-    <div className="menu" data-open={isOpenMenu}>
-      <div className="menu__paper-ear" onClick={handleMenu}>
+    <aside className="sidebar" data-open={isOpenMenu}>
+      <div className="sidebar__paper-ear" onClick={handleMenu}>
         Click
       </div>
-      <nav className="menu__off-canvas">
-        <div className="menu__container">
+      <nav className="sidebar__off-canvas">
+        <div className="sidebar__container">
           <img src={astronaut} alt="" />
           <MobileNavigation anchors={routes} />
         </div>
       </nav>
-    </div>
+    </aside>
   );
 }
