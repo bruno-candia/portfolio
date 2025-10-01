@@ -1,0 +1,14 @@
+.logo {
+  display: flex;
+  font-family: "Caveat", cursive;
+  align-items: center;
+}
+
+.logo img {
+  height: 48px;
+}
+
+.logo p {
+  font-size: 38px;
+  letter-spacing: -4px;
+}

@@ -1,18 +1,15 @@
-import { SidebarMenuMobile } from "./components/organism/SidebarMenuMobile";
 import { Header } from "./components/organism/Header";
 import { Hero } from "./components/organism/Hero";
-import { Skills } from "./components/organism/Skills";
 import "./App.css";
 
 function App() {
   return (
-    <>
+    <div className="wrapper">
       <Header />
-      <SidebarMenuMobile />
-      <main className="container">
+      <main>
         <Hero />
       </main>
-    </>
+    </div>
   );
 }
 

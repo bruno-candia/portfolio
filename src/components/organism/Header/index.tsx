@@ -1,17 +1,11 @@
-import hangloose from "@/assets/hangloose.svg";
+import Logo from "@/components/atoms/Logo";
 import "./style.css";
-import { Navigation } from "@/components/molecules/Navigation";
-import { routes } from "@/routes";
+import { SidebarMenuMobile } from "../SidebarMenuMobile";
 export function Header() {
   return (
     <header>
-      <div className="logo">
-        <img src={hangloose} alt="" />
-        <p>Bruno Candia</p>
-      </div>
-      <div className="desktop-menu">
-        <Navigation anchors={routes} />
-      </div>
+      <Logo />
+      <SidebarMenuMobile />
     </header>
   );
 }
