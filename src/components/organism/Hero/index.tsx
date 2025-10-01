@@ -2,6 +2,7 @@ import Me from "@/assets/me.svg";
 import "./style.css";
 import Rocket from "@/assets/rocket.svg";
 import { RoughButton } from "@/components/atoms/RoughButton";
+import { Suspense } from "react";
 
 export function Hero() {
   return (
@@ -26,10 +27,19 @@ export function Hero() {
           </blockquote>
           <p> — Stephen Hawking</p>
         </div>
-
-        <RoughButton className="hero_cta">Baixar CSV</RoughButton>
+        <Suspense fallback={null}>
+          <RoughButton className="hero_cta">Baixar CSV</RoughButton>
+        </Suspense>
       </div>
-      <img className="hero__me" src={Me} alt="" />
+      <img
+        src={Me}
+        className="hero__me"
+        fetchPriority="high"
+        decoding="async"
+        width="400"
+        height="400"
+        alt="Bruno"
+      />
     </section>
   );
 }

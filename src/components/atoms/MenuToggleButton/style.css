@@ -1,0 +1,23 @@
+.menu-toggle-button {
+  pointer-events: auto;
+  cursor: pointer;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: var(--menu-size);
+  height: calc(var(--menu-size) / 2 - 0.05rem);
+  padding-top: 1em;
+  transform-origin: 50% 0;
+  transform: rotate(45deg);
+  text-align: center;
+  z-index: 8;
+  background: transparent;
+  border: none;
+  font: inherit;
+  color: inherit;
+}
+
+.menu-toggle-button:focus-visible {
+  outline: 2px solid #000;
+  outline-offset: 2px;
+}

@@ -31,3 +31,8 @@ a:hover,
 a:focus-within {
   background-size: 100% 100%, 100% 100%;
 }
+
+a:focus-visible {
+  outline: 2px solid #000;
+  outline-offset: 2px;
+}

@@ -3,6 +3,13 @@
   text-align: left;
   white-space: nowrap;
   right: 0;
-  padding: 11px 20px;
+  padding: 10px 10px;
   line-height: 2;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sidebar__content ul li {
+    transition: none;
+    background-size: 100% 100%, 100% 100%;
+  }
 }

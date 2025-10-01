@@ -1,7 +1,8 @@
 import { SidebarMenuMobile } from "./components/organism/SidebarMenuMobile";
-import "./App.css";
 import { Header } from "./components/organism/Header";
 import { Hero } from "./components/organism/Hero";
+import { Skills } from "./components/organism/Skills";
+import "./App.css";
 
 function App() {
   return (

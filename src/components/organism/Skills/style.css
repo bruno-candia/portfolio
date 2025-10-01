@@ -1,0 +1,349 @@
+#skills {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  padding: 24px 0 96px;
+}
+
+.skills__header {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 760px;
+}
+
+.skills__tag {
+  width: fit-content;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #1f2937;
+  background: #fde68a;
+  padding: 6px 14px;
+  border-radius: 999px;
+  box-shadow: 2px 4px 0 rgba(15, 23, 42, 0.18);
+}
+
+#skills h3 {
+  font-size: clamp(1.9rem, 3vw, 2.6rem);
+  letter-spacing: -0.02em;
+  color: #111827;
+}
+
+.skills__header p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #334155;
+  max-width: 640px;
+}
+
+.skills__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 64px;
+}
+
+.skills__area-card {
+  position: relative;
+  background: linear-gradient(
+      to bottom right,
+      var(--paper-dark),
+      20%,
+      var(--transparent)
+    ),
+    var(--paper-color);
+  min-width: 250px;
+  min-height: 130px;
+  font-family: "Caveat", cursive;
+  font-size: 2rem;
+  margin: auto;
+  margin-top: 50px;
+}
+
+.skills__area-card::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(
+      var(--transparent),
+      50%,
+      var(--paper-dark),
+      51%,
+      var(--transparent)
+    ),
+    linear-gradient(
+      to right,
+      var(--transparent),
+      50%,
+      var(--paper-dark),
+      51%,
+      var(--transparent)
+    );
+}
+
+.skills__area-card:nth-child(1) {
+  --tape-gray: #dbd8be;
+  --tape-edge-gray: #b7b49d;
+  --transparent: rgba(255, 255, 255, 0);
+  --paper-color: #ecb2ba;
+  --paper-dark: #d299a0;
+  --shadow-size: 1px;
+  --transparent: rgba(236, 178, 186, 0);
+}
+
+.skills__area-card:nth-child(2) {
+  --tape-gray: #dbd8be;
+  --tape-edge-gray: #b7b49d;
+  --transparent: rgba(255, 255, 255, 0);
+  --paper-color: #f2f4ff;
+  --paper-dark: #d2d7ea;
+  --shadow-size: 1px;
+  --transparent: rgba(236, 178, 186, 0);
+}
+
+.skills__area-card:nth-child(3) {
+  --paper-color: #ecfaf3;
+  --paper-line-color: #b7e1cf;
+  --tape-color: #def4e8;
+}
+
+.skills__area-card:nth-child(4) {
+  --paper-color: #f4f0ff;
+  --paper-line-color: #cbc3f3;
+  --tape-color: #e8e2ff;
+}
+
+.skills__area-crease {
+  position: absolute;
+  top: 36px;
+  bottom: 36px;
+  left: 50%;
+  width: 1px;
+  background: rgba(71, 85, 105, 0.3);
+  box-shadow: -1px 0 0 rgba(255, 255, 255, 0.7);
+  transform: translateX(-50%) rotate(-1deg);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.skills__area-corner {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 32px;
+  height: 32px;
+  background: var(--paper-color);
+  clip-path: polygon(100% 0, 100% 100%, 0 100%);
+  border-left: 1px solid rgba(148, 163, 184, 0.4);
+  border-top: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: -4px -4px 0 var(--corner-shadow);
+  transform: translate(18px, 18px) rotate(3deg);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.skills__area-tape {
+  position: absolute;
+  width: 84px;
+  height: 26px;
+  background: var(--tape-color);
+  border: 1px solid var(--tape-edge);
+  box-shadow: 2px 4px 0 rgba(15, 23, 42, 0.12);
+  opacity: 0.92;
+  pointer-events: none;
+  z-index: 4;
+}
+
+.skills__area-tape::before,
+.skills__area-tape::after {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background: var(--tape-color);
+  border: 1px solid var(--tape-edge);
+}
+
+.skills__area-tape::before {
+  top: -5px;
+  left: -10px;
+  transform: rotate(-14deg);
+}
+
+.skills__area-tape::after {
+  bottom: -5px;
+  right: -10px;
+  transform: rotate(18deg);
+}
+
+.skills__area-tape--tl {
+  top: 32px;
+  left: clamp(28px, 9vw, 110px);
+  transform: rotate(-7deg);
+}
+
+.skills__area-tape--tr {
+  top: 28px;
+  right: clamp(28px, 9vw, 110px);
+  transform: rotate(6deg);
+}
+
+.skills__area-tape--bl {
+  bottom: 40px;
+  left: clamp(34px, 12vw, 140px);
+  transform: rotate(8deg);
+}
+
+.skills__area-tape--br {
+  bottom: 38px;
+  right: clamp(34px, 12vw, 140px);
+  transform: rotate(-10deg);
+}
+
+.skills__area-header {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.skills__area-hand {
+  position: absolute;
+  top: -36px;
+  left: -12px;
+  font-size: clamp(1.8rem, 2.6vw, 2.3rem);
+  font-family: "Permanent Marker", "Patrick Hand", "Caveat", "Comic Sans MS",
+    cursive;
+  color: rgba(71, 85, 105, 0.3);
+  transform: rotate(-4deg);
+  pointer-events: none;
+}
+
+.skills__area-header h4 {
+  font-family: "Permanent Marker", "Patrick Hand", "Caveat", "Comic Sans MS",
+    cursive;
+  font-size: clamp(1.9rem, 3vw, 2.45rem);
+  letter-spacing: 0.8px;
+  color: #111827;
+  margin: 0;
+}
+
+.skills__area-description {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #1f2937;
+  margin-bottom: 28px;
+}
+
+.skills__tools-intro {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 28px;
+  color: #1f2937;
+}
+
+.skills__tools-intro strong {
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.skills__tools-intro span {
+  font-size: 0.85rem;
+  color: rgba(51, 65, 85, 0.8);
+  line-height: 1.5;
+}
+
+.skills__stickers {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.skills__area-card:nth-child(odd) .skills__stickers {
+  justify-content: flex-start;
+}
+
+.skills__area-card:nth-child(even) .skills__stickers {
+  justify-content: flex-end;
+}
+
+@media (min-width: 768px) {
+  #skills {
+    gap: 72px;
+  }
+
+  .skills__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 72px 64px;
+  }
+
+  .skills__area-card {
+    padding: 88px 36px 72px;
+  }
+
+  .skills__area-inner {
+    min-height: 520px;
+  }
+}
+
+@media (max-width: 640px) {
+  .skills__area-card {
+    padding: 64px 16px 56px;
+  }
+
+  .skills__area-inner {
+    padding: 40px 24px 48px;
+  }
+
+  .skills__area-tape {
+    width: 68px;
+    height: 22px;
+  }
+
+  .skills__area-tape--tl,
+  .skills__area-tape--tr {
+    top: 24px;
+  }
+
+  .skills__area-tape--bl,
+  .skills__area-tape--br {
+    bottom: 28px;
+  }
+
+  .skills__area-hand {
+    top: -28px;
+    left: -4px;
+  }
+
+  .skills__tools-intro span {
+    font-size: 0.8rem;
+  }
+
+  .skills__header p {
+    font-size: 0.94rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skills__area-card,
+  .skills__area-inner,
+  .skills__area-corner,
+  .skills__area-tape,
+  .sticker,
+  .sticker::after {
+    transition: none !important;
+  }
+}
