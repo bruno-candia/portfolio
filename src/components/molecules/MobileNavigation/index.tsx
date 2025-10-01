@@ -18,13 +18,13 @@ export function MobileNavigation({
 
   return (
     <nav
-      className="sidebar__content"
+      className="mobile-navigation"
       id="mobile-navigation-menu"
       aria-hidden={!isOpen}
     >
-      <ul role="list">
+      <ul className="mobile-navigation__list" role="list">
         {anchors.map((anchor) => (
-          <li key={anchor.link}>
+          <li key={anchor.link} className="mobile-navigation__item">
             <NavButton
               href={anchor.link}
               onClick={handleClick}

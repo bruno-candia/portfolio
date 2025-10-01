@@ -4,11 +4,11 @@
   align-items: center;
 }
 
-.logo img {
+.logo__icon {
   height: 48px;
 }
 
-.logo p {
+.logo__text {
   font-size: 38px;
   letter-spacing: -4px;
 }

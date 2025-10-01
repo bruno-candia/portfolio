@@ -5,5 +5,9 @@ interface INavButton extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
 }
 
 export function NavButton({ children, ...props }: INavButton) {
-  return <a {...props}>{children}</a>;
+  return (
+    <a className="nav-button" {...props}>
+      {children}
+    </a>
+  );
 }

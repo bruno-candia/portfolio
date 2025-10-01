@@ -1,5 +1,13 @@
-header {
+.header {
   display: flex;
   align-items: center;
   margin: 26px 0;
+}
+
+.header__logo {
+  flex: 1;
+}
+
+.header__menu {
+  flex-shrink: 0;
 }

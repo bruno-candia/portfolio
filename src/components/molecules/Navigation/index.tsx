@@ -6,10 +6,10 @@ interface INavigation {
 
 export function Navigation({ anchors }: INavigation) {
   return (
-    <nav className="navigation__content">
-      <ul>
+    <nav className="navigation">
+      <ul className="navigation__list" role="list">
         {anchors.map((anchor) => (
-          <li key={anchor.link}>
+          <li key={anchor.link} className="navigation__item">
             <NavButton href={anchor.link}>{anchor.text}</NavButton>
           </li>
         ))}

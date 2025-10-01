@@ -1,5 +1,5 @@
 import ReactLogo from "@/assets/react.svg";
-import { Sticker, type StickerPeel } from "@/components/atoms/sticker";
+import { Sticker, type StickerPeel } from "@/components/atoms/Sticker";
 import type { ReactNode } from "react";
 import "./style.css";
 

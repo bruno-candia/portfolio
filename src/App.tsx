@@ -4,9 +4,9 @@ import "./App.css";
 
 function App() {
   return (
-    <div className="wrapper">
+    <div className="app">
       <Header />
-      <main>
+      <main className="app__main">
         <Hero />
       </main>
     </div>

@@ -1,4 +1,4 @@
-a {
+.nav-button {
   font-weight: bolder;
   background: linear-gradient(
       104deg,
@@ -27,12 +27,12 @@ a {
   transition: background-size 450ms ease, text-shadow 250ms ease;
 }
 
-a:hover,
-a:focus-within {
+.nav-button:hover,
+.nav-button:focus-within {
   background-size: 100% 100%, 100% 100%;
 }
 
-a:focus-visible {
+.nav-button:focus-visible {
   outline: 2px solid #000;
   outline-offset: 2px;
 }

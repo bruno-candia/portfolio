@@ -8,8 +8,8 @@ export interface ILogo {
 function Logo({ type = "default" }: ILogo) {
   return (
     <div className="logo">
-      <img src={hangloose} alt="" />
-      {type === "default" && <p>Bruno Candia</p>}
+      <img src={hangloose} alt="Logo hang loose" className="logo__icon" />
+      {type === "default" && <span className="logo__text">Bruno Candia</span>}
     </div>
   );
 }
