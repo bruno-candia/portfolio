@@ -1,0 +1,130 @@
+.paper-card-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  margin-top: 16px;
+  padding: 0 20px;
+  --card-color: #4a5568;
+}
+
+.paper-card-wrapper--default .paper-card::before {
+  filter: none;
+}
+
+.paper-card-wrapper--blue {
+  --card-color: #3b82f6;
+}
+
+.paper-card-wrapper--blue .paper-card::before {
+  filter: sepia(0.2) hue-rotate(190deg) saturate(0.8) brightness(1.1);
+}
+
+.paper-card-wrapper--purple {
+  --card-color: #8b5cf6;
+}
+
+.paper-card-wrapper--purple .paper-card::before {
+  filter: sepia(0.2) hue-rotate(240deg) saturate(0.7) brightness(1.15);
+}
+
+.paper-card-wrapper--green {
+  --card-color: #10b981;
+}
+
+.paper-card-wrapper--green .paper-card::before {
+  filter: sepia(0.2) hue-rotate(110deg) saturate(0.7) brightness(1.1);
+}
+
+.paper-card-wrapper--orange {
+  --card-color: #f97316;
+}
+
+.paper-card-wrapper--orange .paper-card::before {
+  filter: sepia(0.3) hue-rotate(350deg) saturate(0.8) brightness(1.1);
+}
+
+.paper-card-wrapper--pink {
+  --card-color: #ec4899;
+}
+
+.paper-card-wrapper--pink .paper-card::before {
+  filter: sepia(0.25) hue-rotate(310deg) saturate(0.7) brightness(1.15);
+}
+
+.paper-card-wrapper--yellow {
+  --card-color: #eab308;
+}
+
+.paper-card-wrapper--yellow .paper-card::before {
+  filter: sepia(0.35) hue-rotate(20deg) saturate(0.9) brightness(1.15);
+}
+
+.paper-card-wrapper--cyan {
+  --card-color: #06b6d4;
+}
+
+.paper-card-wrapper--cyan .paper-card::before {
+  filter: sepia(0.2) hue-rotate(170deg) saturate(0.8) brightness(1.15);
+}
+
+.paper-card-wrapper--teal {
+  --card-color: #14b8a6;
+}
+
+.paper-card-wrapper--teal .paper-card::before {
+  filter: sepia(0.2) hue-rotate(150deg) saturate(0.7) brightness(1.1);
+}
+
+.tape {
+  position: absolute;
+  width: 80px;
+  height: 60px;
+  background-image: url("../../../assets/tape.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 2;
+}
+
+.tape-top-left {
+  left: -8px;
+  top: -18px;
+  transform: rotate(-5deg);
+}
+
+.tape-top-right {
+  right: -8px;
+  top: -18px;
+  transform: rotate(90deg);
+}
+
+.tape-bottom-left {
+  left: -8px;
+  bottom: -18px;
+  transform: rotate(90deg);
+}
+
+.tape-bottom-right {
+  right: -8px;
+  bottom: -18px;
+  transform: rotate(-5deg);
+}
+
+.paper-card {
+  position: relative;
+  padding: 24px 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  isolation: isolate;
+}
+
+.paper-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("../../../assets/paper.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: -1;
+}
