@@ -12,7 +12,6 @@ export function SidebarMenuMobile() {
     setIsOpenMenu((prev) => !prev);
   }
 
-  // Fecha o menu quando ESC é pressionado
   useEffect(() => {
     function handleEscape(event: KeyboardEvent) {
       if (event.key === "Escape" && isOpenMenu) {
@@ -24,7 +23,6 @@ export function SidebarMenuMobile() {
     return () => document.removeEventListener("keydown", handleEscape);
   }, [isOpenMenu]);
 
-  // Previne scroll quando o menu está aberto
   useEffect(() => {
     if (isOpenMenu) {
       document.body.style.overflow = "hidden";

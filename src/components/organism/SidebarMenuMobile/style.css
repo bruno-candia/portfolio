@@ -30,8 +30,6 @@
   pointer-events: none;
 }
 
-/* Estilos do botão de toggle foram movidos para o componente MenuToggleButton */
-
 .sidebar__off-canvas {
   position: absolute;
   bottom: 50%;

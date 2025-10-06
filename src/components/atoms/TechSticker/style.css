@@ -83,14 +83,12 @@
   stroke: currentColor;
 }
 
-/* Regras para learning devem vir antes das regras gerais de hover/selected */
 .tech-sticker.learning:hover .tech-sticker__icon-wrapper svg,
 .tech-sticker.learning.selected .tech-sticker__icon-wrapper svg {
   filter: saturate(0.5) brightness(0.8) !important;
   opacity: 0.8 !important;
 }
 
-/* Regras gerais de hover/selected (cor normal original dos ícones) */
 .tech-sticker:hover .tech-sticker__icon-wrapper svg,
 .tech-sticker.selected .tech-sticker__icon-wrapper svg {
   filter: saturate(1) brightness(1);

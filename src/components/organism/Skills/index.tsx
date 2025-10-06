@@ -6,7 +6,6 @@ import { skills } from "@/data/skillsData";
 import type { TechStack } from "@/data/skillsData";
 import "./style.css";
 
-// Mapeamento de cores para cada categoria
 const categoryColors: Record<
   string,
   { variant: PaperCardVariant; color: string }
