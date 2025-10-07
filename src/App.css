@@ -5,5 +5,5 @@
 .app__main {
   display: flex;
   flex-direction: column;
-  gap: 44px;
+  gap: 0;
 }

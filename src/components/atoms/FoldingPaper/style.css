@@ -1,0 +1,272 @@
+/* Colors */
+:root {
+  --clr1: #abc7c9;
+  --clr2: #f8f3e8;
+  --clr3: #f3efe5; /* darken(#f8f3e8, 2%) */
+  --clr4: #f3bcaa;
+}
+
+/* Container */
+#stage {
+  position: relative;
+  width: 350px;
+  height: 350px;
+  perspective: 800px;
+}
+
+#frame {
+  position: relative;
+  width: 350px;
+  height: 350px;
+  margin: 0 auto;
+  opacity: 1;
+  cursor: pointer;
+}
+
+/* Folds */
+#box {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background: var(--clr1);
+  border: 25px solid var(--clr2);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.07);
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+#box .in {
+  display: none;
+}
+
+.company-logo {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 195px;
+  height: 195px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  pointer-events: none;
+  opacity: 1;
+  padding: 35px;
+  animation: logoReverse 0.8s ease forwards;
+}
+
+.company-logo img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* Esconde a logo quando aberto - sincronizado com Box 1 */
+#frame.open .company-logo {
+  animation: logoFade 0.8s ease forwards;
+}
+
+/* Box 1 - Top Left */
+#stage #box:nth-child(1) {
+  background: var(--clr3);
+  border-radius: 5px 0 0 0;
+  border-right: none;
+  border-bottom: none;
+  top: 0;
+  left: 0;
+  animation: clrReverse 0.8s ease forwards;
+}
+
+/* Box 2 - Top Right */
+#stage #box:nth-child(2) {
+  background: var(--clr3);
+  border-radius: 0 5px 0 0;
+  top: 0;
+  left: 150px;
+  border-left: none;
+  border-bottom: none;
+  transform-origin: 0 0;
+  transform: rotateY(180deg);
+  opacity: 1;
+  animation: foldReverse 0.8s 0.8s ease forwards;
+  animation-fill-mode: backwards;
+}
+
+/* Box 3 - Bottom Left */
+#stage #box:nth-child(3) {
+  background: var(--clr3);
+  border-radius: 0 0 0 5px;
+  top: 150px;
+  left: 0;
+  width: 150px;
+  opacity: 0;
+  border-top: none;
+  border-right: none;
+  transform: rotateX(180deg);
+  transform-origin: 0 0;
+  animation: fold2Reverse 0.8s 0s ease forwards;
+  animation-fill-mode: backwards;
+}
+
+/* Box 4 - Bottom Right */
+#stage #box:nth-child(4) {
+  background: var(--clr3);
+  border-radius: 0 0 5px 0;
+  top: 150px;
+  left: 150px;
+  opacity: 0;
+  border-top: none;
+  border-left: none;
+  transform: rotateX(180deg);
+  transform-origin: 0 0;
+  animation: fold2Reverse 0.8s 0s ease forwards;
+  animation-fill-mode: backwards;
+}
+
+/* Estado Aberto - usa keyframes para controle preciso da cor */
+#frame.open #stage #box:nth-child(1) {
+  animation: clr 0.8s ease forwards;
+}
+
+#frame.open #stage #box:nth-child(2) {
+  animation: fold 0.8s ease forwards;
+}
+
+#frame.open #stage #box:nth-child(3) {
+  animation: fold2 0.8s 0.8s ease forwards;
+}
+
+#frame.open #stage #box:nth-child(4) {
+  animation: fold2 0.8s 0.8s ease forwards;
+}
+
+/* Keyframes - Abrir */
+@keyframes clr {
+  0% {
+    background: var(--clr3);
+  }
+  99.99% {
+    background: var(--clr3);
+  }
+  100% {
+    background: var(--clr1);
+  }
+}
+
+@keyframes fold {
+  0% {
+    background: var(--clr3);
+    transform: rotateY(180deg);
+  }
+  99.99% {
+    background: var(--clr3);
+    transform: rotateY(360deg);
+  }
+  100% {
+    background: var(--clr1);
+    transform: rotateY(360deg);
+  }
+}
+
+@keyframes fold2 {
+  0% {
+    opacity: 1;
+    background: var(--clr3);
+    transform: rotateX(180deg);
+  }
+  25% {
+    opacity: 1;
+    background: var(--clr3);
+  }
+  40% {
+    opacity: 1;
+    background: var(--clr1);
+  }
+  100% {
+    opacity: 1;
+    background: var(--clr1);
+    transform: rotateX(0deg);
+  }
+}
+
+/* Keyframes - Fechar (Reverso) */
+@keyframes clrReverse {
+  0% {
+    background: var(--clr1);
+  }
+  99.99% {
+    background: var(--clr1);
+  }
+  100% {
+    background: var(--clr3);
+  }
+}
+
+@keyframes foldReverse {
+  0% {
+    background: var(--clr1);
+    transform: rotateY(360deg);
+    opacity: 1;
+  }
+  0.01% {
+    background: var(--clr3);
+    transform: rotateY(360deg);
+  }
+  99.99% {
+    opacity: 1;
+  }
+  100% {
+    background: var(--clr3);
+    transform: rotateY(180deg);
+    opacity: 1;
+  }
+}
+
+@keyframes fold2Reverse {
+  0% {
+    opacity: 1;
+    background: var(--clr1);
+    transform: rotateX(0deg);
+  }
+  25% {
+    opacity: 1;
+    background: var(--clr1);
+  }
+  40% {
+    opacity: 1;
+    background: var(--clr3);
+  }
+  99.99% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    background: var(--clr3);
+    transform: rotateX(180deg);
+  }
+}
+
+/* Keyframes da Logo */
+@keyframes logoFade {
+  0% {
+    opacity: 1;
+  }
+  0.01% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes logoReverse {
+  0% {
+    opacity: 0;
+  }
+  99.99% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
