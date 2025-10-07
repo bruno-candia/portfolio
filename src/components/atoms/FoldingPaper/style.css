@@ -1,8 +1,8 @@
 /* Colors */
 :root {
   --clr1: #abc7c9;
-  --clr2: #f8f3e8;
-  --clr3: #f3efe5; /* darken(#f8f3e8, 2%) */
+  --clr2: #fff;
+  --clr3: #ececec;
   --clr4: #f3bcaa;
 }
 
@@ -16,20 +16,28 @@
 
 #frame {
   position: relative;
-  width: 350px;
-  height: 350px;
-  margin: 0 auto;
+  width: 200px;
+  height: 200px;
+  margin: 0;
   opacity: 1;
   cursor: pointer;
+  z-index: 1;
+  overflow: visible;
+  transform-origin: center center;
+  transition: transform 0.8s ease;
 }
 
-/* Folds */
+#frame.open {
+  z-index: 100;
+  position: relative;
+}
+
 #box {
   position: absolute;
   width: 150px;
   height: 150px;
   background: var(--clr1);
-  border: 25px solid var(--clr2);
+  border: 10px solid var(--clr2);
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.07);
   overflow: hidden;
   border-radius: 4px;
@@ -39,31 +47,119 @@
   display: none;
 }
 
-.company-logo {
+.paper-content {
   position: absolute;
-  top: -10px;
-  left: -10px;
-  width: 195px;
-  height: 195px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 300px;
+  padding: 40px 30px;
+  opacity: 0;
   pointer-events: none;
-  opacity: 1;
-  padding: 35px;
-  animation: logoReverse 0.8s ease forwards;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  z-index: 3;
+  text-align: center;
+  animation: textHideReverse 0.8s 0s ease forwards;
+  animation-fill-mode: backwards;
+  will-change: opacity, z-index;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
 }
 
-.company-logo img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
+#frame.open .paper-content {
+  animation: textShow 0.8s 0.8s ease forwards;
+  z-index: 10;
 }
 
-/* Esconde a logo quando aberto - sincronizado com Box 1 */
-#frame.open .company-logo {
-  animation: logoFade 0.8s ease forwards;
+@keyframes textShow {
+  0% {
+    opacity: 0;
+  }
+  30.99% {
+    opacity: 0;
+  }
+  31% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes textHideReverse {
+  0% {
+    opacity: 1;
+  }
+  27% {
+    opacity: 1;
+  }
+  27.01% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.paper-content__header {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  border-bottom: 2px solid rgba(44, 62, 80, 0.15);
+  padding-bottom: 12px;
+}
+
+.paper-content__role {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0;
+  color: #2c3e50;
+  line-height: 1.3;
+}
+
+.paper-content__company {
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0;
+  color: #34495e;
+}
+
+.paper-content__period {
+  font-size: 13px;
+  font-weight: 500;
+  margin: 0;
+  color: #7f8c8d;
+}
+
+.paper-content__description {
+  font-size: 13px;
+  line-height: 1.6;
+  margin: 0;
+  color: #2c3e50;
+  overflow-y: auto;
+  max-height: 140px;
+  text-align: left;
+  padding: 0 10px;
+}
+
+.paper-content__description::-webkit-scrollbar {
+  width: 4px;
+}
+
+.paper-content__description::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 2px;
+}
+
+.paper-content__description::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
+}
+
+.paper-content__description::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.3);
 }
 
 /* Box 1 - Top Left */
@@ -74,12 +170,16 @@
   border-bottom: none;
   top: 0;
   left: 0;
+  z-index: 1;
   animation: clrReverse 0.8s ease forwards;
 }
 
-/* Box 2 - Top Right */
 #stage #box:nth-child(2) {
   background: var(--clr3);
+  background-image: var(--company-logo);
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
   border-radius: 0 5px 0 0;
   top: 0;
   left: 150px;
@@ -88,11 +188,11 @@
   transform-origin: 0 0;
   transform: rotateY(180deg);
   opacity: 1;
+  z-index: 2;
   animation: foldReverse 0.8s 0.8s ease forwards;
   animation-fill-mode: backwards;
 }
 
-/* Box 3 - Bottom Left */
 #stage #box:nth-child(3) {
   background: var(--clr3);
   border-radius: 0 0 0 5px;
@@ -104,6 +204,7 @@
   border-right: none;
   transform: rotateX(180deg);
   transform-origin: 0 0;
+  z-index: 5;
   animation: fold2Reverse 0.8s 0s ease forwards;
   animation-fill-mode: backwards;
 }
@@ -119,6 +220,7 @@
   border-left: none;
   transform: rotateX(180deg);
   transform-origin: 0 0;
+  z-index: 5;
   animation: fold2Reverse 0.8s 0s ease forwards;
   animation-fill-mode: backwards;
 }
@@ -130,6 +232,9 @@
 
 #frame.open #stage #box:nth-child(2) {
   animation: fold 0.8s ease forwards;
+  background-size: 60%;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 #frame.open #stage #box:nth-child(3) {
@@ -156,14 +261,28 @@
 @keyframes fold {
   0% {
     background: var(--clr3);
+    background-image: var(--company-logo);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: rotateY(180deg);
+  }
+  2%{
+    background: var(--clr3);
+    background-image: var(--company-logo);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
     transform: rotateY(180deg);
   }
   99.99% {
     background: var(--clr3);
+    background-image: none;
     transform: rotateY(360deg);
   }
   100% {
     background: var(--clr1);
+    background-image: none;
     transform: rotateY(360deg);
   }
 }
@@ -205,11 +324,13 @@
 @keyframes foldReverse {
   0% {
     background: var(--clr1);
+    background-image: none;
     transform: rotateY(360deg);
     opacity: 1;
   }
-  0.01% {
+  2% {
     background: var(--clr3);
+    background-image: none;
     transform: rotateY(360deg);
   }
   99.99% {
@@ -217,6 +338,10 @@
   }
   100% {
     background: var(--clr3);
+    background-image: var(--company-logo);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
     transform: rotateY(180deg);
     opacity: 1;
   }
@@ -243,30 +368,5 @@
     opacity: 0;
     background: var(--clr3);
     transform: rotateX(180deg);
-  }
-}
-
-/* Keyframes da Logo */
-@keyframes logoFade {
-  0% {
-    opacity: 1;
-  }
-  0.01% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-@keyframes logoReverse {
-  0% {
-    opacity: 0;
-  }
-  99.99% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
   }
 }

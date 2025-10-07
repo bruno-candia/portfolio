@@ -23,8 +23,32 @@ export function Experience() {
 
         <div className="experience__cards">
           <FoldingPaper
-            companyLogo="https://media.licdn.com/dms/image/v2/C4E0BAQGXPkcsGk7KYA/company-logo_200_200/company-logo_200_200/0/1678379975390/beesb2b_logo?e=1762992000&v=beta&t=Vv5n0E3t4nIpzvdjvDjPVmZyAST-AS6SZetg8xLKhUo"
-            companyName="Empresa Exemplo"
+            companyLogo="https://media.licdn.com/dms/image/v2/C4D0BAQHm1ULYG7xpsw/company-logo_200_200/company-logo_200_200/0/1630576352747/beesbrasil_logo?e=1762992000&v=beta&t=GeCrbz-0NOlDCRoJXo42kXVkDvlCBOobxKJacYRsDl8"
+            role="Desenvolvedor Full Stack"
+            company="BEES Brasil"
+            period="Jan 2023 - Atual"
+            description="Desenvolvimento de aplicações web utilizando React, TypeScript e Node.js. Implementação de features, testes automatizados e melhorias de performance."
+          />
+          <FoldingPaper
+            companyLogo="https://media.licdn.com/dms/image/v2/C4D0BAQHm1ULYG7xpsw/company-logo_200_200/company-logo_200_200/0/1630576352747/beesbrasil_logo?e=1762992000&v=beta&t=GeCrbz-0NOlDCRoJXo42kXVkDvlCBOobxKJacYRsDl8"
+            role="Desenvolvedor Full Stack"
+            company="BEES Brasil"
+            period="Jan 2023 - Atual"
+            description="Desenvolvimento de aplicações web utilizando React, TypeScript e Node.js. Implementação de features, testes automatizados e melhorias de performance."
+          />
+          <FoldingPaper
+            companyLogo="https://media.licdn.com/dms/image/v2/C4D0BAQHm1ULYG7xpsw/company-logo_200_200/company-logo_200_200/0/1630576352747/beesbrasil_logo?e=1762992000&v=beta&t=GeCrbz-0NOlDCRoJXo42kXVkDvlCBOobxKJacYRsDl8"
+            role="Desenvolvedor Full Stack"
+            company="BEES Brasil"
+            period="Jan 2023 - Atual"
+            description="Desenvolvimento de aplicações web utilizando React, TypeScript e Node.js. Implementação de features, testes automatizados e melhorias de performance."
+          />
+          <FoldingPaper
+            companyLogo="https://media.licdn.com/dms/image/v2/C4D0BAQHm1ULYG7xpsw/company-logo_200_200/company-logo_200_200/0/1630576352747/beesbrasil_logo?e=1762992000&v=beta&t=GeCrbz-0NOlDCRoJXo42kXVkDvlCBOobxKJacYRsDl8"
+            role="Desenvolvedor Full Stack"
+            company="BEES Brasil"
+            period="Jan 2023 - Atual"
+            description="Desenvolvimento de aplicações web utilizando React, TypeScript e Node.js. Implementação de features, testes automatizados e melhorias de performance."
           />
         </div>
       </div>

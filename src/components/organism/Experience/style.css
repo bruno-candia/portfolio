@@ -66,6 +66,10 @@
   max-width: 1200px;
   margin: 0 auto;
   padding-top: 60px;
+  background-image: url("@/assets/boxing-gloves.svg");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: contain;
 }
 
 .experience__header {
@@ -82,22 +86,22 @@
 }
 
 .experience__description {
-  font-size: 1.1rem;
+  font-size: 1.75rem;
   color: #6b6b6b;
   max-width: 800px;
   margin: 0;
   line-height: 1.7;
-  font-family: "Segoe Print", "Bradley Hand", "Brush Script MT", cursive;
   font-weight: 400;
 }
 
 .experience__cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
   margin-top: 40px;
-  justify-items: center;
+  justify-items: start;
   padding: 20px 0;
+  position: relative;
 }
 
 @media (max-width: 768px) {
@@ -116,6 +120,6 @@
 
   .experience__cards {
     grid-template-columns: 1fr;
-    gap: 30px;
+    gap: 20px;
   }
 }
