@@ -1,7 +1,14 @@
 #education {
   position: relative;
-  margin: 0 -24px;
+  margin: 0 0 0 0;
   padding: 0 24px 340px 24px;
+}
+
+@media (max-width: 1023px) {
+  #education {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
 }
 
 .education__content {
@@ -69,4 +76,53 @@
 .education__link {
   color: #1e63b6;
   text-decoration: underline;
+}
+
+@media (min-width: 1024px) {
+  .education__clip {
+    display: none;
+  }
+
+
+  .education__header {
+    margin-bottom: 0px;
+  }
+
+  .education__paper-wrapper {
+    left: 0;
+    right: auto;
+  }
+
+  .education__paper {
+    transform-origin: left center;
+  }
+
+  .education__paper-content {
+    transform: none;
+  }
+
+  .education__paper-wrapper::before,
+  .education__paper-wrapper::after {
+    content: "";
+    position: absolute;
+    width: 80px;
+    height: 70px;
+    background-image: url("../../../assets/tape.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 2;
+  }
+
+  .education__paper-wrapper::before {
+    top: 5px;
+    left: 5px;
+    transform: rotate(-8deg);
+  }
+
+  .education__paper-wrapper::after {
+    bottom: -20px;
+    right: -25px;
+    transform: rotate(6deg);
+  }
 }

@@ -3,7 +3,6 @@ body {
   background: white;
 }
 
-/* Apply ruled background via utility class in markup or keep here if needed */
 @media (min-width: 0px) {
   body {
     background-size: 100% 2rem;

@@ -20,6 +20,8 @@ export function Experience() {
         <div className="experience__cards">
           {experiencesData.map((exp, index) => (
             <div key={index} className="experience__card-wrapper">
+              <FoldingPaper descriptions={exp.descriptions} />
+
               <div className="experience__info">
                 <img
                   src={exp.companyLogo}
@@ -34,7 +36,6 @@ export function Experience() {
                   <p className="experience__period">{exp.period}</p>
                 </div>
               </div>
-              <FoldingPaper descriptions={exp.descriptions} />
             </div>
           ))}
         </div>

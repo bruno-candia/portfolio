@@ -1,9 +1,16 @@
 #experience {
   position: relative;
+  padding: 0;
+}
+
+@media (max-width: 1023px) {
+  #experience {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
 }
 
 .experience__content {
-  max-width: 1200px;
   margin: 0 auto;
   padding-top: 60px;
 }
@@ -32,6 +39,16 @@
 }
 
 .experience__info {
+  order: 1;
+}
+
+.experience__card-wrapper #frame {
+  order: 2;
+  margin-top: 8px;
+  flex-shrink: 0;
+}
+
+.experience__info {
   display: flex;
   align-items: flex-start;
   gap: 16px;
@@ -39,12 +56,17 @@
 }
 
 .experience__company-logo {
-  border-radius: 50%;
+  border-radius: 10%;
   object-fit: cover;
   box-shadow: 6px 6px 4px -4px rgba(0, 0, 0, 0.1);
   border: 3px solid white;
   flex-shrink: 0;
   background: white;
+}
+
+.experience__company-logo {
+  width: 56px;
+  height: 56px;
 }
 
 .experience__details {
@@ -79,18 +101,35 @@
   line-height: var(--line-height-snug);
 }
 
-@media (max-width: 768px) {
-  #experience {
-    margin: 0 -24px;
-    padding: 0 24px 40px 24px;
+@media (min-width: 1024px) {
+  .experience__cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px 48px;
   }
 
-  .experience__cards {
-    gap: 32px;
+  .experience__card-wrapper {
+    align-items: stretch;
+    flex-direction: row;
+    gap: 24px;
+  }
+
+  .experience__info {
+    align-items: center;
+    flex: 1;
+    order: 2;
+  }
+
+  .experience__card-wrapper #frame {
+    order: 1;
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 8px;
   }
 
   .experience__company-logo {
-    width: 52px;
-    height: 52px;
+    width: 72px;
+    height: 72px;
   }
 }
+

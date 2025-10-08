@@ -23,8 +23,22 @@
   opacity: 0.85;
 }
 
-@media (min-width: 768px) {
-  #footer {
-    padding: 48px 24px 60px 24px;
+@media (min-width: 1024px) {
+  .footer__content {
+    display: flex;
+    align-items: center;
+    text-align: left;
+  }
+
+  .footer__content > p {
+    display: inline;
+    margin: 0;
+    margin-right: 12px;
+  }
+
+  .footer__logo {
+    margin-top: 0;
+    margin-left: auto;
   }
 }
+

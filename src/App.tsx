@@ -14,13 +14,15 @@ function App() {
       <main className="app__main">
         <Hero />
         <Skills />
-        <div className="app_second-page">
+        <div className="app__second-page">
           <div className="app__torn-paper">
             <img src={tornPaper} alt="" className="app__torn-edge" />
           </div>
-          <Experience />
-          <Education />
-          <Footer />
+          <div className="app__second-page__inner">
+            <Experience />
+            <Education />
+            <Footer />
+          </div>
         </div>
       </main>
     </div>

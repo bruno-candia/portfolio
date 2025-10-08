@@ -8,23 +8,26 @@
   gap: 0;
 }
 
-.app_second-page {
+.app__second-page {
   position: relative;
-  background: #f5f5f5;
+  background: #f1f1f1;
   background-size: 100% 2rem;
   background-image: linear-gradient(#e5e5e5 0.05em, transparent 0.05em);
-  margin: 0 -24px;
-  padding: 0 24px 0px 24px;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  width: 100vw;
+  margin-left: calc(50% - 50.5vw);
 }
 
 @media (min-width: 768px) {
-  .app_second-page {
+  .app__second-page {
     background-image: linear-gradient(
         90deg,
-        transparent 79px,
-        #9cbdc4 79px,
-        #9cbdc4 81px,
-        transparent 81px
+        transparent 87px,
+        #9cbdc4 87px,
+        #9cbdc4 89px,
+        transparent 89px
       ),
       linear-gradient(#e5e5e5 0.05em, transparent 0.05em);
   }
@@ -32,9 +35,9 @@
 
 .app__torn-paper {
   position: relative;
-  width: calc(100% + 48px);
-  margin-left: -24px;
-  margin-top: -50px;
+  width: 100%;
+  margin-left: 0;
+  margin-top: -20px;
   overflow: visible;
 }
 
@@ -52,22 +55,44 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-size: 100% 2rem;
+  background-size: 100% rem;
   background-image: linear-gradient(#eee 0.05em, transparent 0.05em);
   pointer-events: none;
   mix-blend-mode: multiply;
-  opacity: 0.6;
 }
 
-@media (min-width: 768px) {
+
+@media (min-width: 1024px) {
   .app__torn-paper::after {
+    background-size: 100% 2rem;
+    background-position-y: -10px;
+    opacity: 0.8;
+    margin-top: -20px;
     background-image: linear-gradient(
-        90deg,
-        transparent 79px,
-        #abced4 79px,
-        #abced4 81px,
-        transparent 81px
-      ),
-      linear-gradient(#eee 0.05em, transparent 0.05em);
+      90deg,
+      transparent 86.5px,
+      #9cbdc4 86.5px,
+      #9cbdc4 88.5px,
+      transparent 88.5px
+    ),
+    linear-gradient(#e5e5e5 0.05em, transparent 0.05em);
+}
+
+  .app__torn-edge {
+    object-fit: cover;
   }
+
+  .app__main {
+    max-width: 1024px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .app__second-page__inner {
+    max-width: 1024px;
+  }
+}
+
+.app__second-page__inner {
+  margin: 0 auto;
+  width: 100%;
 }
