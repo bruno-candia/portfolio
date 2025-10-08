@@ -92,6 +92,7 @@ export function RoughButton({
         setIsHovered(true);
         setHoverVersion((v) => v + 1);
       }}
+      type="button"
       onMouseLeave={() => setIsHovered(false)}
       className={`rough-button ${className}`}
       style={{

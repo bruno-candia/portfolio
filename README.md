@@ -120,3 +120,13 @@ This is a personal portfolio project.
 ---
 
 Developed with 💙 by Bruno Candia
+
+
+
+Vou usar
+2. O botão do `Hero` deve baixar o seu currículo (CV) em PDF? Se sim, você pretende colocá-lo em `public/` (ex.: `/cv.pdf`)?
+3. Prefere consolidar o `hangloose.svg` (logo) em um único local ou manter versões separadas para favicon e logo do app?
+4. Deseja trazer os logos das empresas para o projeto (em `src/assets`/`public`) para evitar hotlink externo?
+5. Posso padronizar o diretório para `components/organisms/` e ajustar os imports?
+6. O efeito de papel pautado deve ser global (no `body`) ou confinado às seções específicas? Posso centralizar isso num único lugar.
+7. Posso substituir os ids duplicados em `FoldingPaper` por classes e ajustar os seletores para manter o efeito?

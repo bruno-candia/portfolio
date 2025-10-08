@@ -25,6 +25,8 @@ export function Experience() {
                   src={exp.companyLogo}
                   alt={exp.company}
                   className="experience__company-logo"
+                  loading="lazy"
+                  decoding="async"
                 />
                 <div className="experience__details">
                   <h3 className="experience__company-name">{exp.company}</h3>

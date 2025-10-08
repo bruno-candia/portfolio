@@ -1,18 +1,17 @@
-.hero__content{
+.hero__content {
   display: grid;
   grid-template-rows: auto 300px auto;
   gap: 1rem;
 }
 
-.hero__greeting{
+.hero__greeting {
   margin-top: -3px;
 }
 
-.hero__title{
+.hero__title {
   margin-top: -4px;
   line-height: 32px;
 }
-
 
 .hero__subtitle {
   display: inline-block;
@@ -43,9 +42,12 @@
   background-repeat: no-repeat;
   background-position: 0 10px, 0 0;
   background-size: 100% 60%, 100% 100%;
+  font-size: var(--font-size-heading-xs);
+  line-height: var(--line-height-snug);
+  font-weight: var(--font-weight-medium);
 }
 
-.hero__image{
+.hero__image {
   margin: 0;
   padding: 0;
   width: auto;
@@ -55,10 +57,9 @@
 
 .hero__quote p {
   margin-top: 17px;
-
 }
 
-.hero__quote-author{
+.hero__quote-author {
   margin-top: 3px;
   font-weight: bold;
 }

@@ -1,10 +1,10 @@
-import { Header } from "./components/organism/Header";
-import { Hero } from "./components/organism/Hero";
+import { Header } from "./components/organisms/Header";
+import { Hero } from "./components/organisms/Hero";
 import "./App.css";
-import { Skills } from "./components/organism/Skills";
-import { Experience } from "./components/organism/Experience";
-import { Education } from "./components/organism/Education";
-import { Footer } from "./components/organism/Footer";
+import { Skills } from "./components/organisms/Skills";
+import { Experience } from "./components/organisms/Experience";
+import { Education } from "./components/organisms/Education";
+import { Footer } from "./components/organisms/Footer";
 import tornPaper from "@/assets/torn-paper.svg";
 
 function App() {

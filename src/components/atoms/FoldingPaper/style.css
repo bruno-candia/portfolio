@@ -38,7 +38,7 @@
   animation: zIndexOpen 0s ease forwards;
 }
 
-#box {
+.box {
   position: absolute;
   width: 150px;
   height: 150px;
@@ -52,7 +52,7 @@
   border-radius: 4px;
 }
 
-#box:nth-child(2)::after {
+.box:nth-child(2)::after {
   content: attr(data-hint);
   position: absolute;
   top: 50%;
@@ -63,7 +63,6 @@
   font-weight: var(--font-weight-semibold);
   color: #6b6b6b;
   font-style: italic;
-  white-space: wrap;
   text-align: center;
   opacity: 1;
   pointer-events: none;
@@ -71,11 +70,11 @@
   animation-fill-mode: backwards;
 }
 
-#frame.open #box:nth-child(2)::after {
+#frame.open .box:nth-child(2)::after {
   animation: hintTextHide 0.8s ease forwards;
 }
 
-#box .in {
+.box .in {
   display: none;
 }
 
@@ -209,7 +208,7 @@
   background: rgba(0, 0, 0, 0.4);
 }
 
-#stage #box:nth-child(1) {
+#stage .box:nth-child(1) {
   background: var(--clr3-box1);
   border-radius: 5px 0 0 0;
   border-right: none;
@@ -220,7 +219,7 @@
   animation: clrReverse 0.8s ease forwards;
 }
 
-#stage #box:nth-child(2) {
+#stage .box:nth-child(2) {
   background: var(--clr3-box2);
   border-radius: 0 5px 0 0;
   top: 0;
@@ -235,7 +234,7 @@
   animation-fill-mode: backwards;
 }
 
-#stage #box:nth-child(3) {
+#stage .box:nth-child(3) {
   background: var(--clr3-box3);
   border-radius: 0 0 0 5px;
   top: 150px;
@@ -251,7 +250,7 @@
   animation-fill-mode: backwards;
 }
 
-#stage #box:nth-child(4) {
+#stage .box:nth-child(4) {
   background: var(--clr3-box4);
   border-radius: 0 0 5px 0;
   top: 150px;
@@ -266,19 +265,19 @@
   animation-fill-mode: backwards;
 }
 
-#frame.open #stage #box:nth-child(1) {
+#frame.open #stage .box:nth-child(1) {
   animation: clr 0.8s ease forwards;
 }
 
-#frame.open #stage #box:nth-child(2) {
+#frame.open #stage .box:nth-child(2) {
   animation: fold 0.8s ease forwards;
 }
 
-#frame.open #stage #box:nth-child(3) {
+#frame.open #stage .box:nth-child(3) {
   animation: fold2 0.8s 0.8s ease forwards;
 }
 
-#frame.open #stage #box:nth-child(4) {
+#frame.open #stage .box:nth-child(4) {
   animation: fold2 0.8s 0.8s ease forwards;
 }
 

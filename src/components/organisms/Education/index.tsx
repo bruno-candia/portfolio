@@ -20,11 +20,15 @@ export function Education() {
             src={piecePaper}
             alt="Papel rasgado"
             className="education__paper"
+            loading="lazy"
+            decoding="async"
           />
           <img
             src={paperClips}
             alt="Clipe de papel"
             className="education__clip"
+            loading="lazy"
+            decoding="async"
           />
 
           <div className="education__paper-content">

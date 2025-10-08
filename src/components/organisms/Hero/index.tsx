@@ -1,16 +1,15 @@
 import Me from "@/assets/me.png";
 import "./style.css";
 import { RoughButton } from "@/components/atoms/RoughButton";
-import { Suspense } from "react";
 
 export function Hero() {
   return (
     <section id="hero">
       <div className="hero__content">
         <div>
-          <p className="hero__greeting">Hello Wold :)</p>
+          <p className="hero__greeting">Hello World :)</p>
           <h1 className="hero__title">Me chamo Bruno Candia</h1>
-          <h5 className="hero__subtitle">ENGENHEIRO DE SOFTWARE</h5>
+          <h2 className="hero__subtitle">ENGENHEIRO DE SOFTWARE</h2>
         </div>
         <img
           src={Me}
@@ -31,9 +30,7 @@ export function Hero() {
           <p className="hero__quote-author"> — Stephen Hawking</p>
         </div>
       </div>
-      <Suspense fallback={null}>
-        <RoughButton className="hero__cta">BAIXAR CSV</RoughButton>
-      </Suspense>
+      <RoughButton className="hero__cta">BAIXAR CV</RoughButton>
     </section>
   );
 }

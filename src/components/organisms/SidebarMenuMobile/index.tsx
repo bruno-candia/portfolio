@@ -55,6 +55,8 @@ export function SidebarMenuMobile() {
             src={astronaut}
             alt="Ilustração de um astronauta flutuando no espaço"
             role="img"
+            loading="lazy"
+            decoding="async"
           />
           <MobileNavigation
             anchors={routes}

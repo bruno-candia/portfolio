@@ -42,10 +42,10 @@ export function FoldingPaper({ descriptions }: FoldingPaperProps) {
       onClick={handleClick}
     >
       <div id="stage">
-        <div id="box"></div>
-        <div id="box" data-hint="Clique aqui para saber mais"></div>
-        <div id="box"></div>
-        <div id="box"></div>
+        <div className="box"></div>
+        <div className="box" data-hint="Clique aqui para saber mais"></div>
+        <div className="box"></div>
+        <div className="box"></div>
         <img className="paper-content_tape" src={scotchTape} alt="" />
 
         <ul className="paper-content">

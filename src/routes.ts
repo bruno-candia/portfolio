@@ -1,7 +1,7 @@
 export const routes = [
   {
     text: "Sobre",
-    link: "#about",
+    link: "#hero",
   },
   {
     text: "Habilidades",
@@ -16,11 +16,7 @@ export const routes = [
     link: "#education",
   },
   {
-    text: "Projetos",
-    link: "#projects",
-  },
-  {
     text: "Contato",
-    link: "#contact",
+    link: "#footer",
   },
 ];

@@ -16,7 +16,7 @@
 
 .education__paper-wrapper {
   position: absolute;
-  right: 0;
+  right: 0.4px;
   margin-top: 36px;
   display: inline-block;
 }
@@ -34,7 +34,6 @@
   top: 50%;
   width: 64px;
   height: auto;
-  transform: translate(-50%, -50%);
   transform: rotate(-10deg);
   filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.15));
 }
@@ -70,10 +69,4 @@
 .education__link {
   color: #1e63b6;
   text-decoration: underline;
-}
-
-@media (min-width: 768px) {
-  #education {
-    padding-bottom: 420px;
-  }
 }
