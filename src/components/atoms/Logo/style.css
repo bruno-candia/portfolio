@@ -9,6 +9,6 @@
 }
 
 .logo__text {
-  font-size: 38px;
-  letter-spacing: -4px;
+  font-size: var(--font-size-heading-lg);
+  letter-spacing: -2px;
 }

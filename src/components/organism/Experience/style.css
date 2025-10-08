@@ -1,65 +1,5 @@
 #experience {
   position: relative;
-  background: #f5f5f5;
-  background-size: 100% 2rem;
-  background-image: linear-gradient(#e5e5e5 0.05em, transparent 0.05em);
-  margin: 0 -24px;
-  padding: 0 24px 60px 24px;
-}
-
-@media (min-width: 768px) {
-  #experience {
-    background-image: linear-gradient(
-        90deg,
-        transparent 79px,
-        #9cbdc4 79px,
-        #9cbdc4 81px,
-        transparent 81px
-      ),
-      linear-gradient(#e5e5e5 0.05em, transparent 0.05em);
-  }
-}
-
-.experience__torn-paper {
-  position: relative;
-  width: calc(100% + 48px);
-  margin-left: -24px;
-  margin-top: -50px;
-  overflow: visible;
-}
-
-.experience__torn-edge {
-  width: 100%;
-  height: auto;
-  display: block;
-  position: relative;
-}
-
-.experience__torn-paper::after {
-  content: "";
-  position: absolute;
-  top: 18px;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: 100% 2rem;
-  background-image: linear-gradient(#eee 0.05em, transparent 0.05em);
-  pointer-events: none;
-  mix-blend-mode: multiply;
-  opacity: 0.6;
-}
-
-@media (min-width: 768px) {
-  .experience__torn-paper::before {
-    background-image: linear-gradient(
-        90deg,
-        transparent 79px,
-        #abced4 79px,
-        #abced4 81px,
-        transparent 81px
-      ),
-      linear-gradient(#eee 0.05em, transparent 0.05em);
-  }
 }
 
 .experience__content {
@@ -73,29 +13,11 @@
   margin-bottom: 40px;
 }
 
-.experience__title {
-  font-size: 3rem;
-  margin-bottom: 24px;
-  color: #6b6b6b;
-  font-weight: 400;
-  line-height: 1.2;
-}
-
-.experience__description {
-  font-size: 1.75rem;
-  color: #6b6b6b;
-  max-width: 800px;
-  margin: 0;
-  line-height: 1.7;
-  font-weight: 400;
-}
-
 .experience__cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
   margin-top: 40px;
-  justify-items: start;
   padding: 20px 0;
   position: relative;
 }
@@ -103,44 +25,58 @@
 .experience__card-wrapper {
   position: relative;
   display: flex;
-  align-items: center;
-  gap: 20px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  width: 100%;
 }
 
-.experience__click-hint {
+.experience__info {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  width: 100%;
+}
+
+.experience__company-logo {
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 6px 6px 4px -4px rgba(0, 0, 0, 0.1);
+  border: 3px solid white;
+  flex-shrink: 0;
+  background: white;
+}
+
+.experience__details {
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 4px;
-  opacity: 0.6;
-  transition: opacity 0.3s ease;
-  transform: rotate(-15deg);
-  margin-left: 10px;
+  flex: 1;
+  text-align: left;
 }
 
-.experience__card-wrapper:hover .experience__click-hint {
-  opacity: 0.8;
+.experience__company-name {
+  font-size: var(--font-size-heading-sm);
+  font-weight: var(--font-weight-semibold);
+  margin: 0;
+  color: #2c3e50;
+  line-height: var(--line-height-tight);
 }
 
-.experience__click-hint-arrow {
-  font-size: 32px;
-  color: #6b6b6b;
-  line-height: 1;
-  transform: rotate(20deg);
+.experience__role {
+  font-size: var(--font-size-body-md);
+  font-weight: var(--font-weight-medium);
+  margin: 0;
+  color: #34495e;
+  line-height: var(--line-height-snug);
 }
 
-.experience__click-hint-text {
-  font-size: 13px;
-  color: #6b6b6b;
-  font-weight: 600;
-  white-space: nowrap;
-  font-style: italic;
-}
-
-/* Esconde a hint quando o card está aberto */
-.experience__card-wrapper.open .experience__click-hint {
-  opacity: 0;
-  pointer-events: none;
+.experience__period {
+  font-size: var(--font-size-body-sm);
+  font-weight: var(--font-weight-normal);
+  margin: 0;
+  color: #7f8c8d;
+  line-height: var(--line-height-snug);
 }
 
 @media (max-width: 768px) {
@@ -149,16 +85,12 @@
     padding: 0 24px 40px 24px;
   }
 
-  .experience__title {
-    font-size: 2.2rem;
-  }
-
-  .experience__description {
-    font-size: 1rem;
-  }
-
   .experience__cards {
-    grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 32px;
+  }
+
+  .experience__company-logo {
+    width: 52px;
+    height: 52px;
   }
 }

@@ -1,80 +1,80 @@
-// Placeholder para logos - você pode substituir pelos logos reais das empresas
-export interface Experience {
-  id: string;
-  companyLogo: string;
-  companyName: string;
-  role: string;
-  duration: string;
-  period: string;
-  description: string;
-  color: string;
-}
-
-export const experiences: Experience[] = [
+export const experiencesData = [
   {
-    id: "1",
-    companyLogo: "https://via.placeholder.com/80/FCC200/FFFFFF?text=BEES",
-    companyName: "BEES",
+    companyLogo:
+      "https://media.licdn.com/dms/image/v2/C4E0BAQGXPkcsGk7KYA/company-logo_200_200/company-logo_200_200/0/1678379975390/beesb2b_logo?e=1762992000&v=beta&t=Vv5n0E3t4nIpzvdjvDjPVmZyAST-AS6SZetg8xLKhUo",
     role: "Tech Leader",
-    duration: "1 ano 9 meses",
-    period: "Fev 2024 - Presente",
-    description:
-      "🏆 Top Performer Award 2025 AB InBev por resultados consistentes e impacto estratégico.\n\n• Defino e evoluo arquitetura microfrontend usando Single-SPA, import-map e Module Federation para plataformas globais com 3.3M+ usuários ativos mensais em 20+ mercados\n• Crio e mantenho design systems corporativos garantindo consistência e eficiência entre times frontend\n• Estruturo pipelines CI/CD e versionamento automatizado com estratégias multi-ambiente (UAT, SIT, PROD) e multi-vendor\n• Desenvolvo ferramentas de performance e observabilidade: dashboards de memória, bundle analyzer e integração New Relic\n• Lidero desenvolvimento e padronização de arquitetura BFF com NestJS, configurando WireMock e Robot Framework para simulação de serviços externos e testes automatizados\n\nTecnologias: React, TypeScript, Node.js, NestJS, Single-SPA, Module Federation, Azure DevOps, New Relic",
-    color: "#FCC200",
+    company: "BEES",
+    period: "fev de 2024 - o momento · 1 ano 9 meses",
+    descriptions: [
+      "Recognized in 2025 with the Top Performer Award for strategic impact.",
+      "Maintained corporate design systems for frontend consistency.",
+      "Structured CI/CD pipelines with multi-environment strategies.",
+      "Developed performance tools and integrated New Relic.",
+      "Standardized BFF architecture with NestJS and implemented testing frameworks.",
+    ],
   },
   {
-    id: "2",
-    companyLogo: "https://via.placeholder.com/80/FCC200/FFFFFF?text=BEES",
-    companyName: "BEES",
+    companyLogo:
+      "https://media.licdn.com/dms/image/v2/C4E0BAQGXPkcsGk7KYA/company-logo_200_200/company-logo_200_200/0/1678379975390/beesb2b_logo?e=1762992000&v=beta&t=Vv5n0E3t4nIpzvdjvDjPVmZyAST-AS6SZetg8xLKhUo",
     role: "Frontend Developer",
-    duration: "1 ano",
-    period: "Mar 2023 - Fev 2024",
-    description:
-      "Desenvolvi a plataforma BEES Grow, projetada para impulsionar vendas através de interações com clientes.\n\nPrincipais conquistas:\n• Construí o modo Auto Dialer, aumentando significativamente o volume diário de chamadas de vendas no Grow\n• Liderei a migração do Grow de arquitetura monolítica para micro-frontends, garantindo maior escalabilidade e flexibilidade\n• Criei aplicação Electron para simular ambiente CTI (Computer Telephony Integration), simplificando testes e eliminando dependências de máquinas virtuais\n• Responsável por levantamento de requisitos, desenvolvimento, testes, deploy, code reviews, suporte ao cliente e documentação\n\nTecnologias: TypeScript, React, Redux, Styled-Components, Electron, Azure DevOps, Azure Pipelines, Jest, Testing Library, Webpack, Module Federation",
-    color: "#FCC200",
+    company: "BEES",
+    period: "mar de 2023 - fev de 2024 · 1 ano",
+    descriptions: [
+      "Developed platform to boost sales through client interactions.",
+      "Built Auto Dialer mode, increasing sales call volume.",
+      "Led migration from monolith to micro-frontends.",
+      "Created Electron app for CTI simulation.",
+      "Handled end-to-end processes including development and support.",
+    ],
   },
   {
-    id: "3",
-    companyLogo: "https://via.placeholder.com/80/6B5B95/FFFFFF?text=Aurem",
-    companyName: "Aurem",
+    companyLogo:
+      "https://media.licdn.com/dms/image/v2/C4E0BAQGaEKT_mYTsww/company-logo_100_100/company-logo_100_100/0/1639756948830/startupaurem_logo?e=1762992000&v=beta&t=AhC0WrNp7mQ6uk81ic04G538vw3B3oF5uXKRML2fg2A",
     role: "Founder & Software Architect",
-    duration: "5 anos 4 meses",
-    period: "Fev 2018 - Mai 2023",
-    description:
-      "🏆 Prêmio Empreenda Santander 2019 - reconhecimento nacional por empreendedorismo de impacto.\n\nFundei e liderei startup de tecnologia assistiva focada em acessibilidade para pessoas surdas.\n\nPrincipais conquistas técnicas:\n• Implementei Web Speech API para captura e transcrição de fala em tempo real diretamente no browser\n• Desenvolvi aplicações web, mobile (iOS/Android) e desktop, garantindo experiência consistente multiplataforma\n• Projetei sistema baseado em WebSocket para gerenciamento de salas e sincronização de legendas em tempo real\n• Construí arquitetura de design system para padronizar UI/UX em todas as aplicações\n• Implantei em ambientes cloud (AWS, Vercel, Azure, Docker) para escalabilidade\n\nImpacto: Aplicado em universidades USF, Unicamp, Inatel e eventos como Hack Town e Learning Village.\n\nTecnologias: React, React Native, Electron, TypeScript, Node.js, WebSocket, Socket.io, AWS, Azure, Docker, Figma",
-    color: "#6B5B95",
+    company: "Aurem",
+    period: "fev de 2018 - mai de 2023 · 5 anos 4 meses",
+    descriptions: [
+      "Led development of real-time captioning application for accessibility.",
+      "Awarded Empreenda Santander Prize in 2019 for impactful entrepreneurship.",
+      "Implemented Web Speech API for real-time transcription.",
+      "Developed multi-platform applications for consistent experience.",
+      "Built design system architecture for UI/UX standardization.",
+      "Adopted by universities and events for accessibility solutions.",
+    ],
   },
   {
-    id: "4",
-    companyLogo: "https://via.placeholder.com/80/00A859/FFFFFF?text=Verzel",
-    companyName: "Verzel",
+    companyLogo:
+      "https://media.licdn.com/dms/image/v2/C4D0BAQHnvgaFSxLdOQ/company-logo_200_200/company-logo_200_200/0/1630579452723/verzel_solucoes_em_sistemas_logo?e=1762992000&v=beta&t=JZiNNxYB9uOgxS0QKywcwRNkxMY1CNatq4iebwUp2WU",
     role: "UX Designer",
-    duration: "9 meses",
-    period: "Dez 2021 - Ago 2022",
-    description:
-      "Trabalhei no UX/Tech Team projetando soluções digitais que equilibram necessidades de empresas parceiras, requisitos de usuários e viabilidade técnica.\n\nResponsabilidades:\n• Levantamento de requisitos e pesquisa com usuários\n• Prototipagem e design de interfaces\n• Testes de usabilidade e validação com usuários\n• Apresentação de resultados e justificativas de design\n• Colaboração com desenvolvedores para garantir implementação fiel\n\nProjetei layouts e interfaces para empresas de diversos setores: campanhas de doação, plataformas de aluguel de carros, soluções blockchain, marketplaces e aplicativos corporativos.\n\nTecnologias: Figma, Adobe XD, Miro, Design Systems, User Research, Usability Testing, Prototyping",
-    color: "#00A859",
+    company: "Verzel",
+    period: "dez de 2021 - ago de 2022 · 9 meses",
+    descriptions: [
+      "Designed digital solutions balancing business and user needs.",
+      "Conducted research, prototyping, and usability testing.",
+      "Designed layouts for diverse sectors including donations and blockchain.",
+    ],
   },
   {
-    id: "5",
-    companyLogo: "https://via.placeholder.com/80/0066B3/FFFFFF?text=Neoenergia",
-    companyName: "Neoenergia",
+    companyLogo: "https://logo.clearbit.com/neoenergia.com",
     role: "Software Developer Intern",
-    duration: "7 meses",
-    period: "Mai 2021 - Nov 2021",
-    description:
-      "Trabalhei na Agility Team desenvolvendo projetos focados em eficiência de processos, gerando ganhos quantitativos e qualitativos ao negócio.\n\nPrincipais atividades:\n• Desenvolvimento de aplicações usando React e TypeScript no frontend e Node.js com SQL no backend\n• Criação de componentes reutilizáveis para melhorar consistência e acelerar entregas entre projetos\n• Implementação de workflows para otimizar processos internos com foco em eficiência operacional\n• Levantamento de requisitos, design de componentes, desenvolvimento, testes, deploy e documentação\n• Monitoramento de aplicações em produção e suporte aos usuários finais\n\nTecnologias: React, TypeScript, Node.js, Express, SQL, Git, Azure DevOps, REST APIs",
-    color: "#0066B3",
+    company: "Neoenergia",
+    period: "mai de 2021 - nov de 2021 · 7 meses",
+    descriptions: [
+      "Developed projects focused on process efficiency.",
+      "Worked with React/TypeScript on frontend and Node.js/SQL on backend.",
+      "Created reusable components to accelerate delivery.",
+      "Implemented workflows for operational efficiency.",
+    ],
   },
   {
-    id: "6",
-    companyLogo: "https://via.placeholder.com/80/0066B3/FFFFFF?text=Neoenergia",
-    companyName: "Neoenergia",
+    companyLogo: "https://logo.clearbit.com/neoenergia.com",
     role: "Business Analyst Intern",
-    duration: "4 meses",
-    period: "Fev 2021 - Mai 2021",
-    description:
-      "Auxiliei na estruturação e planejamento de projetos usando metodologia SCRUM na área de tecnologia.\n\nResponsabilidades:\n• Comunicação com clientes internos para levantamento de necessidades\n• Mapeamento de requisitos técnicos e funcionais com stakeholders\n• Redação de user stories seguindo critérios INVEST\n• Criação e análise de indicadores internos (KPIs) para métricas da área\n• Apoio na condução de reuniões SCRUM (planning, daily, review, retrospective)\n• Documentação de processos e fluxos de trabalho\n• Priorização de backlog junto ao Product Owner\n\nPrimeira experiência profissional que me proporcionou entendimento sólido sobre metodologias ágeis e gestão de projetos de tecnologia.\n\nCompetências: Gestão de projetos, SCRUM, Análise de requisitos, Documentação",
-    color: "#0066B3",
+    company: "Neoenergia",
+    period: "fev de 2021 - mai de 2021 · 4 meses",
+    descriptions: [
+      "Assisted in project structuring using SCRUM methodology.",
+      "Handled client communication and requirements mapping.",
+      "Managed indicators and supported SCRUM meetings.",
+    ],
   },
 ];

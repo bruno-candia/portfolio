@@ -78,7 +78,7 @@
 .tape {
   position: absolute;
   width: 80px;
-  height: 60px;
+  height: 70px;
   background-image: url("../../../assets/tape.png");
   background-size: contain;
   background-repeat: no-repeat;
@@ -87,26 +87,26 @@
 }
 
 .tape-top-left {
-  left: -8px;
-  top: -18px;
+  left: -10px;
+  top: -30px;
   transform: rotate(-5deg);
 }
 
 .tape-top-right {
-  right: -8px;
-  top: -18px;
+  right: -10px;
+  top: -30px;
   transform: rotate(90deg);
 }
 
 .tape-bottom-left {
-  left: -8px;
-  bottom: -18px;
+  left: -10px;
+  bottom: -30px;
   transform: rotate(90deg);
 }
 
 .tape-bottom-right {
-  right: -8px;
-  bottom: -18px;
+  right: -10px;
+  bottom: -30px;
   transform: rotate(-5deg);
 }
 

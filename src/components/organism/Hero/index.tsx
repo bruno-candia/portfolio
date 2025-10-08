@@ -10,7 +10,7 @@ export function Hero() {
         <div>
           <p className="hero__greeting">Hello Wold :)</p>
           <h1 className="hero__title">Me chamo Bruno Candia</h1>
-          <h2 className="hero__subtitle">ENGENHEIRO DE SOFTWARE</h2>
+          <h5 className="hero__subtitle">ENGENHEIRO DE SOFTWARE</h5>
         </div>
         <img
           src={Me}

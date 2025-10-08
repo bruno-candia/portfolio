@@ -2,6 +2,53 @@
 
 :root {
   --menu-size: 100px;
+
+  /* Typography Scale - Design System */
+  /* Mobile-first approach with better readability */
+
+  /* Headings */
+  --font-size-heading-xl: 2rem;        /* 32px - Main page titles */
+  --font-size-heading-lg: 1.75rem;     /* 28px - Section titles */
+  --font-size-heading-md: 1.5rem;      /* 24px - Subsection titles */
+  --font-size-heading-sm: 1.25rem;     /* 20px - Card titles */
+  --font-size-heading-xs: 1.125rem;    /* 18px - Small headings */
+
+  /* Body text */
+  --font-size-body-xl: 1.375rem;       /* 22px - Hero/intro text */
+  --font-size-body-lg: 1.25rem;        /* 20px - Large body text */
+  --font-size-body-md: 1.125rem;       /* 18px - Regular body text */
+  --font-size-body-sm: 1rem;           /* 16px - Small body text */
+  --font-size-body-xs: 0.875rem;       /* 14px - Captions, labels */
+
+  /* Line heights */
+  --line-height-tight: 1.2;
+  --line-height-snug: 1.3;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.6;
+  --line-height-loose: 1.7;
+
+  /* Font weights */
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+}
+
+/* Desktop breakpoint - increase sizes for better readability on large screens */
+@media (min-width: 768px) {
+  :root {
+    --font-size-heading-xl: 3rem;        /* 48px */
+    --font-size-heading-lg: 2.5rem;      /* 40px */
+    --font-size-heading-md: 2rem;        /* 32px */
+    --font-size-heading-sm: 1.5rem;      /* 24px */
+    --font-size-heading-xs: 1.25rem;     /* 20px */
+
+    --font-size-body-xl: 1.75rem;        /* 28px */
+    --font-size-body-lg: 1.5rem;         /* 24px */
+    --font-size-body-md: 1.25rem;        /* 20px */
+    --font-size-body-sm: 1.125rem;       /* 18px */
+    --font-size-body-xs: 1rem;           /* 16px */
+  }
 }
 
 
@@ -85,38 +132,86 @@ a {
   isolation: isolate;
 }
 
-p{
+/* Typography - Normalized Design System */
+
+p {
   font-family: "Caveat", cursive;
-  font-size: 1.25rem;
-  line-height: 31.5px;
+  font-size: var(--font-size-body-md);
+  line-height: var(--line-height-relaxed);
+  font-weight: var(--font-weight-normal);
   margin: 0;
   padding: 0;
 }
 
-
-h1{
-  font-weight: normal;
-  font-size: 30px;
-  line-height: 43px;
+h1 {
+  font-family: "Gloria Hallelujah", cursive;
+  font-size: var(--font-size-heading-xl);
+  line-height: var(--line-height-tight);
+  font-weight: var(--font-weight-normal);
   letter-spacing: -1px;
   padding: 0;
   margin: 0;
 }
 
-
-h2{
-  font-weight: normal;
-  font-size: 18px;
-  line-height: 27px;
+h2 {
+  font-family: "Gloria Hallelujah", cursive;
+  font-size: var(--font-size-heading-lg);
+  line-height: var(--line-height-snug);
+  font-weight: var(--font-weight-normal);
   padding: 0;
   margin: 0;
 }
 
-h3{
-  font-weight: normal;
-  font-size: 28px;
-  line-height: 43px;
-  letter-spacing: -1px;
+h3 {
+  font-family: "Gloria Hallelujah", cursive;
+  font-size: var(--font-size-heading-md);
+  line-height: var(--line-height-tight);
+  font-weight: var(--font-weight-normal);
+  letter-spacing: -0.5px;
   padding: 0;
   margin: 0;
+}
+
+h4 {
+  font-family: "Gloria Hallelujah", cursive;
+  font-size: var(--font-size-heading-sm);
+  line-height: var(--line-height-snug);
+  font-weight: var(--font-weight-medium);
+  padding: 0;
+  margin: 0;
+}
+
+h5 {
+  font-family: "Gloria Hallelujah", cursive;
+  font-size: var(--font-size-heading-xs);
+  line-height: var(--line-height-snug);
+  font-weight: var(--font-weight-medium);
+  padding: 0;
+  margin: 0;
+}
+
+/* Utility classes for typography */
+.text-xl {
+  font-size: var(--font-size-body-xl);
+  line-height: var(--line-height-loose);
+}
+
+.text-lg {
+  font-size: var(--font-size-body-lg);
+  line-height: var(--line-height-relaxed);
+}
+
+.text-md {
+  font-size: var(--font-size-body-md);
+  line-height: var(--line-height-relaxed);
+}
+
+.text-sm {
+  font-size: var(--font-size-body-sm);
+  line-height: var(--line-height-normal);
+}
+
+.text-xs {
+  font-size: var(--font-size-body-xs);
+  line-height: var(--line-height-normal);
 }

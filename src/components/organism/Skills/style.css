@@ -10,23 +10,23 @@
 }
 
 .skills__title {
-  font-size: 2.5rem;
+  font-size: var(--font-size-heading-lg);
   margin-bottom: 16px;
   color: #979797;
 }
 
 .skills__description {
-  font-size: 1.1rem;
+  font-size: var(--font-size-body-md);
   color: #979797;
   max-width: 700px;
   margin: 0;
-  line-height: 1.6;
+  line-height: var(--line-height-relaxed);
 }
 
 .skills__content {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-  gap: 32px;
+  gap: 48px;
   margin-top: 40px;
 }
 
@@ -45,17 +45,17 @@
 }
 
 .skill-card__title {
-  font-size: 1.5rem;
+  font-size: var(--font-size-heading-sm);
   color: #2c3e50;
   margin: 0;
   text-transform: capitalize;
-  font-weight: 600;
+  font-weight: var(--font-weight-semibold);
 }
 
 .skill-card__category-description {
-  font-size: 0.95rem;
+  font-size: var(--font-size-body-sm);
   color: #555;
-  line-height: 1.6;
+  line-height: var(--line-height-relaxed);
   margin: 0;
 }
 
@@ -92,7 +92,7 @@
 
 .skill-card__description.placeholder p {
   margin: 0;
-  font-size: 1.05rem;
+  font-size: var(--font-size-body-md);
 }
 
 .skill-card__description.active {
@@ -102,7 +102,7 @@
 
 .skill-card__description.active strong {
   display: inline-block;
-  font-size: 1.1rem;
+  font-size: var(--font-size-body-md);
   color: #1a202c;
   margin-bottom: 6px;
   margin-right: 8px;
@@ -111,8 +111,8 @@
 
 .skill-card__learning-badge {
   display: inline-block;
-  font-size: 0.8rem;
-  font-weight: 600;
+  font-size: var(--font-size-body-xs);
+  font-weight: var(--font-weight-semibold);
   color: #92400e;
   padding: 6px 12px 4px 8px;
   vertical-align: middle;
@@ -142,8 +142,8 @@
 .skill-card__description.active p {
   margin: 0;
   color: #374151;
-  line-height: 1.6;
-  font-size: 1.05rem;
+  line-height: var(--line-height-relaxed);
+  font-size: var(--font-size-body-md);
 }
 
 @keyframes fadeInDescription {
@@ -157,21 +157,3 @@
   }
 }
 
-@media (max-width: 768px) {
-  .skills__content {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-
-  .skill-card__stickers {
-    justify-content: center;
-  }
-
-  .skills__title {
-    font-size: 2rem;
-  }
-
-  .skills__description {
-    font-size: 1rem;
-  }
-}

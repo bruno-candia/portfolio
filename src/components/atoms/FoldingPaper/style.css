@@ -1,12 +1,16 @@
-/* Colors */
 :root {
   --clr2: #fff;
-  --clr3: #ececec;
   --clr4: #f3bcaa;
-  --vintage-paper: url('/src/assets/vintage-paper-folder.png');
+  --gradient-top: #F2DB76;
+  --gradient-middle: #F4DF75;
+  --gradient-bottom: #F7E275;
+  --clr3-box1: linear-gradient(180deg, var(--gradient-top) 0%, var(--gradient-middle) 100%);
+  --clr3-box2: linear-gradient(180deg, var(--gradient-top) 0%, var(--gradient-middle) 100%);
+  --clr3-box3: linear-gradient(180deg, var(--gradient-middle) 0%, var(--gradient-bottom) 100%);
+  --clr3-box4: linear-gradient(180deg, var(--gradient-middle) 0%, var(--gradient-bottom) 100%);
+  --clr3: linear-gradient(180deg, var(--gradient-top) 0%, var(--gradient-middle) 50%, var(--gradient-bottom) 100%);
 }
 
-/* Container */
 #stage {
   position: relative;
   width: 350px;
@@ -16,8 +20,8 @@
 
 #frame {
   position: relative;
-  width: 200px;
-  height: 200px;
+  width: 170px;
+  height: 170px;
   margin: 0;
   opacity: 1;
   cursor: pointer;
@@ -25,18 +29,20 @@
   overflow: visible;
   transform-origin: center center;
   transition: transform 0.8s ease;
+  animation: zIndexClose 0.8s ease forwards;
 }
 
 #frame.open {
   z-index: 100;
   position: relative;
+  animation: zIndexOpen 0s ease forwards;
 }
 
 #box {
   position: absolute;
   width: 150px;
   height: 150px;
-  background: var(--vintage-paper);
+  background: var(--clr3);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -44,6 +50,29 @@
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.07);
   overflow: hidden;
   border-radius: 4px;
+}
+
+#box:nth-child(2)::after {
+  content: attr(data-hint);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  transform: translate(-50%, -50%) scaleX(-1) rotate(-8deg);
+  font-size: var(--font-size-body-xs);
+  font-weight: var(--font-weight-semibold);
+  color: #6b6b6b;
+  font-style: italic;
+  white-space: wrap;
+  text-align: center;
+  opacity: 1;
+  pointer-events: none;
+  animation: hintTextReverse 0.8s 0.8s ease forwards;
+  animation-fill-mode: backwards;
+}
+
+#frame.open #box:nth-child(2)::after {
+  animation: hintTextHide 0.8s ease forwards;
 }
 
 #box .in {
@@ -56,7 +85,7 @@
   left: 0;
   width: 300px;
   height: 300px;
-  padding: 28px 22px;
+  padding: 16px 28px;
   opacity: 0;
   pointer-events: none;
   display: flex;
@@ -69,6 +98,49 @@
   will-change: opacity, z-index;
   backface-visibility: hidden;
   -webkit-font-smoothing: antialiased;
+
+}
+
+.paper-content li{
+  list-style-type: none;
+  position: relative;
+  padding-left: 16px;
+}
+
+.paper-content li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.4em;
+  width: 8px;
+  height: 8px;
+  background: transparent;
+  border: 1.5px solid #2c3e50;
+  border-radius: 50%;
+  border-radius: 53% 47% 52% 48% / 45% 49% 51% 55%;
+  transform: rotate(10deg);
+  transition: transform 0.2s ease;
+}
+
+.paper-content li:hover::before {
+  transform: rotate(-10deg) scale(1.1);
+}
+
+.paper-content_tape {
+  position: absolute;
+  top: -30px;
+  left: 7%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 30px;
+  height: auto;
+  z-index: -1;
+  pointer-events: none;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
+  animation: tapeHideReverse 0.8s 0s ease forwards;
+}
+
+#frame.open .paper-content_tape {
+  animation: tapeShow 0.8s 0.8s ease forwards;
 }
 
 #frame.open .paper-content {
@@ -80,10 +152,10 @@
   0% {
     opacity: 0;
   }
-  30.99% {
+  25% {
     opacity: 0;
   }
-  31% {
+  26% {
     opacity: 1;
   }
   100% {
@@ -95,10 +167,10 @@
   0% {
     opacity: 1;
   }
-  27% {
+  18% {
     opacity: 1;
   }
-  27.01% {
+  19% {
     opacity: 0;
   }
   100% {
@@ -106,45 +178,17 @@
   }
 }
 
-.paper-content__header {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-  padding-bottom: 6px;
-}
-
-.paper-content__role {
-  font-size: 15px;
-  font-weight: 700;
-  margin: 0;
-  color: #2c3e50;
-  line-height: 1.2;
-}
-
-.paper-content__company {
-  font-size: 13px;
-  font-weight: 600;
-  margin: 0;
-  color: #34495e;
-}
-
-.paper-content__period {
-  font-size: 11px;
-  font-weight: 500;
-  margin: 0;
-  color: #7f8c8d;
-}
-
 .paper-content__description {
-  font-size: 1rem;
-  line-height: 1.45;
+  font-size: var(--font-size-body-sm);
+  line-height: var(--line-height-snug);
   margin: 0;
   color: #2c3e50;
-  overflow-y: auto;
-  max-height: 185px;
+  overflow: hidden;
+  max-height: none;
   text-align: left;
   padding: 0;
-  padding-right: 8px;
+  line-height: 18px;
+  font-weight: var(--font-weight-normal);
 }
 
 .paper-content__description::-webkit-scrollbar {
@@ -165,9 +209,8 @@
   background: rgba(0, 0, 0, 0.4);
 }
 
-/* Box 1 - Top Left */
 #stage #box:nth-child(1) {
-  background: var(--clr3);
+  background: var(--clr3-box1);
   border-radius: 5px 0 0 0;
   border-right: none;
   border-bottom: none;
@@ -178,11 +221,7 @@
 }
 
 #stage #box:nth-child(2) {
-  background: var(--clr3);
-  background-image: var(--company-logo);
-  background-size: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
+  background: var(--clr3-box2);
   border-radius: 0 5px 0 0;
   top: 0;
   left: 150px;
@@ -197,7 +236,7 @@
 }
 
 #stage #box:nth-child(3) {
-  background: var(--clr3);
+  background: var(--clr3-box3);
   border-radius: 0 0 0 5px;
   top: 150px;
   left: 0;
@@ -212,9 +251,8 @@
   animation-fill-mode: backwards;
 }
 
-/* Box 4 - Bottom Right */
 #stage #box:nth-child(4) {
-  background: var(--clr3);
+  background: var(--clr3-box4);
   border-radius: 0 0 5px 0;
   top: 150px;
   left: 150px;
@@ -228,16 +266,12 @@
   animation-fill-mode: backwards;
 }
 
-/* Estado Aberto - usa keyframes para controle preciso da cor */
 #frame.open #stage #box:nth-child(1) {
   animation: clr 0.8s ease forwards;
 }
 
 #frame.open #stage #box:nth-child(2) {
   animation: fold 0.8s ease forwards;
-  background-size: 60%;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 
 #frame.open #stage #box:nth-child(3) {
@@ -248,16 +282,15 @@
   animation: fold2 0.8s 0.8s ease forwards;
 }
 
-/* Keyframes - Abrir */
 @keyframes clr {
   0% {
-    background: var(--clr3);
+    background: var(--clr3-box1);
   }
   99.99% {
-    background: var(--clr3);
+    background: var(--clr3-box1);
   }
   100% {
-    background: var(--vintage-paper);
+    background: var(--clr3);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -266,28 +299,19 @@
 
 @keyframes fold {
   0% {
-    background: var(--clr3);
-    background-image: var(--company-logo);
-    background-size: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
+    background: var(--clr3-box2);
     transform: rotateY(180deg);
   }
-  2%{
-    background: var(--clr3);
-    background-image: var(--company-logo);
-    background-size: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
+  2% {
+    background: var(--clr3-box2);
     transform: rotateY(180deg);
   }
   99.99% {
-    background: var(--clr3);
-    background-image: none;
+    background: var(--clr3-box2);
     transform: rotateY(360deg);
   }
   100% {
-    background: var(--vintage-paper);
+    background: var(--clr3);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -298,23 +322,23 @@
 @keyframes fold2 {
   0% {
     opacity: 1;
-    background: var(--clr3);
+    background: var(--clr3-box3);
     transform: rotateX(180deg);
   }
   25% {
     opacity: 1;
-    background: var(--clr3);
+    background: var(--clr3-box3);
   }
   40% {
     opacity: 1;
-    background: var(--vintage-paper);
+    background: var(--clr3);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
   }
   100% {
     opacity: 1;
-    background: var(--vintage-paper);
+    background: var(--clr3);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -322,28 +346,27 @@
   }
 }
 
-/* Keyframes - Fechar (Reverso) */
 @keyframes clrReverse {
   0% {
-    background: var(--vintage-paper);
+    background: var(--clr3);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
   }
   99.99% {
-    background: var(--vintage-paper);
+    background: var(--clr3);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
   }
   100% {
-    background: var(--clr3);
+    background: var(--clr3-box1);
   }
 }
 
 @keyframes foldReverse {
   0% {
-    background: var(--vintage-paper);
+    background: var(--clr3);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -351,19 +374,14 @@
     opacity: 1;
   }
   2% {
-    background: var(--clr3);
-    background-image: none;
+    background: var(--clr3-box2);
     transform: rotateY(360deg);
   }
   99.99% {
     opacity: 1;
   }
   100% {
-    background: var(--clr3);
-    background-image: var(--company-logo);
-    background-size: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
+    background: var(--clr3-box2);
     transform: rotateY(180deg);
     opacity: 1;
   }
@@ -372,7 +390,7 @@
 @keyframes fold2Reverse {
   0% {
     opacity: 1;
-    background: var(--vintage-paper);
+    background: var(--clr3);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -380,21 +398,96 @@
   }
   25% {
     opacity: 1;
-    background: var(--vintage-paper);
+    background: var(--clr3);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
   }
   40% {
     opacity: 1;
-    background: var(--clr3);
+    background: var(--clr3-box3);
   }
   99.99% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    background: var(--clr3);
+    background: var(--clr3-box3);
     transform: rotateX(180deg);
+  }
+}
+
+@keyframes tapeShow {
+  0% {
+    z-index: -1;
+  }
+  10% {
+    z-index: -1;
+  }
+  100% {
+    z-index: 100;
+  }
+}
+
+@keyframes tapeHideReverse {
+  0% {
+    z-index: 100;
+  }
+  60% {
+    z-index: -1;
+  }
+  100% {
+    z-index: -1;
+  }
+}
+
+@keyframes zIndexOpen {
+  0% {
+    z-index: 100;
+  }
+  100% {
+    z-index: 100;
+  }
+}
+
+@keyframes zIndexClose {
+  0% {
+    z-index: 100;
+  }
+  99% {
+    z-index: 100;
+  }
+  100% {
+    z-index: 1;
+  }
+}
+
+@keyframes hintTextHide {
+  0% {
+    opacity: 1;
+  }
+  35.9%{
+    opacity: 1;
+  }
+  40% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes hintTextReverse {
+  0% {
+    opacity: 0;
+  }
+  35.9%{
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
   }
 }

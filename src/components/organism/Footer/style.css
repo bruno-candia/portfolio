@@ -1,0 +1,30 @@
+#footer {
+  position: relative;
+}
+
+.footer__content {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  color: #6b6b6b;
+  margin-bottom: 24px;
+}
+
+.footer__copyright {
+  font-size: var(--font-size-body-md);
+  line-height: var(--line-height-relaxed);
+}
+
+.footer__logo {
+  margin-top: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.85;
+}
+
+@media (min-width: 768px) {
+  #footer {
+    padding: 48px 24px 60px 24px;
+  }
+}

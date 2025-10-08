@@ -15,7 +15,10 @@
 
 
 .hero__subtitle {
-  width: max-content;
+  display: inline-block;
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
   font-weight: bolder;
   background: linear-gradient(
       104deg,
