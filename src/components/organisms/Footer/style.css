@@ -2,7 +2,7 @@
   position: relative;
   margin-top: auto;
   padding: 24px 0;
-  margin-top: 20px;
+  margin-top: 5px;
 }
 
 .footer__content {
@@ -10,15 +10,17 @@
   margin: 0 auto;
   text-align: center;
   color: #6b6b6b;
+  margin-top: 2px;
 }
 
 .footer__copyright {
   font-size: var(--font-size-body-md);
   line-height: var(--line-height-relaxed);
+  margin-bottom: 4px;
 }
 
 .footer__logo {
-  margin-top: 12px;
+  margin-top: -6px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -26,6 +28,14 @@
 }
 
 @media (min-width: 1024px) {
+
+  #footer {
+    position: relative;
+    margin-top: auto;
+    padding: 24px 0;
+    margin-top: 20px;
+  }
+
   .footer__content {
     display: flex;
     align-items: center;

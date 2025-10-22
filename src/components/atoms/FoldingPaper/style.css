@@ -13,9 +13,16 @@
 
 #stage {
   position: relative;
-  width: 350px;
-  height: 350px;
+  width: 280px;
+  height: 280px;
   perspective: 800px;
+}
+
+@media (min-width: 768px) {
+  #stage {
+    width: 350px;
+    height: 350px;
+  }
 }
 
 #frame {
@@ -82,9 +89,9 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 300px;
-  height: 300px;
-  padding: 16px 28px;
+  width: 240px;
+  height: 240px;
+  padding: 16px 20px;
   opacity: 0;
   pointer-events: none;
   display: flex;
@@ -97,7 +104,14 @@
   will-change: opacity, z-index;
   backface-visibility: hidden;
   -webkit-font-smoothing: antialiased;
+}
 
+@media (min-width: 768px) {
+  .paper-content {
+    width: 300px;
+    height: 300px;
+    padding: 16px 28px;
+  }
 }
 
 .paper-content li{

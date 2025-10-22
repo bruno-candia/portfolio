@@ -1,7 +1,13 @@
 #education {
   position: relative;
   margin: 0 0 0 0;
-  padding: 0 24px 340px 24px;
+  padding: 0 24px 300px 24px;
+  margin-top: -67px;
+}
+
+.education__description{
+  margin-top: 2px;
+  line-height: 32px;
 }
 
 @media (max-width: 1023px) {
@@ -23,21 +29,23 @@
 
 .education__paper-wrapper {
   position: absolute;
-  right: 0.4px;
-  margin-top: 36px;
+  margin-top: 32px;
+  right: -32px;
   display: inline-block;
+  width: 100%;
+  max-width: 400px;
 }
 
 .education__paper {
   display: block;
-  width: 90%;
+  width: 100%;
   height: auto;
   margin-left: auto;
 }
 
 .education__clip {
   position: absolute;
-  right: 0;
+  right: 0px;
   top: 50%;
   width: 64px;
   height: auto;
@@ -48,8 +56,9 @@
 .education__paper-content {
   position: absolute;
   top: 10%;
-  left: 10%;
-  padding: 52px 0px 32px 36px;
+  left: 5%;
+  right: 10%;
+  padding: 52px 16px 32px 24px;
   display: flex;
   flex-direction: column;
   transform: rotate(-2deg);
@@ -60,9 +69,10 @@
   line-height: var(--line-height-snug);
   font-size: var(--font-size-heading-xs);
   font-weight: var(--font-weight-bold);
-  text-wrap: nowrap;
+  text-wrap: balance;
   letter-spacing: -1px;
   color: #2c3e50;
+  word-break: break-word;
 }
 
 .education__line {
@@ -70,7 +80,8 @@
   line-height: var(--line-height-snug);
   font-size: var(--font-size-body-sm);
   font-weight: var(--font-weight-bold);
-  text-wrap: nowrap;
+  text-wrap: balance;
+  word-break: break-word;
 }
 
 .education__link {
@@ -83,9 +94,15 @@
     display: none;
   }
 
-
   .education__header {
     margin-bottom: 0px;
+  }
+
+  .education__title{
+    margin-top: 13px;
+  }
+  .education__description {
+    margin-top: 3px;
   }
 
   .education__paper-wrapper {
@@ -115,8 +132,8 @@
   }
 
   .education__paper-wrapper::before {
-    top: 5px;
-    left: 5px;
+    top: 15px;
+    left: -25px;
     transform: rotate(-8deg);
   }
 

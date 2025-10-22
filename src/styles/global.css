@@ -212,13 +212,7 @@ h5 {
 
 @media (min-width: 1024px) {
   .ruled-bg {
-    background-image: linear-gradient(
-        90deg,
-        transparent 79px,
-        #abced4 79px,
-        #abced4 81px,
-        transparent 81px
-      ),
+    background-image:
       linear-gradient(#eee 0.05em, transparent 0.05em);
   }
 }

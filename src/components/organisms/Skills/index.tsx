@@ -22,7 +22,15 @@ export function Skills() {
   const { t } = useTranslation();
   const [selectedTech, setSelectedTech] = useState<
     Record<string, string | null>
-  >({});
+  >(() => {
+    const initialState: Record<string, string | null> = {};
+    skills.content.forEach(({ title, stacks }) => {
+      if (stacks.length > 0) {
+        initialState[title] = stacks[0].name;
+      }
+    });
+    return initialState;
+  });
 
   const handleTechClick = (categoryTitle: string, techName: string) => {
     setSelectedTech((prev) => ({
@@ -78,12 +86,12 @@ export function Skills() {
                 <div className="skill-card__description-area">
                   {selectedTechInfo ? (
                     <div className="skill-card__description active">
+                      <strong>{selectedTechInfo.name}</strong>
                       {selectedTechInfo.learning && (
                         <span className="skill-card__learning-badge">
                           {t("skills.learning")}
                         </span>
                       )}
-                      <strong>{selectedTechInfo.name}</strong>
                       <p>{selectedTechInfo.description}</p>
                     </div>
                   ) : (

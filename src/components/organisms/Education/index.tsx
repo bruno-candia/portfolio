@@ -10,7 +10,7 @@ export function Education() {
     <section id="education">
       <div className="education__content">
         <div className="education__header">
-          <h3 className="education__title">{t("education.title")}</h3>
+          <h2 className="education__title">{t("education.title")}</h2>
           <p className="education__description">{t("education.description")}</p>
         </div>
 

@@ -5,6 +5,7 @@
   flex: 1;
   display: flex;
   flex-direction: column;
+  margin-top: calc(60px - 28px);
 }
 
 .experience__content {
@@ -32,6 +33,7 @@
   flex-direction: column;
   align-items: flex-start;
   width: 100%;
+  gap: 8px;
 }
 
 .experience__info {
@@ -100,6 +102,10 @@
   .experience__content {
     margin: 0 auto;
     margin-top: 24px;
+  }
+
+  .experience__title{
+    margin-top: 17px;
   }
 
   .experience__description {

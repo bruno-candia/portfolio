@@ -84,139 +84,139 @@ export const skills: { content: SkillCategory[] } = {
           name: "javascript",
           icon: SiJavascript,
           description:
-            "Linguagem de programação essencial para desenvolvimento web. Usada para criar interatividade, manipular DOM, fazer requisições assíncronas e construir aplicações completas tanto no front-end quanto no back-end.",
+            "Linguagem essencial para desenvolvimento web. Usada para criar interatividade, manipular DOM e construir aplicações completas tanto no front-end quanto no back-end.",
         },
         {
           name: "typescript",
           icon: SiTypescript,
           description:
-            "Superset do JavaScript que adiciona tipagem estática. Melhora a qualidade do código, facilita refatoração, previne erros em tempo de desenvolvimento e aumenta a produtividade em projetos de médio e grande porte.",
+            "Superset do JavaScript que adiciona tipagem estática. Melhora qualidade do código, facilita refatoração e previne erros em tempo de desenvolvimento.",
         },
         {
           name: "react",
           icon: SiReact,
           description:
-            "Biblioteca JavaScript para construção de interfaces de usuário. Utiliza componentes reutilizáveis, virtual DOM para performance, hooks para gerenciamento de estado e ciclo de vida. Ideal para SPAs e aplicações complexas.",
+            "Biblioteca para construção de interfaces. Utiliza componentes reutilizáveis, virtual DOM, hooks para estado e ciclo de vida. Ideal para SPAs e aplicações complexas.",
         },
         {
           name: "nextjs",
           icon: SiNextdotjs,
           description:
-            "Framework React com renderização híbrida (SSR, SSG, ISR). Oferece otimização automática de imagens, code splitting, rotas baseadas em arquivo e melhor SEO. Usado em projetos que exigem performance e indexação.",
+            "Framework React com renderização híbrida (SSR, SSG, ISR). Otimização de imagens, code splitting, rotas baseadas em arquivo e melhor SEO.",
         },
         {
           name: "angular",
           icon: SiAngular,
           description:
-            "Framework TypeScript completo para aplicações enterprise. Inclui injeção de dependências, RxJS para programação reativa, CLI robusto e estrutura opinativa. Ideal para grandes equipes e projetos corporativos.",
+            "Framework TypeScript completo para aplicações enterprise. Inclui injeção de dependências, RxJS para programação reativa e CLI robusto.",
         },
         {
           name: "redux",
           icon: SiRedux,
           description:
-            "Biblioteca de gerenciamento de estado global previsível. Implementa padrão Flux com store centralizada, actions e reducers. Útil para aplicações com estado complexo compartilhado entre múltiplos componentes.",
+            "Biblioteca de gerenciamento de estado global. Implementa padrão Flux com store centralizada, actions e reducers para aplicações com estado complexo.",
         },
         {
           name: "react-query",
           icon: SiReactquery,
           description:
-            "Biblioteca para gerenciamento de estado do servidor. Oferece cache inteligente, sincronização automática, refetch em background e estados de loading/error. Simplifica fetching de dados e reduz código boilerplate.",
+            "Gerenciamento de estado do servidor. Cache inteligente, sincronização automática, refetch em background. Simplifica fetching de dados e reduz boilerplate.",
         },
         {
           name: "html",
           icon: SiHtml5,
           description:
-            "Linguagem de marcação para estruturação de conteúdo web. Uso de tags semânticas (header, nav, article) melhora acessibilidade e SEO. Base fundamental para qualquer aplicação web.",
+            "Linguagem de marcação para estruturação de conteúdo web. Tags semânticas melhoram acessibilidade e SEO. Base fundamental para qualquer aplicação web.",
         },
         {
           name: "css",
           icon: SiCss3,
           description:
-            "Linguagem de estilização para controle visual de páginas web. Domínio de Flexbox e Grid para layouts responsivos, animações, transições e técnicas modernas como CSS Variables e Custom Properties.",
+            "Linguagem de estilização para controle visual de páginas. Domínio de Flexbox e Grid para layouts responsivos, animações e técnicas modernas.",
         },
         {
           name: "tailwind",
           icon: SiTailwindcss,
           description:
-            "Framework CSS utility-first que acelera o desenvolvimento. Classes pré-definidas aplicadas diretamente no HTML, design system consistente, purge automático de CSS não utilizado e customização via configuração.",
+            "Framework CSS utility-first que acelera o desenvolvimento. Classes pré-definidas, design system consistente e purge automático de CSS não utilizado.",
         },
         {
           name: "sass",
           icon: SiSass,
           description:
-            "Pré-processador CSS que adiciona funcionalidades como variáveis, nesting, mixins e funções. Organiza estilos de forma modular, facilita manutenção em projetos grandes e permite reutilização de código.",
+            "Pré-processador CSS com variáveis, nesting, mixins e funções. Organiza estilos de forma modular e facilita manutenção em projetos grandes.",
         },
         {
           name: "styled-components",
           icon: SiStyledcomponents,
           description:
-            "Biblioteca CSS-in-JS para React. Estilos escopados por componente, suporte a temas dinâmicos, props condicionais e TypeScript. Elimina conflitos de classe e mantém estilos próximos aos componentes.",
+            "Biblioteca CSS-in-JS para React. Estilos escopados por componente, suporte a temas dinâmicos e TypeScript. Elimina conflitos de classe.",
         },
         {
           name: "vite",
           icon: SiVite,
           description:
-            "Build tool moderna baseada em ESM nativo. Oferece HMR instantâneo, build otimizado com Rollup, suporte TypeScript nativo e plugins. Substitui Webpack em projetos modernos por sua velocidade superior.",
+            "Build tool moderna baseada em ESM. HMR instantâneo, build otimizado com Rollup e suporte TypeScript nativo. Substitui Webpack por velocidade superior.",
         },
         {
           name: "axios",
           icon: SiAxios,
           description:
-            "Cliente HTTP baseado em Promises para navegador e Node.js. Oferece interceptors para requisições/respostas, cancelamento de requests, transformação automática de JSON e tratamento de erros estruturado.",
+            "Cliente HTTP baseado em Promises. Oferece interceptors, cancelamento de requests, transformação automática de JSON e tratamento estruturado de erros.",
         },
         {
           name: "figma",
           icon: SiFigma,
           description:
-            "Ferramenta colaborativa de design de interfaces. Criação de protótipos interativos, design systems, componentes reutilizáveis e handoff para desenvolvimento. Essencial para trabalho em equipe entre design e desenvolvimento.",
+            "Ferramenta colaborativa de design de interfaces. Criação de protótipos interativos, design systems e componentes reutilizáveis.",
         },
         {
           name: "storybook",
           icon: SiStorybook,
           description:
-            "Ferramenta para desenvolvimento e documentação de componentes UI isolados. Permite testar componentes em diferentes estados, criar guias de estilo vivos e facilitar revisão de código visual.",
+            "Desenvolvimento e documentação de componentes UI isolados. Testa componentes em diferentes estados e cria guias de estilo vivos.",
         },
         {
           name: "jest",
           icon: SiJest,
           description:
-            "Framework de testes JavaScript completo. Oferece assertions, mocks, spies, coverage reports e snapshot testing. Usado para testes unitários e de integração em projetos React, Node.js e TypeScript.",
+            "Framework de testes JavaScript completo. Assertions, mocks, spies, coverage e snapshot testing. Para testes unitários e de integração.",
         },
         {
           name: "vitest",
           icon: SiVitest,
           description:
-            "Framework de testes ultra-rápido compatível com Jest. Integrado com Vite, execução paralela, HMR para testes e configuração zero. Ideal para projetos modernos que usam Vite como bundler.",
+            "Framework de testes ultra-rápido compatível com Jest. Integrado com Vite, execução paralela, HMR para testes e configuração zero.",
         },
         {
           name: "testing-library",
           icon: SiTestinglibrary,
           description:
-            "Biblioteca para testes focados em comportamento do usuário. Testa componentes da forma como usuários interagem, promove boas práticas de acessibilidade e evita testes dependentes de implementação.",
+            "Testes focados em comportamento do usuário. Testa componentes como usuários interagem, promove acessibilidade e evita dependência de implementação.",
         },
         {
           name: "cypress",
           icon: SiCypress,
           description:
-            "Framework para testes end-to-end em navegador real. Time-travel debugging, screenshots automáticos, execução de comandos em tempo real e API intuitiva. Testa fluxos completos da aplicação.",
+            "Framework para testes end-to-end em navegador real. Time-travel debugging, screenshots automáticos e API intuitiva. Testa fluxos completos da aplicação.",
         },
         {
           name: "msw",
           icon: FaServer,
           description:
-            "Mock Service Worker para interceptar requisições de rede. Simula APIs durante desenvolvimento e testes sem modificar código da aplicação. Funciona tanto em navegador quanto em Node.js.",
+            "Mock Service Worker para interceptar requisições de rede. Simula APIs durante desenvolvimento e testes sem modificar código. Funciona em navegador e Node.js.",
         },
         {
           name: "eslint",
           icon: SiEslint,
           description:
-            "Ferramenta de análise estática de código JavaScript/TypeScript. Identifica problemas, enforça padrões de código, previne bugs e mantém consistência no projeto. Integra com editores e CI/CD.",
+            "Análise estática de código JavaScript/TypeScript. Identifica problemas, enforça padrões, previne bugs e mantém consistência. Integra com editores e CI/CD.",
         },
         {
           name: "electron",
           icon: SiElectron,
           description:
-            "Framework para criar aplicações desktop cross-platform usando tecnologias web. Combina Chromium e Node.js, permite acesso a APIs nativas do sistema operacional e distribuição em Windows, macOS e Linux.",
+            "Framework para aplicações desktop cross-platform usando tecnologias web. Combina Chromium e Node.js, acesso a APIs nativas do sistema operacional.",
         },
       ],
     },
@@ -229,97 +229,97 @@ export const skills: { content: SkillCategory[] } = {
           name: "nodejs",
           icon: SiNodedotjs,
           description:
-            "Runtime JavaScript server-side construído sobre V8. Execução assíncrona e non-blocking, ideal para APIs RESTful, microserviços, real-time com WebSockets e serviços de alta concorrência com baixo consumo de recursos.",
+            "Runtime JavaScript server-side sobre V8. Execução assíncrona e non-blocking, ideal para APIs RESTful, microserviços e serviços de alta concorrência.",
         },
         {
           name: "java",
           icon: FaJava,
           description:
-            "Linguagem orientada a objetos para sistemas enterprise robustos. Usado em aplicações corporativas de grande escala, microserviços Spring Boot, APIs RESTful e sistemas que exigem performance, segurança e escalabilidade.",
+            "Linguagem orientada a objetos para sistemas enterprise. Usado em aplicações corporativas, microserviços Spring Boot e sistemas que exigem performance.",
         },
         {
           name: "nestjs",
           icon: SiNestjs,
           description:
-            "Framework Node.js progressivo inspirado em Angular. Arquitetura modular com injeção de dependências, decorators TypeScript, suporte nativo a GraphQL e WebSockets. Ideal para APIs escaláveis e manuteníveis.",
+            "Framework Node.js progressivo inspirado em Angular. Arquitetura modular com injeção de dependências e decorators TypeScript. Ideal para APIs escaláveis.",
         },
         {
           name: "express",
           icon: SiExpress,
           description:
-            "Framework web minimalista e flexível para Node.js. Sistema de rotas robusto, middlewares customizáveis e grande ecossistema de plugins. Base para criação de APIs REST rápidas e performáticas.",
+            "Framework web minimalista e flexível para Node.js. Sistema de rotas robusto, middlewares customizáveis. Base para APIs REST rápidas e performáticas.",
         },
         {
           name: "prisma",
           icon: SiPrisma,
           description:
-            "ORM type-safe de próxima geração com schema declarativo. Migrations automáticas, cliente tipado que previne erros, introspection de banco existente e Prisma Studio para visualização de dados.",
+            "ORM type-safe de próxima geração com schema declarativo. Migrations automáticas, cliente tipado que previne erros e Prisma Studio para visualização de dados.",
         },
         {
           name: "postgresql",
           icon: SiPostgresql,
           description:
-            "Banco de dados relacional open-source avançado. Suporte a JSON, full-text search, transações ACID, índices complexos e extensibilidade. Usado em aplicações que exigem integridade de dados e queries complexas.",
+            "Banco de dados relacional open-source avançado. Suporte a JSON, full-text search, transações ACID e índices complexos. Ideal para integridade de dados.",
         },
         {
           name: "mysql",
           icon: SiMysql,
           description:
-            "Sistema de gerenciamento de banco de dados relacional popular. Performance otimizada para leitura, replicação master-slave, clustering e ampla adoção na indústria. Ideal para aplicações web de alto tráfego.",
+            "Sistema de gerenciamento de banco relacional popular. Performance otimizada para leitura, replicação master-slave. Ideal para aplicações web de alto tráfego.",
         },
         {
           name: "sql-server",
           icon: FaDatabase,
           description:
-            "Banco de dados relacional da Microsoft para ambientes enterprise. Integração com ecossistema Azure, suporte a análise avançada, alta disponibilidade, segurança robusta e ferramentas de BI integradas.",
+            "Banco de dados relacional da Microsoft para ambientes enterprise. Integração com Azure, análise avançada, alta disponibilidade e ferramentas de BI integradas.",
         },
         {
           name: "mongodb",
           icon: SiMongodb,
           description:
-            "Banco de dados NoSQL orientado a documentos. Esquema flexível com documentos JSON/BSON, escalabilidade horizontal, aggregation pipeline poderoso. Ideal para dados não estruturados e aplicações que exigem rápida iteração.",
+            "Banco de dados NoSQL orientado a documentos. Esquema flexível com JSON/BSON, escalabilidade horizontal. Ideal para dados não estruturados e rápida iteração.",
         },
         {
           name: "rest-api",
           icon: TbApi,
           description:
-            "Padrão arquitetural para APIs web usando HTTP. Design de endpoints RESTful, uso correto de verbos HTTP (GET, POST, PUT, DELETE), status codes, versionamento e HATEOAS. Comunicação stateless entre cliente e servidor.",
+            "Padrão arquitetural para APIs web usando HTTP. Design de endpoints RESTful, uso correto de verbos HTTP, status codes e versionamento.",
         },
         {
           name: "jwt",
           icon: SiJsonwebtokens,
           description:
-            "Padrão aberto para autenticação stateless baseada em tokens. Encoda claims de usuário em token assinado, permite autenticação distribuída sem sessão servidor, refresh tokens e verificação de integridade.",
+            "Padrão para autenticação stateless baseada em tokens. Encoda claims de usuário em token assinado, autenticação distribuída sem sessão servidor.",
         },
         {
           name: "oauth2",
           icon: TbBrandOauth,
           description:
-            "Framework de autorização para delegação de acesso seguro. Implementação de fluxos (authorization code, implicit, client credentials), integração com providers externos (Google, GitHub) e proteção de recursos.",
+            "Framework de autorização para delegação de acesso seguro. Implementação de fluxos, integração com providers externos (Google, GitHub) e proteção de recursos.",
         },
         {
           name: "swagger",
           icon: SiSwagger,
           description:
-            "Ferramenta para documentação e design de APIs REST. Especificação OpenAPI para descrever endpoints, geração automática de documentação interativa, validação de contratos e cliente SDK para múltiplas linguagens.",
+            "Ferramenta para documentação e design de APIs REST. Especificação OpenAPI, geração automática de documentação interativa e validação de contratos.",
         },
         {
           name: "jest",
           icon: SiJest,
           description:
-            "Framework de testes para serviços Node.js. Testes unitários de controllers, services e repositories, mocking de dependências, testes de integração com banco de dados e coverage reports detalhados.",
+            "Framework de testes para serviços Node.js. Testes unitários de controllers e services, mocking de dependências, testes de integração e coverage reports.",
         },
         {
           name: "wiremock",
           icon: FaServer,
           description:
-            "Servidor HTTP mock para simular APIs externas. Stub de responses, matching de requests, simulação de delays e falhas, record/playback de tráfego. Essencial para testes de integração isolados.",
+            "Servidor HTTP mock para simular APIs externas. Stub de responses, matching de requests e simulação de delays e falhas. Essencial para testes de integração.",
         },
         {
           name: "robot-framework",
           icon: FaRobot,
           description:
-            "Framework de automação de testes genérico baseado em keywords. Sintaxe legível para não-programadores, bibliotecas extensíveis, testes de aceitação, API testing e relatórios HTML detalhados.",
+            "Framework de automação de testes genérico baseado em keywords. Sintaxe legível, bibliotecas extensíveis, testes de aceitação e relatórios HTML detalhados.",
         },
       ],
     },
@@ -332,43 +332,43 @@ export const skills: { content: SkillCategory[] } = {
           name: "react-native",
           icon: SiReact,
           description:
-            "Framework para desenvolvimento mobile nativo multiplataforma. Código JavaScript renderiza componentes nativos, acesso a APIs do dispositivo, hot reload, reutilização de lógica entre iOS e Android e performance próxima ao nativo.",
+            "Framework para desenvolvimento mobile nativo multiplataforma. Código JavaScript renderiza componentes nativos, acesso a APIs do dispositivo e hot reload.",
         },
         {
           name: "expo",
           icon: SiExpo,
           description:
-            "Plataforma e conjunto de ferramentas para React Native. Desenvolvimento sem Xcode/Android Studio, over-the-air updates, bibliotecas nativas pré-configuradas, build na nuvem e publicação simplificada nas stores.",
+            "Plataforma e ferramentas para React Native. Desenvolvimento sem Xcode/Android Studio, over-the-air updates, bibliotecas nativas pré-configuradas e build na nuvem.",
         },
         {
           name: "react-navigation",
           icon: SiReactrouter,
           description:
-            "Biblioteca de navegação para React Native. Stack navigator, tab navigation, drawer, deep linking, transições customizadas e estado de navegação persistente. Padrão da indústria para routing em apps mobile.",
+            "Biblioteca de navegação para React Native. Stack navigator, tab navigation, drawer, deep linking e transições customizadas. Padrão da indústria para routing mobile.",
         },
         {
           name: "styled-components",
           icon: SiStyledcomponents,
           description:
-            "Estilização CSS-in-JS adaptada para React Native. Temas dinâmicos, estilos baseados em props, reutilização através de styled utilities e manutenção de estilos colocalizados com componentes.",
+            "Estilização CSS-in-JS adaptada para React Native. Temas dinâmicos, estilos baseados em props e manutenção de estilos colocalizados com componentes.",
         },
         {
           name: "ios",
           icon: SiApple,
           description:
-            "Desenvolvimento e publicação de apps para ecossistema Apple. Configuração de provisioning profiles, otimização de bundle, App Store Connect, guidelines de interface iOS e certificados de distribuição.",
+            "Desenvolvimento e publicação de apps para ecossistema Apple. Configuração de provisioning profiles, App Store Connect e guidelines de interface iOS.",
         },
         {
           name: "android",
           icon: SiAndroid,
           description:
-            "Desenvolvimento e publicação de apps Android. Configuração de gradle, geração de APK/AAB assinado, Google Play Console, otimização para diferentes tamanhos de tela e versionamento de releases.",
+            "Desenvolvimento e publicação de apps Android. Configuração de gradle, geração de APK/AAB assinado, Google Play Console e otimização para diferentes tamanhos de tela.",
         },
         {
           name: "jest",
           icon: SiJest,
           description:
-            "Testes unitários e de integração para React Native. Mocking de módulos nativos, snapshot testing de componentes, testes de lógica de negócio e hooks. Integrado com React Native Testing Library.",
+            "Testes unitários e de integração para React Native. Mocking de módulos nativos, snapshot testing de componentes e testes de lógica de negócio e hooks.",
         },
       ],
     },
@@ -381,50 +381,50 @@ export const skills: { content: SkillCategory[] } = {
           name: "clean-architecture",
           icon: MdArchitecture,
           description:
-            "Arquitetura em camadas independentes (Entities, Use Cases, Adapters, Frameworks). Desacoplamento de regras de negócio da infraestrutura, testabilidade, manutenibilidade e facilidade de mudança de tecnologias.",
+            "Arquitetura em camadas independentes (Entities, Use Cases, Adapters). Desacoplamento de regras de negócio da infraestrutura, testabilidade e manutenibilidade.",
         },
         {
           name: "ddd",
           icon: MdAccountTree,
           description:
-            "Domain-Driven Design para modelagem de sistemas complexos. Ubiquitous language, bounded contexts, agregados, value objects e domain events. Alinhamento entre código e domínio de negócio.",
+            "Domain-Driven Design para modelagem de sistemas complexos. Ubiquitous language, bounded contexts, agregados e domain events. Alinhamento entre código e domínio.",
         },
         {
           name: "micro-frontends",
           icon: AiOutlineApartment,
           description:
-            "Arquitetura que divide aplicação front-end em módulos independentes. Times autônomos, deploy independente, tecnologias heterogêneas e integração em tempo de build ou runtime. Escalabilidade para grandes organizações.",
+            "Arquitetura que divide aplicação front-end em módulos independentes. Times autônomos, deploy independente e tecnologias heterogêneas.",
         },
         {
           name: "module-federation",
           icon: VscSymbolInterface,
           description:
-            "Técnica Webpack 5 para compartilhamento dinâmico de código entre aplicações. Carregamento remoto de módulos, versionamento independente, code splitting avançado e redução de duplicação de dependências.",
+            "Técnica Webpack 5 para compartilhamento dinâmico de código. Carregamento remoto de módulos, versionamento independente e code splitting avançado.",
           learning: true,
         },
         {
           name: "monorepo",
           icon: FaLayerGroup,
           description:
-            "Estratégia de organizar múltiplos projetos em único repositório. Ferramentas como Nx, Turborepo ou Lerna, compartilhamento de código, versionamento unificado, CI/CD otimizado e refatoração cross-project.",
+            "Estratégia de organizar múltiplos projetos em único repositório. Ferramentas como Nx e Turborepo, compartilhamento de código e versionamento unificado.",
         },
         {
           name: "design-patterns",
           icon: HiOutlineCube,
           description:
-            "Soluções reutilizáveis para problemas comuns de design. Padrões criacionais (Factory, Singleton), estruturais (Adapter, Decorator) e comportamentais (Observer, Strategy). Código mais manutenível e expressivo.",
+            "Soluções reutilizáveis para problemas comuns de design. Padrões criacionais (Factory), estruturais (Adapter) e comportamentais (Observer, Strategy).",
         },
         {
           name: "performance",
           icon: MdSpeed,
           description:
-            "Otimização de métricas Core Web Vitals (LCP, FID, CLS). Code splitting, lazy loading, otimização de imagens, cache strategies, Web Workers, memoization e técnicas de rendering performance.",
+            "Otimização de métricas Core Web Vitals (LCP, FID, CLS). Code splitting, lazy loading, otimização de imagens, cache strategies e Web Workers.",
         },
         {
           name: "mvvm",
           icon: MdArchitecture,
           description:
-            "Model-View-ViewModel para separação de responsabilidades. Separação entre lógica de apresentação (ViewModel), interface (View) e dados (Model). Binding bidirecional, testabilidade, reatividade e manutenibilidade em aplicações complexas.",
+            "Model-View-ViewModel para separação de responsabilidades. Separação entre lógica (ViewModel), interface (View) e dados (Model). Binding bidirecional.",
         },
       ],
     },
@@ -437,75 +437,75 @@ export const skills: { content: SkillCategory[] } = {
           name: "git",
           icon: SiGit,
           description:
-            "Sistema de controle de versão distribuído. Git Flow para gestão de branches, conventional commits, rebase interativo, cherry-pick, resolução de conflitos e estratégias de merge. Colaboração eficiente em equipe.",
+            "Sistema de controle de versão distribuído. Git Flow para gestão de branches, conventional commits, rebase interativo e resolução de conflitos.",
         },
         {
           name: "github-actions",
           icon: SiGithubactions,
           description:
-            "Plataforma de CI/CD integrada ao GitHub. Workflows automatizados com YAML, matrix builds, caching de dependências, deploy automático, testes em múltiplos ambientes e integração com marketplace de actions.",
+            "Plataforma de CI/CD integrada ao GitHub. Workflows automatizados com YAML, matrix builds, caching de dependências e deploy automático.",
         },
         {
           name: "azure-pipelines",
           icon: AzurePipelinesIcon,
           description:
-            "Serviço de CI/CD da Azure DevOps. Pipelines YAML ou clássicos, multi-stage deployments, aprovações manuais, integração com Azure services, agents self-hosted e templates reutilizáveis.",
+            "Serviço de CI/CD da Azure DevOps. Pipelines YAML ou clássicos, multi-stage deployments, aprovações manuais e integração com Azure services.",
         },
         {
           name: "docker",
           icon: SiDocker,
           description:
-            "Plataforma de containerização de aplicações. Criação de imagens leves, Dockerfile multi-stage, Docker Compose para ambientes locais, isolamento de processos e garantia de paridade dev/produção.",
+            "Plataforma de containerização de aplicações. Criação de imagens leves, Dockerfile multi-stage, Docker Compose para ambientes locais e isolamento de processos.",
         },
         {
           name: "kubernetes",
           icon: SiKubernetes,
           description:
-            "Sistema de orquestração de containers em produção. Deployments, services, ingress, auto-scaling horizontal e vertical, self-healing, rolling updates e configuração via Helm charts.",
+            "Sistema de orquestração de containers em produção. Deployments, services, ingress, auto-scaling, self-healing e rolling updates via Helm charts.",
           learning: true,
         },
         {
           name: "terraform",
           icon: SiTerraform,
           description:
-            "Ferramenta de Infrastructure as Code declarativa. Provisionamento multi-cloud com HCL, state management, módulos reutilizáveis, plan/apply seguro e versionamento de infraestrutura como código.",
+            "Ferramenta de Infrastructure as Code declarativa. Provisionamento multi-cloud com HCL, state management, módulos reutilizáveis e plan/apply seguro.",
           learning: true,
         },
         {
           name: "aws",
           icon: FaAws,
           description:
-            "Plataforma de cloud computing da Amazon. Serviços como EC2, S3, Lambda, RDS, CloudFront, API Gateway, ECS/EKS. Deploy de aplicações escaláveis, serverless e infraestrutura global distribuída.",
+            "Plataforma de cloud computing da Amazon. Serviços como EC2, S3, Lambda, RDS, CloudFront e API Gateway. Deploy de aplicações escaláveis e serverless.",
         },
         {
           name: "azure",
           icon: AzureIcon,
           description:
-            "Plataforma de cloud computing da Microsoft. App Service, Functions, Blob Storage, SQL Database, CDN e DevOps. Integração com ecossistema Microsoft e híbrido cloud-on premise.",
+            "Plataforma de cloud computing da Microsoft. App Service, Functions, Blob Storage, SQL Database, CDN e DevOps. Integração com ecossistema Microsoft.",
         },
         {
           name: "vercel",
           icon: SiVercel,
           description:
-            "Plataforma de deploy otimizada para front-end e frameworks como Next.js. Deploy automático via Git, edge functions, preview deployments, CDN global, analytics e otimização de performance automática.",
+            "Plataforma de deploy otimizada para front-end e Next.js. Deploy automático via Git, edge functions, preview deployments, CDN global e analytics.",
         },
         {
           name: "firebase",
           icon: SiFirebase,
           description:
-            "Backend-as-a-Service do Google para desenvolvimento rápido. Firestore (banco real-time), Authentication, Cloud Functions, Hosting, Storage e Analytics. Ideal para MVPs e aplicações real-time.",
+            "Backend-as-a-Service do Google para desenvolvimento rápido. Firestore, Authentication, Cloud Functions, Hosting e Storage. Ideal para MVPs e apps real-time.",
         },
         {
           name: "sonarqube",
           icon: SiSonarqube,
           description:
-            "Plataforma de análise contínua de qualidade de código. Detecção de bugs, vulnerabilidades de segurança, code smells, cobertura de testes e métricas de complexidade. Integração com CI/CD pipelines.",
+            "Plataforma de análise contínua de qualidade de código. Detecção de bugs, vulnerabilidades, code smells, cobertura de testes. Integração com CI/CD.",
         },
         {
           name: "ci-cd",
           icon: GoWorkflow,
           description:
-            "Práticas de integração e entrega contínua. Automação de build, testes e deploy, feedback rápido, rollback seguro, feature flags, canary releases e deployment strategies (blue-green, rolling).",
+            "Práticas de integração e entrega contínua. Automação de build, testes e deploy, feedback rápido, rollback seguro e deployment strategies (blue-green, rolling).",
         },
       ],
     },

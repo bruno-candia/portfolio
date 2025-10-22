@@ -5,7 +5,6 @@ import { Skills } from "./components/organisms/Skills";
 import { Experience } from "./components/organisms/Experience";
 import { Education } from "./components/organisms/Education";
 import { Footer } from "./components/organisms/Footer";
-import tornPaper from "@/assets/torn-paper.svg";
 
 function App() {
   return (
@@ -14,16 +13,9 @@ function App() {
       <main className="app__main">
         <Hero />
         <Skills />
-        <div className="app__second-page">
-          <div className="app__torn-paper">
-            <img src={tornPaper} alt="" className="app__torn-edge" />
-          </div>
-          <div className="app__second-page__inner">
-            <Experience />
-            <Education />
-            <Footer />
-          </div>
-        </div>
+        <Experience />
+        <Education />
+        <Footer />
       </main>
     </div>
   );

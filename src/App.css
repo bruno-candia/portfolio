@@ -1,5 +1,6 @@
 .app {
   padding: 0 24px;
+  overflow-x: hidden;
 }
 
 .app__main {
@@ -15,79 +16,23 @@
   background-image: linear-gradient(#e5e5e5 0.05em, transparent 0.05em);
   margin: 0;
   padding: 0;
-  padding-bottom: 60px;
   min-height: 100vh;
   width: 100vw;
-  margin-left: calc(50% - 50.5vw);
+  margin-left: -24px;
+  margin-right: -24px;
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
 }
 
 @media (min-width: 1278px) {
-  .app__second-page {
-    background-image: linear-gradient(
-        90deg,
-        transparent 93.85px,
-        #9cbdc4 93.85px,
-        #9cbdc4 95.85px,
-        transparent 95.85px
-      ),
-      linear-gradient(#e5e5e5 0.05em, transparent 0.05em);
-  }
-}
-
-.app__torn-paper {
-  position: relative;
-  width: 100%;
-  margin-left: 0;
-  margin-top: 0px;
-  overflow: visible;
-}
-
-.app__torn-edge {
-  width: 100%;
-  height: auto;
-  display: block;
-  position: relative;
-}
-
-.app__torn-paper::after {
-  content: "";
-  position: absolute;
-  top: 32px;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: 100% 2rem;
-  pointer-events: none;
-  mix-blend-mode: multiply;
-}
-
-@media (min-width: 1278px) {
-  .app__torn-paper::after {
-    background-size: 100% 2rem;
-    background-position-y: -10px;
-    opacity: 0.8;
-    margin-top:  -84px;
-    background-image: linear-gradient(
-      90deg,
-      transparent 93.85px,
-      #9cbdc4 93.85px,
-      #9cbdc4 95.85px,
-      transparent 95.85px
-    ),
-    linear-gradient(#e5e5e5 0.05em, transparent 0.05em)
-  }
-
-  .app__torn-edge {
-    object-fit: cover;
-  }
 
   .app__main {
     max-width: 1024px;
     margin-left: auto;
     margin-right: auto;
   }
+
   .app__second-page__inner {
     max-width: 1024px;
   }
