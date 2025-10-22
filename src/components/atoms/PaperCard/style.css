@@ -113,7 +113,7 @@
 .paper-card {
   position: relative;
   padding: 24px 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0px 8px 4px rgba(0, 0, 0, 0.2);
   z-index: 1;
   isolation: isolate;
 }

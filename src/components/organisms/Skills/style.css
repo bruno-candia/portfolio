@@ -1,25 +1,20 @@
 #skills {
-  padding: 60px 0 100px 0;
   margin: 0 auto;
+  margin-top: calc(60px - 8px);
 }
 
-.skills__header {
-  text-align: left;
-  margin-bottom: 40px;
-}
 
 .skills__title {
   font-size: var(--font-size-heading-lg);
-  margin-bottom: 16px;
+  margin-top: -2px;
   color: #979797;
 }
 
 .skills__description {
   font-size: var(--font-size-body-md);
   color: #979797;
-  max-width: 700px;
-  margin: 0;
-  line-height: var(--line-height-relaxed);
+  margin-top: 8px;
+  line-height: 32px;
 }
 
 .skills__content {
@@ -157,6 +152,17 @@
 }
 
 @media (min-width: 1024px) {
+  #skills {
+    margin: 0 auto;
+    margin-top: calc(60px - 12px);
+  }
+
+
+  .skills__description {
+    margin-top: 4px;
+    line-height: 32px;
+  }
+
   .skills__content > .paper-card-wrapper .paper-card {
     height: 100%;
   }

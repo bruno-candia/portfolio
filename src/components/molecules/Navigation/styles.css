@@ -1,5 +1,4 @@
 .navigation__list {
   display: flex;
-  gap: 20px;
-  padding-top: 10px;
+  gap: 24px;
 }

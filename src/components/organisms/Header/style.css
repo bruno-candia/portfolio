@@ -1,11 +1,19 @@
 #header {
   display: flex;
   align-items: center;
-  margin: 26px 0;
+  margin-top: 32px;
 }
 
 .header__logo {
   flex: 1;
+  padding-top: 3px;
+}
+
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
 }
 
 .header__menu {
@@ -14,6 +22,7 @@
 
 .header__nav {
   display: none;
+  justify-content: center;
 }
 
 @media (min-width: 1024px) {
@@ -23,8 +32,15 @@
     margin-right: auto;
   }
 
+  .header__actions {
+    padding-top: 6px;
+
+  }
+
   .header__nav {
     display: block;
+    padding-top: 6px;
+    padding-right: 24px;
   }
 
   .header__menu {

@@ -5,10 +5,17 @@
 }
 
 .logo__icon {
-  height: 48px;
+  height: 32px;
 }
 
 .logo__text {
-  font-size: var(--font-size-heading-lg);
+  font-size: var(--font-size-heading-md);
   letter-spacing: -2px;
+}
+
+
+@media(max-width: 1024px){
+  .logo__text{
+    font-size: 1.75rem;
+  }
 }

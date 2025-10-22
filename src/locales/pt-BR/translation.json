@@ -1,0 +1,131 @@
+{
+  "nav": {
+    "about": "Sobre",
+    "skills": "Habilidades",
+    "experience": "Experiências",
+    "education": "Educação",
+    "contact": "Contato"
+  },
+  "hero": {
+    "greeting": "Hello World :)",
+    "title": "Me chamo Bruno Candia",
+    "subtitle": "Engenheiro de Software",
+    "quote": "Somos todos viajantes do tempo, viajando rumo ao futuro. Mas vamos trabalhar para fazer desse futuro um lugar que desejamos visitar. Sejam corajosos, curiosos, determinados, superem as adversidades.",
+    "quoteAuthor": "Stephen Hawking",
+    "downloadCV": "BAIXAR CV"
+  },
+  "skills": {
+    "title": "Habilidades",
+    "description": "Minhas competências abrangem o desenvolvimento front-end, back-end e DevOps, refletindo meu interesse contínuo pela inovação e minha dedicação ao aprendizado constante.",
+    "clickToSeeMore": "Clique em um ícone para ver mais detalhes",
+    "learning": "Estudando",
+    "categories": {
+      "frontend": {
+        "title": "frontend",
+        "description": "Desenvolvimento de interfaces web modernas e responsivas. Experiência com SPAs, SSR, gerenciamento de estado complexo, testes automatizados e integração com APIs."
+      },
+      "backend": {
+        "title": "backend",
+        "description": "Desenvolvimento de APIs escaláveis e microsserviços. Experiência com arquitetura RESTful, autenticação, bancos de dados e testes de integração."
+      },
+      "mobile": {
+        "title": "mobile",
+        "description": "Desenvolvimento de aplicações mobile multiplataforma com React Native. Experiência em apps iOS e Android com navegação, APIs nativas e otimização."
+      },
+      "arquitetura": {
+        "title": "arquitetura",
+        "description": "Design de sistemas escaláveis e manuteníveis. Experiência em padrões arquiteturais, micro-frontends, DDD e estratégias de modularização para aplicações complexas."
+      },
+      "devops": {
+        "title": "devops",
+        "description": "Automação de processos, containerização, CI/CD e cloud computing. Experiência com pipelines automatizados, infraestrutura como código e deploy em múltiplas plataformas."
+      }
+    }
+  },
+  "experience": {
+    "title": "Experiência",
+    "description": "Minha jornada profissional tem sido marcada por diversas oportunidades que me permitiram crescer e adquirir novas habilidades. Abaixo estão alguns dos cargos que ocupei, cada um contribuindo significativamente para minha formação como desenvolvedor e profissional de tecnologia.",
+    "clickToLearnMore": "Clique aqui para saber mais",
+    "jobs": {
+      "bees_tech_leader": {
+        "role": "Tech Leader",
+        "company": "BEES",
+        "period": "fev de 2024 - o momento",
+        "descriptions": [
+          "Reconhecido em 2025 com o Prêmio Top Performer por impacto estratégico.",
+          "Mantive sistemas de design corporativo para consistência frontend.",
+          "Estruturei pipelines de CI/CD com estratégias multi-ambiente.",
+          "Desenvolvi ferramentas de performance e integrei New Relic.",
+          "Padronizei arquitetura BFF com NestJS e implementei frameworks de testes."
+        ]
+      },
+      "bees_frontend": {
+        "role": "Desenvolvedor Frontend",
+        "company": "BEES",
+        "period": "mar de 2023 - fev de 2024",
+        "descriptions": [
+          "Desenvolvi plataforma para impulsionar vendas através de interações com clientes.",
+          "Construí modo Auto Dialer, aumentando volume de chamadas de vendas.",
+          "Liderei migração de monolito para micro-frontends.",
+          "Criei aplicativo Electron para simulação de CTI.",
+          "Gerenciei processos end-to-end incluindo desenvolvimento e suporte."
+        ]
+      },
+      "aurem": {
+        "role": "Fundador & Arquiteto de Software",
+        "company": "Aurem",
+        "period": "fev de 2018 - mai de 2023",
+        "descriptions": [
+          "Liderei desenvolvimento de aplicação de legendagem em tempo real para acessibilidade.",
+          "Premiado com Prêmio Empreenda Santander em 2019 por empreendedorismo impactante.",
+          "Implementei Web Speech API para transcrição em tempo real.",
+          "Desenvolvi aplicações multiplataforma para experiência consistente.",
+          "Construí arquitetura de design system para padronização UI/UX.",
+          "Adotado por universidades e eventos para soluções de acessibilidade."
+        ]
+      },
+      "verzel": {
+        "role": "UX Designer",
+        "company": "Verzel",
+        "period": "dez de 2021 - ago de 2022",
+        "descriptions": [
+          "Projetei soluções digitais equilibrando necessidades de negócio e usuários.",
+          "Conduzi pesquisas, prototipagem e testes de usabilidade.",
+          "Criei layouts para diversos setores incluindo doações e blockchain."
+        ]
+      },
+      "neoenergia_dev": {
+        "role": "Estagiário Desenvolvedor de Software",
+        "company": "Neoenergia",
+        "period": "mai de 2021 - nov de 2021",
+        "descriptions": [
+          "Desenvolvi projetos focados em eficiência de processos.",
+          "Trabalhei com React/TypeScript no frontend e Node.js/SQL no backend.",
+          "Criei componentes reutilizáveis para acelerar entregas.",
+          "Implementei fluxos de trabalho para eficiência operacional."
+        ]
+      },
+      "neoenergia_analyst": {
+        "role": "Estagiário Analista de Negócios",
+        "company": "Neoenergia",
+        "period": "fev de 2021 - mai de 2021",
+        "descriptions": [
+          "Auxiliei na estruturação de projetos usando metodologia SCRUM.",
+          "Gerenciei comunicação com clientes e mapeamento de requisitos.",
+          "Administrei indicadores e apoiei reuniões SCRUM."
+        ]
+      }
+    }
+  },
+  "education": {
+    "title": "Educação",
+    "description": "Abaixo estão algumas das formações acadêmicas e cursos que concluí, cada um contribuindo significativamente para a minha capacitação e crescimento na área de tecnologia.",
+    "degree": "ENGENHARIA DE CONTROLE E AUTOMAÇÃO",
+    "madeAt": "Feito em",
+    "period": "Jan 2017 - Jul 2022"
+  },
+  "footer": {
+    "copyright": "Copyright © {{year}} bruno candia",
+    "rights": "Todos os direitos reservados"
+  }
+}

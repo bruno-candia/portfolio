@@ -1,0 +1,131 @@
+{
+  "nav": {
+    "about": "About",
+    "skills": "Skills",
+    "experience": "Experience",
+    "education": "Education",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hello World :)",
+    "title": "My name is Bruno Candia",
+    "subtitle": "Software Engineer",
+    "quote": "We are all time travellers, journeying together into the future. But let us work together to make that future a place we want to visit. Be brave, be curious, be determined, overcome the odds.",
+    "quoteAuthor": "Stephen Hawking",
+    "downloadCV": "DOWNLOAD CV"
+  },
+  "skills": {
+    "title": "Skills",
+    "description": "My expertise spans front-end, back-end, and DevOps development, reflecting my continuous interest in innovation and my dedication to constant learning.",
+    "clickToSeeMore": "Click on an icon to see more details",
+    "learning": "Learning",
+    "categories": {
+      "frontend": {
+        "title": "frontend",
+        "description": "Development of modern and responsive web interfaces. Experience with SPAs, SSR, complex state management, automated testing, and API integration."
+      },
+      "backend": {
+        "title": "backend",
+        "description": "Development of scalable APIs and microservices. Experience with RESTful architecture, authentication, databases, and integration testing."
+      },
+      "mobile": {
+        "title": "mobile",
+        "description": "Cross-platform mobile application development with React Native. Experience in iOS and Android apps with navigation, native APIs, and optimization."
+      },
+      "arquitetura": {
+        "title": "architecture",
+        "description": "Design of scalable and maintainable systems. Experience in architectural patterns, micro-frontends, DDD, and modularization strategies for complex applications."
+      },
+      "devops": {
+        "title": "devops",
+        "description": "Process automation, containerization, CI/CD, and cloud computing. Experience with automated pipelines, infrastructure as code, and deployment on multiple platforms."
+      }
+    }
+  },
+  "experience": {
+    "title": "Experience",
+    "description": "My professional journey has been marked by various opportunities that have allowed me to grow and acquire new skills. Below are some of the positions I have held, each contributing significantly to my formation as a developer and technology professional.",
+    "clickToLearnMore": "Click here to learn more",
+    "jobs": {
+      "bees_tech_leader": {
+        "role": "Tech Leader",
+        "company": "BEES",
+        "period": "Feb 2024 - present",
+        "descriptions": [
+          "Recognized in 2025 with the Top Performer Award for strategic impact.",
+          "Maintained corporate design systems for frontend consistency.",
+          "Structured CI/CD pipelines with multi-environment strategies.",
+          "Developed performance tools and integrated New Relic.",
+          "Standardized BFF architecture with NestJS and implemented testing frameworks."
+        ]
+      },
+      "bees_frontend": {
+        "role": "Frontend Developer",
+        "company": "BEES",
+        "period": "Mar 2023 - Feb 2024",
+        "descriptions": [
+          "Developed platform to boost sales through client interactions.",
+          "Built Auto Dialer mode, increasing sales call volume.",
+          "Led migration from monolith to micro-frontends.",
+          "Created Electron app for CTI simulation.",
+          "Handled end-to-end processes including development and support."
+        ]
+      },
+      "aurem": {
+        "role": "Founder & Software Architect",
+        "company": "Aurem",
+        "period": "Feb 2018 - May 2023",
+        "descriptions": [
+          "Led development of real-time captioning application for accessibility.",
+          "Awarded Empreenda Santander Prize in 2019 for impactful entrepreneurship.",
+          "Implemented Web Speech API for real-time transcription.",
+          "Developed multi-platform applications for consistent experience.",
+          "Built design system architecture for UI/UX standardization.",
+          "Adopted by universities and events for accessibility solutions."
+        ]
+      },
+      "verzel": {
+        "role": "UX Designer",
+        "company": "Verzel",
+        "period": "Dec 2021 - Aug 2022",
+        "descriptions": [
+          "Designed digital solutions balancing business and user needs.",
+          "Conducted research, prototyping, and usability testing.",
+          "Designed layouts for diverse sectors including donations and blockchain."
+        ]
+      },
+      "neoenergia_dev": {
+        "role": "Software Developer Intern",
+        "company": "Neoenergia",
+        "period": "May 2021 - Nov 2021",
+        "descriptions": [
+          "Developed projects focused on process efficiency.",
+          "Worked with React/TypeScript on frontend and Node.js/SQL on backend.",
+          "Created reusable components to accelerate delivery.",
+          "Implemented workflows for operational efficiency."
+        ]
+      },
+      "neoenergia_analyst": {
+        "role": "Business Analyst Intern",
+        "company": "Neoenergia",
+        "period": "Feb 2021 - May 2021",
+        "descriptions": [
+          "Assisted in project structuring using SCRUM methodology.",
+          "Handled client communication and requirements mapping.",
+          "Managed indicators and supported SCRUM meetings."
+        ]
+      }
+    }
+  },
+  "education": {
+    "title": "Education",
+    "description": "Below are some of the academic degrees and courses I have completed, each contributing significantly to my training and growth in the technology field.",
+    "degree": "CONTROL AND AUTOMATION ENGINEERING",
+    "madeAt": "Made at",
+    "period": "Jan 2017 - Jul 2022"
+  },
+  "footer": {
+    "copyright": "Copyright © {{year}} bruno candia",
+    "rights": "All rights reserved"
+  }
+}

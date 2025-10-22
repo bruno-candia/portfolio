@@ -4,6 +4,7 @@ import type { PaperCardVariant } from "@/components/atoms/PaperCard";
 import { TechSticker } from "@/components/atoms/TechSticker";
 import { skills } from "@/data/skillsData";
 import type { TechStack } from "@/data/skillsData";
+import { useTranslation } from "react-i18next";
 import "./style.css";
 
 const categoryColors: Record<
@@ -18,6 +19,7 @@ const categoryColors: Record<
 };
 
 export function Skills() {
+  const { t } = useTranslation();
   const [selectedTech, setSelectedTech] = useState<
     Record<string, string | null>
   >({});
@@ -37,15 +39,11 @@ export function Skills() {
   return (
     <section id="skills">
       <div className="skills__header">
-        <h3 className="skills__title">Habilidades</h3>
-        <p className="skills__description">
-          Minhas competências abrangem o desenvolvimento front-end, back-end e
-          DevOps, refletindo meu interesse contínuo pela inovação e minha
-          dedicação ao aprendizado constante.
-        </p>
+        <h3 className="skills__title">{t("skills.title")}</h3>
+        <p className="skills__description">{t("skills.description")}</p>
       </div>
       <div className="skills__content">
-        {skills.content.map(({ title, description, stacks }) => {
+        {skills.content.map(({ title, stacks }) => {
           const selectedTechInfo = getSelectedTechInfo(title, stacks);
           const categoryStyle =
             categoryColors[title] || categoryColors["scripts & automação"];
@@ -54,9 +52,11 @@ export function Skills() {
             <PaperCard key={title} variant={categoryStyle.variant}>
               <div className="skill-card">
                 <div className="skill-card__header">
-                  <h3 className="skill-card__title">{title}</h3>
+                  <h3 className="skill-card__title">
+                    {t(`skills.categories.${title}.title`)}
+                  </h3>
                   <p className="skill-card__category-description">
-                    {description}
+                    {t(`skills.categories.${title}.description`)}
                   </p>
                 </div>
 
@@ -80,7 +80,7 @@ export function Skills() {
                     <div className="skill-card__description active">
                       {selectedTechInfo.learning && (
                         <span className="skill-card__learning-badge">
-                          Estudando
+                          {t("skills.learning")}
                         </span>
                       )}
                       <strong>{selectedTechInfo.name}</strong>
@@ -88,7 +88,7 @@ export function Skills() {
                     </div>
                   ) : (
                     <div className="skill-card__description placeholder">
-                      <p>Clique em um ícone para ver mais detalhes</p>
+                      <p>{t("skills.clickToSeeMore")}</p>
                     </div>
                   )}
                 </div>

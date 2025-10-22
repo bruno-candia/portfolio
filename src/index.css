@@ -10,7 +10,7 @@ body {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1278px) {
   body {
     background-image: linear-gradient(
         90deg,

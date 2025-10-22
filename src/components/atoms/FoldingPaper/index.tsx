@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
 import scotchTape from "@/assets/scotch-tape.png";
 import "./style.css";
 
@@ -7,12 +8,13 @@ interface FoldingPaperProps {
 }
 
 export function FoldingPaper({ descriptions }: FoldingPaperProps) {
+  const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const frameRef = useRef<HTMLDivElement>(null);
 
-  const handleClick = (e: React.MouseEvent) => {
+  const handleToggle = (e: React.MouseEvent) => {
     e.stopPropagation();
-    setIsOpen(!isOpen);
+    setIsOpen((prev) => !prev);
   };
 
   useEffect(() => {
@@ -35,17 +37,16 @@ export function FoldingPaper({ descriptions }: FoldingPaperProps) {
   }, [isOpen]);
 
   return (
-    <div
-      ref={frameRef}
-      id="frame"
-      className={isOpen ? "open" : ""}
-      onClick={handleClick}
-    >
+    <div ref={frameRef} id="frame" className={isOpen ? "open" : ""}>
       <div id="stage">
-        <div className="box"></div>
-        <div className="box" data-hint="Clique aqui para saber mais"></div>
-        <div className="box"></div>
-        <div className="box"></div>
+        <div className="box" onClick={handleToggle}></div>
+        <div
+          className="box"
+          data-hint={t("experience.clickToLearnMore")}
+          onClick={handleToggle}
+        ></div>
+        <div className="box" onClick={handleToggle}></div>
+        <div className="box" onClick={handleToggle}></div>
         <img className="paper-content_tape" src={scotchTape} alt="" />
 
         <ul className="paper-content">

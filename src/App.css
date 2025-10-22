@@ -15,19 +15,22 @@
   background-image: linear-gradient(#e5e5e5 0.05em, transparent 0.05em);
   margin: 0;
   padding: 0;
+  padding-bottom: 60px;
   min-height: 100vh;
   width: 100vw;
   margin-left: calc(50% - 50.5vw);
+  display: flex;
+  flex-direction: column;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1278px) {
   .app__second-page {
     background-image: linear-gradient(
         90deg,
-        transparent 87px,
-        #9cbdc4 87px,
-        #9cbdc4 89px,
-        transparent 89px
+        transparent 93.85px,
+        #9cbdc4 93.85px,
+        #9cbdc4 95.85px,
+        transparent 95.85px
       ),
       linear-gradient(#e5e5e5 0.05em, transparent 0.05em);
   }
@@ -37,7 +40,7 @@
   position: relative;
   width: 100%;
   margin-left: 0;
-  margin-top: -20px;
+  margin-top: 0px;
   overflow: visible;
 }
 
@@ -51,32 +54,30 @@
 .app__torn-paper::after {
   content: "";
   position: absolute;
-  top: 18px;
+  top: 32px;
   left: 0;
   width: 100%;
   height: 100%;
-  background-size: 100% rem;
-  background-image: linear-gradient(#eee 0.05em, transparent 0.05em);
+  background-size: 100% 2rem;
   pointer-events: none;
   mix-blend-mode: multiply;
 }
 
-
-@media (min-width: 1024px) {
+@media (min-width: 1278px) {
   .app__torn-paper::after {
     background-size: 100% 2rem;
     background-position-y: -10px;
     opacity: 0.8;
-    margin-top: -20px;
+    margin-top:  -84px;
     background-image: linear-gradient(
       90deg,
-      transparent 86.5px,
-      #9cbdc4 86.5px,
-      #9cbdc4 88.5px,
-      transparent 88.5px
+      transparent 93.85px,
+      #9cbdc4 93.85px,
+      #9cbdc4 95.85px,
+      transparent 95.85px
     ),
-    linear-gradient(#e5e5e5 0.05em, transparent 0.05em);
-}
+    linear-gradient(#e5e5e5 0.05em, transparent 0.05em)
+  }
 
   .app__torn-edge {
     object-fit: cover;
@@ -94,5 +95,9 @@
 
 .app__second-page__inner {
   margin: 0 auto;
-  width: 100%;
+  width: 98%;
+  padding: 0 24px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }

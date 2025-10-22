@@ -1,36 +1,34 @@
 import Me from "@/assets/me.png";
 import "./style.css";
 import { RoughButton } from "@/components/atoms/RoughButton";
+import { useTranslation } from "react-i18next";
 
 export function Hero() {
+  const { t } = useTranslation();
+
   return (
     <section id="hero">
       <div className="hero__content">
         <div>
-          <p className="hero__greeting">Hello World :)</p>
-          <h1 className="hero__title">Me chamo Bruno Candia</h1>
-          <h2 className="hero__subtitle">ENGENHEIRO DE SOFTWARE</h2>
+          <p className="hero__greeting">{t("hero.greeting")}</p>
+          <h1 className="hero__title">{t("hero.title")}</h1>
+          <h2 className="hero__subtitle">{t("hero.subtitle")}</h2>
         </div>
         <img
           src={Me}
           className="hero__image"
           fetchPriority="high"
           decoding="async"
-          alt="Bruno Candia - Engenheiro de Software"
+          alt="Bruno Candia - Software Engineer"
         />
         <div className="hero__description">
           <blockquote className="hero__quote">
-            <p>
-              "Somos todos viajantes do tempo, viajando juntos rumo ao futuro.
-              Mas vamos trabalhar juntos para fazer desse futuro um lugar que
-              desejamos visitar. Sejam corajosos, sejam curiosos, sejam
-              determinados, superem as adversidades."
-            </p>
+            <p>"{t("hero.quote")}"</p>
           </blockquote>
-          <p className="hero__quote-author"> — Stephen Hawking</p>
+          <p className="hero__quote-author"> — {t("hero.quoteAuthor")}</p>
         </div>
       </div>
-      <RoughButton className="hero__cta">BAIXAR CV</RoughButton>
+      <RoughButton className="hero__cta">{t("hero.downloadCV")}</RoughButton>
     </section>
   );
 }

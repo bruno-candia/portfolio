@@ -1,0 +1,17 @@
+.language-switcher {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: var(--font-size-body-sm);
+  font-weight: var(--font-weight-semibold);
+  color: #2c3e50;
+}
+
+.language-switcher__text {
+  font-size: var(--font-size-body-sm);
+  letter-spacing: 0.5px;
+}

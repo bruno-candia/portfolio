@@ -1,12 +1,21 @@
 import { useState, useEffect } from "react";
 import "./style.css";
-import { routes } from "@/routes";
 import { MobileNavigation } from "@/components/molecules/MobileNavigation";
 import { MenuToggleButton } from "@/components/atoms/MenuToggleButton";
 import astronaut from "@/assets/astronaut.svg";
+import { useTranslation } from "react-i18next";
 
 export function SidebarMenuMobile() {
+  const { t } = useTranslation();
   const [isOpenMenu, setIsOpenMenu] = useState(false);
+
+  const routes = [
+    { text: t("nav.about"), link: "#hero" },
+    { text: t("nav.skills"), link: "#skills" },
+    { text: t("nav.experience"), link: "#experience" },
+    { text: t("nav.education"), link: "#education" },
+    { text: t("nav.contact"), link: "#footer" },
+  ];
 
   function handleMenu() {
     setIsOpenMenu((prev) => !prev);
