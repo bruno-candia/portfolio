@@ -1,4 +1,6 @@
 import { useTranslation } from "react-i18next";
+import brazilFlag from "@/assets/brazil-flag.svg";
+import unitedStatesFlag from "@/assets/eua-flag.svg";
 import "./style.css";
 
 export function LanguageSwitcher() {
@@ -9,8 +11,6 @@ export function LanguageSwitcher() {
     i18n.changeLanguage(newLang);
   };
 
-  const currentLang = i18n.language === "pt-BR" ? "PT" : "EN";
-
   return (
     <button
       onClick={toggleLanguage}
@@ -20,7 +20,11 @@ export function LanguageSwitcher() {
       }`}
       type="button"
     >
-      <span className="language-switcher__text">{currentLang}</span>
+      <img
+        className="language-switcher__icon"
+        src={i18n.language === "pt-BR" ? brazilFlag : unitedStatesFlag}
+        alt={i18n.language === "pt-BR" ? "Brazil" : "United States"}
+      />
     </button>
   );
 }

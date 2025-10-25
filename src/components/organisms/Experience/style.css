@@ -8,6 +8,10 @@
   margin-top: calc(60px - 28px);
 }
 
+#experience[data-language="en-US"] {
+  margin-top: calc(60px + 3px);
+}
+
 .experience__content {
   margin: 0 auto;
   margin-top: 16px;
@@ -97,6 +101,10 @@
 @media (min-width: 1024px) {
   #experience {
     padding: 0;
+  }
+
+  #experience[data-language="en-US"] {
+    margin-top: calc(60px - 48px);
   }
 
   .experience__content {

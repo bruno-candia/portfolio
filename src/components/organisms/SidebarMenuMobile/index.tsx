@@ -14,7 +14,7 @@ export function SidebarMenuMobile() {
     { text: t("nav.skills"), link: "#skills" },
     { text: t("nav.experience"), link: "#experience" },
     { text: t("nav.education"), link: "#education" },
-    { text: t("nav.contact"), link: "#footer" },
+    // { text: t("nav.contact"), link: "#footer" },
   ];
 
   function handleMenu() {

@@ -26,10 +26,10 @@ const companyLogos: Record<string, string> = {
 };
 
 export function Experience() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   return (
-    <section id="experience">
+    <section id="experience" data-language={i18n.language}>
       <div className="experience__content">
         <div className="experience__header">
           <h2 className="experience__title">{t("experience.title")}</h2>
