@@ -1,0 +1,66 @@
+[
+  {
+    "id": "frontend",
+    "category": "Front-end",
+    "stacks": [
+      { "name": "React" },
+      { "name": "Next.js" },
+      { "name": "TypeScript" },
+      { "name": "Vue.js" },
+      { "name": "Tailwind CSS" },
+      { "name": "SASS/SCSS" },
+      { "name": "Webpack" },
+      { "name": "Vite" }
+    ]
+  },
+  {
+    "id": "backend",
+    "category": "Back-end",
+    "stacks": [
+      { "name": "Node.js" },
+      { "name": "Java" },
+      { "name": "Spring Boot" },
+      { "name": "Express.js" },
+      { "name": "NestJS" },
+      { "name": "PostgreSQL" },
+      { "name": "MongoDB" },
+      { "name": "Redis" }
+    ]
+  },
+  {
+    "id": "mobile",
+    "category": "Mobile",
+    "stacks": [
+      { "name": "React Native" },
+      { "name": "Flutter" },
+      { "name": "iOS (Swift)" },
+      { "name": "Android (Kotlin)" }
+    ]
+  },
+  {
+    "id": "architecture",
+    "category": "Architecture",
+    "stacks": [
+      { "name": "Micro-frontends" },
+      { "name": "Microservices" },
+      { "name": "Clean Architecture" },
+      { "name": "Domain-Driven Design" },
+      { "name": "Event-Driven" },
+      { "name": "RESTful APIs" },
+      { "name": "GraphQL" }
+    ]
+  },
+  {
+    "id": "devops",
+    "category": "DevOps",
+    "stacks": [
+      { "name": "Docker" },
+      { "name": "Kubernetes" },
+      { "name": "AWS" },
+      { "name": "CI/CD" },
+      { "name": "GitHub Actions" },
+      { "name": "Terraform" },
+      { "name": "Jenkins" }
+    ]
+  }
+]

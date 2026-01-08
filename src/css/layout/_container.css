@@ -4,3 +4,11 @@
   margin-inline: auto;
   margin: 0 var(--space-12);
 }
+
+.content-surface {
+  position: relative;
+  z-index: var(--z-above);
+  isolation: isolate;
+  background-color: #fff;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}

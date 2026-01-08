@@ -1,0 +1,92 @@
+[
+  {
+    "id": "bees",
+    "period": "2023 - Current",
+    "title": "Tech Leader",
+    "company": "BEES - AB-Inbev",
+    "image": {
+      "src": "/assets/images/bees-company.png",
+      "alt": "BEES - AB-Inbev"
+    },
+    "summaryIntro": "At BEES (AB InBev), I contributed significantly to the development of global digital platforms. My achievements include:",
+    "highlights": [
+      "Standardized BFF architecture using NestJS and Clean Architecture, resolving frontend-backend dependencies. This approach, combined with WireMock, enabled parallel development and decoupled data processing from legacy contracts.",
+      "Acted as Cross-Product Tech Lead (Grow, Force, Control Tower), defining MVVM patterns and elevating the team's technical bar through Code Reviews and Pair Programming.",
+      "Architected the global ecosystem using Single-SPA and Module Federation, scaling to 10+ MFEs and 5 BFFs across 22 countries, significantly reducing bootstrap time for new services.",
+      "Engineered proactive observability with New Relic and custom Bundle Analyzers, enabling real-time detection of performance issues correlated with user environments (browser versions, network conditions) before they impact end-users.",
+      "Expanded technical scope to the Backend, supporting the team with Java and Spring."
+    ]
+  },
+  {
+    "id": "bees-2",
+    "period": "2023 - Current",
+    "title": "Tech Leader",
+    "company": "BEES - AB-Inbev",
+    "image": {
+      "src": "/assets/images/bees-company.png",
+      "alt": "BEES - AB-Inbev"
+    },
+    "summaryIntro": "At BEES (AB InBev), I contributed significantly to the development of global digital platforms. My achievements include:",
+    "highlights": [
+      "Standardized BFF architecture using NestJS and Clean Architecture, resolving frontend-backend dependencies. This approach, combined with WireMock, enabled parallel development and decoupled data processing from legacy contracts.",
+      "Acted as Cross-Product Tech Lead (Grow, Force, Control Tower), defining MVVM patterns and elevating the team's technical bar through Code Reviews and Pair Programming.",
+      "Architected the global ecosystem using Single-SPA and Module Federation, scaling to 10+ MFEs and 5 BFFs across 22 countries, significantly reducing bootstrap time for new services.",
+      "Engineered proactive observability with New Relic and custom Bundle Analyzers, enabling real-time detection of performance issues correlated with user environments (browser versions, network conditions) before they impact end-users.",
+      "Expanded technical scope to the Backend, supporting the team with Java and Spring."
+    ]
+  },
+  {
+    "id": "bees-3",
+    "period": "2023 - Current",
+    "title": "Tech Leader",
+    "company": "BEES - AB-Inbev",
+    "image": {
+      "src": "/assets/images/bees-company.png",
+      "alt": "BEES - AB-Inbev"
+    },
+    "summaryIntro": "At BEES (AB InBev), I contributed significantly to the development of global digital platforms. My achievements include:",
+    "highlights": [
+      "Standardized BFF architecture using NestJS and Clean Architecture, resolving frontend-backend dependencies. This approach, combined with WireMock, enabled parallel development and decoupled data processing from legacy contracts.",
+      "Acted as Cross-Product Tech Lead (Grow, Force, Control Tower), defining MVVM patterns and elevating the team's technical bar through Code Reviews and Pair Programming.",
+      "Architected the global ecosystem using Single-SPA and Module Federation, scaling to 10+ MFEs and 5 BFFs across 22 countries, significantly reducing bootstrap time for new services.",
+      "Engineered proactive observability with New Relic and custom Bundle Analyzers, enabling real-time detection of performance issues correlated with user environments (browser versions, network conditions) before they impact end-users.",
+      "Expanded technical scope to the Backend, supporting the team with Java and Spring."
+    ]
+  },
+  {
+    "id": "bees-4",
+    "period": "2023 - Current",
+    "title": "Tech Leader",
+    "company": "BEES - AB-Inbev",
+    "image": {
+      "src": "/assets/images/bees-company.png",
+      "alt": "BEES - AB-Inbev"
+    },
+    "summaryIntro": "At BEES (AB InBev), I contributed significantly to the development of global digital platforms. My achievements include:",
+    "highlights": [
+      "Standardized BFF architecture using NestJS and Clean Architecture, resolving frontend-backend dependencies. This approach, combined with WireMock, enabled parallel development and decoupled data processing from legacy contracts.",
+      "Acted as Cross-Product Tech Lead (Grow, Force, Control Tower), defining MVVM patterns and elevating the team's technical bar through Code Reviews and Pair Programming.",
+      "Architected the global ecosystem using Single-SPA and Module Federation, scaling to 10+ MFEs and 5 BFFs across 22 countries, significantly reducing bootstrap time for new services.",
+      "Engineered proactive observability with New Relic and custom Bundle Analyzers, enabling real-time detection of performance issues correlated with user environments (browser versions, network conditions) before they impact end-users.",
+      "Expanded technical scope to the Backend, supporting the team with Java and Spring."
+    ]
+  },
+  {
+    "id": "bees-5",
+    "period": "2023 - Current",
+    "title": "Tech Leader",
+    "company": "BEES - AB-Inbev",
+    "image": {
+      "src": "/assets/images/bees-company.png",
+      "alt": "BEES - AB-Inbev"
+    },
+    "summaryIntro": "At BEES (AB InBev), I contributed significantly to the development of global digital platforms. My achievements include:",
+    "highlights": [
+      "Standardized BFF architecture using NestJS and Clean Architecture, resolving frontend-backend dependencies. This approach, combined with WireMock, enabled parallel development and decoupled data processing from legacy contracts.",
+      "Acted as Cross-Product Tech Lead (Grow, Force, Control Tower), defining MVVM patterns and elevating the team's technical bar through Code Reviews and Pair Programming.",
+      "Architected the global ecosystem using Single-SPA and Module Federation, scaling to 10+ MFEs and 5 BFFs across 22 countries, significantly reducing bootstrap time for new services.",
+      "Engineered proactive observability with New Relic and custom Bundle Analyzers, enabling real-time detection of performance issues correlated with user environments (browser versions, network conditions) before they impact end-users.",
+      "Expanded technical scope to the Backend, supporting the team with Java and Spring."
+    ]
+  }
+]

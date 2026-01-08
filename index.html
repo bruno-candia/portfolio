@@ -13,20 +13,6 @@
 
 <body>
   <div id="app">
-    <header class="header">
-      <button class="header__menu-toggle" aria-label="Abrir menu" aria-expanded="false">
-        <svg class="header__menu-text" viewBox="0 0 100 100" aria-hidden="true">
-          <defs>
-            <path id="circlePath" d="M 50,50 m -40,0 a 40,40 0 1,1 80,0 a 40,40 0 1,1 -80,0" />
-          </defs>
-          <text>
-            <textPath href="#circlePath">MENU • MENU • MENU • MENU •</textPath>
-          </text>
-        </svg>
-        <img src="/assets/images/icons/smile-menu.svg" alt="" class="header__menu-icon" />
-      </button>
-    </header>
-
     <nav class="menu" aria-hidden="true">
       <ul class="menu__list">
         <li class="menu__item"><a href="#hero" class="menu__link" data-section="hero">Home</a></li>
@@ -39,6 +25,20 @@
 
     <main>
       <section class="hero" id="hero">
+        <header class="header">
+          <button class="header__menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+            <svg class="header__menu-text" viewBox="0 0 100 100" aria-hidden="true">
+              <defs>
+                <path id="circlePath" d="M 50,50 m -40,0 a 40,40 0 1,1 80,0 a 40,40 0 1,1 -80,0" />
+              </defs>
+              <text>
+                <textpath href="#circlePath">MENU • MENU • MENU • MENU •</textpath>
+              </text>
+            </svg>
+            <img src="/assets/images/icons/smile-menu.svg" alt="" class="header__menu-icon" />
+          </button>
+        </header>
+
         <div class="hero__content ">
 
           <div class="hero__title">
@@ -83,34 +83,176 @@
         </div>
       </section>
 
-      <section class="skills" id="skills">
-        <div class="skills__title">
-          <span class="skills__tag">Hey :D I'm</span>
-          <h1 class="skills__name">
-            Exemplo
-          </h1>
-        </div>
+      <div class="content-surface">
+        <section class="skills" id="skills">
+          <header class="skills__header">
+            <h2 class="skills__title">Skills</h2>
+            <p class="skills__description">
+              My expertise spans front-end, back-end, and DevOps development, reflecting my continuous interest in
+              innovation and my dedication to constant learning.
+            </p>
+          </header>
 
+          <div class="skills__accordion">
+            <div class="skills__accordion-item" data-skill="frontend">
+              <button class="skills__accordion-trigger" aria-expanded="false" aria-controls="skills-frontend">
+                <span class="skills__accordion-category">Front-end</span>
+                <img src="/assets/images/icons/plus.svg" alt="" class="skills__accordion-icon" aria-hidden="true" />
+              </button>
+              <div class="skills__accordion-content" id="skills-frontend">
+                <div class="skills__accordion-inner">
+                  <ul class="skills__stacks"></ul>
+                </div>
+              </div>
+            </div>
 
+            <div class="skills__accordion-item" data-skill="backend">
+              <button class="skills__accordion-trigger" aria-expanded="false" aria-controls="skills-backend">
+                <span class="skills__accordion-category">Back-end</span>
+                <img src="/assets/images/icons/plus.svg" alt="" class="skills__accordion-icon" aria-hidden="true" />
+              </button>
+              <div class="skills__accordion-content" id="skills-backend">
+                <div class="skills__accordion-inner">
+                  <ul class="skills__stacks"></ul>
+                </div>
+              </div>
+            </div>
 
-        <p class="skills__tagline">
-          <span class="skills__tagline-text">Engineering <br />solutions for scale</span><br />
-          <img src="/assets/images/circle-graffiti.svg" alt="" class="skills__tagline-badge" aria-hidden="true" />
-        </p>
+            <div class="skills__accordion-item" data-skill="mobile">
+              <button class="skills__accordion-trigger" aria-expanded="false" aria-controls="skills-mobile">
+                <span class="skills__accordion-category">Mobile</span>
+                <img src="/assets/images/icons/plus.svg" alt="" class="skills__accordion-icon" aria-hidden="true" />
+              </button>
+              <div class="skills__accordion-content" id="skills-mobile">
+                <div class="skills__accordion-inner">
+                  <ul class="skills__stacks"></ul>
+                </div>
+              </div>
+            </div>
 
-        <p class="skills__description">
-          I leverage 7 years of experience to build
-          resilient digital platforms using React,
-          Node.js, and Java. From micro-frontends to clean architecture, I drive
-          technical excellence that optimizes performance and empowers business
-          growth.
-        </p>
+            <div class="skills__accordion-item" data-skill="architecture">
+              <button class="skills__accordion-trigger" aria-expanded="false" aria-controls="skills-architecture">
+                <span class="skills__accordion-category">Architecture</span>
+                <img src="/assets/images/icons/plus.svg" alt="" class="skills__accordion-icon" aria-hidden="true" />
+              </button>
+              <div class="skills__accordion-content" id="skills-architecture">
+                <div class="skills__accordion-inner">
+                  <ul class="skills__stacks"></ul>
+                </div>
+              </div>
+            </div>
 
-        <a href="/assets/documents/resume.pdf" class="skills__cta" download>
-          Download my CV
-        </a>
-      </section>
+            <div class="skills__accordion-item" data-skill="devops">
+              <button class="skills__accordion-trigger" aria-expanded="false" aria-controls="skills-devops">
+                <span class="skills__accordion-category">DevOps</span>
+                <img src="/assets/images/icons/plus.svg" alt="" class="skills__accordion-icon" aria-hidden="true" />
+              </button>
+              <div class="skills__accordion-content" id="skills-devops">
+                <div class="skills__accordion-inner">
+                  <ul class="skills__stacks"></ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="experience" id="experience">
+          <header class="experience__header">
+            <h2 class="experience__title">Experience</h2>
+            <p class="experience__description">
+              My professional journey has been marked by various opportunities that have allowed me to grow and acquire
+              new skills. Below are some of the positions I have held, each contributing significantly to my formation
+              as
+              a developer and technology professional.
+            </p>
+          </header>
+
+          <div class="experience__grid">
+            <button class="experience__card" type="button" data-experience="bees" aria-haspopup="dialog">
+              <div class="experience__media">
+                <img class="experience__image" alt="" />
+                <div class="experience__gradient" aria-hidden="true"></div>
+                <div class="experience__meta">
+                  <span class="experience__period"></span>
+                  <span class="experience__role"></span>
+                  <span class="experience__company"></span>
+                </div>
+              </div>
+            </button>
+
+            <button class="experience__card" type="button" data-experience="bees-2" aria-haspopup="dialog">
+              <div class="experience__media">
+                <img class="experience__image" alt="" />
+                <div class="experience__gradient" aria-hidden="true"></div>
+                <div class="experience__meta">
+                  <span class="experience__period"></span>
+                  <span class="experience__role"></span>
+                  <span class="experience__company"></span>
+                </div>
+              </div>
+            </button>
+
+            <button class="experience__card" type="button" data-experience="bees-3" aria-haspopup="dialog">
+              <div class="experience__media">
+                <img class="experience__image" alt="" />
+                <div class="experience__gradient" aria-hidden="true"></div>
+                <div class="experience__meta">
+                  <span class="experience__period"></span>
+                  <span class="experience__role"></span>
+                  <span class="experience__company"></span>
+                </div>
+              </div>
+            </button>
+
+            <button class="experience__card" type="button" data-experience="bees-4" aria-haspopup="dialog">
+              <div class="experience__media">
+                <img class="experience__image" alt="" />
+                <div class="experience__gradient" aria-hidden="true"></div>
+                <div class="experience__meta">
+                  <span class="experience__period"></span>
+                  <span class="experience__role"></span>
+                  <span class="experience__company"></span>
+                </div>
+              </div>
+            </button>
+
+            <button class="experience__card" type="button" data-experience="bees-5" aria-haspopup="dialog">
+              <div class="experience__media">
+                <img class="experience__image" alt="" />
+                <div class="experience__gradient" aria-hidden="true"></div>
+                <div class="experience__meta">
+                  <span class="experience__period"></span>
+                  <span class="experience__role"></span>
+                  <span class="experience__company"></span>
+                </div>
+              </div>
+            </button>
+          </div>
+        </section>
+      </div>
     </main>
+
+    <div class="experience-modal" aria-hidden="true">
+      <div class="experience-modal__backdrop" data-experience-close></div>
+      <div class="experience-modal__panel" role="dialog" aria-modal="true" aria-labelledby="experience-modal-title"
+        data-lenis-prevent>
+        <div class="experience-modal__handle" aria-hidden="true"></div>
+        <button class="experience-modal__close" type="button" aria-label="Close" data-experience-close>
+          <span aria-hidden="true">×</span>
+        </button>
+
+        <header class="experience-modal__header">
+          <p class="experience-modal__period" id="experience-modal-title"></p>
+          <h3 class="experience-modal__role"></h3>
+          <p class="experience-modal__company"></p>
+        </header>
+
+        <div class="experience-modal__body">
+          <p class="experience-modal__intro"></p>
+          <ul class="experience-modal__highlights"></ul>
+        </div>
+      </div>
+    </div>
 
   </div>
   <script type="module" src="/src/ts/main.ts"></script>
