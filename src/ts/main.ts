@@ -1,3 +1,7 @@
 import '@css/main.css';
+import { App } from '@core/App';
 
-console.log('Portfolio loaded!');
+document.addEventListener('DOMContentLoaded', () => {
+  const app = new App();
+  app.hydrate();
+});

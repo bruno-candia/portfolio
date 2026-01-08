@@ -2,6 +2,11 @@
 @import "./base/_variables.css";
 @import "./base/_typography.css";
 
+@import "./layout/_container.css";
+
+@import "./components/_header.css";
+@import "./components/_hero.css";
+
 body {
   font-family: var(--font-body);
   font-size: var(--text-base);
@@ -10,6 +15,7 @@ body {
   color: var(--color-text);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 /* Headings */
@@ -26,13 +32,13 @@ h6 {
 }
 
 h1 {
-  font-size: var(--text-5xl);
+  font-size: var(--text-6xl);
 }
 h2 {
-  font-size: var(--text-4xl);
+  font-size: var(--text-5xl);
 }
 h3 {
-  font-size: var(--text-3xl);
+  font-size: var(--text-4xl);
 }
 /* ... */
 

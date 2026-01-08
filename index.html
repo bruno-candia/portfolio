@@ -5,11 +5,61 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio</title>
+  <meta name="description"
+    content="Bruno Candia - Software Engineer with 7+ years building scalable platforms with React, Node.js, and Java. From micro-frontends to clean architecture.">
+  <meta name="theme-color" content="#171717">
+  <title>Bruno Candia</title>
 </head>
 
 <body>
-  <div id="app"></div>
+  <div id="app">
+    <header class="header">
+      <nav class="header__nav">
+        <!-- Menu items (futuro) -->
+      </nav>
+
+      <button class="header__menu-toggle" aria-label="Abrir menu">
+        <img src="/assets/images/icons/smile-menu.svg" alt="" aria-hidden="true" />
+      </button>
+    </header>
+
+    <section class="hero" id="hero">
+      <div class="hero__content ">
+
+        <div class="hero__title">
+          <span class="hero__tag">Hey :D I'm</span>
+          <h1 class="hero__name">
+            Bruno<br />Candia
+          </h1>
+        </div>
+
+
+
+        <p class="hero__tagline">
+          <span class="hero__tagline-text">Engineering <br />solutions for scale</span><br />
+          <img src="/assets/images/circle-graffiti.svg" alt="" class="hero__tagline-badge" aria-hidden="true" />
+        </p>
+
+        <p class="hero__description">
+          I leverage 7 years of experience to build
+          resilient digital platforms using React,
+          Node.js, and Java. From micro-frontends to clean architecture, I drive
+          technical excellence that optimizes performance and empowers business
+          growth.
+        </p>
+
+        <a href="/assets/documents/resume.pdf" class="hero__cta" download>
+          Download my CV
+        </a>
+      </div>
+
+      <div class="hero__background">
+        <img src="/assets/images/me-hero.png" alt="Bruno Candia" class="hero__image" />
+      </div>
+    </section>
+
+
+  </div>
   <script type="module" src="/src/ts/main.ts"></script>
 </body>
 
