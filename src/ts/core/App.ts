@@ -1,5 +1,5 @@
-import { Header } from '@components/Header';
-import { Hero } from '@components/Hero';
+import { Header } from '@ts/components/Header';
+import { Hero } from '@ts/components/Hero';
 
 export class App {
   private header: Header;
