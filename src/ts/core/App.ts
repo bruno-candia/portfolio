@@ -1,5 +1,6 @@
 import { Header } from '@ts/components/Header';
 import { Hero } from '@ts/components/Hero';
+import { scrollService } from '@ts/services/ScrollService';
 
 export class App {
   private header: Header;
@@ -11,6 +12,7 @@ export class App {
   }
 
   hydrate(): void {
+    scrollService.init();
     this.header.hydrate();
     this.hero.hydrate();
   }

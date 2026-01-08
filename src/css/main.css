@@ -5,8 +5,26 @@
 @import "./layout/_container.css";
 
 @import "./components/_header.css";
+@import "./components/_menu.css";
 @import "./components/_hero.css";
 @import "./components/_skills.css";
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
 
 body {
   font-family: var(--font-body);

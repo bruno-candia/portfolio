@@ -14,14 +14,28 @@
 <body>
   <div id="app">
     <header class="header">
-      <nav class="header__nav">
-        <!-- Menu items (futuro) -->
-      </nav>
-
-      <button class="header__menu-toggle" aria-label="Abrir menu">
-        <img src="/assets/images/icons/smile-menu.svg" alt="" aria-hidden="true" />
+      <button class="header__menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+        <svg class="header__menu-text" viewBox="0 0 100 100" aria-hidden="true">
+          <defs>
+            <path id="circlePath" d="M 50,50 m -40,0 a 40,40 0 1,1 80,0 a 40,40 0 1,1 -80,0" />
+          </defs>
+          <text>
+            <textPath href="#circlePath">MENU • MENU • MENU • MENU •</textPath>
+          </text>
+        </svg>
+        <img src="/assets/images/icons/smile-menu.svg" alt="" class="header__menu-icon" />
       </button>
     </header>
+
+    <nav class="menu" aria-hidden="true">
+      <ul class="menu__list">
+        <li class="menu__item"><a href="#hero" class="menu__link" data-section="hero">Home</a></li>
+        <li class="menu__item"><a href="#skills" class="menu__link" data-section="skills">Skills</a></li>
+        <li class="menu__item"><a href="#projects" class="menu__link" data-section="projects">Projects</a></li>
+        <li class="menu__item"><a href="#experience" class="menu__link" data-section="experience">Experience</a></li>
+        <li class="menu__item"><a href="#contact" class="menu__link" data-section="contact">Contact</a></li>
+      </ul>
+    </nav>
 
     <main>
       <section class="hero" id="hero">

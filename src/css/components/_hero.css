@@ -12,6 +12,7 @@
   align-items: flex-start;
   height: 100%;
   justify-content: center;
+  gap: clamp(var(--space-20), 3dvh, var(--space-16));
 }
 
 .hero__background {
@@ -72,7 +73,6 @@
 }
 
 .hero__tagline {
-  margin-top: 2rem;
   position: relative;
   z-index: 2;
 }
@@ -90,7 +90,6 @@
 }
 
 .hero__description {
-  margin-top: var(--space-8);
   font-size: var(--text-xl);
   line-height: var(--leading-normal);
   max-width: 22.5rem;
@@ -102,7 +101,6 @@
   padding: var(--space-5) var(--space-12);
   font-size: var(--text-xl);
   border-radius: var(--radius-full);
-  margin-top: 4dvh;
 }
 
 .hero__scroll-indicator {

@@ -13,6 +13,7 @@ export class SprayEffect {
   private canvas: HTMLCanvasElement;
   private ctx: CanvasRenderingContext2D;
   private mobileCursor: HTMLElement | null = null;
+  private clearHint: HTMLElement | null = null;
   private sprayInterval: number | null = null;
   private dripAnimationFrame: number | null = null;
   private mouseX = 0;
@@ -22,6 +23,7 @@ export class SprayEffect {
   private lastTapTime = 0;
   private drips: Drip[] = [];
   private sprayTime = 0;
+  private hasDrawn = false;
 
   private config = {
     sprayRadius: 5,
@@ -51,6 +53,14 @@ export class SprayEffect {
     if (this.isMobile) {
       this.mobileCursor = this.createMobileCursor();
       this.container.appendChild(this.mobileCursor);
+    }
+
+    this.clearHint = this.createClearHint();
+    const heroElement = this.container.closest('.hero');
+    if (heroElement) {
+      heroElement.appendChild(this.clearHint);
+    } else {
+      this.container.appendChild(this.clearHint);
     }
 
     this.setupEvents();
@@ -107,6 +117,28 @@ export class SprayEffect {
       transition: opacity 0.15s ease;
     `;
     return cursor;
+  }
+
+  private createClearHint(): HTMLElement {
+    const hint = document.createElement('div');
+    hint.classList.add('hero__spray-hint');
+    const action = this.isMobile ? 'Double tap' : 'Right-click';
+    hint.textContent = `${action} to clear`;
+    return hint;
+  }
+
+  private showClearHint(): void {
+    if (this.clearHint && !this.hasDrawn) {
+      this.hasDrawn = true;
+      this.clearHint.classList.add('is-visible');
+    }
+  }
+
+  private hideClearHint(): void {
+    if (this.clearHint) {
+      this.hasDrawn = false;
+      this.clearHint.classList.remove('is-visible');
+    }
   }
 
   private showMobileCursor(): void {
@@ -314,6 +346,7 @@ export class SprayEffect {
     this.sprayTime = 0;
     this.spray();
     this.sprayInterval = window.setInterval(() => this.spray(), 30);
+    this.showClearHint();
   }
 
   private stopSpray(): void {
@@ -327,6 +360,7 @@ export class SprayEffect {
   clearCanvas(): void {
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
     this.drips = [];
+    this.hideClearHint();
   }
 
   private handleMouseDown(e: MouseEvent): void {
