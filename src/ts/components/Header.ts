@@ -9,6 +9,7 @@ export class Header {
   private isMenuOpen = false;
   private currentRotation = 0;
   private spinAnimation: number | null = null;
+  private boundDocumentClick?: (e: MouseEvent) => void;
 
   constructor() {
     this.element = document.querySelector('.header');
@@ -30,6 +31,18 @@ export class Header {
     this.menuLinks.forEach(link => {
       link.addEventListener('click', this.handleLinkClick.bind(this));
     });
+
+    this.boundDocumentClick = (e: MouseEvent) => {
+      if (!this.isMenuOpen) return;
+      const target = e.target as Node | null;
+      if (!target) return;
+
+      if (this.menu && this.menu.contains(target)) return;
+      if (this.menuButton && this.menuButton.contains(target)) return;
+
+      this.closeMenu();
+    };
+    document.addEventListener('click', this.boundDocumentClick);
 
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && this.isMenuOpen) {

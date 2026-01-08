@@ -3,14 +3,29 @@
     "id": "frontend",
     "category": "Front-end",
     "stacks": [
+      { "name": "JavaScript" },
+      { "name": "TypeScript" },
       { "name": "React" },
       { "name": "Next.js" },
-      { "name": "TypeScript" },
-      { "name": "Vue.js" },
-      { "name": "Tailwind CSS" },
-      { "name": "SASS/SCSS" },
-      { "name": "Webpack" },
-      { "name": "Vite" }
+      { "name": "Angular" },
+      { "name": "Redux" },
+      { "name": "React Query" },
+      { "name": "HTML" },
+      { "name": "CSS" },
+      { "name": "Tailwind" },
+      { "name": "Sass" },
+      { "name": "Styled Components" },
+      { "name": "Vite" },
+      { "name": "Axios" },
+      { "name": "Figma" },
+      { "name": "Storybook" },
+      { "name": "Jest" },
+      { "name": "Vitest" },
+      { "name": "Testing Library" },
+      { "name": "Cypress" },
+      { "name": "MSW" },
+      { "name": "ESLint" },
+      { "name": "Electron" }
     ]
   },
   {
@@ -19,12 +34,20 @@
     "stacks": [
       { "name": "Node.js" },
       { "name": "Java" },
-      { "name": "Spring Boot" },
-      { "name": "Express.js" },
       { "name": "NestJS" },
+      { "name": "Express" },
+      { "name": "Prisma" },
       { "name": "PostgreSQL" },
+      { "name": "MySQL" },
+      { "name": "SQL Server" },
       { "name": "MongoDB" },
-      { "name": "Redis" }
+      { "name": "REST API" },
+      { "name": "JWT" },
+      { "name": "OAuth2" },
+      { "name": "Swagger" },
+      { "name": "Jest" },
+      { "name": "WireMock" },
+      { "name": "Robot Framework" }
     ]
   },
   {
@@ -32,35 +55,44 @@
     "category": "Mobile",
     "stacks": [
       { "name": "React Native" },
-      { "name": "Flutter" },
-      { "name": "iOS (Swift)" },
-      { "name": "Android (Kotlin)" }
+      { "name": "Expo" },
+      { "name": "React Navigation" },
+      { "name": "Styled Components" },
+      { "name": "iOS" },
+      { "name": "Android" },
+      { "name": "Jest" }
     ]
   },
   {
     "id": "architecture",
-    "category": "Architecture",
+    "category": "Arquitetura",
     "stacks": [
-      { "name": "Micro-frontends" },
-      { "name": "Microservices" },
       { "name": "Clean Architecture" },
-      { "name": "Domain-Driven Design" },
-      { "name": "Event-Driven" },
-      { "name": "RESTful APIs" },
-      { "name": "GraphQL" }
+      { "name": "DDD" },
+      { "name": "Micro-frontends" },
+      { "name": "Module Federation" },
+      { "name": "Monorepo" },
+      { "name": "Design Patterns" },
+      { "name": "Performance" },
+      { "name": "MVVM" }
     ]
   },
   {
     "id": "devops",
     "category": "DevOps",
     "stacks": [
+      { "name": "Git" },
+      { "name": "GitHub Actions" },
+      { "name": "Azure Pipelines" },
       { "name": "Docker" },
       { "name": "Kubernetes" },
-      { "name": "AWS" },
-      { "name": "CI/CD" },
-      { "name": "GitHub Actions" },
       { "name": "Terraform" },
-      { "name": "Jenkins" }
+      { "name": "AWS" },
+      { "name": "Azure" },
+      { "name": "Vercel" },
+      { "name": "Firebase" },
+      { "name": "SonarQube" },
+      { "name": "CI/CD" }
     ]
   }
 ]
