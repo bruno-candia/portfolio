@@ -1,8 +1,9 @@
 .header {
-  position: absolute;
+  position: fixed;
   padding: var(--space-12);
   right: 0;
   top: 0;
+  z-index: var(--z-fixed);
 }
 
 .header__tag {

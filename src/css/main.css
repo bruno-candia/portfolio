@@ -6,6 +6,7 @@
 
 @import "./components/_header.css";
 @import "./components/_hero.css";
+@import "./components/_skills.css";
 
 body {
   font-family: var(--font-body);
@@ -40,7 +41,6 @@ h2 {
 h3 {
   font-size: var(--text-4xl);
 }
-/* ... */
 
 /* Body text */
 p {

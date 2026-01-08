@@ -1,23 +1,40 @@
+interface Drip {
+  x: number;
+  y: number;
+  color: string;
+  speed: number;
+  size: number;
+  length: number;
+  maxLength: number;
+}
+
 export class SprayEffect {
   private container: HTMLElement;
   private canvas: HTMLCanvasElement;
   private ctx: CanvasRenderingContext2D;
   private mobileCursor: HTMLElement | null = null;
   private sprayInterval: number | null = null;
+  private dripAnimationFrame: number | null = null;
   private mouseX = 0;
   private mouseY = 0;
   private currentColor: string;
   private isMobile: boolean;
   private lastTapTime = 0;
+  private drips: Drip[] = [];
+  private sprayTime = 0;
 
   private config = {
-    sprayRadius: 10,
-    sprayDensity: 20,
+    sprayRadius: 5,
+    sprayDensity: 30,
     particleSizeMin: 0.5,
     particleSizeMax: 2,
     smokeEnabled: true,
     mobileOffsetX: -40,
     mobileOffsetY: -20,
+    dripChance: 0.01,
+    dripSpeedMin: 0.2,
+    dripSpeedMax: 0.5,
+    dripMaxLength: 30,
   };
 
   constructor(container: HTMLElement) {
@@ -39,6 +56,7 @@ export class SprayEffect {
     this.setupEvents();
     this.handleResize();
     window.addEventListener('resize', this.handleResize.bind(this));
+    this.startDripAnimation();
   }
 
   destroy(): void {
@@ -53,6 +71,7 @@ export class SprayEffect {
 
     window.removeEventListener('resize', this.handleResize.bind(this));
     this.stopSpray();
+    this.stopDripAnimation();
     this.canvas.remove();
     this.mobileCursor?.remove();
   }
@@ -162,6 +181,63 @@ export class SprayEffect {
     this.ctx.globalAlpha = 1;
   }
 
+  private createDrip(): void {
+    const { dripChance, dripSpeedMin, dripSpeedMax, dripMaxLength, sprayRadius } = this.config;
+
+    const timeMultiplier = Math.min(this.sprayTime / 2000, 3);
+    const adjustedChance = dripChance * (1 + timeMultiplier);
+    const lengthMultiplier = 1 + timeMultiplier;
+
+    if (Math.random() < adjustedChance) {
+      const offsetX = (Math.random() * 2 - 1) * sprayRadius;
+
+      this.drips.push({
+        x: this.mouseX + offsetX,
+        y: this.mouseY,
+        color: this.currentColor,
+        speed: Math.random() * (dripSpeedMax - dripSpeedMin) + dripSpeedMin,
+        size: Math.random() * 1.5 + 0.5,
+        length: 0,
+        maxLength: (Math.random() * dripMaxLength + 5) * lengthMultiplier,
+      });
+    }
+  }
+
+  private updateDrips(): void {
+    for (let i = this.drips.length - 1; i >= 0; i--) {
+      const drip = this.drips[i];
+
+      if (drip.length < drip.maxLength && drip.speed > 0.05) {
+        this.ctx.beginPath();
+        this.ctx.arc(drip.x, drip.y + drip.length, drip.size, 0, Math.PI * 2);
+        this.ctx.fillStyle = drip.color;
+        this.ctx.globalAlpha = 0.6;
+        this.ctx.fill();
+
+        drip.length += drip.speed;
+        drip.speed *= 0.99;
+      } else {
+        this.drips.splice(i, 1);
+      }
+    }
+    this.ctx.globalAlpha = 1;
+  }
+
+  private startDripAnimation(): void {
+    const animate = (): void => {
+      this.updateDrips();
+      this.dripAnimationFrame = requestAnimationFrame(animate);
+    };
+    this.dripAnimationFrame = requestAnimationFrame(animate);
+  }
+
+  private stopDripAnimation(): void {
+    if (this.dripAnimationFrame) {
+      cancelAnimationFrame(this.dripAnimationFrame);
+      this.dripAnimationFrame = null;
+    }
+  }
+
   private createSmoke(x: number, y: number, size: number, velocityX: number, velocityY: number): void {
     const smoke = document.createElement('div');
     smoke.classList.add('hero__spray-cursor-smoke');
@@ -227,12 +303,15 @@ export class SprayEffect {
   private spray(): void {
     this.paintSpray();
     this.spraySmoke();
+    this.createDrip();
+    this.sprayTime += 30;
   }
 
   private startSpray(): void {
     if (this.sprayInterval) return;
 
     this.currentColor = this.getRandomColor();
+    this.sprayTime = 0;
     this.spray();
     this.sprayInterval = window.setInterval(() => this.spray(), 30);
   }
@@ -242,10 +321,12 @@ export class SprayEffect {
       clearInterval(this.sprayInterval);
       this.sprayInterval = null;
     }
+    this.sprayTime = 0;
   }
 
   clearCanvas(): void {
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+    this.drips = [];
   }
 
   private handleMouseDown(e: MouseEvent): void {
@@ -272,9 +353,8 @@ export class SprayEffect {
   }
 
   private updateMousePosition(e: MouseEvent): void {
-    const rect = this.container.getBoundingClientRect();
-    this.mouseX = e.clientX - rect.left;
-    this.mouseY = e.clientY - rect.top;
+    this.mouseX = e.offsetX;
+    this.mouseY = e.offsetY;
   }
 
   private handleTouchStart(e: TouchEvent): void {
@@ -312,8 +392,10 @@ export class SprayEffect {
     const touch = e.touches[0];
     if (touch) {
       const rect = this.container.getBoundingClientRect();
-      this.mouseX = touch.clientX - rect.left + this.config.mobileOffsetX;
-      this.mouseY = touch.clientY - rect.top + this.config.mobileOffsetY;
+      const x = touch.clientX - rect.left;
+      const y = touch.clientY - rect.top;
+      this.mouseX = x + this.config.mobileOffsetX;
+      this.mouseY = y + this.config.mobileOffsetY;
     }
   }
 }

@@ -14,10 +14,15 @@
   --color-bg-overlay-dark: rgba(0, 0, 0, 0.33);
   --color-bg-muted: rgba(23, 23, 23, 0.6);
 
-  /* Text */
+  /* Text Light */
   --color-text-primary: #ffffff;
   --color-text-secondary: rgba(255, 255, 255, 0.8);
   --color-text-muted: rgba(255, 255, 255, 0.6);
+
+  /* Text Dark */
+  --color-text-dark: #171717;
+  --color-text-dark-secondary: rgba(23, 23, 23, 0.8);
+  --color-text-dark-muted: rgba(23, 23, 23, 0.6);
 
   /* Accent / Brand */
   --color-accent: #7828ff;
@@ -34,9 +39,9 @@
      ───────────────────────────────────────────────────────── */
 
   /* Font Families */
-  --font-display: "Digitag", system-ui, sans-serif; /* Títulos grandes */
-  --font-accent: "The Battle Continuez", system-ui, sans-serif; /* Destaques */
-  --font-body: "Instrument Serif", Georgia, serif; /* Corpo de texto */
+  --font-display: "Digitag", system-ui, sans-serif;
+  --font-accent: "The Battle Continuez", system-ui, sans-serif;
+  --font-body: "Instrument Serif", Georgia, serif;
 
   /* Font Sizes - Scale (mobile first) */
   --text-xs: 0.75rem; /* 12px */
@@ -103,7 +108,7 @@
   --radius-full: 9999px;
 
   /* ─────────────────────────────────────────────────────────
-     TRANSITIONS (placeholder - definir depois)
+     TRANSITIONS
      ───────────────────────────────────────────────────────── */
 
   --transition-fast: 150ms ease;
@@ -122,14 +127,3 @@
   --z-modal: 400;
   --z-tooltip: 500;
 }
-
-/* ═══════════════════════════════════════════════════════════
-   RESPONSIVE TOKENS (Desktop overrides)
-   ═══════════════════════════════════════════════════════════ */
-
-/* @media (min-width: 768px) {
-  :root { */
-/* Pode aumentar espaçamentos no desktop se necessário */
-/* --space-section: var(--space-32); */
-/* }
-} */
