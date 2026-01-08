@@ -23,24 +23,68 @@
       </button>
     </header>
 
-    <section class="hero" id="hero">
-      <div class="hero__content ">
+    <main>
+      <section class="hero" id="hero">
+        <div class="hero__content ">
 
-        <div class="hero__title">
-          <span class="hero__tag">Hey :D I'm</span>
-          <h1 class="hero__name">
-            Bruno<br />Candia
+          <div class="hero__title">
+            <span class="hero__tag">Hey :D I'm</span>
+            <h1 class="hero__name">
+              Bruno<br />Candia
+            </h1>
+          </div>
+
+
+
+          <p class="hero__tagline">
+            <span class="hero__tagline-text">Engineering <br />solutions for scale</span><br />
+          </p>
+
+          <p class="hero__description">
+            I leverage 7 years of experience to build
+            resilient digital platforms using React,
+            Node.js, and Java. From micro-frontends to clean architecture, I drive
+            technical excellence that optimizes performance and empowers business
+            growth.
+          </p>
+
+          <a href="/assets/documents/resume.pdf" class="hero__cta" download>
+            Download my CV
+          </a>
+        </div>
+
+        <div class="hero__scroll-indicator">
+          <span class="hero__scroll-text">Scroll here</span>
+          <svg class="hero__scroll-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 5V19M12 19L5 12M12 19L19 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </div>
+
+        <div class="hero__spray-cursor"></div>
+
+        <div class="hero__background">
+          <img src="/assets/images/me-hero.png" alt="Bruno Candia" class="hero__image" />
+        </div>
+      </section>
+
+      <section class="skills" id="skills">
+        <div class="skills__title">
+          <span class="skills__tag">Hey :D I'm</span>
+          <h1 class="skills__name">
+            Exemplo
           </h1>
         </div>
 
 
 
-        <p class="hero__tagline">
-          <span class="hero__tagline-text">Engineering <br />solutions for scale</span><br />
-          <img src="/assets/images/circle-graffiti.svg" alt="" class="hero__tagline-badge" aria-hidden="true" />
+        <p class="skills__tagline">
+          <span class="skills__tagline-text">Engineering <br />solutions for scale</span><br />
+          <img src="/assets/images/circle-graffiti.svg" alt="" class="skills__tagline-badge" aria-hidden="true" />
         </p>
 
-        <p class="hero__description">
+        <p class="skills__description">
           I leverage 7 years of experience to build
           resilient digital platforms using React,
           Node.js, and Java. From micro-frontends to clean architecture, I drive
@@ -48,54 +92,11 @@
           growth.
         </p>
 
-        <a href="/assets/documents/resume.pdf" class="hero__cta" download>
+        <a href="/assets/documents/resume.pdf" class="skills__cta" download>
           Download my CV
         </a>
-      </div>
-
-      <div class="hero__scroll-indicator">
-        <span class="hero__scroll-text">Scroll here</span>
-        <svg class="hero__scroll-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
-          xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 5V19M12 19L5 12M12 19L19 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-            stroke-linejoin="round" />
-        </svg>
-      </div>
-
-      <div class="hero__spray-cursor"></div>
-
-      <div class="hero__background">
-        <img src="/assets/images/me-hero.png" alt="Bruno Candia" class="hero__image" />
-      </div>
-    </section>
-
-    <section class="skills" id="skills">
-      <div class="skills__title">
-        <span class="skills__tag">Hey :D I'm</span>
-        <h1 class="skills__name">
-          Exemplo
-        </h1>
-      </div>
-
-
-
-      <p class="skills__tagline">
-        <span class="skills__tagline-text">Engineering <br />solutions for scale</span><br />
-        <img src="/assets/images/circle-graffiti.svg" alt="" class="skills__tagline-badge" aria-hidden="true" />
-      </p>
-
-      <p class="skills__description">
-        I leverage 7 years of experience to build
-        resilient digital platforms using React,
-        Node.js, and Java. From micro-frontends to clean architecture, I drive
-        technical excellence that optimizes performance and empowers business
-        growth.
-      </p>
-
-      <a href="/assets/documents/resume.pdf" class="skills__cta" download>
-        Download my CV
-      </a>
-    </section>
+      </section>
+    </main>
 
   </div>
   <script type="module" src="/src/ts/main.ts"></script>
