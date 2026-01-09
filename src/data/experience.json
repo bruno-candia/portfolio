@@ -4,10 +4,8 @@
     "period": "2023 - Current",
     "title": "Tech Leader",
     "company": "BEES - AB-Inbev",
-    "image": {
-      "src": "/assets/images/bees-company.png",
-      "alt": "BEES - AB-Inbev"
-    },
+    "background": "/assets/images/yellow-background.png",
+    "logo": "/assets/images/bees-company.png",
     "summaryIntro": "At BEES (AB InBev), I contributed significantly to the development of global digital platforms. My achievements include:",
     "highlights": [
       "Standardized BFF architecture using NestJS and Clean Architecture, resolving frontend-backend dependencies. This approach, combined with WireMock, enabled parallel development and decoupled data processing from legacy contracts.",
@@ -20,12 +18,10 @@
   {
     "id": "aurem",
     "period": "2018 - 2023",
-    "title": "Founder & Software Engineer",
+    "title": "Founder",
     "company": "Aurem",
-    "image": {
-      "src": "/assets/images/aurem-company.jpeg",
-      "alt": "Aurem"
-    },
+    "background": "/assets/images/white-background.png",
+    "logo": "/assets/images/aurem-company.png",
     "summaryIntro": "As Founder, I led the development of an inclusive real-time captioning application, driving accessibility through speech recognition technologies. In 2019, I was awarded the Empreenda Santander Prize, a national recognition for impactful entrepreneurship. My main technical achievements include:",
     "highlights": [
       "Engineered a low-latency transcription engine leveraging the Web Speech API for client-side processing. This architecture eliminated backend bottlenecks, ensuring near-instantaneous speech-to-text conversion and reducing server costs.",
@@ -39,10 +35,8 @@
     "period": "2021 - 2022",
     "title": "UX Designer",
     "company": "Verzel Soluções em Sistemas",
-    "image": {
-      "src": "/assets/images/verzel-company.png",
-      "alt": "Verzel Soluções em Sistemas"
-    },
+    "background": "/assets/images/white-background.png",
+    "logo": "/assets/images/verzel-company.png",
     "summaryIntro": "At Verzel, I bridged the gap between design and engineering, creating digital solutions for the Web3 and Mobility sectors. My contributions include:",
     "highlights": [
       "Designed developer-friendly interfaces using Figma and Auto Layout, structuring prototypes with component variants that mirror React architecture to ensure technical feasibility.",
@@ -54,10 +48,8 @@
     "period": "2021",
     "title": "Software Developer Intern",
     "company": "Neoenergia",
-    "image": {
-      "src": "/assets/images/neoenergia-company.png",
-      "alt": "Neoenergia"
-    },
+    "background": "/assets/images/white-background.png",
+    "logo": "/assets/images/neoenergia-company.png",
     "summaryIntro": "At Neoenergia (Agility Team), I worked on the digital transformation of internal processes, replacing manual workflows with custom software solutions. My main contributions include:",
     "highlights": [
       "Developed custom dashboards and smart data entry forms from scratch using React and TypeScript, replacing legacy Excel spreadsheets and Google Forms for field and management teams.",
