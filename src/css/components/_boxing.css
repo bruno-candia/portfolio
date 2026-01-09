@@ -1,0 +1,15 @@
+.boxing-hero {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  z-index: var(--z-base);
+}
+
+.boxing-hero__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}

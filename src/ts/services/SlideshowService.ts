@@ -43,7 +43,7 @@ export class SlideshowService {
 
   private animateGrid(index: number) {
     const ratios = Array(this.totalTabs).fill(1);
-    ratios[index] = 2.6;
+    ratios[index] = 4;
     const gridString = ratios.map((r) => `${r}fr`).join(' ');
 
     gsap.to(this.container, {

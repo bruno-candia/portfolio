@@ -1,0 +1,77 @@
+.education {
+  position: relative;
+  z-index: var(--z-above);
+  isolation: isolate;
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  padding: var(--space-20) var(--space-12);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  margin-top: -15vh; /* Shifts the section up to overlap the previous sticky section */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.education__header {
+  margin-bottom: var(--space-16);
+  width: 100%;
+}
+
+.education__title {
+  font-size: clamp(2.5rem, 8vw, 4rem); /* Matching experience size */
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-text-primary); /* White text */
+  margin-bottom: var(--space-8);
+  /* Removed rotation to match Experience title style if that is the goal, or keeping it if "structure" refers only to hierarchy.
+     The user said "follow the same structure of title and description". Experience title is NOT rotated in CSS.
+     So I will remove rotation. */
+  transform: none;
+}
+
+.education__description {
+  font-family: var(--font-body);
+  font-size: var(--text-lg); /* Matching experience */
+  line-height: var(--leading-normal); /* Matching experience */
+  color: var(--color-text-secondary); /* White secondary */
+  max-width: 52ch; /* Matching experience */
+  margin: 0; /* Removing auto margin since we are left aligning */
+}
+
+/* Content Left Alignment */
+.education__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Left aligned */
+  width: 100%;
+}
+
+.education__degree-title {
+  font-family: var(--font-graffiti);
+  font-size: var(--text-6xl);
+  color: var(--color-graffiti);
+  line-height: 0.8;
+  text-transform: uppercase;
+  max-width: 15ch;
+  transform: rotate(
+    -2deg
+  ); /* Keeping this artistic rotation for the content itself as user didn't say to remove it, just align left */
+  text-align: left;
+}
+
+.education__institution {
+  font-size: var(--text-3xl);
+  margin-top: var(--space-4);
+}
+
+.education__institution-name {
+  text-decoration: underline;
+  margin-left: var(--space-2);
+}
+
+.education__date {
+  font-size: var(--text-2xl);
+  margin-top: var(--space-4);
+}

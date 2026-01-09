@@ -16,19 +16,19 @@
   --color-text-dark-secondary: rgba(23, 23, 23, 0.8);
   --color-text-dark-muted: rgba(23, 23, 23, 0.6);
 
-  /* Accent / Brand */
-  --color-accent: #7828ff;
-  --color-accent-muted: rgba(120, 40, 255, 0.94);
-  --color-accent-subtle: rgba(120, 40, 255, 0.2);
+  /* graffiti / Brand */
+  --color-graffiti: #7828ff;
+  --color-graffiti-muted: rgba(120, 40, 255, 0.94);
+  --color-graffiti-subtle: rgba(120, 40, 255, 0.2);
 
   /* Semantic shortcuts */
   --color-bg: var(--color-bg-primary);
   --color-text: var(--color-text-primary);
-  --color-primary: var(--color-accent);
+  --color-primary: var(--color-graffiti);
 
   /* Font Families */
-  --font-display: "Digitag", system-ui, sans-serif;
-  --font-accent: "The Battle Continuez", system-ui, sans-serif;
+  --font-graffiti: "Graffiti", system-ui, sans-serif;
+  --font-street: "Street", system-ui, sans-serif;
   --font-body: "Instrument Serif", Georgia, serif;
 
   /* Font Sizes - Scale (mobile first) */

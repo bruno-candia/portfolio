@@ -67,14 +67,7 @@
           </a>
         </div>
 
-        <div class="hero__scroll-indicator">
-          <span class="hero__scroll-text">Scroll here</span>
-          <svg class="hero__scroll-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
-            xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 5V19M12 19L5 12M12 19L19 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-              stroke-linejoin="round" />
-          </svg>
-        </div>
+
 
         <div class="hero__spray-cursor"></div>
 
@@ -85,6 +78,12 @@
 
       <div class="content-surface">
         <section class="skills" id="skills">
+          <div class="skills__scroll-indicator">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 5V19M12 19L5 12M12 19L19 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </div>
           <header class="skills__header">
             <h2 class="skills__title">Skills</h2>
             <p class="skills__description">
@@ -174,7 +173,69 @@
           </div>
         </section>
       </div>
+
+      <section class="boxing-hero">
+        <img src="/assets/images/boxe-gloves.png" alt="" class="boxing-hero__image" />
+      </section>
+
+      <section class="education" id="education">
+        <header class="education__header">
+          <h2 class="education__title">Education</h2>
+          <p class="education__description">
+            Below are some of the academic degrees and courses I have completed, each contributing significantly to my
+            training and growth in the technology field.
+          </p>
+        </header>
+
+        <div class="education__content">
+          <h3 class="education__degree-title">
+            Control and<br />
+            Automation<br />
+            Engineering
+          </h3>
+          <div class="education__institution">
+            made at <span class="education__institution-name">INATEL</span>
+          </div>
+          <div class="education__date">
+            Jan 2017 - Jul 2022
+          </div>
+        </div>
+      </section>
     </main>
+
+    <footer class="footer" id="contact">
+      <div class="footer__container">
+        <div class="footer__grid">
+          <div class="footer__column footer__logo-col">
+            <span class="footer__logo">BC</span>
+          </div>
+
+          <div class="footer__column footer__about-col">
+            <p class="footer__description">
+              Bruno Candia is a Software Engineer based in Brazil, specializing in scalable platforms, React, Node.js,
+              and Java. Pleased to make your acquaintance.
+            </p>
+          </div>
+
+          <div class="footer__column footer__contact-col">
+            <span class="footer__label">Email</span>
+            <a href="mailto:contact@brunocandia.dev" class="footer__link">contact@brunocandia.dev</a>
+          </div>
+
+          <div class="footer__column footer__contact-col">
+            <span class="footer__label">Socials</span>
+            <a href="https://linkedin.com/in/brunocandia" target="_blank" rel="noopener noreferrer"
+              class="footer__link">LinkedIn</a>
+            <a href="https://github.com/brunocandia" target="_blank" rel="noopener noreferrer"
+              class="footer__link">GitHub</a>
+          </div>
+        </div>
+
+        <div class="footer__copyright">
+          Bruno Candia Copyright © 2026 All Rights Reserved.
+        </div>
+      </div>
+    </footer>
 
     <div class="experience-modal" aria-hidden="true">
       <div class="experience-modal__backdrop" data-experience-close></div>

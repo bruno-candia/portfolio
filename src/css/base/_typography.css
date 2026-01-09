@@ -1,17 +1,17 @@
 @font-face {
-  font-family: "Digitag";
-  src: url("/assets/fonts/digitag.regular.woff2") format("woff2");
+  font-family: "Graffiti";
+  src: url("/assets/fonts/adrip1.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
-  font-display: swap;
+  font-graffiti: swap;
 }
 
 @font-face {
-  font-family: "The Battle Continuez";
-  src: url("/assets/fonts/the-battle-continuez.regular.woff2") format("woff2");
+  font-family: "Street";
+  src: url("/assets/fonts/beatstreet.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
-  font-display: swap;
+  font-graffiti: swap;
 }
 
 @font-face {
@@ -19,7 +19,7 @@
   src: url("/assets/fonts/InstrumentSerif-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
-  font-display: swap;
+  font-graffiti: swap;
 }
 
 @font-face {
@@ -27,5 +27,5 @@
   src: url("/assets/fonts/InstrumentSerif-Italic.woff2") format("woff2");
   font-weight: 400;
   font-style: italic;
-  font-display: swap;
+  font-graffiti: swap;
 }

@@ -2,6 +2,7 @@
   position: sticky;
   top: 0;
   height: calc(100vh - 120px);
+  min-height: 600px; /* Ensure a minimum height for taller content */
   margin-left: var(--space-12);
   overflow: hidden;
   will-change: transform;
@@ -54,20 +55,21 @@
 
 .hero__title {
   transform: rotate(-20deg);
-  margin: 0 var(--space-6) 0;
+  margin: 0 var(--space-10) 0;
   display: flex;
   flex-direction: column;
   gap: var(--space-12);
 }
 
 .hero__tag {
-  font-family: var(--font-display);
+  font-family: var(--font-graffiti);
   font-size: var(--text-3xl);
-  color: var(--color-accent);
+  color: var(--color-graffiti);
   letter-spacing: var(--tracking-wide);
 }
 
 .hero__name {
+  font-family: var(--font-graffiti);
   color: var(--color-text-primary);
   letter-spacing: var(--tracking-wider);
 }
@@ -96,7 +98,7 @@
 }
 
 .hero__cta {
-  background-color: var(--color-accent);
+  background-color: var(--color-graffiti);
   color: var(--color-text-primary);
   padding: var(--space-5) var(--space-12);
   font-size: var(--text-xl);

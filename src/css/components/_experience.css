@@ -1,7 +1,7 @@
 .experience {
   color: var(--color-text-dark);
   min-height: auto;
-  padding: var(--space-12) var(--space-12) var(--space-24);
+  padding: var(--space-12) var(--space-12);
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
@@ -12,7 +12,6 @@
 }
 
 .experience__title {
-  font-family: var(--font-accent);
   font-size: clamp(2.5rem, 8vw, 4rem);
   line-height: var(--leading-tight);
   letter-spacing: var(--tracking-tight);
@@ -30,8 +29,8 @@
 
 .slideshow-stack {
   width: 100%;
-  aspect-ratio: 9/13;
-  min-height: 90svh;
+  aspect-ratio: 9/19;
+  min-height: 80svh;
   position: relative;
 }
 
@@ -197,7 +196,8 @@
 }
 
 .experience__logo {
-  width: 360px;
+  width: 300px;
+  max-width: none;
   height: auto;
   object-fit: contain;
   filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
@@ -229,7 +229,7 @@
   bottom: calc(var(--panel-padding) + 35px);
   left: var(--panel-padding);
   width: calc(100% - 2 * var(--panel-padding));
-  font-family: var(--font-accent);
+  font-family: var(--font-graffiti);
   font-size: 1.5rem;
   line-height: 1.1;
   margin: 0;
