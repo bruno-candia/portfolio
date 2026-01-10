@@ -2,21 +2,75 @@
   position: sticky;
   top: 0;
   height: calc(100vh - 120px);
-  min-height: 600px; /* Ensure a minimum height for taller content */
-  margin-left: var(--space-12);
+  min-height: 600px;
   overflow: hidden;
   will-change: transform;
 }
 
 .hero__content {
   position: relative;
-  z-index: 1;
+  z-index: 20;
   display: flex;
+  pointer-events: none;
   flex-direction: column;
   align-items: flex-start;
   height: 100%;
   justify-content: center;
   gap: clamp(var(--space-20), 3dvh, var(--space-16));
+}
+
+.hero__left,
+.hero__right {
+  display: contents;
+}
+
+@media (min-width: 1024px) {
+  .hero__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+    gap: var(--space-16);
+  }
+
+  .hero__left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: var(--space-40);
+    margin-top: var(--space-24);
+    position: relative;
+    z-index: 20;
+  }
+
+  .hero__right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+    gap: var(--space-8);
+    margin-bottom: var(--space-24);
+  }
+
+  .hero__title {
+    transform: rotate(-15deg);
+  }
+
+  .hero__tag {
+    font-size: var(--text-4xl);
+  }
+
+  .hero__name {
+    font-size: clamp(5rem, 10vw, 7rem);
+  }
+
+  .hero__description {
+    text-align: right;
+  }
+}
+
+.hero__visuals {
+  position: static;
 }
 
 .hero__background {
@@ -35,6 +89,10 @@
   min-width: 100%;
   cursor: url("/assets/images/icons/spray-can.svg") 16 16,
     url("/assets/images/icons/spray-can.png") 16 16, crosshair;
+}
+
+.hero__frame {
+  display: none;
 }
 
 .hero__spray-cursor-smoke {
@@ -59,6 +117,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-12);
+  pointer-events: auto; /* Re-enable interaction */
 }
 
 .hero__tag {
@@ -72,15 +131,23 @@
   font-family: var(--font-graffiti);
   color: var(--color-text-primary);
   letter-spacing: var(--tracking-wider);
+  line-height: var(--leading-tight);
 }
 
 .hero__tagline {
   position: relative;
   z-index: 2;
+  pointer-events: auto; /* Re-enable interaction */
 }
 
 .hero__tagline-text {
   font-size: var(--text-4xl);
+}
+
+@media (min-width: 1024px) {
+  .hero__tagline-text {
+    font-size: clamp(3rem, 6vw, 4.7rem);
+  }
 }
 
 .hero__tagline-badge {
@@ -95,6 +162,14 @@
   font-size: var(--text-xl);
   line-height: var(--leading-normal);
   max-width: 22.5rem;
+  pointer-events: auto; /* Re-enable interaction */
+}
+
+@media (min-width: 1024px) {
+  .hero__description {
+    font-size: var(--text-2xl);
+    max-width: 26rem;
+  }
 }
 
 .hero__cta {
@@ -103,6 +178,7 @@
   padding: var(--space-5) var(--space-12);
   font-size: var(--text-xl);
   border-radius: var(--radius-full);
+  pointer-events: auto; /* Re-enable interaction */
 }
 
 .hero__scroll-indicator {
@@ -144,19 +220,27 @@
 }
 
 .hero__spray-hint {
-  position: absolute;
-  bottom: 16px;
-  right: 16px;
-  padding: 6px 10px;
-  background-color: rgba(0, 0, 0, 0.7);
-  color: white;
-  font-family: system-ui, sans-serif;
-  font-size: 11px;
-  border-radius: 4px;
-  pointer-events: none;
-  z-index: 50;
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .hero__spray-hint {
+    display: block;
+    position: absolute;
+    bottom: 170px;
+    left: 60%;
+    transform: translateX(-50%);
+    padding: 6px 12px;
+    background-color: rgba(0, 0, 0, 0.75);
+    color: white;
+    font-family: system-ui, sans-serif;
+    font-size: 11px;
+    border-radius: 4px;
+    pointer-events: none;
+    z-index: 50;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
 }
 
 .hero__spray-hint.is-visible {
@@ -170,5 +254,55 @@
   }
   50% {
     opacity: 0.8;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero__visuals {
+    position: absolute;
+    top: 42%;
+    left: 51.5%;
+    width: 590px;
+    height: 745px;
+    transform: translate(-50%, -50%) rotate(2deg); /* Adjusted translate Y to center better */
+    z-index: 10;
+  }
+
+  .hero__background {
+    position: absolute;
+    inset: 145px;
+    top: 27%;
+    width: auto;
+    height: auto;
+    z-index: 1;
+    border-radius: var(--radius-sm);
+    background-color: #000;
+    overflow: hidden;
+  }
+
+  .hero__image {
+    object-fit: cover;
+  }
+
+  .hero__spray-cursor {
+    position: absolute;
+    inset: 145px;
+    width: auto;
+    height: auto;
+    min-width: auto;
+    z-index: 2;
+
+    mask-image: radial-gradient(ellipse at center, black 60%, transparent 98%);
+  }
+
+  .hero__frame {
+    display: block;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    z-index: 3; /* Top */
+    pointer-events: none; /* Let clicks pass through to spray */
   }
 }

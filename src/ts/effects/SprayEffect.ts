@@ -24,6 +24,8 @@ export class SprayEffect {
   private drips: Drip[] = [];
   private sprayTime = 0;
   private hasDrawn = false;
+  private resizeObserver: ResizeObserver | null = null;
+  private cachedRotation: number | null = null;
 
   private config = {
     sprayRadius: 5,
@@ -34,8 +36,8 @@ export class SprayEffect {
     mobileOffsetX: -40,
     mobileOffsetY: -20,
     dripChance: 0.01,
-    dripSpeedMin: 0.2,
-    dripSpeedMax: 0.5,
+    dripSpeedMin: 0.1,
+    dripSpeedMax: 0.3,
     dripMaxLength: 30,
   };
 
@@ -56,16 +58,16 @@ export class SprayEffect {
     }
 
     this.clearHint = this.createClearHint();
-    const heroElement = this.container.closest('.hero');
-    if (heroElement) {
-      heroElement.appendChild(this.clearHint);
+    const visualsElement = this.container.closest('.hero__visuals');
+    if (visualsElement) {
+      visualsElement.appendChild(this.clearHint);
     } else {
       this.container.appendChild(this.clearHint);
     }
 
     this.setupEvents();
-    this.handleResize();
-    window.addEventListener('resize', this.handleResize.bind(this));
+    this.setupResizeObserver();
+    this.cachedRotation = this.calculateContainerRotation();
     this.startDripAnimation();
   }
 
@@ -79,7 +81,7 @@ export class SprayEffect {
     this.container.removeEventListener('touchend', this.handleTouchEnd.bind(this));
     this.container.removeEventListener('touchmove', this.handleTouchMove.bind(this));
 
-    window.removeEventListener('resize', this.handleResize.bind(this));
+    this.resizeObserver?.disconnect();
     this.stopSpray();
     this.stopDripAnimation();
     this.canvas.remove();
@@ -171,10 +173,17 @@ export class SprayEffect {
     this.container.addEventListener('touchmove', this.handleTouchMove.bind(this), { passive: false });
   }
 
+  private setupResizeObserver(): void {
+    this.resizeObserver = new ResizeObserver(() => {
+      this.handleResize();
+    });
+    this.resizeObserver.observe(this.container);
+  }
+
   private handleResize(): void {
-    const rect = this.container.getBoundingClientRect();
-    this.canvas.width = rect.width;
-    this.canvas.height = rect.height;
+    // Use clientWidth/Height instead of getBoundingClientRect to get unrotated dimensions
+    this.canvas.width = this.container.clientWidth;
+    this.canvas.height = this.container.clientHeight;
   }
 
   private getRandomColor(): string {
@@ -236,12 +245,20 @@ export class SprayEffect {
   }
 
   private updateDrips(): void {
+    const rotation = this.cachedRotation ?? 0; // Use cached value
+
     for (let i = this.drips.length - 1; i >= 0; i--) {
       const drip = this.drips[i];
 
       if (drip.length < drip.maxLength && drip.speed > 0.05) {
+        const originX = drip.x;
+        const originY = drip.y;
+
+        const dx = Math.sin(rotation) * drip.length;
+        const dy = Math.cos(rotation) * drip.length;
+
         this.ctx.beginPath();
-        this.ctx.arc(drip.x, drip.y + drip.length, drip.size, 0, Math.PI * 2);
+        this.ctx.arc(originX + dx, originY + dy, drip.size, 0, Math.PI * 2);
         this.ctx.fillStyle = drip.color;
         this.ctx.globalAlpha = 0.6;
         this.ctx.fill();
@@ -395,7 +412,7 @@ export class SprayEffect {
     e.preventDefault();
 
     const now = Date.now();
-    if (now - this.lastTapTime < 300) {
+    if (now - this.lastTapTime < 200) {
       this.clearCanvas();
       this.lastTapTime = 0;
       return;
@@ -411,6 +428,10 @@ export class SprayEffect {
   private handleTouchEnd(): void {
     this.stopSpray();
     this.hideMobileCursor();
+    const holdDuration = Date.now() - this.lastTapTime;
+    if (holdDuration > 200) {
+      this.lastTapTime = 0;
+    }
   }
 
   private handleTouchMove(e: TouchEvent): void {
@@ -431,5 +452,27 @@ export class SprayEffect {
       this.mouseX = x + this.config.mobileOffsetX;
       this.mouseY = y + this.config.mobileOffsetY;
     }
+  }
+
+  private calculateContainerRotation(): number {
+    let element = this.container;
+    let style = window.getComputedStyle(element);
+    let transform = style.transform;
+
+    if (transform === 'none' && element.parentElement) {
+      element = element.parentElement;
+      style = window.getComputedStyle(element);
+      transform = style.transform;
+    }
+
+    if (transform === 'none' || !transform) return 0;
+
+    const values = transform.split('(')[1].split(')')[0].split(',');
+    const a = parseFloat(values[0]);
+    const b = parseFloat(values[1]);
+    const angle = Math.atan2(b, a);
+
+
+    return angle;
   }
 }

@@ -103,14 +103,14 @@ export class ParallaxEffect {
       let moveY = 0;
 
       if (layer.classList.contains('layer-bg')) {
-        moveX = -x * 30;
-        moveY = -y * 20;
+        moveX = -x * 40;
+        moveY = -y * 30;
       } else if (layer.classList.contains('layer-mid')) {
-        moveX = x * 10;
-        moveY = y * 10;
+        moveX = x * 20;
+        moveY = y * 20;
       } else if (layer.classList.contains('layer-front')) {
-        moveX = x * 25;
-        moveY = y * 15;
+        moveX = x * 60;
+        moveY = y * 40;
       }
 
       gsap.to(layer, {

@@ -1,10 +1,8 @@
 .experience {
   color: var(--color-text-dark);
   min-height: auto;
-  padding: var(--space-12) var(--space-12);
+  padding-block: var(--space-32);
   width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
 }
 
 .experience__header {
@@ -13,7 +11,6 @@
 
 .experience__title {
   font-size: clamp(2.5rem, 8vw, 4rem);
-  line-height: var(--leading-tight);
   letter-spacing: var(--tracking-tight);
   color: var(--color-text-dark);
   margin-bottom: var(--space-8);
@@ -38,6 +35,13 @@
   .slideshow-stack {
     aspect-ratio: 16/9;
     min-height: 500px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .slideshow-stack {
+    aspect-ratio: 21/9;
+    max-height: 600px;
   }
 }
 
@@ -243,7 +247,7 @@
   left: 50%;
   transform: translate(-50%, 50%);
   text-align: start;
-  font-size: 2rem;
+  font-size: 3rem;
   width: 100%;
   padding: 30px;
 }
@@ -254,8 +258,9 @@
   }
   .slideshow-stack__panel.is-active .experience__role-title {
     font-size: 4rem;
-    bottom: 50%;
+    top: 5%;
     transform: translate(-50%, 50%);
+    padding: 0 30px;
   }
 }
 
@@ -303,6 +308,39 @@
     grid-template-rows: 100%;
     transition-property: grid-template-columns;
   }
+}
+
+@media (min-width: 1024px) {
+  .slideshow-stack__panel:not(.is-active) .experience__role-title {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    bottom: 90%;
+    left: 30%;
+    width: max-content;
+    font-size: 2.25rem;
+    white-space: nowrap;
+    padding: 0;
+  }
+
+  .slideshow-stack__panel .experience__action {
+    position: absolute;
+    top: var(--space-8);
+    right: var(--space-8);
+    bottom: auto;
+  }
+
+  .slideshow-stack__panel .experience__cta {
+    padding: var(--space-4) var(--space-8);
+    font-size: var(--text-base);
+  }
+
+  .slideshow-stack__panel .experience__meta-row {
+    font-size: 1.5rem;
+    gap: var(--space-2);
+    margin-bottom: var(--space-4);
+  }
+
+  /* Ensure active state keeps standard styling if needed, though :not(.is-active) protects it */
 }
 
 .experience-modal {

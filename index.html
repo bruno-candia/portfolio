@@ -39,45 +39,49 @@
           </button>
         </header>
 
-        <div class="hero__content ">
+        <div class="hero__content container">
+          <div class="hero__left">
+            <div class="hero__title">
+              <span class="hero__tag">Hey :D I'm</span>
+              <h1 class="hero__name">
+                Bruno<br />Candia
+              </h1>
+            </div>
 
-          <div class="hero__title">
-            <span class="hero__tag">Hey :D I'm</span>
-            <h1 class="hero__name">
-              Bruno<br />Candia
-            </h1>
+            <p class="hero__tagline">
+              <span class="hero__tagline-text">Engineering <br />solutions for scale</span><br />
+            </p>
           </div>
 
+          <div class="hero__right">
+            <p class="hero__description">
+              I leverage 7 years of experience to build
+              resilient digital platforms using React,
+              Node.js, and Java. From micro-frontends to clean architecture, I drive
+              technical excellence that optimizes performance and empowers business
+              growth.
+            </p>
 
-
-          <p class="hero__tagline">
-            <span class="hero__tagline-text">Engineering <br />solutions for scale</span><br />
-          </p>
-
-          <p class="hero__description">
-            I leverage 7 years of experience to build
-            resilient digital platforms using React,
-            Node.js, and Java. From micro-frontends to clean architecture, I drive
-            technical excellence that optimizes performance and empowers business
-            growth.
-          </p>
-
-          <a href="/assets/documents/resume.pdf" class="hero__cta" download>
-            Download my CV
-          </a>
+            <a href="/assets/documents/resume.pdf" class="hero__cta" download>
+              Download my CV
+            </a>
+          </div>
         </div>
 
 
-
-        <div class="hero__spray-cursor"></div>
-
-        <div class="hero__background">
-          <img src="/assets/images/me-hero.png" alt="Bruno Candia" class="hero__image" />
+        <div class="container">
+          <div class="hero__visuals">
+            <div class="hero__spray-cursor"></div>
+            <img src="/assets/images/picture-frame.png" alt="" class="hero__frame" />
+            <div class="hero__background">
+              <img src="/assets/images/me-hero.png" alt="Bruno Candia" class="hero__image" />
+            </div>
+          </div>
         </div>
       </section>
 
       <div class="content-surface">
-        <section class="skills" id="skills">
+        <section class="skills container" id="skills">
           <div class="skills__scroll-indicator">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M12 5V19M12 19L5 12M12 19L19 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -155,7 +159,7 @@
           </div>
         </section>
 
-        <section class="experience" id="experience">
+        <section class="experience container" id="experience">
           <header class="experience__header">
             <h2 class="experience__title">Experience</h2>
             <p class="experience__description">
@@ -174,37 +178,35 @@
         </section>
       </div>
 
-      <section class="boxing-hero">
-        <img src="/assets/images/boxe-gloves.png" alt="" class="boxing-hero__image" />
-      </section>
-
       <section class="education" id="education">
-        <header class="education__header">
-          <h2 class="education__title">Education</h2>
-          <p class="education__description">
-            Below are some of the academic degrees and courses I have completed, each contributing significantly to my
-            training and growth in the technology field.
-          </p>
-        </header>
+        <div class="education__inner container">
+          <header class="education__header">
+            <h2 class="education__title">Education</h2>
+            <p class="education__description">
+              Below are some of the academic degrees and courses I have completed, each contributing significantly to my
+              training and growth in the technology field.
+            </p>
+          </header>
 
-        <div class="education__content">
-          <h3 class="education__degree-title">
-            Control and<br />
-            Automation<br />
-            Engineering
-          </h3>
-          <div class="education__institution">
-            made at <span class="education__institution-name">INATEL</span>
-          </div>
-          <div class="education__date">
-            Jan 2017 - Jul 2022
+          <div class="education__content">
+            <h3 class="education__degree-title">
+              Control and<br />
+              Automation<br />
+              Engineering
+            </h3>
+            <div class="education__institution">
+              made at <span class="education__institution-name">INATEL</span>
+            </div>
+            <div class="education__date">
+              Jan 2017 - Jul 2022
+            </div>
           </div>
         </div>
       </section>
     </main>
 
     <footer class="footer" id="contact">
-      <div class="footer__container">
+      <div class="footer__container container">
         <div class="footer__grid">
           <div class="footer__column footer__logo-col">
             <span class="footer__logo">BC</span>
@@ -230,10 +232,10 @@
               class="footer__link">GitHub</a>
           </div>
         </div>
+      </div>
 
-        <div class="footer__copyright">
-          Bruno Candia Copyright © 2026 All Rights Reserved.
-        </div>
+      <div class="footer__copyright">
+        Bruno Candia Copyright © 2026 All Rights Reserved.
       </div>
     </footer>
 

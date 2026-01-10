@@ -9,7 +9,7 @@
 @import "./components/_hero.css";
 @import "./components/_skills.css";
 @import "./components/_experience.css";
-@import "./components/_boxing.css";
+
 @import "./components/_education.css";
 @import "./components/_footer.css";
 
@@ -50,7 +50,6 @@ h5,
 h6 {
   font-family: var(--font-street);
   font-weight: var(--font-regular);
-  line-height: var(--leading-tight);
   letter-spacing: var(--tracking-wide);
 }
 
