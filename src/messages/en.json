@@ -9,5 +9,11 @@
   },
   "Header": {
     "title": "Portfolio"
+  },
+  "Hero": {
+    "greeting": "Hi! I'm Bruno",
+    "role": "Full-stack Developer",
+    "description": "UI & UX Designer.",
+    "scrollDown": "scroll down"
   }
 }
