@@ -1,0 +1,20 @@
+@import 'tailwindcss';
+@import './styles/_reset.css';
+@import './styles/_variables.css';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+html,
+body {
+  font-family: var(--font-cabinet-grotesk), Arial, Helvetica, sans-serif;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}

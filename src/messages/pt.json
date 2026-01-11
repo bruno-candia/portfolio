@@ -1,0 +1,13 @@
+{
+  "Sidebar": {
+    "portuguese": "Português",
+    "english": "Inglês",
+    "home": "Início",
+    "profile": "Perfil",
+    "settings": "Configurações",
+    "logout": "Sair"
+  },
+  "Header": {
+    "title": "Portfólio"
+  }
+}
