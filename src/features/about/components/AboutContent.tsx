@@ -1,5 +1,6 @@
 import { Button } from '@/components/atoms/button';
 import { useAboutViewModel } from '../hooks/useAboutViewModel';
+import Link from 'next/link';
 
 export function AboutContent() {
   const { title, description, buttonLabel } = useAboutViewModel();
@@ -13,8 +14,8 @@ export function AboutContent() {
         {description}
       </p>
 
-      <Button variant="about" size="lg">
-        {buttonLabel}
+      <Button size="lg">
+        <Link href="/about">{buttonLabel}</Link>
       </Button>
     </div>
   );

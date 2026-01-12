@@ -2,6 +2,7 @@ import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import { works } from './data/works';
 import { WorkCard } from './components/WorkCard';
+import { Button } from '@/components/atoms/button';
 
 export function Works() {
   const t = useTranslations('Works');
@@ -25,13 +26,10 @@ export function Works() {
           ))}
         </div>
 
-        <div className="flex justify-center mt-12">
-          <Link
-            href="/works"
-            className="px-8 py-3 border border-white text-white font-medium rounded-full hover:bg-white hover:text-black transition-colors duration-300"
-          >
-            {t('button')}
-          </Link>
+        <div className="flex justify-center pt-16">
+          <Button size="lg" asChild>
+            <Link href="/works">{t('button')}</Link>
+          </Button>
         </div>
       </div>
     </section>
