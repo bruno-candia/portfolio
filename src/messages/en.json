@@ -13,12 +13,11 @@
   "Hero": {
     "greeting": "Hi! I'm Bruno",
     "role": "Full-stack Developer",
-    "description": "UI & UX Designer.",
-    "scrollDown": "scroll down"
+    "description": "UI & UX Designer."
   },
   "About": {
-    "title": "I'm Bruno - a Full Stack Developer crafting fast, scalable, and immersive digital experiences that merge creativity with engineering precision.",
-    "description": "I specialize in developing SaaS platforms, AI-driven products, and interactive 3D web experiences using technologies like Next.js, Node.js, and Three.js.",
+    "title": "Hey, I'm Bruno. I've been building scalable software for over 7 years.",
+    "description": "I'm a Full Stack engineer working with React, Node.js, and Java. My focus is on writing clean code and solving real problems—whether that's optimizing application performance or architecting new features. Beyond the tech, I'm passionate about mentorship and creating a collaborative environment where everyone can learn.",
     "button": "About Me",
     "scrollToExplore": "Scroll to Explore",
     "shortStory": "My Short Story"
@@ -34,7 +33,7 @@
     }
   },
   "Experience": {
-    "title": "Explore my journey and the technologies that define my craft.",
+    "title": "Explore my journey",
     "experiences": {
       "bees-tech-lead": {
         "role": "Tech Lead",
@@ -357,5 +356,17 @@
         }
       }
     }
+  },
+  "Footer": {
+    "nav": {
+      "services": "Services",
+      "projects": "Projects",
+      "profile": "Profile",
+      "reviews": "Reviews",
+      "contact": "Contact"
+    },
+    "madeBy": "Made by Bruno Costa",
+    "builtIn": "Built in Next.js",
+    "copyright": "© 2026 Bruno Costa"
   }
 }

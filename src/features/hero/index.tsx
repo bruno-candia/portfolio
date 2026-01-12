@@ -2,7 +2,6 @@
 
 import { HeroContent } from './components/HeroContent';
 import { HeroSocials } from './components/HeroSocials';
-import { ScrollIndicator } from './components/ScrollIndicator';
 
 export function Hero() {
   return (
@@ -14,7 +13,6 @@ export function Hero() {
         <HeroContent />
       </div>
       <HeroSocials />
-      <ScrollIndicator />
     </section>
   );
 }
