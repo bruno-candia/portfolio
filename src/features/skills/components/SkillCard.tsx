@@ -43,7 +43,7 @@ export function SkillCard({
   return (
     <div
       className={cn(
-        'flex flex-col justify-center gap-4 p-8 lg:px-0 lg:pt-24 lg:pb-8 lg:min-h-screen lg:justify-start transition-opacity duration-500',
+        'flex flex-col justify-center gap-4 p-6 lg:px-0 lg:pt-24 lg:pb-8 lg:min-h-screen lg:justify-start transition-opacity duration-500',
         isActive ? 'opacity-100' : 'opacity-50'
       )}
     >

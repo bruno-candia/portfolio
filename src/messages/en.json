@@ -33,6 +33,31 @@
       "project-4": { "name": "Project Four" }
     }
   },
+  "Experience": {
+    "title": "Explore my journey and the technologies that define my craft.",
+    "experiences": {
+      "bees-tech-lead": {
+        "role": "Tech Lead",
+        "description": "Leading global platforms standardization (Grow, Force, Control Tower). Architected BFFs with NestJS/Clean Arch, defined MVVM patterns, and scaled the ecosystem with 10+ MFEs using Single-SPA & Module Federation across 22 countries."
+      },
+      "bees-senior": {
+        "role": "Senior Software Engineer",
+        "description": "Boosted sales interactions by engineering the Auto Dialer with React & WebSockets. Led the migration to Micro-frontends (Azure/Kubernetes), cutting deployment time from >1h to minutes and reducing maintenance costs by 50%."
+      },
+      "aurem": {
+        "role": "Founder & Software Engineer",
+        "description": "Founded an inclusive real-time captioning startup (Santander Prize Winner). Built a low-latency speech-to-text engine with Web Speech API and WebSockets, serving 1,000+ students and scaling via AWS/Docker."
+      },
+      "verzel": {
+        "role": "UX Designer",
+        "description": "Bridged design and engineering for Web3/Mobility projects. Designed developer-friendly Figma interfaces with Auto Layout and created Design Systems to streamline handoff and ensure accurate React implementation."
+      },
+      "neoenergia": {
+        "role": "Software Developer Intern",
+        "description": "Digitized internal workflows by building custom React/TypeScript dashboards. Created a shared UI Component Library adopted by multiple squads and maintained Node.js/SQL backends for data visualization."
+      }
+    }
+  },
   "Skills": {
     "title": "Transforming ideas into exceptional digital experiences through expertise and innovation",
     "learning": "learning",
