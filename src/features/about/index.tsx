@@ -8,8 +8,9 @@ export const About = () => {
     <section
       id="about"
       className={cn(
-        'relative w-full min-h-screen bg-zinc-950 flex flex-col justify-center items-center overflow-hidden'
+        'relative w-full bg-zinc-950 flex flex-col justify-center items-center overflow-hidden'
       )}
+      style={{ minHeight: '100dvh' }}
     >
       <div className="absolute inset-0 w-full h-full pointer-events-none">
         <div className="absolute left-4 md:left-20 top-0 w-px h-full bg-neutral-800" />

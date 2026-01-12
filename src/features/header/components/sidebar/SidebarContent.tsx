@@ -9,7 +9,10 @@ export function Content() {
   const { menuItems, languages, locale, pathname } = useSidebarViewModel();
 
   return (
-    <aside className="fixed top-0 left-0 z-40 h-screen w-full -translate-y-full bg-black shadow-lg transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] peer-checked:translate-y-0">
+    <aside
+      className="fixed top-0 left-0 z-40 w-full -translate-y-full bg-black shadow-lg transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] peer-checked:translate-y-0"
+      style={{ height: '100dvh' }}
+    >
       <div className="sticky top-0 left-0 grid items-center justify-between z-2 grid-cols-8 border-b p-4">
         <Logo className="col-span-6" />
         <label
