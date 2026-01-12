@@ -23,6 +23,16 @@
     "scrollToExplore": "Role para Explorar",
     "shortStory": "Minha Breve História"
   },
+  "Works": {
+    "title": "Descubra meus trabalhos mais recentes e soluções criativas que dão vida às ideias",
+    "button": "Todos os Projetos",
+    "projects": {
+      "project-1": { "name": "Projeto Um" },
+      "project-2": { "name": "Projeto Dois" },
+      "project-3": { "name": "Projeto Três" },
+      "project-4": { "name": "Projeto Quatro" }
+    }
+  },
   "Skills": {
     "title": "Transformando ideias em experiências digitais excepcionais por meio de conhecimento especializado e inovação",
     "learning": "estudando",

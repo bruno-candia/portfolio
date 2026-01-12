@@ -23,6 +23,16 @@
     "scrollToExplore": "Scroll to Explore",
     "shortStory": "My Short Story"
   },
+  "Works": {
+    "title": "Discover my latest work and creative solutions that bring ideas to life",
+    "button": "All Projects",
+    "projects": {
+      "project-1": { "name": "Project One" },
+      "project-2": { "name": "Project Two" },
+      "project-3": { "name": "Project Three" },
+      "project-4": { "name": "Project Four" }
+    }
+  },
   "Skills": {
     "title": "Transforming ideas into exceptional digital experiences through expertise and innovation",
     "learning": "learning",
