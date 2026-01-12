@@ -1,4 +1,3 @@
-import { Minus } from 'lucide-react';
 import { useHeroViewModel } from '../hooks/useHeroViewModel';
 
 export function ScrollIndicator() {

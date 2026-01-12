@@ -15,5 +15,12 @@
     "role": "Desenvolvedor Full-stack",
     "description": "UI & UX Designer.",
     "scrollDown": "role para baixo"
+  },
+  "About": {
+    "title": "Sou Bruno – um Desenvolvedor Full Stack criando experiências digitais rápidas, escaláveis e imersivas que unem criatividade e precisão de engenharia.",
+    "description": "Especialista no desenvolvimento de plataformas SaaS, produtos baseados em IA e experiências web 3D interativas usando tecnologias como Next.js, Node.js e Three.js.",
+    "button": "Sobre Mim",
+    "scrollToExplore": "Role para Explorar",
+    "shortStory": "Minha Breve História"
   }
 }

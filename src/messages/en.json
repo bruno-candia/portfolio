@@ -15,5 +15,12 @@
     "role": "Full-stack Developer",
     "description": "UI & UX Designer.",
     "scrollDown": "scroll down"
+  },
+  "About": {
+    "title": "I'm Bruno - a Full Stack Developer crafting fast, scalable, and immersive digital experiences that merge creativity with engineering precision.",
+    "description": "I specialize in developing SaaS platforms, AI-driven products, and interactive 3D web experiences using technologies like Next.js, Node.js, and Three.js.",
+    "button": "About Me",
+    "scrollToExplore": "Scroll to Explore",
+    "shortStory": "My Short Story"
   }
 }
