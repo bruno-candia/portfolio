@@ -55,7 +55,7 @@ export function useSkillsScrollAnimation({
   }, [categories, containerRef]);
 
   const handleTechClick = useCallback((tech: TechStack) => {
-    setSelectedTech((prev) => (prev?.id === tech.id ? null : tech));
+    setSelectedTech(tech);
   }, []);
 
   const activeCategoryData = categories.find((c) => c.id === activeCategory);
