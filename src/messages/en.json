@@ -22,5 +22,304 @@
     "button": "About Me",
     "scrollToExplore": "Scroll to Explore",
     "shortStory": "My Short Story"
+  },
+  "Skills": {
+    "title": "Transforming ideas into exceptional digital experiences through expertise and innovation",
+    "categories": {
+      "frontend": {
+        "title": "frontend",
+        "description": "Development of modern and responsive web interfaces. Experience with SPAs, SSR, complex state management, automated testing, and API integration.",
+        "stacks": {
+          "javascript": {
+            "name": "javascript",
+            "description": "Essential language for web development. Used to create interactivity, manipulate the DOM, and build complete applications on both frontend and backend."
+          },
+          "typescript": {
+            "name": "typescript",
+            "description": "JavaScript superset adding static typing. Improves code quality, facilitates refactoring, and prevents errors during development."
+          },
+          "react": {
+            "name": "react",
+            "description": "Library for building interfaces. Uses reusable components, virtual DOM, hooks for state and lifecycle. Ideal for SPAs and complex applications."
+          },
+          "nextjs": {
+            "name": "nextjs",
+            "description": "React framework with hybrid rendering (SSR, SSG, ISR). Image optimization, code splitting, file-system based routing, and better SEO."
+          },
+          "angular": {
+            "name": "angular",
+            "description": "Complete TypeScript framework for enterprise applications. Includes dependency injection, RxJS for reactive programming, and robust CLI."
+          },
+          "redux": {
+            "name": "redux",
+            "description": "Global state management library. Implements Flux pattern with centralized store, actions, and reducers for applications with complex state."
+          },
+          "react-query": {
+            "name": "react-query",
+            "description": "Server state management. Intelligent caching, automatic synchronization, background refetching. Simplifies data fetching and reduces boilerplate."
+          },
+          "html": {
+            "name": "html",
+            "description": "Markup language for web content structuring. Semantic tags improve accessibility and SEO. Fundamental base for any web application."
+          },
+          "css": {
+            "name": "css",
+            "description": "Styling language for visual page control. Mastery of Flexbox and Grid for responsive layouts, animations, and modern techniques."
+          },
+          "tailwind": {
+            "name": "tailwind",
+            "description": "Utility-first CSS framework speeding up development. Pre-defined classes, consistent design system, and automatic purging of unused CSS."
+          },
+          "sass": {
+            "name": "sass",
+            "description": "CSS preprocessor with variables, nesting, mixins, and functions. Organizes styles loosely and facilitates maintenance in large projects."
+          },
+          "styled-components": {
+            "name": "styled-components",
+            "description": "CSS-in-JS library for React. Scoped styles per component, dynamic theme support, and TypeScript. Eliminates class name conflicts."
+          },
+          "vite": {
+            "name": "vite",
+            "description": "Modern ESM-based build tool. Instant HMR, optimized build with Rollup, and native TypeScript support. Replaces Webpack for superior speed."
+          },
+          "axios": {
+            "name": "axios",
+            "description": "Promise-based HTTP client. Offers interceptors, request cancellation, automatic JSON transformation, and structured error handling."
+          },
+          "figma": {
+            "name": "figma",
+            "description": "Collaborative interface design tool. Creation of interactive prototypes, design systems, and reusable components."
+          },
+          "storybook": {
+            "name": "storybook",
+            "description": "Development and documentation of isolated UI components. Tests components in different states and creates living style guides."
+          },
+          "jest": {
+            "name": "jest",
+            "description": "Complete JavaScript testing framework. Assertions, mocks, spies, coverage, and snapshot testing. For unit and integration tests."
+          },
+          "vitest": {
+            "name": "vitest",
+            "description": "Ultra-fast testing framework compatible with Jest. Integrated with Vite, parallel execution, HMR for tests, and zero config."
+          },
+          "testing-library": {
+            "name": "testing-library",
+            "description": "Testing focused on user behavior. Tests components as users interact, promotes accessibility, and avoids implementation dependence."
+          },
+          "cypress": {
+            "name": "cypress",
+            "description": "End-to-end testing framework in real browser. Time-travel debugging, automatic screenshots, and intuitive API. Tests complete application flows."
+          },
+          "msw": {
+            "name": "msw",
+            "description": "Mock Service Worker for intercepting network requests. Simulates APIs during development and tests without modifying code. Works in browser and Node.js."
+          },
+          "eslint": {
+            "name": "eslint",
+            "description": "Static code analysis for JavaScript/TypeScript. Identifies problems, enforces standards, prevents bugs, and maintains consistency. Integrates with editors and CI/CD."
+          },
+          "electron": {
+            "name": "electron",
+            "description": "Framework for cross-platform desktop applications using web technologies. Combines Chromium and Node.js, access to native OS APIs."
+          }
+        }
+      },
+      "backend": {
+        "title": "backend",
+        "description": "Development of scalable APIs and microservices. Experience with RESTful architecture, authentication, databases, and integration tests.",
+        "stacks": {
+          "nodejs": {
+            "name": "nodejs",
+            "description": "JavaScript server-side runtime on V8. Asynchronous and non-blocking execution, ideal for RESTful APIs, microservices, and high concurrency services."
+          },
+          "java": {
+            "name": "java",
+            "description": "Object-oriented language for enterprise systems. Used in corporate applications, Spring Boot microservices, and systems requiring performance."
+          },
+          "nestjs": {
+            "name": "nestjs",
+            "description": "Progressive Node.js framework inspired by Angular. Modular architecture with dependency injection and TypeScript decorators. Ideal for scalable APIs."
+          },
+          "express": {
+            "name": "express",
+            "description": "Minimalist and flexible web framework for Node.js. Robust routing system, customizable middlewares. Base for fast and performant REST APIs."
+          },
+          "prisma": {
+            "name": "prisma",
+            "description": "Next-gen type-safe ORM with declarative schema. Automatic migrations, typed client preventing errors, and Prisma Studio for data visualization."
+          },
+          "postgresql": {
+            "name": "postgresql",
+            "description": "Advanced open-source relational database. Support for JSON, full-text search, ACID transactions, and complex indexes. Ideal for data integrity."
+          },
+          "mysql": {
+            "name": "mysql",
+            "description": "Popular relational database management system. Optimized performance for reading, master-slave replication. Ideal for high-traffic web applications."
+          },
+          "sql-server": {
+            "name": "sql-server",
+            "description": "Microsoft relational database for enterprise environments. Integration with Azure, advanced analytics, high availability, and integrated BI tools."
+          },
+          "mongodb": {
+            "name": "mongodb",
+            "description": "Document-oriented NoSQL database. Flexible schema with JSON/BSON, horizontal scalability. Ideal for unstructured data and rapid iteration."
+          },
+          "rest-api": {
+            "name": "rest-api",
+            "description": "Architectural style for web APIs using HTTP. Design of RESTful endpoints, correct use of HTTP verbs, status codes, and versioning."
+          },
+          "jwt": {
+            "name": "jwt",
+            "description": "Standard for stateless authentication based on tokens. Encodes user claims in signed token, distributed authentication without server session."
+          },
+          "oauth2": {
+            "name": "oauth2",
+            "description": "Authorization framework for secure access delegation. Implementation of flows, integration with external providers (Google, GitHub), and resource protection."
+          },
+          "swagger": {
+            "name": "swagger",
+            "description": "Tool for documentation and design of REST APIs. OpenAPI specification, automatic generation of interactive documentation, and contract validation."
+          },
+          "jest": {
+            "name": "jest",
+            "description": "Testing framework for Node.js services. Unit tests of controllers and services, dependency mocking, integration tests, and coverage reports."
+          },
+          "wiremock": {
+            "name": "wiremock",
+            "description": "Mock HTTP server to simulate external APIs. Response stubbing, request matching, and simulation of delays and failures. Essential for integration tests."
+          },
+          "robot-framework": {
+            "name": "robot-framework",
+            "description": "Generic test automation framework based on keywords. Readable syntax, extensible libraries, acceptance testing, and detailed HTML reports."
+          }
+        }
+      },
+      "mobile": {
+        "title": "mobile",
+        "description": "Development of cross-platform mobile applications with React Native. Experience in iOS and Android apps with navigation, native APIs, and optimization.",
+        "stacks": {
+          "react-native": {
+            "name": "react-native",
+            "description": "Framework for cross-platform native mobile development. JavaScript code renders native components, device API access, and hot reload."
+          },
+          "expo": {
+            "name": "expo",
+            "description": "Platform and tools for React Native. Development without Xcode/Android Studio, over-the-air updates, pre-configured native libraries, and cloud build."
+          },
+          "react-navigation": {
+            "name": "react-navigation",
+            "description": "Navigation library for React Native. Stack navigator, tab navigation, drawer, deep linking, and custom transitions. Industry standard for mobile routing."
+          },
+          "styled-components": {
+            "name": "styled-components",
+            "description": "CSS-in-JS styling adapted for React Native. Dynamic themes, prop-based styles, and maintenance of styles co-located with components."
+          },
+          "ios": {
+            "name": "ios",
+            "description": "Development and publication of apps for Apple ecosystem. Provisioning profiles configuration, App Store Connect, and iOS interface guidelines."
+          },
+          "android": {
+            "name": "android",
+            "description": "Development and publication of Android apps. Gradle configuration, signed APK/AAB generation, Google Play Console, and optimization for different screen sizes."
+          },
+          "jest": {
+            "name": "jest",
+            "description": "Unit and integration testing for React Native. Native module mocking, component snapshot testing, and business logic/hooks testing."
+          }
+        }
+      },
+      "arquitetura": {
+        "title": "arquitetura",
+        "description": "Design of scalable and maintainable systems. Experience in architectural patterns, micro-frontends, DDD, and modularization strategies for complex applications.",
+        "stacks": {
+          "clean-architecture": {
+            "name": "clean-architecture",
+            "description": "Architecture in independent layers (Entities, Use Cases, Adapters). Decoupling of business rules from infrastructure, testability, and maintainability."
+          },
+          "ddd": {
+            "name": "ddd",
+            "description": "Domain-Driven Design for complex system modeling. Ubiquitous language, bounded contexts, aggregates, and domain events. Alignment between code and domain."
+          },
+          "micro-frontends": {
+            "name": "micro-frontends",
+            "description": "Architecture dividing frontend application into independent modules. Autonomous teams, independent deploy, and heterogeneous technologies."
+          },
+          "module-federation": {
+            "name": "module-federation",
+            "description": "Webpack 5 technique for dynamic code sharing. Remote module loading, independent versioning, and advanced code splitting."
+          },
+          "monorepo": {
+            "name": "monorepo",
+            "description": "Strategy of organizing multiple projects in a single repository. Tools like Nx and Turborepo, code sharing, and unified versioning."
+          },
+          "design-patterns": {
+            "name": "design-patterns",
+            "description": "Reusable solutions to common design problems. Creational (Factory), structural (Adapter), and behavioral (Observer, Strategy) patterns."
+          },
+          "performance": {
+            "name": "performance",
+            "description": "Optimization of Core Web Vitals metrics (LCP, FID, CLS). Code splitting, lazy loading, image optimization, cache strategies, and Web Workers."
+          },
+          "mvvm": {
+            "name": "mvvm",
+            "description": "Model-View-ViewModel for separation of concerns. Separation between logic (ViewModel), interface (View), and data (Model). Bidirectional binding."
+          }
+        }
+      },
+      "devops": {
+        "title": "devops",
+        "description": "Process automation, containerization, CI/CD, and cloud computing. Experience with automated pipelines, infrastructure as code, and multi-platform deployment.",
+        "stacks": {
+          "git": {
+            "name": "git",
+            "description": "Distributed version control system. Git Flow for branch management, conventional commits, interactive rebase, and conflict resolution."
+          },
+          "github-actions": {
+            "name": "github-actions",
+            "description": "CI/CD platform integrated with GitHub. Automated workflows with YAML, matrix builds, dependency caching, and automatic deploy."
+          },
+          "azure-pipelines": {
+            "name": "azure-pipelines",
+            "description": "Azure DevOps CI/CD service. YAML or classic pipelines, multi-stage deployments, manual approvals, and integration with Azure services."
+          },
+          "docker": {
+            "name": "docker",
+            "description": "Application containerization platform. Creation of lightweight images, multi-stage Dockerfile, Docker Compose for local environments, and process isolation."
+          },
+          "kubernetes": {
+            "name": "kubernetes",
+            "description": "Container orchestration system in production. Deployments, services, ingress, auto-scaling, self-healing, and rolling updates via Helm charts."
+          },
+          "terraform": {
+            "name": "terraform",
+            "description": "Declarative Infrastructure as Code tool. Multi-cloud provisioning with HCL, state management, reusable modules, and secure plan/apply."
+          },
+          "aws": {
+            "name": "aws",
+            "description": "Amazon cloud computing platform. Services like EC2, S3, Lambda, RDS, CloudFront, and API Gateway. Scalable and serverless application deployment."
+          },
+          "azure": {
+            "name": "azure",
+            "description": "Microsoft cloud computing platform. App Service, Functions, Blob Storage, SQL Database, CDN, and DevOps. Integration with Microsoft ecosystem."
+          },
+          "vercel": {
+            "name": "vercel",
+            "description": "Deploy platform optimized for frontend and Next.js. Automatic deploy via Git, edge functions, preview deployments, global CDN, and analytics."
+          },
+          "firebase": {
+            "name": "firebase",
+            "description": "Google Backend-as-a-Service for rapid development. Firestore, Authentication, Cloud Functions, Hosting, and Storage. Ideal for MVPs and real-time apps."
+          },
+          "sonarqube": {
+            "name": "sonarqube",
+            "description": "Continuous code quality analysis platform. Bug detection, vulnerabilities, code smells, test coverage. Integration with CI/CD."
+          },
+          "ci-cd": {
+            "name": "ci-cd",
+            "description": "Continuous integration and delivery practices. Build, test, and deploy automation, rapid feedback, secure rollback, and deployment strategies (blue-green, rolling)."
+          }
+        }
+      }
+    }
   }
 }

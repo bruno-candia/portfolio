@@ -1,6 +1,6 @@
 import gsap from 'gsap';
 
-interface DeviceOrientationEventiOS extends DeviceOrientationEvent {
+interface DeviceOrientationEventIOS extends DeviceOrientationEvent {
   requestPermission?: () => Promise<'granted' | 'denied'>;
 }
 
@@ -20,12 +20,9 @@ export class ParallaxEffect {
   constructor(section: HTMLElement) {
     this.section = section;
     this.checkMobile();
-    // Use bind to ensure 'this' context is preserved when passing as callback
     this.onDeviceOrientationBinder = this.onDeviceOrientation.bind(this);
     this.onMouseMoveBinder = this.onMouseMove.bind(this);
 
-    // Only enable if we have layers, but we might set layers later.
-    // So we listen to resize to re-check mobile state.
     if (typeof window !== 'undefined') {
       window.addEventListener('resize', () => this.enable());
     }
@@ -33,7 +30,6 @@ export class ParallaxEffect {
 
   public setLayers(layers: NodeListOf<HTMLElement> | null) {
     this.layers = layers;
-    // Re-enable to ensure listeners are valid for the current layers/mode
     this.enable();
   }
 
@@ -44,7 +40,7 @@ export class ParallaxEffect {
         this.permissionGranted ||
         (typeof DeviceOrientationEvent !== 'undefined' &&
           typeof (
-            DeviceOrientationEvent as unknown as DeviceOrientationEventiOS
+            DeviceOrientationEvent as unknown as DeviceOrientationEventIOS
           ).requestPermission !== 'function')
       ) {
         this.enableMobile();
@@ -62,18 +58,17 @@ export class ParallaxEffect {
       this.onDeviceOrientationBinder
     );
     this.section.removeEventListener('mousemove', this.onMouseMoveBinder);
-    // Clean up other potential listeners if needed
   }
 
   public async requestMobilePermission(): Promise<boolean> {
     if (
       typeof DeviceOrientationEvent !== 'undefined' &&
-      typeof (DeviceOrientationEvent as unknown as DeviceOrientationEventiOS)
+      typeof (DeviceOrientationEvent as unknown as DeviceOrientationEventIOS)
         .requestPermission === 'function'
     ) {
       try {
         const state = await (
-          DeviceOrientationEvent as unknown as DeviceOrientationEventiOS
+          DeviceOrientationEvent as unknown as DeviceOrientationEventIOS
         ).requestPermission!();
         if (state === 'granted') {
           this.permissionGranted = true;
@@ -119,8 +114,8 @@ export class ParallaxEffect {
   private onMouseMove(e: MouseEvent) {
     if (this.isMobile || !this.layers) return;
 
-    const x = (e.clientX / window.innerWidth - 0.5) * 2; // -1 to 1
-    const y = (e.clientY / window.innerHeight - 0.5) * 2; // -1 to 1
+    const x = (e.clientX / window.innerWidth - 0.5) * 2;
+    const y = (e.clientY / window.innerHeight - 0.5) * 2;
 
     this.applyParallax(x, y);
   }
@@ -131,11 +126,9 @@ export class ParallaxEffect {
     let beta = e.beta || 0;
     const gamma = e.gamma || 0;
 
-    // Clamp values
     if (beta > 90) beta = 90;
     if (beta < -90) beta = -90;
 
-    // Normalize roughly to -1 to 1
     const yRaw = (beta - 45) / 45;
     const xRaw = gamma / 45;
 
@@ -152,15 +145,7 @@ export class ParallaxEffect {
       let moveX = 0;
       let moveY = 0;
 
-      // Custom multipliers for eye effect
-      // If we want the pupil to follow the mouse, we move it TOWARDS the mouse (positive x/y)
-      // The user provided code had custom logical classes.
-
       if (layer.classList.contains('layer-pupil')) {
-        // Pupil follows mouse.
-        // x and y are -1 to 1.
-        // We use specific limits for each direction.
-
         const limitX = x > 0 ? this.pupilLimitRight : this.pupilLimitLeft;
         const limitY = y > 0 ? this.pupilLimitBottom : this.pupilLimitTop;
 

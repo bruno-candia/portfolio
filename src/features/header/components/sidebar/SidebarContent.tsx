@@ -3,7 +3,7 @@
 import { XIcon } from 'lucide-react';
 import { Logo } from '@/components/atoms/logo';
 import { Link } from '@/i18n/routing';
-import { useSidebarViewModel } from '../hooks/useSidebarViewModel';
+import { useSidebarViewModel } from '../../hooks/useSidebarViewModel';
 
 export function Content() {
   const { menuItems, languages, locale, pathname } = useSidebarViewModel();

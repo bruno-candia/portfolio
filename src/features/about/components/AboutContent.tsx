@@ -5,7 +5,7 @@ export function AboutContent() {
   const { title, description, buttonLabel } = useAboutViewModel();
 
   return (
-    <div className="flex flex-col items-center text-center gap-12 pt-4 md:pt-8 pb-32">
+    <div className="flex flex-col items-center text-center gap-12 pt-4 md:pt-8 pb-32 px-6 z-10 relative">
       <h2 className="text-xl md:text-3xl font-light leading-snug tracking-wide text-gray-200 max-w-4xl">
         {title}
       </h2>
@@ -13,7 +13,7 @@ export function AboutContent() {
         {description}
       </p>
 
-      <Button className="bg-white text-black hover:bg-gray-200 rounded-full px-8 py-6 text-lg font-medium transition-transform hover:scale-105">
+      <Button variant="about" size="lg">
         {buttonLabel}
       </Button>
     </div>

@@ -8,6 +8,13 @@ import { routing } from '@/i18n/routing';
 
 import '../globals.css';
 
+import { Geist_Mono } from 'next/font/google';
+
+const geistMono = Geist_Mono({
+  subsets: ['latin'],
+  variable: '--font-geist-mono',
+});
+
 const graffiti: NextFontWithVariable = localFont({
   src: '../fonts/adrip1.woff2',
   variable: '--font-graffiti',
@@ -41,7 +48,7 @@ export default async function RootLayout({
   return (
     <html lang={locale} className={'dark'}>
       <body
-        className={`${graffiti.variable} ${cabinetGrotesk.variable} antialiased`}
+        className={`${graffiti.variable} ${cabinetGrotesk.variable} ${geistMono.variable} antialiased`}
       >
         <NextIntlClientProvider messages={messages}>
           {children}
