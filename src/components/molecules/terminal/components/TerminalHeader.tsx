@@ -17,7 +17,7 @@ export const TerminalHeader = forwardRef<HTMLSpanElement, TerminalHeaderProps>(
         </div>
         <span
           ref={ref}
-          className="text-xs text-zinc-500 font-mono truncate max-w-[120px]"
+          className="text-xs text-zinc-500 font-mono truncate max-w-full"
         >
           {title}
         </span>

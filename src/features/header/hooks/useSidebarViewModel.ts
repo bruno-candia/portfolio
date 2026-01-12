@@ -8,9 +8,9 @@ export const useSidebarViewModel = () => {
 
   const menuItems = [
     { label: t('home'), href: '#' },
-    { label: t('profile'), href: '#' },
-    { label: t('settings'), href: '#' },
-    { label: t('logout'), href: '#' },
+    { label: t('about'), href: '#about' },
+    { label: t('works'), href: '#works' },
+    { label: t('contact'), href: '#contact' },
   ];
 
   const languages = [

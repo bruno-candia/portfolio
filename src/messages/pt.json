@@ -3,9 +3,9 @@
     "portuguese": "Português",
     "english": "Inglês",
     "home": "Início",
-    "profile": "Perfil",
-    "settings": "Configurações",
-    "logout": "Sair"
+    "about": "Sobre",
+    "works": "Trabalhos",
+    "contact": "Contato"
   },
   "Header": {
     "title": "Portfólio"
@@ -25,6 +25,7 @@
   },
   "Skills": {
     "title": "Transformando ideias em experiências digitais excepcionais por meio de conhecimento especializado e inovação",
+    "learning": "estudando",
     "categories": {
       "frontend": {
         "title": "frontend",

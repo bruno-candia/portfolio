@@ -3,9 +3,9 @@
     "portuguese": "Portuguese",
     "english": "English",
     "home": "Home",
-    "profile": "Profile",
-    "settings": "Settings",
-    "logout": "Logout"
+    "about": "About",
+    "works": "Works",
+    "contact": "Contact"
   },
   "Header": {
     "title": "Portfolio"
@@ -25,6 +25,7 @@
   },
   "Skills": {
     "title": "Transforming ideas into exceptional digital experiences through expertise and innovation",
+    "learning": "learning",
     "categories": {
       "frontend": {
         "title": "frontend",

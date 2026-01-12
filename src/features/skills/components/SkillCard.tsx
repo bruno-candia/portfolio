@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import { Zap } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { SkillCategory, TechStack } from '../data/skills';
 import { CodeTerminal } from '@/components/molecules/terminal/CodeTerminal';
@@ -84,7 +83,7 @@ export function SkillCard({
               onMouseEnter={() => setHoveredTech(stack.id)}
               onMouseLeave={() => setHoveredTech(null)}
               className={cn(
-                'flex items-center gap-3 p-3 rounded-xl border transition-all duration-200 cursor-pointer group',
+                'relative flex items-center gap-3 p-3 rounded-xl border transition-all duration-200 cursor-pointer group',
                 !isSelected &&
                   'bg-zinc-900/50 border-zinc-800 hover:bg-zinc-900'
               )}
@@ -111,6 +110,18 @@ export function SkillCard({
                   : stack.id
               }
             >
+              {stack.learning && (
+                <span
+                  className="absolute -top-2 -left-2 px-1.5 py-0.5 text-[10px] font-bold rounded-md z-10 animate-pulse"
+                  style={{
+                    backgroundColor: '#EAB308',
+                    color: '#000',
+                    boxShadow: '0 0 8px 2px rgba(234, 179, 8, 0.5)',
+                  }}
+                >
+                  {t('learning')}
+                </span>
+              )}
               <div
                 className={cn(
                   'text-xl transition-colors duration-200',
@@ -128,18 +139,16 @@ export function SkillCard({
                   !isSelected && !isHovered && 'text-zinc-300'
                 )}
                 style={isSelected || isHovered ? { color: 'white' } : undefined}
+                title={
+                  t.has(`categories.${category.id}.stacks.${stack.id}.name`)
+                    ? t(`categories.${category.id}.stacks.${stack.id}.name`)
+                    : stack.id
+                }
               >
                 {t.has(`categories.${category.id}.stacks.${stack.id}.name`)
                   ? t(`categories.${category.id}.stacks.${stack.id}.name`)
                   : stack.id}
               </span>
-              {stack.learning && (
-                <Zap
-                  size={12}
-                  className="ml-auto animate-pulse"
-                  style={{ color: '#EAB308' }}
-                />
-              )}
             </button>
           );
         })}

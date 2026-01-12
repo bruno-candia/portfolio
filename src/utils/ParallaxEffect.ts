@@ -10,12 +10,12 @@ export class ParallaxEffect {
   private isMobile: boolean = false;
   private permissionGranted: boolean = false;
 
-  public pupilLimitTop: number = 20;
-  public pupilLimitBottom: number = 15;
-  public pupilLimitLeft: number = 30;
+  public pupilLimitTop: number = 10;
+  public pupilLimitBottom: number = 12;
+  public pupilLimitLeft: number = 34;
   public pupilLimitRight: number = 30;
   public pupilCenterX: number = 0;
-  public pupilCenterY: number = 0;
+  public pupilCenterY: number = 10;
 
   constructor(section: HTMLElement) {
     this.section = section;
