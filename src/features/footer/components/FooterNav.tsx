@@ -6,10 +6,10 @@ export function FooterNav() {
   const t = useTranslations('Footer.nav');
 
   const links = [
-    { label: t('services'), href: '#works' },
-    { label: t('projects'), href: '#experience' },
-    { label: t('profile'), href: '#about' },
-    { label: t('reviews'), href: '#' },
+    { label: t('about'), href: '#about' },
+    { label: t('skills'), href: '#skills' },
+    { label: t('works'), href: '#works' },
+    { label: t('experience'), href: '#experience' },
     { label: t('contact'), href: '#contact' },
   ];
 

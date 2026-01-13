@@ -9,7 +9,10 @@ export function Footer() {
   const t = useTranslations('Footer');
 
   return (
-    <footer className="w-full bg-zinc-950 text-white py-12 md:py-20 border-t border-zinc-900 flex justify-center">
+    <footer
+      id="contact"
+      className="w-full bg-zinc-950 text-white py-12 md:py-20 border-t border-zinc-900 flex justify-center"
+    >
       <div className="w-full max-w-[1080px] mx-auto px-6 flex flex-col gap-16 md:gap-24">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-12 md:gap-0">
           <Logo />

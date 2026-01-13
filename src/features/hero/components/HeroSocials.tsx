@@ -1,4 +1,5 @@
-import { Github, Linkedin, MessageCircle } from 'lucide-react';
+import { Github, Linkedin } from 'lucide-react';
+import { FaBehance } from 'react-icons/fa';
 import { useHeroViewModel } from '../hooks/useHeroViewModel';
 
 export function HeroSocials() {
@@ -8,8 +9,8 @@ export function HeroSocials() {
     switch (iconName) {
       case 'linkedin':
         return <Linkedin size={24} />;
-      case 'whatsapp':
-        return <MessageCircle size={24} />;
+      case 'behance':
+        return <FaBehance size={24} />;
       case 'github':
         return <Github size={24} />;
       default:

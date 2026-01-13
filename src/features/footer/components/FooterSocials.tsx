@@ -1,13 +1,26 @@
 'use client';
 
-import { Github, Linkedin, Instagram, Twitter } from 'lucide-react';
+import { Github, Linkedin, Instagram } from 'lucide-react';
+import { FaBehance } from 'react-icons/fa';
 
 export function FooterSocials() {
   const socials = [
-    { label: 'X', href: '#', icon: Twitter },
-    { label: 'Instagram', href: '#', icon: Instagram },
-    { label: 'LinkedIn', href: '#', icon: Linkedin },
-    { label: 'GitHub', href: '#', icon: Github },
+    {
+      label: 'Behance',
+      href: 'https://www.behance.net/brunocostac3',
+      icon: FaBehance,
+    },
+    {
+      label: 'Instagram',
+      href: 'https://www.instagram.com/brunocandia/',
+      icon: Instagram,
+    },
+    {
+      label: 'LinkedIn',
+      href: 'https://www.linkedin.com/in/bruno-costa-candia/',
+      icon: Linkedin,
+    },
+    { label: 'GitHub', href: 'https://github.com/bruno-candia', icon: Github },
   ];
 
   return (

@@ -5,6 +5,8 @@
     "home": "Home",
     "about": "About",
     "works": "Works",
+    "skills": "Skills",
+    "experience": "Journey",
     "contact": "Contact"
   },
   "Header": {
@@ -26,10 +28,18 @@
     "title": "Discover my latest work and creative solutions that bring ideas to life",
     "button": "All Projects",
     "projects": {
-      "project-1": { "name": "Project One" },
-      "project-2": { "name": "Project Two" },
-      "project-3": { "name": "Project Three" },
-      "project-4": { "name": "Project Four" }
+      "aurem": {
+        "description": "<h>About the Project</h><p>Aurem Genus is an assistive technology solution designed to transform hybrid and distance education. Born from the need for inclusion, the project goes beyond a traditional video conferencing platform: it is an ecosystem focused on breaking communication barriers through real-time captioning and interactive pedagogical tools.</p><p>The platform serves three educational pillars (Students, Teachers, and Institutions), offering everything from a full LMS (Learning Management System) to an immersive virtual classroom where the teacher's voice is instantly converted to text, ensuring accessibility for hearing-impaired people and cognitive reinforcement for all students.</p><spacer></spacer><h>Architecture and Software Engineering</h><p>The Aurem ecosystem operates under a distributed and scalable architecture, divided into three main fronts:</p><p><b>1. Web Client & Interactive Room (SPA)</b></p><p>The heart of the interaction is a robust Single Page Application developed in React.</p><ul><li><b>State Management:</b> Utilization of Redux to orchestrate complex classroom states (who is speaking, current slide, user permissions).</li><li><b>Interactivity:</b> Implementation of a collaborative Digital Whiteboard using Fabric.js, where drawings and annotations are vectorized and synchronized among all clients.</li><li><b>Multimedia:</b> Advanced manipulation of integrated PDFs and video/audio streams.</li></ul><p><b>2. Desktop Client (Electron)</b></p><p>For scenarios where the user needs captions outside the browser (such as in PowerPoint presentations or external software), a Desktop client was developed with Electron.</p><ul><li><b>Transparent Overlay:</b> The application uses frameless windows with transparency and click-through support, allowing captions to float over other applications without obstructing the user's work.</li><li><b>IPC Communication:</b> Complex architecture of inter-process communication (Main and Renderer) to manage floating windows, chat, and authentication simultaneously.</li></ul><p><b>3. Backend and Infrastructure</b></p><p>The backbone of the system is a RESTful API in Node.js/Express, designed for high concurrency.</p><ul><li><b>Real-Time Communication:</b> Intensive use of Socket.io (WebSockets) to ensure sub-second latency in caption delivery and classroom event synchronization (slide changes, chat, drawings).</li><li><b>Hybrid Persistence:</b> MySQL (Sequelize) for structured data; MongoDB for logs and captions; Redis for caching and queues.</li></ul><spacer></spacer><h>The Artificial Intelligence Core</h><p>The technical differentiator of the project is the audio-to-text processing pipeline.</p><ul><li><b>Capture:</b> Audio is captured on the client (Web or Desktop).</li><li><b>Cloud Processing:</b> Direct integration with Azure Cognitive Services.</li><li><b>Smart Fallback:</b> Automatic switching to native Web Speech API in case of failures.</li><li><b>Broadcast:</b> Immediate distribution via WebSocket.</li></ul><spacer></spacer><h>Challenges and Highlights</h><ul><li><b>Synchronization:</b> Ensuring real-time collaborative drawing for 30+ students without delay.</li><li><b>Desktop UX:</b> Creating windows \"invisible\" to the mouse but visible to the eyes with Electron.</li><li><b>DevOps:</b> Automated CI/CD, Docker, and orchestration on AWS.</li></ul>"
+      },
+      "wind-energy": {
+        "description": "<h>About the Project</h><p>Wind Energy is a high-performance software solution developed in C++, designed to conduct viability studies and implementation planning for wind farms. Acting as a strategic engineering tool, the system calculates the energy efficiency of different terrains, focusing not just on \"where\" to place turbines, but \"how much\" the land can yield.</p><spacer></spacer><h>Engineering and Algorithms</h><p>The project solves complex geometric optimization and physics problems:</p><ul><li><b>Packing Algorithms:</b> Mathematical implementation to maximize the number of turbines in irregular terrains (Trapezoids and Triangles), respecting safety distances and physical laws.</li><li><b>Applied Physics:</b> Faithful application of formulas such as the Betz Limit and air density calculations to transform raw wind data into precise electrical power predictions.</li></ul><spacer></spacer><h>Technical Highlights</h><ul><li><b>C++ Performance:</b> Total focus on memory efficiency and execution time.</li><li><b>Low-Level Persistence:</b> Direct manipulation of binary files and struct serialization (no external databases), demonstrating mastery over memory allocation and padding.</li><li><b>Cross-Platform:</b> Compatible with Windows, Linux, and macOS.</li></ul>"
+      },
+      "scaling-x": {
+        "description": "<h>About the Project</h><p>Scaling-X is a comprehensive visual identity project that translates the values of <b>Commitment and Growth</b> into a modern graphic language. The design centers on the company's mission: to be the cloud partner that empowers clients to reach their best version.</p><spacer></spacer><h>Visual Identity & Colors</h><p>The palette was carefully selected to balance vibrancy with minimalist professionalism:</p><ul><li><b>ScalingX Blue (#01ACE0):</b> A vibrant and distinct color evoking innovation.</li><li><b>Deep Black (#01001F) & White:</b> The contrast that brings elegance, seriousness, and modernity.</li></ul><spacer></spacer><h>Typography & Logotype</h><p>Every textual detail was crafted to communicate stability and future:</p><ul><li><b>Dubai Font:</b> Chosen for its symmetry and modern strokes, emphasizing the brand's innovative nature.</li><li><b>Wordmark:</b> A strong logo that symbolizes scalability, reaffirming the commitment to continuous growth.</li></ul>"
+      },
+      "maincore": {
+        "description": "<h>About the Project</h><p>End-to-end development of the corporate portal for Maincore, a specialist in high-performance hardware solutions. The goal was to create a modern, fast, and SEO-optimized digital platform capable of showcasing complex products and effectively capturing qualified leads.</p><spacer></spacer><h>My Role</h><p>I served as the Frontend Developer, responsible for the pixel-perfect interface implementation and code architecture. The focus was on transforming the design system into a high-fidelity, high-performance web application.</p><spacer></spacer><h>Implementation Highlights</h><ul><li><b>Architecture:</b> Adoption of Compound Component patterns to facilitate reuse and maintenance.</li><li><b>Enhanced UX:</b> Rich visual feedback, notifications via react-toastify, and complex form validations with Formik.</li><li><b>Quality & Testing:</b> Unit test coverage using Jest and React Testing Library.</li></ul>"
+      }
     }
   },
   "Experience": {
@@ -359,10 +369,10 @@
   },
   "Footer": {
     "nav": {
-      "services": "Services",
-      "projects": "Projects",
-      "profile": "Profile",
-      "reviews": "Reviews",
+      "about": "About",
+      "skills": "Skills",
+      "works": "Works",
+      "experience": "Journey",
       "contact": "Contact"
     },
     "madeBy": "Made by Bruno Costa",

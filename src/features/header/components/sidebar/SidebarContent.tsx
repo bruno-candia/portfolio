@@ -8,6 +8,13 @@ import { useSidebarViewModel } from '../../hooks/useSidebarViewModel';
 export function Content() {
   const { menuItems, languages, locale, pathname } = useSidebarViewModel();
 
+  const handleLinkClick = () => {
+    const checkbox = document.getElementById('menu-toggle') as HTMLInputElement;
+    if (checkbox) {
+      checkbox.checked = false;
+    }
+  };
+
   return (
     <aside
       className="fixed top-0 left-0 z-40 w-full -translate-y-full bg-black shadow-lg transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] peer-checked:translate-y-0"
@@ -23,12 +30,13 @@ export function Content() {
         </label>
       </div>
 
-      <nav className="fixed top-0 left-0 w-full h-full z-1 flex justify-center flex-col p-6">
-        <ul className="mt-auto">
+      <nav className="fixed top-0 left-0 w-full h-full z-1 flex justify-center flex-col p-6 pointer-events-none">
+        <ul className="mt-auto pointer-events-auto">
           {menuItems.map((item, index) => (
             <li key={index}>
               <a
                 href={item.href}
+                onClick={handleLinkClick}
                 className="cursor-pointer relative p-0 m-0 inline text-white text-4xl leading-14 focus:"
               >
                 {item.label}
@@ -38,9 +46,9 @@ export function Content() {
         </ul>
       </nav>
 
-      <ul className="fixed bottom-0 left-0 h-full z-50 flex gap-6 items-end p-6">
+      <ul className="fixed bottom-0 left-0 h-full z-50 flex gap-6 items-end p-6 pointer-events-none">
         {languages.map((lang) => (
-          <li key={lang.code}>
+          <li key={lang.code} className="pointer-events-auto">
             <Link
               href={pathname}
               locale={lang.code as 'pt' | 'en'}

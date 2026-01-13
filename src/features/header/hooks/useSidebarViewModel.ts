@@ -7,9 +7,10 @@ export const useSidebarViewModel = () => {
   const pathname = usePathname();
 
   const menuItems = [
-    { label: t('home'), href: '#' },
     { label: t('about'), href: '#about' },
+    { label: t('skills'), href: '#skills' },
     { label: t('works'), href: '#works' },
+    { label: t('experience'), href: '#experience' },
     { label: t('contact'), href: '#contact' },
   ];
 

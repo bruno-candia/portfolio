@@ -1,5 +1,4 @@
 import { useTranslations } from 'next-intl';
-import Link from 'next/link';
 import { works } from './data/works';
 import { WorkCard } from './components/WorkCard';
 import { Button } from '@/components/atoms/button';
@@ -28,7 +27,13 @@ export function Works() {
 
         <div className="flex justify-center pt-16">
           <Button size="lg" asChild>
-            <Link href="/works">{t('button')}</Link>
+            <a
+              href="https://github.com/bruno-candia"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {t('button')}
+            </a>
           </Button>
         </div>
       </div>
