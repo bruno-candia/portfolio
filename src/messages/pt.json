@@ -12,6 +12,10 @@
   "Header": {
     "title": "Portfólio"
   },
+  "Metadata": {
+    "title": "Bruno Costa | Desenvolvedor Full-stack",
+    "description": "Desenvolvedor Full-stack apaixonado por construir soluções escaláveis e criar experiências digitais excepcionais."
+  },
   "Hero": {
     "greeting": "Olá! Eu sou Bruno",
     "role": "Desenvolvedor Full-stack",
