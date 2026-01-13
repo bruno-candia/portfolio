@@ -35,7 +35,6 @@ export function Footer() {
 
           <div className="flex flex-col md:flex-row gap-2 md:gap-8">
             <span>{t('madeBy')}</span>
-            <span>{t('builtIn')}</span>
           </div>
         </div>
       </div>

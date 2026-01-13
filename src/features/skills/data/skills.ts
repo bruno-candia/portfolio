@@ -5,7 +5,6 @@ import {
   SiTypescript,
   SiReact,
   SiNextdotjs,
-  SiAngular,
   SiRedux,
   SiReactquery,
   SiAxios,
@@ -33,8 +32,6 @@ import {
   SiEslint,
   SiFigma,
   SiExpo,
-  SiAndroid,
-  SiApple,
   SiElectron,
   SiReactrouter,
   SiVercel,
@@ -42,18 +39,20 @@ import {
   SiTerraform,
   SiSonarqube,
   SiFirebase,
+  SiCplusplus,
+  SiRedis,
+  SiSocketdotio,
 } from 'react-icons/si';
 import {
   FaLayerGroup,
   FaRobot,
   FaServer,
-  FaJava,
   FaDatabase,
   FaAws,
 } from 'react-icons/fa';
-import { TbApi, TbBrandOauth } from 'react-icons/tb';
+import { TbApi } from 'react-icons/tb';
 import { MdArchitecture, MdAccountTree, MdSpeed } from 'react-icons/md';
-import { HiOutlineCube } from 'react-icons/hi';
+
 import { GoWorkflow } from 'react-icons/go';
 import { VscSymbolInterface } from 'react-icons/vsc';
 import { AiOutlineApartment } from 'react-icons/ai';
@@ -240,20 +239,6 @@ useEffect(() => {
 export default async function Page() {
   const data = await getData();
   return <main>{data.title}</main>;
-}`,
-      },
-      {
-        id: 'angular',
-        icon: SiAngular,
-        language: 'typescript',
-        color: '#DD0031',
-        codeSnippet: `// Angular Component
-@Component({
-  selector: 'app-root',
-  template: '<h1>{{ title }}</h1>',
-})
-export class AppComponent {
-  title = 'my-app';
 }`,
       },
       {
@@ -453,21 +438,7 @@ describe('My First Test', () => {
   })
 })`,
       },
-      {
-        id: 'msw',
-        icon: FaServer,
-        language: 'typescript',
-        color: '#FF6A33',
-        codeSnippet: `// Mock Service Worker
-export const handlers = [
-  http.get('/user', () => {
-    return HttpResponse.json({
-      firstName: 'John',
-      lastName: 'Maverick',
-    })
-  }),
-]`,
-      },
+
       {
         id: 'eslint',
         icon: SiEslint,
@@ -503,8 +474,8 @@ const createWindow = () => {
   {
     id: 'backend',
     image: '/backend.png',
-    defaultLanguage: 'java',
-    defaultIcon: FaJava,
+    defaultLanguage: 'javascript',
+    defaultIcon: SiNodedotjs, // Changed from FaJava
     defaultCode: backendCode,
     defaultColor: '#007396',
     stacks: [
@@ -521,15 +492,13 @@ app.get('/', (req, res) => {
 app.listen(3000);`,
       },
       {
-        id: 'java',
-        icon: FaJava,
-        language: 'java',
-        color: '#007396',
-        codeSnippet: `// Java Record
-public record User(
-    String name,
-    String email
-) {}`,
+        id: 'cpp',
+        icon: SiCplusplus,
+        language: 'cpp',
+        color: '#00599C',
+        codeSnippet: `// C++ Memory Management
+std::unique_ptr<WindTurbine> turbine = std::make_unique<WindTurbine>();
+turbine->calculatePowerOutput();`,
       },
       {
         id: 'nestjs',
@@ -610,6 +579,28 @@ db.orders.aggregate([
 ])`,
       },
       {
+        id: 'redis',
+        icon: SiRedis,
+        language: 'javascript',
+        color: '#DC382D',
+        codeSnippet: `// Redis Caching
+await redisClient.set('user:1', JSON.stringify(user), {
+  EX: 3600
+});`,
+      },
+      {
+        id: 'socket-io',
+        icon: SiSocketdotio,
+        language: 'javascript',
+        color: '#010101',
+        codeSnippet: `// Real-time Event
+io.on('connection', (socket) => {
+  socket.on('chat message', (msg) => {
+    io.emit('chat message', msg);
+  });
+});`,
+      },
+      {
         id: 'rest-api',
         icon: TbApi,
         language: 'json',
@@ -635,17 +626,7 @@ const token = jwt.sign(
   { expiresIn: '1h' }
 );`,
       },
-      {
-        id: 'oauth2',
-        icon: TbBrandOauth,
-        language: 'javascript',
-        color: '#4285F4',
-        codeSnippet: `// OAuth2 Flow
-const authUrl = oauth2Client.generateAuthUrl({
-  access_type: 'offline',
-  scope: scopes,
-});`,
-      },
+
       {
         id: 'swagger',
         icon: SiSwagger,
@@ -753,32 +734,7 @@ const Container = styled.View\`
   justify-content: center;
 \`;`,
       },
-      {
-        id: 'ios',
-        icon: SiApple,
-        language: 'swift',
-        color: '#FFFFFF',
-        codeSnippet: `// SwiftUI View
-struct ContentView: View {
-    var body: some View {
-        Text("Hello, iOS!")
-            .padding()
-    }
-}`,
-      },
-      {
-        id: 'android',
-        icon: SiAndroid,
-        language: 'kotlin',
-        color: '#3DDC84',
-        codeSnippet: `// Kotlin Activity
-class MainActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-    }
-}`,
-      },
+
       {
         id: 'jest',
         icon: SiJest,
@@ -859,21 +815,7 @@ remotes: {
   }
 }`,
       },
-      {
-        id: 'design-patterns',
-        icon: HiOutlineCube,
-        color: '#009688',
-        language: 'java',
-        codeSnippet: `// Singleton Pattern
-public class Database {
-    private static Database instance;
-    private Database() {}
-    public static Database getInstance() {
-        if (instance == null) instance = new Database();
-        return instance;
-    }
-}`,
-      },
+
       {
         id: 'performance',
         icon: MdSpeed,
