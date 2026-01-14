@@ -23,7 +23,7 @@
   },
   "About": {
     "title": "Hey, I'm Bruno. I've been building scalable software for over 7 years.",
-    "description": "I'm a Full Stack engineer working with React, Node.js, and Java. My focus is on writing clean code and solving real problems—whether that's optimizing application performance or architecting new features. Beyond the tech, I'm passionate about mentorship and creating a collaborative environment where everyone can learn.",
+    "description": "I'm a Full Stack engineer working with React, Node.js. My focus is on writing clean code and solving real problems—whether that's optimizing application performance or architecting new features. Beyond the tech, I'm passionate about mentorship and creating a collaborative environment where everyone can learn.",
     "button": "About Me",
     "scrollToExplore": "Scroll to Explore",
     "shortStory": "My Short Story"
@@ -51,23 +51,23 @@
     "experiences": {
       "bees-tech-lead": {
         "role": "Tech Lead",
-        "description": "Leading global platforms standardization (Grow, Force, Control Tower). Architected BFFs with NestJS/Clean Arch, defined MVVM patterns, and scaled the ecosystem with 10+ MFEs using Single-SPA & Module Federation across 22 countries."
+        "description": "Leading global platforms standardization (Grow, Force, Control Tower). Architected BFFs with NestJS/Clean Arch, defined architectural patterns, and scaled the ecosystem with Micro-frontends across 22 countries."
       },
       "bees-senior": {
         "role": "Senior Software Engineer",
-        "description": "Boosted sales interactions by engineering the Auto Dialer with React & WebSockets. Led the migration to Micro-frontends (Azure/Kubernetes), cutting deployment time from >1h to minutes and reducing maintenance costs by 50%."
+        "description": "Boosted sales interactions by engineering the Auto Dialer with React & WebSockets. Led the migration to Micro-frontends, cutting deployment time from >1h to minutes."
       },
       "aurem": {
         "role": "Founder & Software Engineer",
-        "description": "Founded an inclusive real-time captioning startup (Santander Prize Winner). Built a low-latency speech-to-text engine with Web Speech API and WebSockets, serving 1,000+ students and scaling via AWS/Docker."
+        "description": "Founded an inclusive real-time captioning startup (Santander Prize Winner). Leveraged the Web Speech API for low-latency captioning and WebSockets for real-time synchronization, serving 1,000+ students and scaling via AWS/Docker."
       },
       "verzel": {
         "role": "UX Designer",
-        "description": "Bridged design and engineering for Web3/Mobility projects. Designed developer-friendly Figma interfaces with Auto Layout and created Design Systems to streamline handoff and ensure accurate React implementation."
+        "description": "Bridged design and engineering for internal company projects. Designed developer-friendly Figma interfaces with Auto Layout and created Design Systems to streamline handoff and ensure accurate React implementation."
       },
       "neoenergia": {
         "role": "Software Developer Intern",
-        "description": "Digitized internal workflows by building custom React/TypeScript dashboards. Created a shared UI Component Library adopted by multiple squads and maintained Node.js/SQL backends for data visualization."
+        "description": "Digitized internal workflows by building custom React/TypeScript dashboards. Maintained Node.js/SQL backends."
       }
     }
   },

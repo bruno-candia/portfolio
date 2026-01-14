@@ -23,7 +23,7 @@
   },
   "About": {
     "title": "Oi, eu sou o Bruno. Desenvolvo software escalável há mais de 7 anos.",
-    "description": "Sou engenheiro Full Stack e trabalho com React, Node.js e Java. Meu foco é escrever código limpo e resolver problemas reais—seja otimizando a performance de aplicações ou arquitetando novas funcionalidades. Além da técnica, sou apaixonado por mentoria e por criar um ambiente colaborativo onde todos possam aprender.",
+    "description": "Sou engenheiro Full Stack e trabalho com React, Node.js. Meu foco é escrever código limpo e resolver problemas reais—seja otimizando a performance de aplicações ou arquitetando novas funcionalidades. Além da técnica, sou apaixonado por mentoria e por criar um ambiente colaborativo onde todos possam aprender.",
     "button": "Sobre Mim",
     "scrollToExplore": "Role para Explorar",
     "shortStory": "Minha Breve História"
@@ -51,23 +51,23 @@
     "experiences": {
       "bees-tech-lead": {
         "role": "Tech Lead",
-        "description": "Liderando a padronização de plataformas globais (Grow, Force, Control Tower). Arquitetei BFFs com NestJS/Clean Arch, defini padrões MVVM e escalei o ecossistema com 10+ MFEs usando Single-SPA e Module Federation em 22 países."
+        "description": "Liderando a padronização de plataformas globais (Grow, Force, Control Tower). Arquitetei BFFs com NestJS/Clean Arch, defini padrões de arquitetura e escalei o ecossistema com Micro-frontends em 22 países."
       },
       "bees-senior": {
         "role": "Engenheiro de Software Sênior",
-        "description": "Impulsionei interações de vendas criando o Auto Dialer com React e WebSockets. Liderei a migração para Micro-frontends (Azure/Kubernetes), reduzindo o deploy de >1h para minutos e cortando custos de manutenção em 50%."
+        "description": "Impulsionei interações de vendas criando o Auto Dialer com React e WebSockets. Liderei a migração para Micro-frontends, reduzindo o deploy de >1h para minutos."
       },
       "aurem": {
         "role": "Fundador e Engenheiro de Software",
-        "description": "Fundei uma startup de legendagem inclusiva em tempo real (Prêmio Santander). Construí um motor de speech-to-text de baixa latência com Web Speech API, atendendo 1.000+ alunos e escalando via AWS/Docker."
+        "description": "Fundei uma startup de legendagem inclusiva em tempo real (Prêmio Santander). Utilizei a Web Speech API para legendagem de baixa latência e WebSockets para sincronização em tempo real, atendendo 1.000+ alunos e escalando via AWS/Docker."
       },
       "verzel": {
         "role": "UX Designer",
-        "description": "Conectei design e engenharia em projetos Web3/Mobilidade. Criei interfaces no Figma focadas no desenvolvedor e Design Systems que otimizaram o handoff e garantiram implementação precisa em React."
+        "description": "Conectei design e engenharia em projetos internos. Criei interfaces no Figma focadas no desenvolvedor e Design Systems que otimizaram o handoff e garantiram implementação precisa em React."
       },
       "neoenergia": {
         "role": "Estagiário de Desenvolvimento",
-        "description": "Digitalizei fluxos internos criando dashboards em React/TypeScript. Desenvolvi uma Biblioteca de Componentes UI adotada por várias squads e mantive backends Node.js/SQL para visualização de dados."
+        "description": "Digitalizei fluxos internos criando dashboards em React/TypeScript. Mantive backends Node.js/SQL."
       }
     }
   },
