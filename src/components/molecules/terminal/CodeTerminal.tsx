@@ -37,15 +37,14 @@ export function CodeTerminal({
       <div className="w-full max-w-full rounded-xl border border-zinc-800 bg-[#0d1117] overflow-hidden shadow-2xl">
         <TerminalHeader ref={titleRef} title={title} />
 
-        <div className="p-4 overflow-x-auto overflow-y-auto max-h-[400px]">
+        <div
+          className="p-4 overflow-x-auto overflow-y-auto max-h-[400px]"
+          tabIndex={0}
+          role="region"
+          aria-label={`Code snippet: ${title}`}
+        >
           <Highlight theme={themes.vsDark} code={code} language={language}>
-            {({
-              className: _className,
-              style,
-              tokens,
-              getLineProps,
-              getTokenProps,
-            }) => (
+            {({ style, tokens, getLineProps, getTokenProps }) => (
               <pre
                 ref={codeRef}
                 style={{

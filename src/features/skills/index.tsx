@@ -62,7 +62,11 @@ export function Skills() {
                 code={currentCode}
                 language={currentLanguage}
                 title={`${activeCategory}.${currentLanguage}`}
-                icon={CurrentIconComponent && <CurrentIconComponent />}
+                icon={
+                  CurrentIconComponent && (
+                    <CurrentIconComponent aria-hidden="true" />
+                  )
+                }
                 iconColor={currentColor}
               />
             </div>

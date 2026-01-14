@@ -9,6 +9,7 @@ import { routing } from '@/i18n/routing';
 import '../globals.css';
 
 import { Geist_Mono } from 'next/font/google';
+import { Analytics } from '@vercel/analytics/react';
 
 const geistMono = Geist_Mono({
   subsets: ['latin'],
@@ -36,11 +37,11 @@ export async function generateMetadata({
   return {
     title: t('title'),
     description: t('description'),
-    metadataBase: new URL('https://brunocandia.com.br'), // Replace with actual domain
+    metadataBase: new URL('https://brunocandia.com'),
     openGraph: {
       title: t('title'),
       description: t('description'),
-      url: `https://brunocandia.com.br/${locale}`,
+      url: `https://brunocandia.com/${locale}`,
       siteName: 'Bruno Costa',
       images: [
         {
@@ -97,7 +98,7 @@ export default async function RootLayout({
                 '@context': 'https://schema.org',
                 '@type': 'Person',
                 name: 'Bruno Costa',
-                url: 'https://brunocandia.com.br',
+                url: 'https://brunocandia.com',
                 jobTitle: 'Full-Stack Developer',
                 description:
                   'Senior Full-Stack Developer specializing in React, Next.js, and Node.js.',
@@ -111,6 +112,7 @@ export default async function RootLayout({
             }}
           />
           {children}
+          <Analytics />
         </NextIntlClientProvider>
       </body>
     </html>

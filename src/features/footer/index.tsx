@@ -30,7 +30,7 @@ export function Footer() {
           <FooterSocials />
         </div>
 
-        <div className="flex flex-col-reverse md:flex-row justify-between items-start md:items-center gap-8 md:gap-0 pt-8 md:pt-0 text-sm text-zinc-500 font-light">
+        <div className="flex flex-col-reverse md:flex-row justify-between items-start md:items-center gap-8 md:gap-0 pt-8 md:pt-0 text-sm text-zinc-400 font-light">
           <span>{t('copyright')}</span>
 
           <div className="flex flex-col md:flex-row gap-2 md:gap-8">

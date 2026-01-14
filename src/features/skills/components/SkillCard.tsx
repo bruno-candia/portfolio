@@ -64,7 +64,7 @@ export function SkillCard({
             code={currentCode}
             language={currentLanguage}
             title={`${category.id}.${currentLanguage}`}
-            icon={<CurrentIconComponent />}
+            icon={<CurrentIconComponent aria-hidden="true" />}
             iconColor={currentColor}
           />
         </div>
@@ -131,12 +131,12 @@ export function SkillCard({
                   isSelected || isHovered ? { color: activeColor } : undefined
                 }
               >
-                <stack.icon />
+                <stack.icon aria-hidden="true" />
               </div>
               <span
                 className={cn(
                   'text-sm font-medium capitalize truncate transition-colors duration-200',
-                  !isSelected && !isHovered && 'text-zinc-300'
+                  !isSelected && !isHovered && 'text-zinc-200'
                 )}
                 style={isSelected || isHovered ? { color: 'white' } : undefined}
                 title={
