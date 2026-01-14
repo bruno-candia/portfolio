@@ -70,7 +70,7 @@ export const works: Work[] = [
     id: 'maincore',
     title: 'Maincore',
     subtitle: 'Web Development',
-    image: '/maincore.png',
+    image: '/maincore-2.png',
     tags: [
       'Next.js',
       'React',
