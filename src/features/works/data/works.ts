@@ -11,7 +11,7 @@ export const works: Work[] = [
   {
     id: 'aurem',
     title: 'Aurem',
-    subtitle: 'Real Time Subtitle',
+    subtitle: 'My Startup Project',
     image: '/aurem.png',
     tags: [
       'React',
@@ -34,7 +34,7 @@ export const works: Work[] = [
   {
     id: 'wind-energy',
     title: 'Wind Energy',
-    subtitle: 'C++ Terminal',
+    subtitle: 'C++ College Study',
     image: '/wind-energy.png',
     tags: [
       'C++',
@@ -54,7 +54,7 @@ export const works: Work[] = [
   {
     id: 'scaling-x',
     title: 'Scaling-X',
-    subtitle: 'Brand Design',
+    subtitle: 'Branding Design',
     image: '/scaling-x.png',
     tags: [
       'Branding',
