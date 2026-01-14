@@ -29,7 +29,7 @@
     "shortStory": "My Short Story"
   },
   "Works": {
-    "title": "Discover my latest work and creative solutions that bring ideas to life",
+    "title": "My work and studies",
     "button": "All Projects",
     "projects": {
       "aurem": {
@@ -72,7 +72,7 @@
     }
   },
   "Skills": {
-    "title": "Transforming ideas into exceptional digital experiences through expertise and innovation",
+    "title": "Building software that solves real problems with clean architecture and modern tools",
     "learning": "learning",
     "categories": {
       "frontend": {

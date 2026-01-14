@@ -29,7 +29,7 @@
     "shortStory": "Minha Breve História"
   },
   "Works": {
-    "title": "Descubra meus trabalhos mais recentes e soluções criativas que dão vida às ideias",
+    "title": "Meus trabalhos e estudos",
     "button": "Todos os Projetos",
     "projects": {
       "aurem": {
@@ -72,7 +72,7 @@
     }
   },
   "Skills": {
-    "title": "Transformando ideias em experiências digitais excepcionais por meio de conhecimento especializado e inovação",
+    "title": "Construindo software que resolve problemas reais com arquitetura limpa e ferramentas modernas",
     "learning": "estudando",
     "categories": {
       "frontend": {

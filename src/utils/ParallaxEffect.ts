@@ -11,7 +11,7 @@ export class ParallaxEffect {
   private permissionGranted: boolean = false;
 
   public pupilLimitTop: number = 10;
-  public pupilLimitBottom: number = 12;
+  public pupilLimitBottom: number = 10;
   public pupilLimitLeft: number = 34;
   public pupilLimitRight: number = 30;
   public pupilCenterX: number = 0;
@@ -179,18 +179,26 @@ export class ParallaxEffect {
     }
   }
 
+  private static globalListenersAdded = false;
+
   private addGlobalPermissionListeners() {
-    if (this.permissionGranted) return;
+    if (this.permissionGranted || ParallaxEffect.globalListenersAdded) return;
+    ParallaxEffect.globalListenersAdded = true;
 
     const handler = async () => {
       const success = await this.requestMobilePermission();
       if (success) {
-        document.body.removeEventListener('click', handler);
-        document.body.removeEventListener('touchstart', handler);
+        document.body.removeEventListener('click', handler, true);
+        document.body.removeEventListener('touchstart', handler, true);
+        document.body.removeEventListener('scroll', handler, true);
       }
     };
 
     document.body.addEventListener('click', handler, { capture: true });
     document.body.addEventListener('touchstart', handler, { capture: true });
+    document.body.addEventListener('scroll', handler, {
+      capture: true,
+      passive: true,
+    });
   }
 }
