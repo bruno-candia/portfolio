@@ -90,6 +90,26 @@ export default async function RootLayout({
         className={`${graffiti.variable} ${cabinetGrotesk.variable} ${geistMono.variable} antialiased`}
       >
         <NextIntlClientProvider messages={messages}>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                '@context': 'https://schema.org',
+                '@type': 'Person',
+                name: 'Bruno Costa',
+                url: 'https://brunocandia.com.br',
+                jobTitle: 'Full-Stack Developer',
+                description:
+                  'Senior Full-Stack Developer specializing in React, Next.js, and Node.js.',
+                sameAs: [
+                  'https://github.com/bruno-candia',
+                  'https://www.linkedin.com/in/bruno-candia',
+                  'https://www.instagram.com/brunocandia/',
+                  'https://www.behance.net/brunocostac3',
+                ],
+              }),
+            }}
+          />
           {children}
         </NextIntlClientProvider>
       </body>
