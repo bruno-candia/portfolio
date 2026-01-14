@@ -1,5 +1,4 @@
 import { useAboutViewModel } from '../hooks/useAboutViewModel';
-import Link from 'next/link';
 
 export function AboutContent() {
   const { title, description } = useAboutViewModel();
