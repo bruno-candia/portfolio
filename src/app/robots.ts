@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: '/private/',
     },
-    sitemap: 'https://brunocandia.com.br/sitemap.xml',
+    sitemap: 'https://brunocandia.com/sitemap.xml',
   };
 }
