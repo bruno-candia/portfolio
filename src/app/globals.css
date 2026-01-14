@@ -215,3 +215,8 @@ body {
     }
   }
 }
+
+/* Prism comment color override for WCAG 2.1 AA contrast */
+.token.comment {
+  color: #7ca668 !important; /* Increased contrast from #6a9955 */
+}

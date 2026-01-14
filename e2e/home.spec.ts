@@ -40,6 +40,6 @@ test.describe('Home Page', () => {
     expect(response.ok()).toBeTruthy();
     const text = await response.text();
     expect(text).toContain('urlset');
-    expect(text).toContain('https://brunocandia.com.br');
+    expect(text).toContain('https://brunocandia.com');
   });
 });
