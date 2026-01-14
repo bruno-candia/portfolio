@@ -43,29 +43,12 @@ export async function generateMetadata({
       description: t('description'),
       url: `https://brunocandia.com/${locale}`,
       siteName: 'Bruno Costa',
-      images: [
-        {
-          url: '/favicon/web-app-manifest-512x512.png',
-          width: 512,
-          height: 512,
-          alt: t('title'),
-        },
-      ],
       type: 'website',
     },
     twitter: {
       card: 'summary_large_image',
       title: t('title'),
       description: t('description'),
-      images: ['/favicon/web-app-manifest-512x512.png'],
-    },
-    icons: {
-      icon: [
-        { url: '/favicon.ico' },
-        { url: '/favicon/favicon-96x96.png', type: 'image/png' },
-      ],
-      shortcut: '/favicon/favicon.ico',
-      apple: '/favicon/apple-touch-icon.png',
     },
   };
 }
