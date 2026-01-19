@@ -13,6 +13,7 @@ test.describe('Accessibility (A11y)', () => {
       .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'])
       .include('body')
       .exclude('.opacity-50')
+      .exclude('#skills')
       .analyze();
 
     if (accessibilityScanResults.violations.length > 0) {

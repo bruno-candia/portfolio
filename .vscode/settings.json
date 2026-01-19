@@ -22,5 +22,5 @@
   "[css]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "cSpell.words": ["gsap"]
+  "cSpell.words": ["domcontentloaded", "gsap", "wcag"]
 }
