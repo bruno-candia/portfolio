@@ -35,7 +35,7 @@ export default function NotFound() {
                 dimension.
               </p>
             </div>
-            <Button>
+            <Button asChild>
               <Link href="/">Return to Base</Link>
             </Button>
           </div>
