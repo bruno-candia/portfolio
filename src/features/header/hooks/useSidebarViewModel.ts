@@ -1,5 +1,6 @@
 import { useLocale, useTranslations } from 'next-intl';
 import { usePathname } from '@/i18n/routing';
+import { sendGAEvent } from '@next/third-parties/google';
 
 export const useSidebarViewModel = () => {
   const t = useTranslations('Sidebar');
@@ -19,10 +20,18 @@ export const useSidebarViewModel = () => {
     { label: t('english'), code: 'en' },
   ];
 
+  const handleNavClick = (section: string) => {
+    sendGAEvent('event', 'navigate', {
+      event_category: 'navigation',
+      event_label: section,
+    });
+  };
+
   return {
     locale,
     pathname,
     menuItems,
     languages,
+    handleNavClick,
   };
 };

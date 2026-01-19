@@ -19,7 +19,8 @@
   "Hero": {
     "greeting": "Olá! Eu sou Bruno",
     "role": "Desenvolvedor Full-stack",
-    "description": "UI & UX Designer."
+    "description": "UI & UX Designer.",
+    "downloadCV": "Baixar CV"
   },
   "About": {
     "title": "Oi, eu sou o Bruno. Desenvolvo software escalável há mais de 7 anos.",

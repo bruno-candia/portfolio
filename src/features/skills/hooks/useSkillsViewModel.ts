@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { sendGAEvent } from '@next/third-parties/google';
 import { skillsData } from '../data/skills';
 
 export const useSkillsViewModel = () => {
@@ -6,6 +7,10 @@ export const useSkillsViewModel = () => {
 
   const handleCategoryClick = (categoryId: string) => {
     setActiveCategory(categoryId);
+    sendGAEvent('event', 'select_skill_category', {
+      event_category: 'content_interaction',
+      event_label: categoryId,
+    });
   };
 
   const activeCategoryData = skillsData.find(

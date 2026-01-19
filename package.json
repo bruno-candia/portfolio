@@ -9,6 +9,8 @@
     "start": "next start",
     "lint": "eslint",
     "lint:fix": "eslint --fix",
+    "test": "vitest",
+    "test:e2e": "playwright test",
     "prepare": "husky"
   },
   "dependencies": {

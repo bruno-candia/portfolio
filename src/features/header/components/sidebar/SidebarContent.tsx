@@ -6,9 +6,11 @@ import { Link } from '@/i18n/routing';
 import { useSidebarViewModel } from '../../hooks/useSidebarViewModel';
 
 export function Content() {
-  const { menuItems, languages, locale, pathname } = useSidebarViewModel();
+  const { menuItems, languages, locale, pathname, handleNavClick } =
+    useSidebarViewModel();
 
-  const handleLinkClick = () => {
+  const handleLinkClick = (label: string) => {
+    handleNavClick(label);
     const checkbox = document.getElementById('menu-toggle') as HTMLInputElement;
     if (checkbox) {
       checkbox.checked = false;
@@ -36,7 +38,7 @@ export function Content() {
             <li key={index}>
               <a
                 href={item.href}
-                onClick={handleLinkClick}
+                onClick={() => handleLinkClick(item.label)}
                 className="cursor-pointer relative p-0 m-0 inline text-white text-4xl leading-14 focus:"
               >
                 {item.label}

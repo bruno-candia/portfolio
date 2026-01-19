@@ -27,6 +27,23 @@ test.describe('Home Page', () => {
     await expect(page).toHaveURL(/#skills/);
   });
 
+  test('should have CV download button with correct attributes', async ({
+    page,
+  }) => {
+    await page.goto('/');
+
+    const downloadButton = page.getByRole('link', {
+      name: /Download CV|Baixar CV/i,
+    });
+
+    await expect(downloadButton).toBeVisible();
+    await expect(downloadButton).toHaveAttribute(
+      'href',
+      '/brunocandia-cv-slim.pdf'
+    );
+    await expect(downloadButton).toHaveAttribute('download', '');
+  });
+
   test('should have valid robots.txt', async ({ request }) => {
     const response = await request.get('/robots.txt');
     expect(response.ok()).toBeTruthy();

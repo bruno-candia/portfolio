@@ -5,6 +5,7 @@ import * as Dialog from '@radix-ui/react-dialog';
 import { X, ArrowUpRight } from 'lucide-react';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
+import { sendGAEvent } from '@next/third-parties/google';
 
 interface ProjectDetailsModalProps {
   isOpen: boolean;
@@ -103,6 +104,13 @@ export function ProjectDetailsModal({
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 text-white hover:text-zinc-300 transition-colors text-sm font-medium border-b border-white/20 hover:border-white pb-0.5"
+                    onClick={() => {
+                      sendGAEvent('event', 'click_project_link', {
+                        event_category: 'content_interaction',
+                        event_label: project.title,
+                        link_type: 'external_details',
+                      });
+                    }}
                   >
                     Saiba mais sobre o projeto
                     <ArrowUpRight className="w-4 h-4" />

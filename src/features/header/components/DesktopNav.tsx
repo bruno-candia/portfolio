@@ -3,7 +3,7 @@
 import { useSidebarViewModel } from '../hooks/useSidebarViewModel';
 
 export function DesktopNav() {
-  const { menuItems } = useSidebarViewModel();
+  const { menuItems, handleNavClick } = useSidebarViewModel();
 
   return (
     <nav className="hidden md:flex items-center gap-8">
@@ -12,6 +12,7 @@ export function DesktopNav() {
           key={index}
           href={item.href}
           className="text-white text-sm font-medium hover:text-zinc-400 transition-colors"
+          onClick={() => handleNavClick(item.label)}
         >
           {item.label}
         </a>

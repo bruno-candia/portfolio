@@ -3,7 +3,7 @@ import { FaBehance } from 'react-icons/fa';
 import { useHeroViewModel } from '../hooks/useHeroViewModel';
 
 export function HeroSocials() {
-  const { socials } = useHeroViewModel();
+  const { socials, handleSocialClick } = useHeroViewModel();
 
   const getIcon = (iconName: string) => {
     switch (iconName) {
@@ -26,6 +26,7 @@ export function HeroSocials() {
           href={social.href}
           className="text-white hover:text-gray-400 transition-colors"
           aria-label={social.label}
+          onClick={() => handleSocialClick(social.label)}
         >
           {getIcon(social.icon)}
         </a>

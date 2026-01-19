@@ -19,7 +19,8 @@
   "Hero": {
     "greeting": "Hi! I'm Bruno",
     "role": "Full-stack Developer",
-    "description": "UI & UX Designer."
+    "description": "UI & UX Designer.",
+    "downloadCV": "Download CV"
   },
   "About": {
     "title": "Hey, I'm Bruno. I've been building scalable software for over 7 years.",
