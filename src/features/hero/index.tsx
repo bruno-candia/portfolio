@@ -1,12 +1,10 @@
-'use client';
-
+import { getTranslations } from 'next-intl/server';
 import { HeroContent } from './components/HeroContent';
 import { HeroSocials } from './components/HeroSocials';
-import { Button } from '@/components/atoms/button';
-import { useHeroViewModel } from './hooks/useHeroViewModel';
+import { DownloadCVButton } from './components/DownloadCVButton';
 
-export function Hero() {
-  const { cvDownloadText, handleDownloadCV } = useHeroViewModel();
+export async function Hero() {
+  const t = await getTranslations('Hero');
 
   return (
     <section
@@ -14,18 +12,14 @@ export function Hero() {
       style={{ height: '100svh' }}
     >
       <div className="w-full max-w-[1080px] mx-auto px-6">
-        <HeroContent />
+        <HeroContent
+          greeting={t('greeting')}
+          role={t('role')}
+          description={t('description')}
+        />
       </div>
       <HeroSocials />
-      <Button
-        asChild
-        size="lg"
-        className="absolute bottom-16 md:bottom-20 bg-white text-black hover:bg-white/90 hover:text-black px-8 py-3 text-base"
-      >
-        <a href="/brunocandia-cv-slim.pdf" download onClick={handleDownloadCV}>
-          {cvDownloadText}
-        </a>
-      </Button>
+      <DownloadCVButton text={t('downloadCV')} />
     </section>
   );
 }

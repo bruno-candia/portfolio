@@ -1,8 +1,10 @@
-import { useHeroViewModel } from '../hooks/useHeroViewModel';
+interface HeroContentProps {
+  greeting: string;
+  role: string;
+  description: string;
+}
 
-export function HeroContent() {
-  const { greeting, role, description } = useHeroViewModel();
-
+export function HeroContent({ greeting, role, description }: HeroContentProps) {
   return (
     <div className="text-center z-10 flex flex-col items-center gap-2">
       <span className="text-xl md:text-2xl font-light text-gray-400 font-sans tracking-wide">

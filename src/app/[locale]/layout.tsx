@@ -14,19 +14,22 @@ import { GoogleAnalytics } from '@next/third-parties/google';
 const geistMono = Geist_Mono({
   subsets: ['latin'],
   variable: '--font-geist-mono',
+  display: 'swap',
 });
 
 const graffiti: NextFontWithVariable = localFont({
   src: '../fonts/adrip1.woff2',
   variable: '--font-graffiti',
+  display: 'swap',
 });
 
 const cabinetGrotesk: NextFontWithVariable = localFont({
   src: '../fonts/CabinetGrotesk.woff2',
   variable: '--font-cabinet-grotesk',
+  display: 'swap',
 });
 
-const BASE_URL = 'https://brunocandia.com';
+const BASE_URL = 'https://www.brunocandia.com';
 
 export async function generateMetadata({
   params,
