@@ -26,7 +26,7 @@ const cabinetGrotesk: NextFontWithVariable = localFont({
   variable: '--font-cabinet-grotesk',
 });
 
-const BASE_URL = 'https://brunocandia.com';
+const BASE_URL = 'https://www.brunocandia.com';
 
 export async function generateMetadata({
   params,
