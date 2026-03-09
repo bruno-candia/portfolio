@@ -39,7 +39,7 @@ test.describe('Home Page', () => {
     await expect(downloadButton).toBeVisible();
     await expect(downloadButton).toHaveAttribute(
       'href',
-      '/brunocandia-cv-slim.pdf'
+      '/bruno-candia-full-stack-resume.pdf'
     );
     await expect(downloadButton).toHaveAttribute('download', '');
   });

@@ -22,7 +22,11 @@ export function Hero() {
         size="lg"
         className="absolute bottom-16 md:bottom-20 bg-white text-black hover:bg-white/90 hover:text-black px-8 py-3 text-base"
       >
-        <a href="/brunocandia-cv-slim.pdf" download onClick={handleDownloadCV}>
+        <a
+          href="/bruno-candia-full-stack-resume.pdf"
+          download
+          onClick={handleDownloadCV}
+        >
           {cvDownloadText}
         </a>
       </Button>
