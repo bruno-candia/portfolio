@@ -13,18 +13,18 @@
     "title": "Portfolio"
   },
   "Metadata": {
-    "title": "Bruno Costa | Senior Full Stack Engineer",
-    "description": "Senior Full Stack Engineer specializing in React, Next.js, and High-Performance Web Apps. Helping companies build scalable and maintainable solutions."
+    "title": "Bruno Costa | Full-stack Developer",
+    "description": "Senior Full-Stack Developer specializing in React, Next.js, and High-Performance Web Apps. Helping companies build scalable and maintainable solutions."
   },
   "Hero": {
     "greeting": "Hi! I'm Bruno",
-    "role": "Senior Full Stack Engineer",
+    "role": "Full-stack Developer",
     "description": "UI & UX Designer.",
     "downloadCV": "Download CV"
   },
   "About": {
     "title": "Hey, I'm Bruno. I've been building scalable software for over 7 years.",
-    "description": "I'm a Senior Full Stack Engineer and an Expert in modern JavaScript ecosystems (React, Node.js). My focus is on writing clean code and solving real problems—whether that's resolving complex performance bottlenecks or architecting new features. Beyond the tech, I'm dedicated to standardizing CI/CD pipelines, mentorship, and team growth, creating a collaborative environment where everyone can learn.",
+    "description": "I'm a Full Stack engineer working with React, Node.js. My focus is on writing clean code and solving real problems—whether that's optimizing application performance or architecting new features. Beyond the tech, I'm passionate about mentorship and creating a collaborative environment where everyone can learn.",
     "button": "About Me",
     "scrollToExplore": "Scroll to Explore",
     "shortStory": "My Short Story"
@@ -52,7 +52,7 @@
     "experiences": {
       "bees-tech-lead": {
         "role": "Tech Lead",
-        "description": "Leading global platforms standardization (Grow, Force, Control Tower). Architected BFFs with NestJS/Clean Arch and scaled the Micro-frontends ecosystem serving 22 countries. Resolved critical performance issues, including OOM crashes exceeding 4GB of RAM using Chrome DevTools (Heap Snapshots). Recognized as a Top Performer (2025)."
+        "description": "Leading global platforms standardization (Grow, Force, Control Tower). Architected BFFs with NestJS/Clean Arch, defined architectural patterns, and scaled the ecosystem with Micro-frontends across 22 countries."
       },
       "bees-senior": {
         "role": "Senior Software Engineer",
@@ -60,7 +60,7 @@
       },
       "aurem": {
         "role": "Founder & Software Engineer",
-        "description": "Founded an inclusive real-time captioning startup (Empreenda Santander 2019 Award Winner). Engineered the cloud infrastructure on AWS (EC2, S3, Lambda) for real-time processing using Web Speech API and WebSockets. The platform served 1,000+ students through B2B contracts with universities like Unicamp, USF, and Inatel."
+        "description": "Founded an inclusive real-time captioning startup (Santander Prize Winner). Leveraged the Web Speech API for low-latency captioning and WebSockets for real-time synchronization, serving 1,000+ students and scaling via AWS/Docker."
       },
       "verzel": {
         "role": "UX Designer",

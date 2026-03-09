@@ -76,7 +76,7 @@ export async function generateMetadata({
           url: '/og-image.jpg',
           width: 1200,
           height: 630,
-          alt: 'Bruno Costa - Senior Full Stack Engineer',
+          alt: 'Bruno Costa - Senior Full-Stack Developer',
         },
       ],
     },
@@ -123,7 +123,7 @@ export default async function RootLayout({
     familyName: 'Costa',
     url: BASE_URL,
     image: `${BASE_URL}/profile.jpg`,
-    jobTitle: 'Senior Full Stack Engineer',
+    jobTitle: 'Senior Full-Stack Developer',
     worksFor: {
       '@type': 'Organization',
       name: 'Open to Work',
