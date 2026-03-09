@@ -42,6 +42,7 @@ import {
   SiCplusplus,
   SiRedis,
   SiSocketdotio,
+  SiSpringboot,
 } from 'react-icons/si';
 import {
   FaLayerGroup,
@@ -49,6 +50,7 @@ import {
   FaServer,
   FaDatabase,
   FaAws,
+  FaJava,
 } from 'react-icons/fa';
 import { TbApi } from 'react-icons/tb';
 import { MdArchitecture, MdAccountTree, MdSpeed } from 'react-icons/md';
@@ -501,6 +503,32 @@ std::unique_ptr<WindTurbine> turbine = std::make_unique<WindTurbine>();
 turbine->calculatePowerOutput();`,
       },
       {
+        id: 'java',
+        icon: FaJava,
+        language: 'java',
+        color: '#007396',
+        codeSnippet: `// Java Class
+public class User {
+    private String name;
+    public User(String name) { this.name = name; }
+}`,
+      },
+      {
+        id: 'spring-boot',
+        icon: SiSpringboot,
+        language: 'java',
+        color: '#6DB33F',
+        codeSnippet: `// Spring Boot REST Controller
+@RestController
+@RequestMapping("/api/users")
+public class UserController {
+    @GetMapping("/{id}")
+    public ResponseEntity<User> getUser(@PathVariable Long id) {
+        return ResponseEntity.ok(new User("Bruno"));
+    }
+}`,
+      },
+      {
         id: 'nestjs',
         icon: SiNestjs,
         language: 'typescript',
@@ -894,7 +922,6 @@ CMD ["npm", "start"]`,
         id: 'kubernetes',
         icon: SiKubernetes,
         language: 'yaml',
-        learning: true,
         color: '#326CE5',
         codeSnippet: `apiVersion: v1
 kind: Pod
@@ -909,7 +936,6 @@ spec:
         id: 'terraform',
         icon: SiTerraform,
         language: 'hcl',
-        learning: true,
         color: '#7B42BC',
         codeSnippet: `resource "aws_instance" "app_server" {
   ami           = "ami-830c94e3"

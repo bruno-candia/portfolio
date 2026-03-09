@@ -13,18 +13,18 @@
     "title": "Portfólio"
   },
   "Metadata": {
-    "title": "Bruno Costa | Desenvolvedor Full-stack",
-    "description": "Desenvolvedor Full-Stack Sênior especializado em React, Next.js e Aplicações Web de Alta Performance. Ajudo empresas a construir soluções escaláveis e manuteníveis."
+    "title": "Bruno Costa | Senior Full Stack Engineer",
+    "description": "Senior Full Stack Engineer especializado em React, Next.js e Aplicações Web de Alta Performance. Ajudo empresas a construir soluções escaláveis e manuteníveis."
   },
   "Hero": {
     "greeting": "Olá! Eu sou Bruno",
-    "role": "Desenvolvedor Full-stack",
+    "role": "Senior Full Stack Engineer",
     "description": "UI & UX Designer.",
     "downloadCV": "Baixar CV"
   },
   "About": {
     "title": "Oi, eu sou o Bruno. Desenvolvo software escalável há mais de 7 anos.",
-    "description": "Sou engenheiro Full Stack e trabalho com React, Node.js. Meu foco é escrever código limpo e resolver problemas reais—seja otimizando a performance de aplicações ou arquitetando novas funcionalidades. Além da técnica, sou apaixonado por mentoria e por criar um ambiente colaborativo onde todos possam aprender.",
+    "description": "Sou Senior Full Stack Engineer e atuo como um Expert in modern JavaScript ecosystems. Meu foco é escrever código limpo e resolver problemas reais—seja atuando em resolving complex performance bottlenecks ou arquitetando novas funcionalidades. Além da técnica, dedico-me a standardizing CI/CD pipelines, bem como à mentoria e ao crescimento de times, criando um ambiente colaborativo onde todos possam aprender.",
     "button": "Sobre Mim",
     "scrollToExplore": "Role para Explorar",
     "shortStory": "Minha Breve História"
@@ -52,7 +52,7 @@
     "experiences": {
       "bees-tech-lead": {
         "role": "Tech Lead",
-        "description": "Liderando a padronização de plataformas globais (Grow, Force, Control Tower). Arquitetei BFFs com NestJS/Clean Arch, defini padrões de arquitetura e escalei o ecossistema com Micro-frontends em 22 países."
+        "description": "Liderando a padronização de plataformas globais (Grow, Force, Control Tower). Arquitetei BFFs com NestJS/Clean Arch e escalei o ecossistema de Micro-frontends que atende 22 países. Atuei na resolução de problemas críticos, como crashes de OOM que excediam 4GB de RAM utilizando Chrome DevTools (Heap Snapshots). Reconhecido como Top Performer (2025)."
       },
       "bees-senior": {
         "role": "Engenheiro de Software Sênior",
@@ -60,7 +60,7 @@
       },
       "aurem": {
         "role": "Fundador e Engenheiro de Software",
-        "description": "Fundei uma startup de legendagem inclusiva em tempo real (Prêmio Santander). Utilizei a Web Speech API para legendagem de baixa latência e WebSockets para sincronização em tempo real, atendendo 1.000+ alunos e escalando via AWS/Docker."
+        "description": "Fundei uma startup de legendagem inclusiva em tempo real (vencedora do prêmio Empreenda Santander 2019). Construí a infraestrutura cloud na AWS (EC2, S3, Lambda) para processamento com Web Speech API e sincronização via WebSockets. A plataforma atendeu 1.000+ alunos através de contratos B2B com universidades como Unicamp, USF e Inatel."
       },
       "verzel": {
         "role": "UX Designer",
