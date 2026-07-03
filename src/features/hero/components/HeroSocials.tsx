@@ -24,6 +24,8 @@ export function HeroSocials() {
         <a
           key={social.label}
           href={social.href}
+          target="_blank"
+          rel="noopener noreferrer"
           className="text-white hover:text-gray-400 transition-colors"
           aria-label={social.label}
           onClick={() => handleSocialClick(social.platform)}

@@ -25,6 +25,8 @@ export function Hero() {
         <a
           href="/bruno-candia-full-stack-resume.pdf"
           download
+          target="_blank"
+          rel="noopener noreferrer"
           onClick={handleDownloadCV}
         >
           {cvDownloadText}

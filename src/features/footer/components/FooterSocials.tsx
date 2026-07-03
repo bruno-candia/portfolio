@@ -29,6 +29,8 @@ export function FooterSocials() {
         <a
           key={social.label}
           href={social.href}
+          target="_blank"
+          rel="noopener noreferrer"
           className="text-white hover:text-zinc-400 transition-colors"
           aria-label={social.label}
         >
