@@ -22,10 +22,10 @@ terraform {
 }
 
 provider "vercel" {
-  api_token = var.vercel_api_token != "" ? var.vercel_api_token : null
+  api_token = var.vercel_api_token
   team      = var.vercel_team_id
 }
 
 provider "sentry" {
-  token = var.sentry_api_token != "" ? var.sentry_api_token : null
+  token = var.sentry_api_token
 }
