@@ -17,7 +17,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: "npm"
 
       - name: Install Dependencies
@@ -39,3 +39,28 @@ jobs:
         run: npx playwright test
         env:
           CI: true
+
+  terraform-check:
+    name: Terraform Lint & Validate
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: "1.15.7"
+
+      - name: Format Check (Fmt)
+        run: terraform fmt -check
+        working-directory: terraform
+
+      - name: Initialize (Validate Mode)
+        run: terraform init -backend=false
+        working-directory: terraform
+
+      - name: Validate Configuration
+        run: terraform validate
+        working-directory: terraform
+

@@ -52,3 +52,11 @@ node_modules/
 
 # Sentry Config File
 .env.sentry-build-plugin
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.backup
+*.tfvars
+*.tfvars.json
+terraform.tfvars

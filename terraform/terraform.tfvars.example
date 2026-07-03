@@ -1,0 +1,15 @@
+# Token de acesso pessoal gerado em Vercel -> Settings -> Tokens
+vercel_api_token = "insira_seu_token_da_vercel_aqui"
+
+# Token de autenticação gerado no Sentry -> Developer Settings -> Internal Integration ou User Auth Tokens
+sentry_api_token = "insira_seu_token_do_sentry_aqui"
+
+# ID do Time Vercel (se aplicável). O valor padrão já está configurado no variables.tf
+# vercel_team_id = "team_BoPmisi1VYB4voNC2i4O59ai"
+
+# Slug da sua organização Sentry. O valor padrão já está configurado no variables.tf
+# sentry_org = "brunocandia"
+
+# Nome do projeto. O valor padrão já está configurado no variables.tf
+# vercel_project_name = "portfolio"
+# sentry_project_name = "portfolio"
