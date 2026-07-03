@@ -8,11 +8,11 @@ const nextConfig = {
   async rewrites() {
     return [
       {
-        source: '/gtm/:path*',
-        destination: 'https://www.googletagmanager.com/:path*',
+        source: '/lib/tracker.js',
+        destination: 'https://www.googletagmanager.com/gtag/js',
       },
       {
-        source: '/ga/:path*',
+        source: '/telemetry/:path*',
         destination: 'https://www.google-analytics.com/:path*',
       },
     ];

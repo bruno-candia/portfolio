@@ -27,7 +27,7 @@ export function SafeGoogleAnalytics() {
             window.gtag = function(){window.dataLayer.push(arguments);}
             window.gtag('js', new Date());
             window.gtag('config', 'G-8M39HC0PEZ', {
-              transport_url: '/ga'
+              transport_url: '/telemetry'
             });
           `,
         }}
@@ -35,7 +35,7 @@ export function SafeGoogleAnalytics() {
       <Script
         id="gtag-load"
         strategy="afterInteractive"
-        src="/gtm/gtag/js?id=G-8M39HC0PEZ"
+        src="/lib/tracker.js?id=G-8M39HC0PEZ"
       />
     </>
   );
