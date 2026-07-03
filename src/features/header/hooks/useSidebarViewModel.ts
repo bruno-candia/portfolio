@@ -1,6 +1,6 @@
 import { useLocale, useTranslations } from 'next-intl';
 import { usePathname } from '@/i18n/routing';
-import { sendGAEvent } from '@next/third-parties/google';
+import { sendGAEvent } from '@/utils/analytics';
 
 export const useSidebarViewModel = () => {
   const t = useTranslations('Sidebar');

@@ -5,7 +5,7 @@ import * as Dialog from '@radix-ui/react-dialog';
 import { X, ArrowUpRight } from 'lucide-react';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
-import { sendGAEvent } from '@next/third-parties/google';
+import { sendGAEvent } from '@/utils/analytics';
 
 interface ProjectDetailsModalProps {
   isOpen: boolean;

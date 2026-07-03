@@ -1,13 +1,13 @@
 import { renderHook } from '@testing-library/react';
 import { useHeroViewModel } from './useHeroViewModel';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { sendGAEvent } from '@next/third-parties/google';
+import { sendGAEvent } from '@/utils/analytics';
 
 vi.mock('next-intl', () => ({
   useTranslations: () => (key: string) => `trans_${key}`,
 }));
 
-vi.mock('@next/third-parties/google', () => ({
+vi.mock('@/utils/analytics', () => ({
   sendGAEvent: vi.fn(),
 }));
 

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { sendGAEvent } from '@next/third-parties/google';
+import { sendGAEvent } from '@/utils/analytics';
 import { skillsData } from '../data/skills';
 
 export const useSkillsViewModel = () => {

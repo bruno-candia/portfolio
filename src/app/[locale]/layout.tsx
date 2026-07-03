@@ -9,7 +9,7 @@ import { routing } from '@/i18n/routing';
 import '../globals.css';
 
 import { Geist_Mono } from 'next/font/google';
-import { GoogleAnalytics } from '@next/third-parties/google';
+import { SafeGoogleAnalytics } from '@/components/SafeGoogleAnalytics';
 
 const geistMono = Geist_Mono({
   subsets: ['latin'],
@@ -159,7 +159,7 @@ export default async function RootLayout({
           />
           {children}
         </NextIntlClientProvider>
-        <GoogleAnalytics gaId="G-8M39HC0PEZ" />
+        <SafeGoogleAnalytics />
       </body>
     </html>
   );

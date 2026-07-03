@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { Work } from '../data/works';
-import { sendGAEvent } from '@next/third-parties/google';
+import { sendGAEvent } from '@/utils/analytics';
 
 export const useWorkCardViewModel = (work: Work) => {
   const t = useTranslations('Works');

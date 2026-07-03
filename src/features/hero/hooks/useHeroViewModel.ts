@@ -1,5 +1,5 @@
 import { useTranslations } from 'next-intl';
-import { sendGAEvent } from '@next/third-parties/google';
+import { sendGAEvent } from '@/utils/analytics';
 
 export const useHeroViewModel = () => {
   const t = useTranslations('Hero');
