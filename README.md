@@ -67,6 +67,33 @@ npx vitest run       # Run unit tests
 npx playwright test  # Run E2E tests
 ```
 
+### Consent-first telemetry
+
+Optional analytics and browser diagnostics are disabled until the visitor
+chooses them in the first-party privacy banner. Browser events are sent to a
+same-origin Next.js route, validated against a strict allowlist, and then
+forwarded server-to-server to GA4. The browser never receives the GA4 API
+secret.
+
+Production requires these environment variables:
+
+| Variable                 | Purpose                                                         |
+| ------------------------ | --------------------------------------------------------------- |
+| `GA_MEASUREMENT_ID`      | GA4 web stream measurement ID                                   |
+| `GA_API_SECRET`          | GA4 Measurement Protocol secret                                 |
+| `CONSENT_SECRET`         | Random value of at least 32 bytes for consent-cookie signatures |
+| `NEXT_PUBLIC_SENTRY_DSN` | Public Sentry DSN; events remain consent-gated and sanitized    |
+
+Create the GA4 API secret under **Admin > Data Streams > Measurement
+Protocol**. Configure event-level retention to the shortest available period
+(two months for a standard GA4 property) and disable advertising features.
+Configure the shortest Sentry retention supported by the active plan. Rotate
+`GA_API_SECRET` and `CONSENT_SECRET` if either value is exposed.
+
+The application intentionally does not collect advertising identifiers,
+fingerprints, form values, full URLs, query strings, visitor IP addresses, or
+User-Agent values in its analytics payload.
+
 ---
 
 ## Quality Assurance

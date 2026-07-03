@@ -4,6 +4,8 @@ import { useTranslations } from 'next-intl';
 import { Logo } from '@/components/atoms/logo';
 import { FooterNav } from './components/FooterNav';
 import { FooterSocials } from './components/FooterSocials';
+import { PrivacySettingsButton } from '@/features/privacy/PrivacySettingsButton';
+import { Link } from '@/i18n/routing';
 
 export function Footer() {
   const t = useTranslations('Footer');
@@ -35,6 +37,13 @@ export function Footer() {
 
           <div className="flex flex-col md:flex-row gap-2 md:gap-8">
             <span>{t('madeBy')}</span>
+            <Link
+              href="/privacy"
+              className="text-zinc-400 transition-colors hover:text-white"
+            >
+              {t('privacy')}
+            </Link>
+            <PrivacySettingsButton />
           </div>
         </div>
       </div>

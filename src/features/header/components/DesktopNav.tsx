@@ -12,7 +12,7 @@ export function DesktopNav() {
           key={index}
           href={item.href}
           className="text-white text-sm font-medium hover:text-zinc-400 transition-colors"
-          onClick={() => handleNavClick(item.label)}
+          onClick={() => handleNavClick(item.id)}
         >
           {item.label}
         </a>

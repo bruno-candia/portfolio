@@ -9,7 +9,7 @@ import { routing } from '@/i18n/routing';
 import '../globals.css';
 
 import { Geist_Mono } from 'next/font/google';
-import { SafeGoogleAnalytics } from '@/components/SafeGoogleAnalytics';
+import { ConsentProvider } from '@/features/privacy/ConsentProvider';
 
 const geistMono = Geist_Mono({
   subsets: ['latin'],
@@ -151,15 +151,16 @@ export default async function RootLayout({
         className={`${graffiti.variable} ${cabinetGrotesk.variable} ${geistMono.variable} antialiased`}
       >
         <NextIntlClientProvider messages={messages}>
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify(jsonLd),
-            }}
-          />
-          {children}
+          <ConsentProvider>
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{
+                __html: JSON.stringify(jsonLd),
+              }}
+            />
+            {children}
+          </ConsentProvider>
         </NextIntlClientProvider>
-        <SafeGoogleAnalytics />
       </body>
     </html>
   );

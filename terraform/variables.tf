@@ -46,3 +46,30 @@ variable "app_secret_api_key" {
   sensitive   = true
   default     = ""
 }
+
+variable "sentry_dsn" {
+  type        = string
+  description = "DSN do Sentry para instrumentação do cliente e servidor"
+  sensitive   = true
+  default     = ""
+}
+
+variable "ga_measurement_id" {
+  type        = string
+  description = "ID de medição do Google Analytics (GA4)"
+  default     = ""
+}
+
+variable "ga_api_secret" {
+  type        = string
+  description = "Segredo do Measurement Protocol do Google Analytics"
+  sensitive   = true
+  default     = ""
+}
+
+variable "consent_secret" {
+  type        = string
+  description = "Segredo aleatório usado para assinar cookies de consentimento"
+  sensitive   = true
+  default     = ""
+}

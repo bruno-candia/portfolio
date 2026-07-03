@@ -4,20 +4,7 @@ import createNextIntlPlugin from 'next-intl/plugin';
 const withNextIntl = createNextIntlPlugin();
 
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  async rewrites() {
-    return [
-      {
-        source: '/lib/tracker.js',
-        destination: 'https://www.googletagmanager.com/gtag/js',
-      },
-      {
-        source: '/telemetry/:path*',
-        destination: 'https://www.google-analytics.com/:path*',
-      },
-    ];
-  },
-};
+const nextConfig = {};
 
 export default withSentryConfig(withNextIntl(nextConfig), {
   // For all available options, see:

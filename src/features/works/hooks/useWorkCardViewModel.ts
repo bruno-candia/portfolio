@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { Work } from '../data/works';
-import { sendGAEvent } from '@/utils/analytics';
+import { sendAnalyticsEvent } from '@/utils/analytics';
 
 export const useWorkCardViewModel = (work: Work) => {
   const t = useTranslations('Works');
@@ -33,10 +33,7 @@ export const useWorkCardViewModel = (work: Work) => {
 
   const handleClick = () => {
     setIsModalOpen(true);
-    sendGAEvent('event', 'view_project', {
-      event_category: 'content_interaction',
-      event_label: work.title,
-    });
+    sendAnalyticsEvent('view_project', { project_id: work.id });
   };
 
   const onCloseModal = () => {

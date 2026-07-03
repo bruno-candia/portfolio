@@ -380,7 +380,58 @@
       "experience": "Jornada",
       "contact": "Contato"
     },
-    "madeBy": "Feito com ♥️ por Bruno Costa",
-    "copyright": "© 2026 Bruno Costa"
+    "madeBy": "Criado por Bruno Costa",
+    "copyright": "© 2026 Bruno Costa",
+    "privacy": "Aviso de privacidade"
+  },
+  "Privacy": {
+    "title": "Privacidade e dados",
+    "description": "Usamos dados analíticos opcionais para entender o uso do portfólio e diagnósticos opcionais para corrigir falhas. Nada é enviado antes da sua escolha.",
+    "privacySignal": "O navegador sinalizou uma preferência de privacidade. As categorias opcionais permanecem desativadas até uma escolha afirmativa.",
+    "analytics": {
+      "title": "Análise de uso",
+      "description": "Mede visualizações e interações permitidas, sem formulários ou identificação pessoal."
+    },
+    "diagnostics": {
+      "title": "Diagnóstico de erros",
+      "description": "Envia falhas técnicas sanitizadas para ajudar na correção do site."
+    },
+    "marketing": {
+      "title": "Marketing",
+      "description": "Não utilizado atualmente."
+    },
+    "accept": "Aceitar opcionais",
+    "reject": "Recusar opcionais",
+    "customize": "Personalizar",
+    "save": "Salvar escolhas",
+    "cancel": "Cancelar",
+    "settings": "Configurações de privacidade",
+    "learnMore": "Ler aviso de privacidade",
+    "saveError": "Não foi possível salvar sua escolha. Nenhum dado opcional foi ativado."
+  },
+  "PrivacyNotice": {
+    "back": "Voltar ao portfólio",
+    "title": "Aviso de privacidade",
+    "intro": "Este portfólio coleta dados opcionais somente depois do seu consentimento. A recusa não limita o acesso ao site.",
+    "controller": {
+      "title": "Responsável",
+      "description": "Bruno Costa é o responsável pelas decisões de tratamento de dados deste portfólio."
+    },
+    "data": {
+      "title": "Dados e finalidade",
+      "description": "A análise registra páginas normalizadas, idioma e interações permitidas. O diagnóstico registra falhas técnicas sanitizadas. Não enviamos valores de formulário, e-mail, nome, URL completa, query string, IP do visitante, User-Agent, publicidade ou fingerprinting."
+    },
+    "providers": {
+      "title": "Operadores",
+      "description": "Eventos analíticos consentidos são processados pelo <google>Google Analytics</google>. Diagnósticos consentidos são processados pelo <sentry>Sentry</sentry>."
+    },
+    "retention": {
+      "title": "Retenção",
+      "description": "Os dados de eventos do GA4 devem permanecer configurados para dois meses. Os diagnósticos seguem o menor prazo disponível no plano ativo do Sentry."
+    },
+    "control": {
+      "title": "Suas escolhas",
+      "description": "Você pode recusar, selecionar categorias ou revogar a autorização a qualquer momento em Configurações de privacidade no rodapé. A revogação interrompe novos envios e remove os identificadores analíticos locais."
+    }
   }
 }

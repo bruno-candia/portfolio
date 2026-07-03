@@ -380,7 +380,58 @@
       "experience": "Journey",
       "contact": "Contact"
     },
-    "madeBy": "Made with ♥️ by Bruno Costa",
-    "copyright": "© 2026 Bruno Costa"
+    "madeBy": "Created by Bruno Costa",
+    "copyright": "© 2026 Bruno Costa",
+    "privacy": "Privacy notice"
+  },
+  "Privacy": {
+    "title": "Privacy and data",
+    "description": "We use optional analytics to understand portfolio usage and optional diagnostics to fix failures. Nothing is sent before you choose.",
+    "privacySignal": "Your browser signaled a privacy preference. Optional categories remain disabled until you make an affirmative choice.",
+    "analytics": {
+      "title": "Usage analytics",
+      "description": "Measures permitted views and interactions without forms or personal identification."
+    },
+    "diagnostics": {
+      "title": "Error diagnostics",
+      "description": "Sends sanitized technical failures to help fix the site."
+    },
+    "marketing": {
+      "title": "Marketing",
+      "description": "Not currently used."
+    },
+    "accept": "Accept optional",
+    "reject": "Reject optional",
+    "customize": "Customize",
+    "save": "Save choices",
+    "cancel": "Cancel",
+    "settings": "Privacy settings",
+    "learnMore": "Read privacy notice",
+    "saveError": "Your choice could not be saved. No optional data was enabled."
+  },
+  "PrivacyNotice": {
+    "back": "Back to portfolio",
+    "title": "Privacy notice",
+    "intro": "This portfolio collects optional data only after your consent. Refusing does not limit access to the site.",
+    "controller": {
+      "title": "Controller",
+      "description": "Bruno Costa is responsible for the data-processing decisions made for this portfolio."
+    },
+    "data": {
+      "title": "Data and purpose",
+      "description": "Analytics records normalized pages, language, and permitted interactions. Diagnostics records sanitized technical failures. We do not send form values, email, name, full URLs, query strings, visitor IP addresses, User-Agent values, advertising data, or fingerprints."
+    },
+    "providers": {
+      "title": "Processors",
+      "description": "Consented analytics events are processed by <google>Google Analytics</google>. Consented diagnostics are processed by <sentry>Sentry</sentry>."
+    },
+    "retention": {
+      "title": "Retention",
+      "description": "GA4 event data must remain configured for two months. Diagnostics follow the shortest retention available under the active Sentry plan."
+    },
+    "control": {
+      "title": "Your choices",
+      "description": "You can reject, select categories, or withdraw permission at any time through Privacy settings in the footer. Withdrawal stops new transmissions and removes local analytics identifiers."
+    }
   }
 }

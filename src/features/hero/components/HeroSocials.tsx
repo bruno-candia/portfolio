@@ -26,7 +26,7 @@ export function HeroSocials() {
           href={social.href}
           className="text-white hover:text-gray-400 transition-colors"
           aria-label={social.label}
-          onClick={() => handleSocialClick(social.label)}
+          onClick={() => handleSocialClick(social.platform)}
         >
           {getIcon(social.icon)}
         </a>

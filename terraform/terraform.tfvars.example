@@ -13,3 +13,9 @@ sentry_api_token = "insira_seu_token_do_sentry_aqui"
 # Nome do projeto. O valor padrão já está configurado no variables.tf
 # vercel_project_name = "portfolio"
 # sentry_project_name = "portfolio"
+
+# Telemetria consent-first. Nunca versione valores reais.
+# sentry_dsn = "https://public-key@organization.ingest.sentry.io/project-id"
+# ga_measurement_id = "G-XXXXXXXXXX"
+# ga_api_secret = "insira_o_segredo_do_measurement_protocol"
+# consent_secret = "gere_um_valor_aleatorio_com_pelo_menos_32_bytes"

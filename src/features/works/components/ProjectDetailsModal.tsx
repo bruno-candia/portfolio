@@ -5,7 +5,7 @@ import * as Dialog from '@radix-ui/react-dialog';
 import { X, ArrowUpRight } from 'lucide-react';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
-import { sendGAEvent } from '@/utils/analytics';
+import { sendAnalyticsEvent } from '@/utils/analytics';
 
 interface ProjectDetailsModalProps {
   isOpen: boolean;
@@ -105,9 +105,8 @@ export function ProjectDetailsModal({
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 text-white hover:text-zinc-300 transition-colors text-sm font-medium border-b border-white/20 hover:border-white pb-0.5"
                     onClick={() => {
-                      sendGAEvent('event', 'click_project_link', {
-                        event_category: 'content_interaction',
-                        event_label: project.title,
+                      sendAnalyticsEvent('click_project_link', {
+                        project_id: project.id,
                         link_type: 'external_details',
                       });
                     }}

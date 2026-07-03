@@ -20,6 +20,7 @@ describe('useSidebarViewModel', () => {
 
     expect(result.current.menuItems).toHaveLength(5);
     expect(result.current.menuItems[0]).toEqual({
+      id: 'about',
       label: 'translated_about',
       href: '#about',
     });

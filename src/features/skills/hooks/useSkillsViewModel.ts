@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { sendGAEvent } from '@/utils/analytics';
+import { sendAnalyticsEvent } from '@/utils/analytics';
 import { skillsData } from '../data/skills';
 
 export const useSkillsViewModel = () => {
@@ -7,9 +7,8 @@ export const useSkillsViewModel = () => {
 
   const handleCategoryClick = (categoryId: string) => {
     setActiveCategory(categoryId);
-    sendGAEvent('event', 'select_skill_category', {
-      event_category: 'content_interaction',
-      event_label: categoryId,
+    sendAnalyticsEvent('select_skill_category', {
+      category_id: categoryId,
     });
   };
 

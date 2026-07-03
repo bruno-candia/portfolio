@@ -1,14 +1,15 @@
 import { renderHook } from '@testing-library/react';
 import { useHeroViewModel } from './useHeroViewModel';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { sendGAEvent } from '@/utils/analytics';
+import { sendAnalyticsEvent } from '@/utils/analytics';
 
 vi.mock('next-intl', () => ({
   useTranslations: () => (key: string) => `trans_${key}`,
+  useLocale: () => 'en',
 }));
 
 vi.mock('@/utils/analytics', () => ({
-  sendGAEvent: vi.fn(),
+  sendAnalyticsEvent: vi.fn(),
 }));
 
 describe('useHeroViewModel', () => {
@@ -29,21 +30,18 @@ describe('useHeroViewModel', () => {
 
     result.current.handleDownloadCV();
 
-    expect(sendGAEvent).toHaveBeenCalledWith('event', 'download_cv', {
-      event_category: 'engagement',
-      event_label: 'CV Download',
-      value: 1,
+    expect(sendAnalyticsEvent).toHaveBeenCalledWith('download_cv', {
+      locale: 'en',
     });
   });
 
   it('should track social clicks', () => {
     const { result } = renderHook(() => useHeroViewModel());
 
-    result.current.handleSocialClick('LinkedIn');
+    result.current.handleSocialClick('linkedin');
 
-    expect(sendGAEvent).toHaveBeenCalledWith('event', 'click_social', {
-      event_category: 'engagement',
-      event_label: 'LinkedIn',
+    expect(sendAnalyticsEvent).toHaveBeenCalledWith('click_social', {
+      platform: 'linkedin',
     });
   });
 });

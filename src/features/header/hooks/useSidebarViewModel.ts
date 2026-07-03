@@ -1,6 +1,6 @@
 import { useLocale, useTranslations } from 'next-intl';
 import { usePathname } from '@/i18n/routing';
-import { sendGAEvent } from '@/utils/analytics';
+import { sendAnalyticsEvent } from '@/utils/analytics';
 
 export const useSidebarViewModel = () => {
   const t = useTranslations('Sidebar');
@@ -8,11 +8,11 @@ export const useSidebarViewModel = () => {
   const pathname = usePathname();
 
   const menuItems = [
-    { label: t('about'), href: '#about' },
-    { label: t('skills'), href: '#skills' },
-    { label: t('works'), href: '#works' },
-    { label: t('experience'), href: '#experience' },
-    { label: t('contact'), href: '#contact' },
+    { id: 'about', label: t('about'), href: '#about' },
+    { id: 'skills', label: t('skills'), href: '#skills' },
+    { id: 'works', label: t('works'), href: '#works' },
+    { id: 'experience', label: t('experience'), href: '#experience' },
+    { id: 'contact', label: t('contact'), href: '#contact' },
   ];
 
   const languages = [
@@ -21,10 +21,7 @@ export const useSidebarViewModel = () => {
   ];
 
   const handleNavClick = (section: string) => {
-    sendGAEvent('event', 'navigate', {
-      event_category: 'navigation',
-      event_label: section,
-    });
+    sendAnalyticsEvent('navigate', { destination: section });
   };
 
   return {

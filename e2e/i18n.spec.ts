@@ -4,6 +4,10 @@ test.describe('Internationalization (i18n)', () => {
   test('should switch language from EN to PT', async ({ page, isMobile }) => {
     await page.goto('/');
 
+    await page
+      .getByRole('button', { name: /Recusar opcionais|Reject optional/i })
+      .click();
+
     await expect(page.getByText("Hi! I'm Bruno")).toBeVisible();
 
     if (isMobile) {

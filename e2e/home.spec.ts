@@ -13,6 +13,10 @@ test.describe('Home Page', () => {
   test('should navigate to skills section', async ({ page }) => {
     await page.goto('/');
 
+    await page
+      .getByRole('button', { name: /Recusar opcionais|Reject optional/i })
+      .click();
+
     const menuToggle = page.locator('label[for="menu-toggle"]').first();
     if (await menuToggle.isVisible()) {
       await menuToggle.click();
