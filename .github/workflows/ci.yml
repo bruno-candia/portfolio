@@ -65,6 +65,11 @@ jobs:
         run: terraform validate
         working-directory: terraform
 
+      - name: Initialize Remote Backend
+        if: github.event_name == 'pull_request' || (github.ref == 'refs/heads/master' && github.event_name == 'push')
+        run: terraform init
+        working-directory: terraform
+
       - name: Plan (Pull Request)
         if: github.event_name == 'pull_request'
         run: terraform plan -no-color
