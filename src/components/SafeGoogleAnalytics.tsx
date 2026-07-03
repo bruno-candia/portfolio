@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { GoogleAnalytics } from '@next/third-parties/google';
+import Script from 'next/script';
 import { isTrackingEnabled } from '@/utils/analytics';
 
 export function SafeGoogleAnalytics() {
@@ -16,5 +16,27 @@ export function SafeGoogleAnalytics() {
 
   if (!shouldLoad) return null;
 
-  return <GoogleAnalytics gaId="G-8M39HC0PEZ" />;
+  return (
+    <>
+      <Script
+        id="gtag-init"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            window.gtag = function(){window.dataLayer.push(arguments);}
+            window.gtag('js', new Date());
+            window.gtag('config', 'G-8M39HC0PEZ', {
+              transport_url: '/ga'
+            });
+          `,
+        }}
+      />
+      <Script
+        id="gtag-load"
+        strategy="afterInteractive"
+        src="/gtm/gtag/js?id=G-8M39HC0PEZ"
+      />
+    </>
+  );
 }

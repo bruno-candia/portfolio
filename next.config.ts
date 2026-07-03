@@ -4,7 +4,20 @@ import createNextIntlPlugin from 'next-intl/plugin';
 const withNextIntl = createNextIntlPlugin();
 
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+  async rewrites() {
+    return [
+      {
+        source: '/gtm/:path*',
+        destination: 'https://www.googletagmanager.com/:path*',
+      },
+      {
+        source: '/ga/:path*',
+        destination: 'https://www.google-analytics.com/:path*',
+      },
+    ];
+  },
+};
 
 export default withSentryConfig(withNextIntl(nextConfig), {
   // For all available options, see:

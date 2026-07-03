@@ -1,5 +1,3 @@
-import { sendGAEvent as nextSendGAEvent } from '@next/third-parties/google';
-
 export const isTrackingEnabled = (): boolean => {
   if (typeof window === 'undefined') return false;
 
@@ -28,11 +26,20 @@ export const sendGAEvent = (
   action: string,
   params?: Record<string, unknown>
 ) => {
-  if (isTrackingEnabled()) {
+  if (isTrackingEnabled() && typeof window !== 'undefined') {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const w = window as any;
+    if (typeof w.gtag !== 'function') {
+      w.dataLayer = w.dataLayer || [];
+      w.gtag = (...args: unknown[]) => {
+        w.dataLayer.push(args);
+      };
+    }
+
     if (params) {
-      nextSendGAEvent(type, action, params);
+      w.gtag(type, action, params);
     } else {
-      nextSendGAEvent(type, action);
+      w.gtag(type, action);
     }
   }
 };
