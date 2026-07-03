@@ -2,6 +2,7 @@ variable "vercel_api_token" {
   type        = string
   description = "Token de API da Vercel para autenticação"
   sensitive   = true
+  default     = ""
 }
 
 variable "vercel_team_id" {
@@ -26,6 +27,7 @@ variable "sentry_api_token" {
   type        = string
   description = "Token de API do Sentry para autenticação"
   sensitive   = true
+  default     = ""
 }
 
 variable "sentry_org" {
