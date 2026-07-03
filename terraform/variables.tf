@@ -62,14 +62,14 @@ variable "ga_measurement_id" {
 
 variable "ga_api_secret" {
   type        = string
-  description = "Segredo do Measurement Protocol do Google Analytics"
+  description = "Segredo da API do Google Analytics (Measurement Protocol)"
   sensitive   = true
   default     = ""
 }
 
 variable "consent_secret" {
   type        = string
-  description = "Segredo aleatório usado para assinar cookies de consentimento"
+  description = "Segredo para criptografia/assinatura dos cookies de consentimento de privacidade"
   sensitive   = true
   default     = ""
 }
