@@ -27,7 +27,7 @@ export function SafeGoogleAnalytics() {
             window.gtag = function(){window.dataLayer.push(arguments);}
             window.gtag('js', new Date());
             window.gtag('config', 'G-8M39HC0PEZ', {
-              transport_url: '/telemetry'
+              transport_url: window.location.origin + '/telemetry'
             });
           `,
         }}
