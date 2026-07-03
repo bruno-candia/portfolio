@@ -58,7 +58,7 @@ jobs:
         working-directory: terraform
 
       - name: Initialize
-        run: terraform init
+        run: terraform init -backend=false
         working-directory: terraform
 
       - name: Validate Configuration
