@@ -31,3 +31,12 @@ updates:
       time: '09:30'
       timezone: America/Sao_Paulo
     open-pull-requests-limit: 5
+
+  - package-ecosystem: gomod
+    directory: /terraform/test
+    schedule:
+      interval: weekly
+      day: monday
+      time: '09:45'
+      timezone: America/Sao_Paulo
+    open-pull-requests-limit: 5

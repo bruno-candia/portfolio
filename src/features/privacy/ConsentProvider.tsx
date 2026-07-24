@@ -105,7 +105,7 @@ export function ConsentProvider({ children }: { children: ReactNode }) {
   return (
     <ConsentContext.Provider value={value}>
       {children}
-      {ready && <ConsentBanner />}
+      {ready && isOpen && <ConsentBanner />}
     </ConsentContext.Provider>
   );
 }

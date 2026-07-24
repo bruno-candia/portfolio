@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
 import { ConsentPreferences, DENIED_PREFERENCES } from './consent';
 import { useConsent } from './ConsentProvider';
@@ -8,7 +8,7 @@ import { useConsent } from './ConsentProvider';
 export function ConsentBanner() {
   const t = useTranslations('Privacy');
   const locale = useLocale();
-  const { decision, isOpen, privacySignal, closeSettings, savePreferences } =
+  const { decision, privacySignal, closeSettings, savePreferences } =
     useConsent();
   const [customizing, setCustomizing] = useState(false);
   const [preferences, setPreferences] = useState<ConsentPreferences>(
@@ -16,15 +16,6 @@ export function ConsentBanner() {
   );
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState(false);
-
-  useEffect(() => {
-    if (isOpen) {
-      setPreferences(decision?.preferences ?? DENIED_PREFERENCES);
-      setError(false);
-    }
-  }, [decision, isOpen]);
-
-  if (!isOpen) return null;
 
   const save = async (next: ConsentPreferences) => {
     setSaving(true);
