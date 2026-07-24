@@ -160,7 +160,7 @@ jobs:
     permissions:
       contents: read
     environment:
-      name: production
+      name: Production
     concurrency:
       group: terraform-production
       cancel-in-progress: false
