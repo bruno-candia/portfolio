@@ -6,16 +6,19 @@ on:
   pull_request:
     branches: [master]
 
+permissions:
+  contents: read
+
 jobs:
   quality:
     name: Code Quality & Tests
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v4
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
         with:
           node-version: 22
           cache: 'npm'
@@ -40,6 +43,25 @@ jobs:
         env:
           CI: true
 
+  security:
+    name: Secret Scan
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout Full History
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          fetch-depth: 0
+
+      - name: Scan Git History
+        uses: gitleaks/gitleaks-action@dcedce43c6f43de0b836d1fe38946645c9c638dc # v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITLEAKS_ENABLE_COMMENTS: false
+          GITLEAKS_ENABLE_UPLOAD_ARTIFACT: false
+          GITLEAKS_ENABLE_SUMMARY: false
+
   terraform-check:
     name: Terraform Lint & Validate
     runs-on: ubuntu-latest
@@ -48,10 +70,20 @@ jobs:
       pull-requests: write
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v4
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+
+      - name: Setup Go
+        uses: actions/setup-go@924ae3a1cded613372ab5595356fb5720e22ba16 # v6
+        with:
+          go-version-file: terraform/test/go.mod
+          cache-dependency-path: terraform/test/go.sum
+
+      - name: Sentry Alert Contract Test
+        run: go test -run '^TestSentryMetricAlertContract$' -count=1
+        working-directory: terraform/test
 
       - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v3
+        uses: hashicorp/setup-terraform@b9cd54a3c349d3f38e8881555d616ced269862dd # v3
         with:
           terraform_version: '1.15.7'
           cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
@@ -74,12 +106,12 @@ jobs:
         continue-on-error: true
 
       - name: Security Scan (tfsec)
-        uses: aquasecurity/tfsec-action@v1.0.3
+        uses: aquasecurity/tfsec-action@b466648d6e39e7c75324f25d83891162a721f2d6 # v1.0.3
         with:
           working_directory: terraform
 
       - name: Initialize Remote Backend
-        if: github.event_name == 'pull_request' || (github.ref == 'refs/heads/master' && github.event_name == 'push')
+        if: github.event_name == 'pull_request'
         run: terraform init
         working-directory: terraform
 
@@ -97,28 +129,15 @@ jobs:
           TF_VAR_consent_secret: ${{ secrets.CONSENT_SECRET }}
 
       - name: Update Pull Request
-        uses: actions/github-script@v7
+        uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b # v7
         if: github.event_name == 'pull_request'
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            const fs = require('fs');
-            const planOutput = fs.readFileSync('./terraform/plan.txt', 'utf8');
-            const maxLen = 65000;
-            const plan = planOutput.length > maxLen ? planOutput.substring(0, maxLen) + '\n... (truncado)' : planOutput;
-
-            const output = `#### Terraform Format and Style 🖌\`${{ steps.fmt.outcome }}\`
-            #### Terraform Initialization ⚙️\`${{ steps.init.outcome }}\`
-            #### Terraform Validation 🤖\`${{ steps.validate.outcome }}\`
-            #### Terraform Plan 📖\`${{ steps.plan.outcome }}\`
-
-            <details><summary>Mostrar Plano (Show Plan)</summary>
-
-            \`\`\`terraform
-            ${plan}
-            \`\`\`
-
-            </details>
+            const output = `#### Terraform Format and Style: \`${{ steps.fmt.outcome }}\`
+            #### Terraform Initialization: \`${{ steps.init.outcome }}\`
+            #### Terraform Validation: \`${{ steps.validate.outcome }}\`
+            #### Terraform Plan: \`${{ steps.plan.outcome }}\`
 
             *Pushed by: @${{ github.actor }}, Action: \`${{ github.event_name }}\`*`;
 
@@ -133,8 +152,33 @@ jobs:
         if: steps.plan.outcome == 'failure' || steps.fmt.outcome == 'failure' || steps.validate.outcome == 'failure'
         run: exit 1
 
-      - name: Apply (Push to Master)
-        if: github.ref == 'refs/heads/master' && github.event_name == 'push'
+  terraform-apply:
+    name: Terraform Apply
+    if: github.ref == 'refs/heads/master' && github.event_name == 'push'
+    needs: [quality, security, terraform-check]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    environment:
+      name: production
+    concurrency:
+      group: terraform-production
+      cancel-in-progress: false
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@b9cd54a3c349d3f38e8881555d616ced269862dd # v3
+        with:
+          terraform_version: '1.15.7'
+          cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
+
+      - name: Initialize Remote Backend
+        run: terraform init
+        working-directory: terraform
+
+      - name: Apply
         run: terraform apply -auto-approve
         working-directory: terraform
         env:

@@ -1,0 +1,12 @@
+title = "Portfolio secret scanning"
+
+[extend]
+useDefault = true
+
+[[allowlists]]
+description = "Known non-secret placeholder from the public Terraform example"
+condition = "AND"
+targetRules = ["generic-api-key"]
+regexTarget = "line"
+regexes = ['''consent_secret\s*=\s*"gere_um_valor_aleatorio_com_pelo_menos_32_bytes"''']
+paths = ['''terraform/terraform\.tfvars\.example''']

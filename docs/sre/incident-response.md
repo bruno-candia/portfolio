@@ -1,8 +1,13 @@
 # Playbook: Gestão de Incidentes e Cultura SRE
 
+> **Status:** modelo operacional proposto para este projeto de portfólio. Ele
+> documenta como incidentes devem ser conduzidos quando houver mais de uma
+> pessoa disponível; não afirma a existência atual de uma equipe de on-call ou
+> de exercícios recorrentes.
+
 A resiliência de um sistema não depende apenas da ausência de falhas, mas da velocidade e eficiência com que a equipe se recupera quando elas acontecem.
 
-Este documento consolida as práticas fundamentais de resposta a incidentes e treinamento para nossa engenharia, baseadas nos modelos do Google SRE.
+Este documento consolida práticas de resposta a incidentes e treinamento que podem ser adotadas conforme o projeto e o time crescerem, baseadas nos modelos do Google SRE.
 
 ---
 
@@ -42,7 +47,7 @@ Quando o incidente termina, o aprendizado começa. Todo incidente de impacto mé
 
 Testes automatizados garantem que código quebrado não suba, mas sistemas distribuídos falham de maneiras imprevisíveis. Para evitar a "atrofia operacional", precisamos testar as pessoas.
 
-A **Roda do Infortúnio (Wheel of Misfortune)** é um exercício de _Role Playing_ (RPG de SRE) regular que conduzimos com a equipe:
+A **Roda do Infortúnio (Wheel of Misfortune)** é um exercício de _Role Playing_ (RPG de SRE) que pode ser conduzido periodicamente quando houver uma equipe:
 
 ### Como funciona:
 

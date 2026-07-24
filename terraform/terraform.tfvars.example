@@ -18,4 +18,4 @@ sentry_api_token = "insira_seu_token_do_sentry_aqui"
 # sentry_dsn = "https://public-key@organization.ingest.sentry.io/project-id"
 # ga_measurement_id = "G-XXXXXXXXXX"
 # ga_api_secret = "insira_o_segredo_do_measurement_protocol"
-# consent_secret = "gere_um_valor_aleatorio_com_pelo_menos_32_bytes"
+# consent_secret = "" # Gere localmente um valor aleatório com pelo menos 32 bytes.

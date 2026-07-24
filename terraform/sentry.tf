@@ -6,6 +6,11 @@ resource "sentry_project" "portfolio" {
   platform     = "javascript-nextjs"
 }
 
+data "sentry_team" "personal" {
+  organization = var.sentry_org
+  slug         = "personal"
+}
+
 resource "sentry_issue_alert" "critical_errors" {
   organization = var.sentry_org
   project      = sentry_project.portfolio.id
@@ -50,6 +55,12 @@ resource "sentry_metric_alert" "error_budget_availability" {
   resolve_threshold = 10
 
   trigger {
+    action {
+      type              = "email"
+      target_type       = "team"
+      target_identifier = data.sentry_team.personal.internal_id
+    }
+
     alert_threshold   = 100
     resolve_threshold = 10
     label             = "critical"
@@ -63,14 +74,20 @@ resource "sentry_metric_alert" "error_budget_latency" {
   organization      = var.sentry_org
   project           = sentry_project.portfolio.id
   name              = "SLO: Error Budget de Latência (LCP)"
-  dataset           = "transactions"
-  query             = "transaction.op:pageload has:measurements.lcp"
+  dataset           = "events_analytics_platform"
+  query             = "is_transaction:true transaction.op:pageload has:measurements.lcp"
   aggregate         = "p95(measurements.lcp)"
   time_window       = 60
   threshold_type    = 0
   resolve_threshold = 2000
 
   trigger {
+    action {
+      type              = "email"
+      target_type       = "team"
+      target_identifier = data.sentry_team.personal.internal_id
+    }
+
     alert_threshold   = 2500
     resolve_threshold = 2000
     label             = "critical"
