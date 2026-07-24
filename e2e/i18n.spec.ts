@@ -8,7 +8,7 @@ test.describe('Internationalization (i18n)', () => {
       .getByRole('button', { name: /Recusar opcionais|Reject optional/i })
       .click();
 
-    await expect(page.getByText("Hi! I'm Bruno")).toBeVisible();
+    await expect(page.getByText("Hi! I'm Bruno").first()).toBeVisible();
 
     if (isMobile) {
       const menuToggle = page.locator('label[for="menu-toggle"]').first();
@@ -19,7 +19,7 @@ test.describe('Internationalization (i18n)', () => {
       await page.getByRole('link', { name: 'pt', exact: true }).click();
     }
 
-    await expect(page.getByText('Olá! Eu sou Bruno')).toBeVisible();
+    await expect(page.getByText('Olá! Eu sou Bruno').first()).toBeVisible();
 
     await expect(page).toHaveURL(/\/pt/);
   });
