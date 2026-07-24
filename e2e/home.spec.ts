@@ -10,7 +10,7 @@ test.describe('Home Page', () => {
     await expect(metaDescription).toHaveAttribute('content', /Full-stack/i);
   });
 
-  test('should navigate to skills section', async ({ page }) => {
+  test('should navigate to skills section', async ({ page, isMobile }) => {
     await page.goto('/');
 
     await page
@@ -20,13 +20,22 @@ test.describe('Home Page', () => {
     const menuToggle = page.locator('label[for="menu-toggle"]').first();
     if (await menuToggle.isVisible()) {
       await menuToggle.click();
+
+      await expect(page.locator('#menu-toggle')).toBeChecked();
+      await expect(page.locator('aside')).toHaveCSS(
+        'transform',
+        /^(none|matrix\(1, 0, 0, 1, 0, 0\))$/
+      );
     }
 
-    const skillsLink = page
-      .getByRole('link', { name: /Habilidades|Skills/i })
-      .first();
+    const skillsLink = page.locator('a[href="#skills"]:visible').first();
     await expect(skillsLink).toBeVisible();
-    await skillsLink.click();
+
+    if (isMobile) {
+      await skillsLink.evaluate((link: HTMLElement) => link.click());
+    } else {
+      await skillsLink.click();
+    }
 
     await expect(page).toHaveURL(/#skills/);
   });

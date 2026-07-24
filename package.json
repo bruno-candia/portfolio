@@ -58,6 +58,7 @@
     "vitest": "^4.1.9"
   },
   "overrides": {
-    "postcss": "8.5.16"
+    "postcss": "8.5.23",
+    "sharp": "0.35.3"
   }
 }

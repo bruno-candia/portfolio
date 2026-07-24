@@ -1,5 +1,7 @@
-echo "🧪 Running unit tests..."
+set -e
+
+echo "Running unit tests..."
 npx vitest run
 
-echo "🎭 Running E2E tests..."
-npx playwright test
+echo "Running E2E tests in production mode..."
+CI=true npx playwright test

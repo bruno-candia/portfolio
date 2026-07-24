@@ -6,6 +6,9 @@ labels: 'postmortem'
 assignees: ''
 ---
 
+> Este arquivo é um template. Datas, métricas, versões e resultados abaixo são
+> exemplos fictícios e devem ser substituídos por evidências do incidente real.
+
 > Por favor, após abrir a issue, aplique labels adicionais para categorizar a área impactada (ex: `frontend`, `database`, `infra`) e a causa raiz (ex: `cause:network`, `cause:deploy`, `cause:config`). Isso facilita a análise de tendências de longo prazo.
 
 ## Sumário Executivo
@@ -31,7 +34,7 @@ assignees: ''
 **Poderia ter sido detectado mais rápido? Como?**
 [Sua análise sobre a detecção]
 
-## Linha do Tempo (Timeline)
+## Linha do Tempo (exemplo fictício)
 
 _(Use o fuso horário local e seja preciso)_
 
@@ -53,12 +56,12 @@ _(Use o fuso horário local e seja preciso)_
 
 **O que deu certo?**
 
-- O Sentry alertou o esgotamento do Error Budget imediatamente.
-- O rollback da Vercel foi instantâneo e mitigou a falha em minutos.
+- [Exemplo] O Sentry alertou o esgotamento do Error Budget imediatamente.
+- [Exemplo] O rollback da Vercel mitigou a falha em minutos.
 
 **O que deu errado?**
 
-- A detecção no pipeline CI/CD falhou em encontrar o problema com antecedência, impactando o usuário.
+- [Exemplo] A detecção no pipeline CI/CD falhou em encontrar o problema com antecedência.
 
 ## Action Items
 
