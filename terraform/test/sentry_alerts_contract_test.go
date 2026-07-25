@@ -18,6 +18,8 @@ func TestSentryMetricAlertContract(t *testing.T) {
 	availability := resourceBlock(t, string(config), `resource "sentry_metric_alert" "error_budget_availability"`)
 	latency := resourceBlock(t, string(config), `resource "sentry_metric_alert" "error_budget_latency"`)
 
+	assertMatches(t, availability, `(?m)event_types\s*=\s*\[\s*"error"\s*\]`,
+		"availability alert must declare Sentry's normalized error event type to avoid perpetual drift")
 	assertMatches(t, latency, `(?m)dataset\s*=\s*"events_analytics_platform"`,
 		"latency alert must use Sentry's events_analytics_platform dataset")
 	assertMatches(t, latency, `(?m)query\s*=\s*"[^"]*is_transaction:true[^"]*"`,

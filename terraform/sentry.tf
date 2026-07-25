@@ -48,6 +48,7 @@ resource "sentry_metric_alert" "error_budget_availability" {
   project           = sentry_project.portfolio.id
   name              = "SLO: Error Budget de Disponibilidade"
   dataset           = "events"
+  event_types       = ["error"]
   query             = "event.type:error"
   aggregate         = "count()"
   time_window       = 60
