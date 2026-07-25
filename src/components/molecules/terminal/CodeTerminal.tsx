@@ -39,6 +39,9 @@ export function CodeTerminal({
 
         <div
           className="p-4 overflow-x-auto overflow-y-auto max-h-[400px]"
+          // The scrollable region must be keyboard-focusable so keyboard users
+          // can reach content that overflows horizontally.
+          // eslint-disable-next-line jsx-a11y-x/no-noninteractive-tabindex
           tabIndex={0}
           role="region"
           aria-label={`Code snippet: ${title}`}

@@ -55,7 +55,11 @@ export function ConsentBanner() {
         {customizing && (
           <fieldset className="grid gap-3 border-y border-zinc-800 py-4">
             <legend className="sr-only">{t('customize')}</legend>
-            <label className="flex items-start justify-between gap-4">
+            <label
+              htmlFor="consent-analytics"
+              aria-label={t('analytics.title')}
+              className="flex items-start justify-between gap-4"
+            >
               <span>
                 <span className="block text-sm font-medium">
                   {t('analytics.title')}
@@ -65,6 +69,7 @@ export function ConsentBanner() {
                 </span>
               </span>
               <input
+                id="consent-analytics"
                 type="checkbox"
                 className="mt-1 h-5 w-5 accent-white"
                 checked={preferences.analytics}
@@ -76,7 +81,11 @@ export function ConsentBanner() {
                 }
               />
             </label>
-            <label className="flex items-start justify-between gap-4">
+            <label
+              htmlFor="consent-diagnostics"
+              aria-label={t('diagnostics.title')}
+              className="flex items-start justify-between gap-4"
+            >
               <span>
                 <span className="block text-sm font-medium">
                   {t('diagnostics.title')}
@@ -86,6 +95,7 @@ export function ConsentBanner() {
                 </span>
               </span>
               <input
+                id="consent-diagnostics"
                 type="checkbox"
                 className="mt-1 h-5 w-5 accent-white"
                 checked={preferences.diagnostics}
