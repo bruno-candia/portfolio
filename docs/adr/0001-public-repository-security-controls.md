@@ -22,8 +22,9 @@ could consequently mutate production infrastructure.
   updates.
 - Publish Terraform check statuses, but never the raw plan, in public pull
   requests.
-- Keep local Terraform tests non-destructive. Future acceptance tests must use
-  an explicitly isolated, ephemeral workspace.
+- Keep Terraform contract tests dependency-light and run CLI validation
+  explicitly in CI. Future acceptance tests must use an explicitly isolated,
+  ephemeral workspace.
 - Run production applies in a serialized GitHub `production` environment after
   all required checks pass on protected `master`.
 - Run CodeQL for JavaScript and TypeScript on pull requests, `master`, and a

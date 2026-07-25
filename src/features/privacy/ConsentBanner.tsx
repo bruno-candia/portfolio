@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
 import { ConsentPreferences, DENIED_PREFERENCES } from './consent';
 import { useConsent } from './ConsentProvider';
@@ -8,7 +8,7 @@ import { useConsent } from './ConsentProvider';
 export function ConsentBanner() {
   const t = useTranslations('Privacy');
   const locale = useLocale();
-  const { decision, isOpen, privacySignal, closeSettings, savePreferences } =
+  const { decision, privacySignal, closeSettings, savePreferences } =
     useConsent();
   const [customizing, setCustomizing] = useState(false);
   const [preferences, setPreferences] = useState<ConsentPreferences>(
@@ -16,15 +16,6 @@ export function ConsentBanner() {
   );
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState(false);
-
-  useEffect(() => {
-    if (isOpen) {
-      setPreferences(decision?.preferences ?? DENIED_PREFERENCES);
-      setError(false);
-    }
-  }, [decision, isOpen]);
-
-  if (!isOpen) return null;
 
   const save = async (next: ConsentPreferences) => {
     setSaving(true);
@@ -64,7 +55,11 @@ export function ConsentBanner() {
         {customizing && (
           <fieldset className="grid gap-3 border-y border-zinc-800 py-4">
             <legend className="sr-only">{t('customize')}</legend>
-            <label className="flex items-start justify-between gap-4">
+            <label
+              htmlFor="consent-analytics"
+              aria-label={t('analytics.title')}
+              className="flex items-start justify-between gap-4"
+            >
               <span>
                 <span className="block text-sm font-medium">
                   {t('analytics.title')}
@@ -74,6 +69,7 @@ export function ConsentBanner() {
                 </span>
               </span>
               <input
+                id="consent-analytics"
                 type="checkbox"
                 className="mt-1 h-5 w-5 accent-white"
                 checked={preferences.analytics}
@@ -85,7 +81,11 @@ export function ConsentBanner() {
                 }
               />
             </label>
-            <label className="flex items-start justify-between gap-4">
+            <label
+              htmlFor="consent-diagnostics"
+              aria-label={t('diagnostics.title')}
+              className="flex items-start justify-between gap-4"
+            >
               <span>
                 <span className="block text-sm font-medium">
                   {t('diagnostics.title')}
@@ -95,6 +95,7 @@ export function ConsentBanner() {
                 </span>
               </span>
               <input
+                id="consent-diagnostics"
                 type="checkbox"
                 className="mt-1 h-5 w-5 accent-white"
                 checked={preferences.diagnostics}
