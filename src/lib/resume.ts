@@ -1,19 +1,13 @@
 /**
- * Fonte única de currículo.
+ * Single source for career and project data.
  *
- * `resume.json` é o canônico, em inglês, no schema JSON Resume. Ele guarda tudo
- * que não é prosa: datas, URLs, keywords, cores das lanes do grafo, visibilidade
- * do repositório e os cross-links entre emprego e projeto.
+ * `resume.json` is canonical and holds everything that is not prose: dates,
+ * URLs, keywords, timeline lane colours, repository visibility and the
+ * cross-links between a job and its project. `resume.pt.json` is a translation
+ * overlay keyed by `x_id`, so a date cannot disagree between locales.
  *
- * `resume.pt.json` é overlay de tradução: só prosa, chaveado por `x_id`.
- *
- * A separação é deliberada. Se fossem dois arquivos completos, o dia em que uma
- * data mudasse num e não no outro, o site em PT e em EN mostraria carreiras
- * diferentes. Assim, data e URL existem em exatamente um lugar.
- *
- * Não há validação em runtime porque não há runtime: os dois JSON entram no
- * bundle em build time e o TypeScript já os tipa estruturalmente. Um validador
- * aqui seria peso sem retorno.
+ * No runtime validation: both files are bundled at build time and TypeScript
+ * types them structurally from the JSON itself.
  */
 
 import base from '@/content/resume.json';
@@ -33,12 +27,12 @@ export interface Work {
   highlights: string[];
   startDate: string;
   endDate?: string;
-  /** Lane no grafo de git da Trajetória. */
+  /** Lane in the career git graph. */
   lane: string;
   color: string;
-  /** Correu em paralelo com outro emprego. */
+  /** Ran alongside another job. */
   parallel: boolean;
-  /** `x_id` do projeto correspondente, quando existe. */
+  /** Matching project, when there is one. */
   projectId?: string;
 }
 
@@ -48,13 +42,13 @@ export interface Project {
   name: string;
   type: string;
   description: string;
-  /** Uma linha de detalhe técnico, mostrada no card. */
+  /** One-line technical detail shown on the card. */
   detail?: string;
-  /** Blocos do case; vazios enquanto não escritos. */
+  /** Case study blocks; undefined until written. */
   problem?: string;
   built?: string;
   result?: string;
-  /** "O que eu faria diferente hoje" — opcional por projeto. */
+  /** "What I would do differently today". */
   retrospective?: string;
   highlights: string[];
   keywords: string[];
@@ -64,9 +58,9 @@ export interface Project {
   repository?: string;
   image?: string;
   visibility?: 'open-source' | 'closed-source';
-  /** `x_id` do emprego correspondente, quando existe. */
+  /** Matching job, when there is one. */
   workId?: string;
-  /** Vai para o bloco "Outros" em vez de virar card. */
+  /** Goes to the "others" block instead of a full card. */
   secondary: boolean;
 }
 
@@ -74,7 +68,7 @@ export interface Skill {
   id: string;
   name: string;
   description: string;
-  /** As que aparecem em destaque; o resto entra no "+N". */
+  /** Shown highlighted; the rest sits behind the "+N" chip. */
   core: string[];
   keywords: string[];
 }
@@ -186,19 +180,19 @@ function toSkill(s: BaseSkill, locale: Locale): Skill {
   };
 }
 
-/** Empregos, do mais recente para o mais antigo — a ordem de um `git log`. */
+/** Newest first, the order of a `git log`. */
 export function getWork(locale: Locale): Work[] {
   return base.work.map((w) => toWork(w, locale));
 }
 
-/** Projetos que viram card grande. */
+/** Projects that get a full card. */
 export function getProjects(locale: Locale): Project[] {
   return base.projects
     .map((p) => toProject(p, locale))
     .filter((p) => !p.secondary);
 }
 
-/** Projetos do bloco "Outros". */
+/** Projects listed in the "others" block. */
 export function getSecondaryProjects(locale: Locale): Project[] {
   return base.projects
     .map((p) => toProject(p, locale))
@@ -217,7 +211,7 @@ export function getSkills(locale: Locale): Skill[] {
   return base.skills.map((s) => toSkill(s, locale));
 }
 
-/** Quantas keywords ficam escondidas atrás do "+N" de uma skill. */
+/** How many keywords the "+N" chip hides. */
 export function hiddenSkillCount(skill: Skill, shown: number): number {
   return Math.max(0, skill.keywords.length - shown);
 }

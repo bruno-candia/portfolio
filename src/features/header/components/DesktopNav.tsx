@@ -6,12 +6,12 @@ export function DesktopNav() {
   const { menuItems, handleNavClick } = useSidebarViewModel();
 
   return (
-    <nav className="hidden md:flex items-center gap-8">
-      {menuItems.map((item, index) => (
+    <nav className="hidden items-center gap-8 md:flex">
+      {menuItems.map((item) => (
         <a
-          key={index}
+          key={item.id}
           href={item.href}
-          className="text-white text-sm font-medium hover:text-zinc-400 transition-colors"
+          className="ds-small text-ink-2 transition-colors hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink"
           onClick={() => handleNavClick(item.id)}
         >
           {item.label}

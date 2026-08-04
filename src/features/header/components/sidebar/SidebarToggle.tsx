@@ -7,9 +7,10 @@ export function Toggle() {
 
       <label
         htmlFor="menu-toggle"
-        className="border h-fit p-2 rounded-full bg-transparent shadow-xs hover:bg-accent hover:text-accent-foreground "
+        aria-label="Abrir menu"
+        className="inline-flex h-11 w-11 cursor-pointer items-center justify-center text-ink transition-colors hover:text-ink-2"
       >
-        <Menu />
+        <Menu aria-hidden />
       </label>
     </>
   );

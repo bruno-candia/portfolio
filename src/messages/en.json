@@ -4,9 +4,9 @@
     "english": "English",
     "home": "Home",
     "about": "About",
-    "works": "Works",
+    "works": "Projects",
     "skills": "Skills",
-    "experience": "Journey",
+    "experience": "Career",
     "contact": "Contact"
   },
   "Header": {
@@ -376,8 +376,8 @@
     "nav": {
       "about": "About",
       "skills": "Skills",
-      "works": "Works",
-      "experience": "Journey",
+      "works": "Projects",
+      "experience": "Career",
       "contact": "Contact"
     },
     "madeBy": "Created by Bruno Costa",

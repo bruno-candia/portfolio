@@ -1,5 +1,5 @@
 @import 'tailwindcss';
-@import './styles/_reset.css';
+@import './styles/_base.css';
 @import './styles/_variables.css';
 @import './styles/_typography.css';
 @import 'tw-animate-css';
@@ -12,11 +12,9 @@ body {
 }
 
 @layer base {
+  /* default colour for the bare `border` utility */
   * {
-    @apply border-border outline-ring/50;
-  }
-  body {
-    @apply bg-background text-foreground;
+    @apply border-line;
   }
 }
 @layer utilities {

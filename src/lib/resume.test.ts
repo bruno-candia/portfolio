@@ -15,7 +15,7 @@ describe('resume', () => {
     const en = getWork('en');
     const pt = getWork('pt');
 
-    // datas e cores vivem só no resume.json: PT e EN não podem divergir
+    // dates and colours live only in resume.json; locales must not diverge
     expect(pt.map((w) => w.startDate)).toEqual(en.map((w) => w.startDate));
     expect(pt.map((w) => w.color)).toEqual(en.map((w) => w.color));
     expect(pt.map((w) => w.id)).toEqual(en.map((w) => w.id));
@@ -53,7 +53,7 @@ describe('resume', () => {
   });
 
   it('falls back to the canonical text when a translation is missing', () => {
-    // wind-energy só tem `description` traduzida
+    // wind-energy only translates `description`
     const pt = getSecondaryProjects('pt').find((p) => p.id === 'wind-energy');
     expect(pt?.description).toBe('C++ · estudo de faculdade');
     expect(pt?.keywords).toContain('C++');

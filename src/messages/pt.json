@@ -4,9 +4,9 @@
     "english": "Inglês",
     "home": "Início",
     "about": "Sobre",
-    "works": "Trabalhos",
-    "skills": "Habilidades",
-    "experience": "Jornada",
+    "works": "Projetos",
+    "skills": "Skills",
+    "experience": "Trajetória",
     "contact": "Contato"
   },
   "Header": {
@@ -375,9 +375,9 @@
   "Footer": {
     "nav": {
       "about": "Sobre",
-      "skills": "Habilidades",
-      "works": "Trabalhos",
-      "experience": "Jornada",
+      "skills": "Skills",
+      "works": "Projetos",
+      "experience": "Trajetória",
       "contact": "Contato"
     },
     "madeBy": "Criado por Bruno Costa",

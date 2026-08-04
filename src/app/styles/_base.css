@@ -1,0 +1,70 @@
+/*
+ * Document base. Tailwind Preflight is the reset; this file only carries what
+ * Preflight does not.
+ *
+ * The previous file duplicated Preflight outside any cascade layer, and
+ * unlayered rules beat `@layer utilities` — which silently disabled every
+ * Tailwind margin utility in the project.
+ */
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* anchor targets must clear the sticky header */
+    scroll-padding-top: var(--header-offset, 104px);
+    /* allows animating height to and from `auto` */
+    interpolate-size: allow-keywords;
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    overflow-wrap: break-word;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-wrap: balance;
+  }
+
+  ::selection {
+    background-color: var(--ink);
+    color: var(--ink-inverse);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 3px;
+  }
+
+  /* Covers anything added later, not just today's decorative loops. */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}

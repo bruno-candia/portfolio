@@ -1,6 +1,6 @@
 {
   "meta": {
-    "note": "Overlay de tradução do resume.json. Só carrega prosa — datas, URLs, keywords e cores vivem exclusivamente no resume.json para não divergirem. Chaveado por x_id."
+    "note": "Translation overlay for resume.json. Prose only — dates, URLs, keywords and colours live exclusively in resume.json so they cannot diverge. Keyed by x_id."
   },
   "basics": {
     "label": "Desenvolvedor Full-stack & UI/UX Designer",

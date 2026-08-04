@@ -9,29 +9,34 @@ export function Hero() {
   const { cvDownloadText, handleDownloadCV } = useHeroViewModel();
 
   return (
-    <section
-      className="relative w-full bg-black text-white flex flex-col items-center justify-start pt-24 md:pt-48 overflow-hidden"
-      style={{ height: '100svh' }}
-    >
-      <div className="w-full max-w-[1080px] mx-auto px-6">
-        <HeroContent />
-      </div>
-      <HeroSocials />
-      <Button
-        asChild
-        size="lg"
-        className="absolute bottom-16 md:bottom-20 bg-white text-black hover:bg-white/90 hover:text-black px-8 py-3 text-base"
+    <section className="relative flex w-full flex-col items-center justify-center bg-bg text-ink min-h-[calc(100svh-104px)]">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-y-0 left-1/2 hidden w-full max-w-page -translate-x-1/2 md:block"
       >
-        <a
-          href="/bruno-candia-full-stack-resume.pdf"
-          download
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={handleDownloadCV}
-        >
-          {cvDownloadText}
-        </a>
-      </Button>
+        <span className="absolute inset-y-0 left-0 w-px bg-line" />
+        <span className="absolute inset-y-0 right-0 w-px bg-line" />
+      </div>
+
+      <div className="-mt-16 flex w-full max-w-page flex-col items-center px-5 md:px-0">
+        <HeroContent />
+
+        <Button asChild variant="primary" size="ds" className="mt-10">
+          <a
+            href="/bruno-candia-full-stack-resume.pdf"
+            download
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={handleDownloadCV}
+          >
+            {cvDownloadText}
+          </a>
+        </Button>
+      </div>
+
+      <HeroSocials />
+
+      <span aria-hidden className="absolute inset-x-0 bottom-0 h-px bg-line" />
     </section>
   );
 }

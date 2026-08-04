@@ -1,46 +1,39 @@
 /*
- * Design tokens.
+ * Design tokens, exported from the "DS · Portfolio" Figma collection rather
+ * than transcribed: a mismatch here is a bug, not a choice.
  *
- * Espelho da coleção "DS · Portfolio" no Figma (arquivo Bruno Portfolio,
- * página Redesign v2). Os valores foram exportados do Figma, não transcritos:
- * qualquer divergência aqui é bug, não escolha.
+ * The site has a single theme, so there is no `.dark` block.
  *
- * O site tem um tema só — preto quase puro. Não há alternância clara/escuro,
- * então não existe bloco `.dark`: os valores abaixo são o tema.
- *
- * Duas camadas:
- *   1. tokens do DS (--bg-*, --line-*, --ink-*, --accent*, --code-*, --space-*)
- *   2. aliases semânticos herdados do shadcn (--primary, --ring, ...), ainda
- *      consumidos por `components/atoms/button`. Apontam para a camada 1, então
- *      existe um único lugar onde a cor é decidida.
+ * The shadcn semantic aliases are kept because components/atoms/button still
+ * consumes them, but they point at the tokens above so colour is decided once.
  */
 
 :root {
-  /* ---- superfícies · bg/* ---- */
+  /* bg/* */
   --bg: #000000;
   --bg-subtle: #000000;
   --surface: #0a0a0a;
   --surface-hi: #111111;
   --inset: #000000;
 
-  /* ---- linhas · border/* ---- */
+  /* border/* */
   --line: rgb(255 255 255 / 8%);
   --line-strong: rgb(255 255 255 / 13%);
   --line-hard: rgb(255 255 255 / 22%);
 
-  /* ---- texto · text/* ---- */
+  /* text/* */
   --ink: #ededed;
   --ink-2: #a1a1a1;
   --ink-3: #7a7a7a;
   --ink-inverse: #08080a;
 
-  /* ---- marca · accent/* ---- */
+  /* accent/* */
   --accent-ink: #ffffff;
   --accent: #f5d90a;
   --accent-dim: rgb(245 217 10 / 14%);
   --accent-line: rgb(245 217 10 / 38%);
 
-  /* ---- syntax highlight dos code cards · code/* ---- */
+  /* code/* */
   --code-bg: #050505;
   --code-keyword: #c792ea;
   --code-string: #c3e88d;
@@ -48,21 +41,20 @@
   --code-comment: #5c6370;
   --code-plain: #d4d4d8;
 
-  /* ---- raio · radius/* ---- */
+  /* radius/* */
   --radius-1: 6px;
   --radius-2: 10px;
   --radius-3: 14px;
   --radius-4: 20px;
   --radius-full: 999px;
-  /* consumido pelo button do shadcn */
   --radius: var(--radius-2);
 
-  /* ---- layout · size/* ---- */
-  --container: 1120px;
+  /* size/* */
+  --container: 1080px;
   --gutter: 32px;
   --header: 64px;
 
-  /* ---- aliases semânticos (shadcn) ---- */
+  /* shadcn aliases */
   --background: var(--bg);
   --foreground: var(--ink);
   --card: var(--surface);
@@ -83,31 +75,26 @@
 }
 
 @theme inline {
-  /* superfícies */
   --color-bg: var(--bg);
   --color-bg-subtle: var(--bg-subtle);
   --color-surface: var(--surface);
   --color-surface-hi: var(--surface-hi);
   --color-inset: var(--inset);
 
-  /* linhas */
   --color-line: var(--line);
   --color-line-strong: var(--line-strong);
   --color-line-hard: var(--line-hard);
 
-  /* texto */
   --color-ink: var(--ink);
   --color-ink-2: var(--ink-2);
   --color-ink-3: var(--ink-3);
   --color-ink-inverse: var(--ink-inverse);
 
-  /* marca */
   --color-accent-ink: var(--accent-ink);
   --color-accent: var(--accent);
   --color-accent-dim: var(--accent-dim);
   --color-accent-line: var(--accent-line);
 
-  /* code */
   --color-code-bg: var(--code-bg);
   --color-code-keyword: var(--code-keyword);
   --color-code-string: var(--code-string);
@@ -115,7 +102,6 @@
   --color-code-comment: var(--code-comment);
   --color-code-plain: var(--code-plain);
 
-  /* aliases semânticos consumidos pelos atoms */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -134,12 +120,11 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
 
-  /* tipografia */
   --font-sans: var(--font-geist);
   --font-mono: var(--font-geist-mono);
   --font-graffiti: var(--font-graffiti);
 
-  /* espaço · space/* */
+  /* space/* */
   --spacing-4: 4px;
   --spacing-8: 8px;
   --spacing-12: 12px;
@@ -154,18 +139,16 @@
   --spacing-128: 128px;
   --spacing-160: 160px;
 
-  /* raio · radius/* */
+  /* radius/* */
   --radius-1: var(--radius-1);
   --radius-2: var(--radius-2);
   --radius-3: var(--radius-3);
   --radius-4: var(--radius-4);
   --radius-full: var(--radius-full);
-  /* usados pelo button do shadcn */
   --radius-sm: var(--radius-1);
   --radius-md: var(--radius-2);
   --radius-lg: var(--radius-3);
   --radius-xl: var(--radius-4);
 
-  /* layout · size/* */
   --container-page: var(--container);
 }
