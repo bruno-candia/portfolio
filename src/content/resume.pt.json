@@ -88,11 +88,11 @@
   },
   "skills": {
     "frontend": {
-      "name": "Frontend & TypeScript",
+      "name": "Frontend",
       "description": "SPAs, SSR, estado complexo e teste automatizado em produto real."
     },
     "backend": {
-      "name": "Backend & APIs",
+      "name": "Backend",
       "description": "APIs escaláveis, concorrência e integridade transacional."
     },
     "platform": {

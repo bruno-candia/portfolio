@@ -1,91 +1,34 @@
-'use client';
+import { useLocale, useTranslations } from 'next-intl';
 
-import { useRef } from 'react';
-import { useTranslations } from 'next-intl';
-import { skillsData } from './data/skills';
-import { SkillCard } from './components/SkillCard';
-import { CodeTerminal } from '@/components/molecules/terminal/CodeTerminal';
-import { useSkillsScrollAnimation } from './hooks/useSkillsScrollAnimation';
+import { getSkills, type Locale } from '@/lib/resume';
+import { SkillsBento } from './components/SkillsBento';
 
 export function Skills() {
   const t = useTranslations('Skills');
-  const sectionRef = useRef<HTMLElement>(null);
-
-  const { activeCategory, activeCategoryData, selectedTech, handleTechClick } =
-    useSkillsScrollAnimation({
-      categories: skillsData,
-      containerRef: sectionRef,
-    });
-
-  const CurrentIconComponent =
-    selectedTech?.icon || activeCategoryData?.defaultIcon;
-  const currentCode =
-    selectedTech?.codeSnippet || activeCategoryData?.defaultCode || '';
-  const currentLanguage =
-    selectedTech?.language ||
-    activeCategoryData?.defaultLanguage ||
-    'plaintext';
-  const currentColor =
-    selectedTech?.color || activeCategoryData?.defaultColor || '#fff';
+  const locale = useLocale() as Locale;
 
   return (
-    <section
-      ref={sectionRef}
-      id="skills"
-      className="relative w-full flex justify-center bg-zinc-950"
-    >
-      <div className="max-w-[1080px] w-full mx-auto overflow-hidden lg:overflow-visible">
-        <div className="pt-16 lg:pt-20 pl-6 lg:pl-0">
-          <h2 className="text-[30px] font-medium mb-6">{t('title')}</h2>
-        </div>
+    <section id="skills" className="relative w-full bg-bg">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-y-0 left-1/2 hidden w-full max-w-page -translate-x-1/2 md:block"
+      >
+        <span className="absolute inset-y-0 left-0 w-px bg-line" />
+        <span className="absolute inset-y-0 right-0 w-px bg-line" />
+      </div>
 
-        <div className="hidden lg:grid lg:grid-cols-2 gap-8">
-          <div className="relative">
-            {skillsData.map((category) => (
-              <div key={category.id} data-skill-card={category.id}>
-                <SkillCard
-                  category={category}
-                  isActive={activeCategory === category.id}
-                  onTechClick={handleTechClick}
-                  selectedTech={
-                    activeCategory === category.id ? selectedTech : null
-                  }
-                  showTerminal={false}
-                />
-              </div>
-            ))}
-          </div>
+      <div className="mx-auto w-full max-w-page px-5 py-20 md:px-8 md:py-28">
+        <header className="flex flex-col gap-3.5">
+          <p className="ds-eyebrow text-ink-3">{t('eyebrow')}</p>
+          <h2 className="ds-m-h1 md:ds-h1 max-w-[680px] text-ink">
+            {t('title')}
+          </h2>
+          <p className="ds-body md:ds-body-lg max-w-[620px] text-ink-3">
+            {t('subtitle')}
+          </p>
+        </header>
 
-          <div className="relative self-stretch">
-            <div className="sticky top-32 py-8">
-              <CodeTerminal
-                code={currentCode}
-                language={currentLanguage}
-                title={`${activeCategory}.${currentLanguage}`}
-                icon={
-                  CurrentIconComponent && (
-                    <CurrentIconComponent aria-hidden="true" />
-                  )
-                }
-                iconColor={currentColor}
-              />
-            </div>
-          </div>
-        </div>
-
-        <div className="lg:hidden">
-          {skillsData.map((category) => (
-            <div key={category.id} data-skill-card={category.id}>
-              <SkillCard
-                category={category}
-                isActive={true}
-                onTechClick={handleTechClick}
-                selectedTech={selectedTech}
-                showTerminal={true}
-              />
-            </div>
-          ))}
-        </div>
+        <SkillsBento skills={getSkills(locale)} />
       </div>
     </section>
   );

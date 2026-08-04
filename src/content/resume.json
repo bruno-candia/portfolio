@@ -237,7 +237,7 @@
   "skills": [
     {
       "x_id": "frontend",
-      "name": "Frontend & TypeScript",
+      "name": "Frontend",
       "level": "Advanced",
       "x_core": [
         "TypeScript",
@@ -274,7 +274,7 @@
     },
     {
       "x_id": "backend",
-      "name": "Backend & APIs",
+      "name": "Backend",
       "level": "Advanced",
       "x_core": [
         "Node.js",

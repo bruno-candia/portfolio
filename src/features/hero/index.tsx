@@ -18,7 +18,7 @@ export function Hero() {
         <span className="absolute inset-y-0 right-0 w-px bg-line" />
       </div>
 
-      <div className="-mt-16 flex w-full max-w-page flex-col items-center px-5 md:px-0">
+      <div className="-mt-16 flex w-full max-w-page flex-col items-center px-5 md:px-8">
         <HeroContent />
 
         <Button asChild variant="primary" size="ds" className="mt-10">

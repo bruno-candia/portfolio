@@ -11,7 +11,7 @@ export function Header() {
   return (
     <>
       <header className="group/header sticky top-0 z-50 w-full">
-        <div className="mx-auto flex h-[104px] w-full max-w-page items-center justify-between px-5 md:px-0">
+        <div className="mx-auto flex h-[104px] w-full max-w-page items-center justify-between px-5 md:px-8">
           <Logo />
 
           <DesktopNav />
