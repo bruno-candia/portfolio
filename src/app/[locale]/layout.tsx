@@ -132,7 +132,7 @@ export default async function RootLayout({
     description: t('description'),
     sameAs: [
       'https://github.com/bruno-candia',
-      'https://www.linkedin.com/in/bruno-candia',
+      'https://www.linkedin.com/in/bruno-costa-candia',
       'https://www.instagram.com/brunocandia/',
       'https://www.behance.net/brunocostac3',
     ],
