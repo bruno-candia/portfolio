@@ -10,7 +10,6 @@ export default async function Loading() {
             className="text-4xl md:text-6xl text-white font-normal animate-wave-text inline-block transform will-change-transform"
             style={{
               animationDelay: `${index * 0.1}s`,
-              fontFamily: 'var(--font-cabinet-grotesk), sans-serif',
             }}
           >
             {char === ' ' ? '\u00A0' : char}

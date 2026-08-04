@@ -2,17 +2,17 @@
 
 import Link from 'next/link';
 import './globals.css';
-import localFont from 'next/font/local';
+import { Geist } from 'next/font/google';
 import { Button } from '@/components/atoms/button';
 
-const cabinetGrotesk = localFont({
-  src: './fonts/CabinetGrotesk.woff2',
-  variable: '--font-cabinet-grotesk',
+const geist = Geist({
+  subsets: ['latin'],
+  variable: '--font-geist',
 });
 
 export default function NotFound() {
   return (
-    <html lang="en" className={cabinetGrotesk.variable}>
+    <html lang="en" className={geist.variable}>
       <body className="bg-black text-white overflow-hidden">
         <main className="h-screen w-screen flex flex-col items-center justify-center relative">
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />

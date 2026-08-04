@@ -1,0 +1,144 @@
+/*
+ * Escala tipográfica.
+ *
+ * Cada classe corresponde 1:1 a um text style da coleção "DS · Portfolio" no
+ * Figma. O nome é o mesmo com `/` virando `-`, então `DS/body-lg` é `.ds-body-lg`.
+ * Isso é proposital: dá para conferir uma tela contra o Figma sem traduzir nada.
+ *
+ * As variantes `.ds-m-*` são os estilos de 390w. Elas existem como classes
+ * separadas em vez de media query porque nem toda seção troca de escala no mesmo
+ * ponto — quem decide o breakpoint é o componente.
+ */
+
+@layer components {
+  .ds-display {
+    font-family: var(--font-geist);
+    font-weight: 500;
+    font-size: 64px;
+    line-height: 68px;
+    letter-spacing: -2.2px;
+  }
+
+  .ds-h1 {
+    font-family: var(--font-geist);
+    font-weight: 500;
+    font-size: 44px;
+    line-height: 50px;
+    letter-spacing: -1.4px;
+  }
+
+  .ds-h2 {
+    font-family: var(--font-geist);
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: -0.9px;
+  }
+
+  .ds-h3 {
+    font-family: var(--font-geist);
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 28px;
+    letter-spacing: -0.3px;
+  }
+
+  .ds-h4 {
+    font-family: var(--font-geist);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.1px;
+  }
+
+  .ds-body-lg {
+    font-family: var(--font-geist);
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 28px;
+  }
+
+  .ds-body {
+    font-family: var(--font-geist);
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 24px;
+  }
+
+  .ds-small {
+    font-family: var(--font-geist);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .ds-eyebrow {
+    font-family: var(--font-geist);
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+  }
+
+  .ds-mono {
+    font-family: var(--font-geist-mono);
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 22px;
+  }
+
+  .ds-mono-sm {
+    font-family: var(--font-geist-mono);
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .ds-mono-label {
+    font-family: var(--font-geist-mono);
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.2px;
+  }
+
+  .ds-logo {
+    font-family: var(--font-graffiti);
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 40px;
+  }
+
+  /* ---- 390w ---- */
+  .ds-m-display {
+    font-family: var(--font-geist);
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 40px;
+    letter-spacing: -1.2px;
+  }
+
+  .ds-m-h1 {
+    font-family: var(--font-geist);
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 32px;
+    letter-spacing: -0.8px;
+  }
+
+  .ds-m-h2 {
+    font-family: var(--font-geist);
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 28px;
+    letter-spacing: -0.4px;
+  }
+
+  .ds-m-mono {
+    font-family: var(--font-geist-mono);
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 17px;
+  }
+}

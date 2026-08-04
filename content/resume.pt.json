@@ -1,0 +1,127 @@
+{
+  "meta": {
+    "note": "Overlay de tradução do resume.json. Só carrega prosa — datas, URLs, keywords e cores vivem exclusivamente no resume.json para não divergirem. Chaveado por x_id."
+  },
+  "basics": {
+    "label": "Desenvolvedor Full-stack & UI/UX Designer",
+    "summary": "Engenheiro full stack. Meu foco é escrever código limpo e resolver problema real — seja otimizando performance ou arquitetando o que ainda não existe. Fora da técnica, mentoria e ambiente onde todo mundo aprende."
+  },
+  "work": {
+    "bees-tech-lead": {
+      "position": "Tech Lead",
+      "summary": "Padronização das plataformas globais (Grow, Force, Control Tower). Arquitetei os BFFs em NestJS com Clean Architecture e escalei o ecossistema com micro-frontends.",
+      "highlights": ["22 países", "micro-frontends", "NestJS · Clean Arch"]
+    },
+    "bees-senior": {
+      "position": "Engenheiro de Software Sênior",
+      "summary": "Auto Dialer em React com WebSockets para acelerar interação de vendas. Liderei a migração para micro-frontends.",
+      "highlights": ["deploy 1h → minutos", "React · WebSockets"]
+    },
+    "aurem": {
+      "position": "Fundador e Engenheiro de Software",
+      "summary": "Startup de legendagem inclusiva em tempo real, tocada em paralelo aos outros times. Web Speech API para baixa latência, WebSockets para sincronização, infra em AWS/Docker.",
+      "highlights": ["5 anos em paralelo", "1.000+ alunos", "Prêmio Santander"]
+    },
+    "verzel": {
+      "position": "UX Designer",
+      "summary": "Ponte entre design e engenharia. Interfaces no Figma pensadas para quem implementa, e Design System que fechou o handoff.",
+      "highlights": ["Design System", "Figma → React"]
+    },
+    "neoenergia": {
+      "position": "Estagiário de Desenvolvimento",
+      "summary": "Digitalizei fluxos internos com dashboards em React/TypeScript e manutenção de backends Node.js/SQL.",
+      "highlights": ["React · TypeScript", "Node · SQL"]
+    }
+  },
+  "projects": {
+    "aurem": {
+      "description": "Aula online exclui quem não ouve.",
+      "detail": "Legendagem em tempo real com Web Speech API, whiteboard colaborativo em Fabric.js e um cliente Electron com overlay transparente que legenda por cima de qualquer software.",
+      "problem": "Aula híbrida assume que todo mundo ouve. Quem tem perda auditiva depende de intérprete presente ou da legenda do próprio player — que não existe quando o professor apresenta de um PowerPoint, de um PDF ou de qualquer software fora do navegador.",
+      "built": "Um ecossistema em três frentes: um LMS para instituições, uma sala de aula virtual com legendagem ao vivo, e um cliente desktop que legenda por cima de qualquer aplicação.",
+      "result": "Atendeu mais de mil alunos e recebeu o Prêmio Santander. A operação foi encerrada em 2023, mas o produto rodou cinco anos em produção enquanto eu trabalhava em outros times.",
+      "highlights": [
+        "Redux, não Context — a sala tem estado compartilhado por três papéis. Em Context isso vira re-render em cascata a cada frase transcrita.",
+        "Fabric.js no whiteboard — anotação precisava trafegar como vetor, não como imagem: sincroniza como dado, cabe no socket e continua nítida em qualquer zoom.",
+        "WebSockets, não polling — legenda com atraso perceptível é inútil. O orçamento de latência era da fala até o texto na tela; polling estourava só no round-trip.",
+        "Electron frameless com click-through — a legenda precisa ficar por cima do PowerPoint sem roubar o clique do professor.",
+        "Web Speech API — transcrição no cliente cortou uma ida ao servidor por frase e tirou áudio do tráfego."
+      ]
+    },
+    "maincore": {
+      "description": "Site institucional que precisa vender dois produtos técnicos e capturar lead qualificado.",
+      "detail": "Next.js 13 com styled-components renderizado no servidor, Radix nos componentes interativos e captura de lead com validação de captcha no backend.",
+      "problem": "A Maincore vende sistemas embarcados e lógica programável: produto que ninguém compra por impulso. O site precisava explicar duas linhas distintas, sustentar a busca em português e inglês, e transformar visita em conversa — sem intermediário guardando o dado do lead.",
+      "built": "Site institucional em Next.js com duas páginas de produto, central de recursos, formulário de contato e inscrição em newsletter protegida por captcha.",
+      "result": "No ar desde 2023 na Vercel, duas linhas de produto documentadas e formulário entregando direto na caixa corporativa.",
+      "retrospective": "A tradução é decidida no cliente por navigator.language, e o <html lang> está fixo em \"en\". Crawler nunca vê a versão em inglês e o idioma declarado não bate com o conteúdo. Hoje eu resolveria com rota por locale — que é o que fiz neste portfólio com next-intl.",
+      "highlights": [
+        "styled-components com ServerStyleSheet — o CSS vai junto no HTML do servidor. Sem isso a primeira pintura chega sem estilo, e essa página é o primeiro contato comercial da empresa.",
+        "Radix para accordion e menu — especificação de produto mora em accordion. Teclado, foco e ARIA prontos custam menos que reimplementar errado.",
+        "reCAPTCHA verificado no servidor — o token só vale quando o backend confirma com a Google. Validar no cliente é decorativo.",
+        "SMTP próprio em vez de form service — o lead cai direto na caixa da empresa, sem terceiro guardando dado de cliente.",
+        "Uma rota por produto — Polaris e Sirius em URLs separadas em vez de abas. Produto que precisa rankear precisa de endereço próprio."
+      ]
+    },
+    "portfolio": {
+      "description": "Portfólio de dev afirma competência. Este tenta provar.",
+      "detail": "O site é o artefato: ADR, teste de acessibilidade no pipeline, alerta de produção em Terraform e varredura de segredo no histórico inteiro.",
+      "problem": "Portfólio de engenheiro costuma listar tecnologia. Listar não prova nada: o repositório é público, então a forma de provar é deixar o processo visível.",
+      "built": "Next.js com arquitetura feature-based e MVVM, i18n por rota, consentimento antes de qualquer evento, e a infraestrutura de observabilidade descrita em Terraform.",
+      "result": "ADR 0001 registrando o modelo de ameaça de um repositório público que faz deploy; 6 suítes end-to-end incluindo acessibilidade e privacidade; 10 testes unitários; CodeQL em PR, master e semanal. O pipeline que sobe este site é o mesmo que dá pra ler no repositório.",
+      "highlights": [
+        "Sentry em Terraform, não no dashboard — alerta de produção é infraestrutura. Em código passa por PR e tem histórico; um contract test em Go valida a regra antes do apply.",
+        "Gitleaks no histórico completo — repo público que faz deploy de infra. Segredo vazado num commit antigo continua vazado; varrer só o diff não serve.",
+        "Actions pinadas por SHA — tag é mutável, SHA não. Dependabot propõe a atualização, eu reviso.",
+        "Plan do Terraform nunca no PR — o status do check é publicado, o plano não. Plano revela topologia de produção em pull request aberto.",
+        "Apply serializado em environment protegido — só roda na master protegida, depois de todos os checks, num environment production do GitHub.",
+        "axe-playwright no CI — acessibilidade que não roda no pipeline apodrece na primeira sprint apertada.",
+        "Consentimento antes de qualquer evento — nenhum analytics dispara antes da escolha."
+      ]
+    },
+    "wind-energy": {
+      "description": "C++ · estudo de faculdade"
+    },
+    "scaling-x": {
+      "description": "branding · identidade visual"
+    }
+  },
+  "skills": {
+    "frontend": {
+      "name": "Frontend & TypeScript",
+      "description": "SPAs, SSR, estado complexo e teste automatizado em produto real."
+    },
+    "backend": {
+      "name": "Backend & APIs",
+      "description": "APIs escaláveis, concorrência e integridade transacional."
+    },
+    "platform": {
+      "name": "Platform & SRE",
+      "description": "Pipeline, infra como código e observabilidade."
+    },
+    "architecture": {
+      "name": "Arquitetura & Qualidade",
+      "description": "Decisão registrada em ADR, limite de módulo explícito, cobertura que pega regressão."
+    },
+    "mobile": {
+      "name": "Mobile",
+      "description": "Multiplataforma com React Native, sem inventar profundidade."
+    }
+  },
+  "awards": {
+    "Santander Award": {
+      "title": "Prêmio Santander",
+      "summary": "Aurem — tecnologia assistiva para legendagem inclusiva em tempo real na educação."
+    }
+  },
+  "languages": {
+    "Portuguese": {
+      "language": "Português",
+      "fluency": "Nativo"
+    },
+    "English": {
+      "language": "Inglês",
+      "fluency": "Profissional"
+    }
+  }
+}

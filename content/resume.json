@@ -1,0 +1,383 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "meta": {
+    "canonical": "https://brunocandia.com/content/resume.json",
+    "version": "1.0.0",
+    "lastModified": "2026-08-04",
+    "note": "Single source of truth. The site, the generated CV and the LinkedIn copy all read from here. Localized prose lives in resume.pt.json, keyed by x_id."
+  },
+  "basics": {
+    "name": "Bruno Costa",
+    "label": "Full-stack Developer & UI/UX Designer",
+    "email": "me@brunocandia.com",
+    "url": "https://brunocandia.com",
+    "summary": "Full-stack engineer. I write clean code and solve real problems — whether that means optimizing application performance or architecting what does not exist yet. Outside the technical side: mentoring, and building environments where everyone learns.",
+    "location": {
+      "countryCode": "BR"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "bruno-costa-candia",
+        "url": "https://www.linkedin.com/in/bruno-costa-candia/"
+      },
+      {
+        "network": "GitHub",
+        "username": "bruno-candia",
+        "url": "https://github.com/bruno-candia"
+      },
+      {
+        "network": "Behance",
+        "username": "brunocostac3",
+        "url": "https://www.behance.net/brunocostac3"
+      }
+    ]
+  },
+  "work": [
+    {
+      "x_id": "bees-tech-lead",
+      "x_lane": "bees",
+      "x_color": "#ef4444",
+      "name": "BEES (AB InBev)",
+      "position": "Tech Lead",
+      "startDate": "2024-02",
+      "summary": "Standardization of the global platforms (Grow, Force, Control Tower). Architected the BFFs in NestJS with Clean Architecture and scaled the ecosystem with micro-frontends.",
+      "highlights": ["22 countries", "micro-frontends", "NestJS · Clean Arch"]
+    },
+    {
+      "x_id": "bees-senior",
+      "x_lane": "bees",
+      "x_color": "#ef4444",
+      "name": "BEES (AB InBev)",
+      "position": "Senior Software Engineer",
+      "startDate": "2023-03",
+      "endDate": "2024-02",
+      "summary": "Auto Dialer in React with WebSockets to speed up sales interaction. Led the migration to micro-frontends.",
+      "highlights": ["deploy 1h → minutes", "React · WebSockets"]
+    },
+    {
+      "x_id": "aurem",
+      "x_lane": "aurem",
+      "x_color": "#22c55e",
+      "x_parallel": true,
+      "x_project": "aurem",
+      "name": "Aurem",
+      "position": "Founder & Software Engineer",
+      "startDate": "2018-02",
+      "endDate": "2023-05",
+      "summary": "Real-time inclusive captioning startup, run in parallel with the other teams. Web Speech API for low latency, WebSockets for sync, infrastructure on AWS/Docker.",
+      "highlights": [
+        "5 years in parallel",
+        "1,000+ students",
+        "Santander Award"
+      ]
+    },
+    {
+      "x_id": "verzel",
+      "x_lane": "short",
+      "x_color": "#f97316",
+      "name": "Verzel",
+      "position": "UX Designer",
+      "startDate": "2021-12",
+      "endDate": "2022-08",
+      "summary": "Bridge between design and engineering. Figma interfaces designed for whoever implements them, and a Design System that closed the handoff.",
+      "highlights": ["Design System", "Figma → React"]
+    },
+    {
+      "x_id": "neoenergia",
+      "x_lane": "short",
+      "x_color": "#22d3ee",
+      "name": "Neoenergia",
+      "position": "Development Intern",
+      "startDate": "2021-05",
+      "endDate": "2021-11",
+      "summary": "Digitized internal flows with React/TypeScript dashboards and maintained Node.js/SQL backends.",
+      "highlights": ["React · TypeScript", "Node · SQL"]
+    }
+  ],
+  "projects": [
+    {
+      "x_id": "aurem",
+      "x_slug": "aurem",
+      "x_image": "/aurem.png",
+      "x_visibility": "closed-source",
+      "x_work": "aurem",
+      "name": "Aurem",
+      "type": "product",
+      "entity": "Aurem",
+      "startDate": "2018-02",
+      "endDate": "2023-05",
+      "url": "https://www.linkedin.com/company/aurem-tec/",
+      "description": "Online class excludes whoever cannot hear.",
+      "highlights": [
+        "Redux over Context — the classroom has state shared by three roles; in Context that becomes cascading re-renders on every transcribed sentence.",
+        "Fabric.js on the whiteboard — annotation had to travel as vector, not image: it syncs as data and stays sharp at any zoom.",
+        "WebSockets over polling — the latency budget ran from speech to text on screen; polling blew it on the round-trip alone.",
+        "Electron frameless with click-through — the caption must sit on top of PowerPoint without stealing the presenter's click.",
+        "Web Speech API — client-side transcription cut one server round-trip per sentence and kept audio off the wire."
+      ],
+      "keywords": [
+        "React",
+        "TypeScript",
+        "Redux",
+        "Fabric.js",
+        "Electron",
+        "Socket.io",
+        "Node.js",
+        "Express",
+        "MySQL",
+        "MongoDB",
+        "Redis",
+        "AWS",
+        "Docker",
+        "Azure"
+      ]
+    },
+    {
+      "x_id": "maincore",
+      "x_slug": "maincore",
+      "x_image": "/maincore-2.png",
+      "x_visibility": "closed-source",
+      "name": "Maincore",
+      "type": "client work",
+      "startDate": "2023-02",
+      "url": "https://maincore-last.vercel.app/",
+      "description": "Institutional site that has to sell two technical product lines and capture qualified leads.",
+      "highlights": [
+        "styled-components with ServerStyleSheet — CSS ships inside the server HTML. Without it the first paint arrives unstyled, and this page is the company's first commercial contact.",
+        "Radix for accordion and menu — product specs live in accordions. Keyboard, focus and ARIA out of the box cost less than reimplementing them wrong.",
+        "reCAPTCHA verified server-side — the token only counts once the backend confirms it with Google. Client-side validation is decorative.",
+        "Own SMTP instead of a form service — the lead lands straight in the company mailbox, with no third party holding customer data.",
+        "One route per product — Polaris and Sirius on separate URLs instead of tabs. A product that must rank needs its own address."
+      ],
+      "keywords": [
+        "Next.js 13",
+        "React",
+        "TypeScript",
+        "styled-components",
+        "Radix UI",
+        "nodemailer",
+        "SendGrid",
+        "reCAPTCHA",
+        "react-ga",
+        "Vercel"
+      ]
+    },
+    {
+      "x_id": "portfolio",
+      "x_slug": "portfolio",
+      "x_image": "/opengraph-image.png",
+      "x_visibility": "open-source",
+      "name": "This portfolio",
+      "type": "personal",
+      "startDate": "2025-01",
+      "url": "https://brunocandia.com",
+      "x_repository": "https://github.com/bruno-candia/portfolio",
+      "description": "Developer portfolios assert competence. This one tries to prove it.",
+      "highlights": [
+        "Sentry in Terraform, not the dashboard — production alerting is infrastructure. In code it goes through PR and keeps history; a Go contract test validates the rule before apply.",
+        "Gitleaks over full history — public repo that deploys infra. A secret leaked in an old commit is still leaked; scanning only the diff does not help.",
+        "Actions pinned to SHAs — tags are mutable, SHAs are not. Dependabot proposes the bump, I review it.",
+        "Terraform plan never posted on PRs — the check status is public, the plan is not. Plans expose production topology in open pull requests.",
+        "Serialized apply in a protected environment — runs only on protected master, after every check, inside a GitHub production environment.",
+        "axe-playwright in CI — accessibility that does not run in the pipeline rots on the first tight sprint.",
+        "Consent before any event — no analytics fires before the choice."
+      ],
+      "keywords": [
+        "Next.js 16",
+        "Tailwind 4",
+        "TypeScript",
+        "GSAP",
+        "Vitest",
+        "Playwright",
+        "axe-core",
+        "next-intl",
+        "Sentry",
+        "Terraform",
+        "GitHub Actions"
+      ]
+    },
+    {
+      "x_id": "wind-energy",
+      "x_slug": "wind-energy",
+      "x_secondary": true,
+      "x_visibility": "open-source",
+      "name": "Wind Energy",
+      "type": "study",
+      "url": "https://github.com/bruno-candia/wind-energy",
+      "x_repository": "https://github.com/bruno-candia/wind-energy",
+      "description": "C++ · college study",
+      "keywords": [
+        "C++",
+        "C++17",
+        "C++20",
+        "Binary Files",
+        "Algorithms",
+        "Physics",
+        "Cross-platform"
+      ]
+    },
+    {
+      "x_id": "scaling-x",
+      "x_slug": "scaling-x",
+      "x_secondary": true,
+      "name": "Scaling-X",
+      "type": "branding",
+      "url": "https://www.behance.net/gallery/157869603/ScalinX",
+      "description": "branding · visual identity",
+      "keywords": [
+        "Branding",
+        "Visual Identity",
+        "Typography",
+        "Color Theory",
+        "Vector Art"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "x_id": "frontend",
+      "name": "Frontend & TypeScript",
+      "level": "Advanced",
+      "x_core": [
+        "TypeScript",
+        "React",
+        "Next.js",
+        "Tailwind",
+        "React Query",
+        "Vitest"
+      ],
+      "keywords": [
+        "TypeScript",
+        "React",
+        "Next.js",
+        "Tailwind",
+        "React Query",
+        "Vitest",
+        "Redux",
+        "Playwright",
+        "Storybook",
+        "Vite",
+        "Testing Library",
+        "Electron",
+        "JavaScript",
+        "HTML",
+        "CSS",
+        "Sass",
+        "styled-components",
+        "Axios",
+        "Figma",
+        "Jest",
+        "Cypress",
+        "ESLint"
+      ]
+    },
+    {
+      "x_id": "backend",
+      "name": "Backend & APIs",
+      "level": "Advanced",
+      "x_core": [
+        "Node.js",
+        "Python",
+        "NestJS",
+        "PostgreSQL",
+        "Prisma",
+        "REST / OpenAPI"
+      ],
+      "keywords": [
+        "Node.js",
+        "Python",
+        "NestJS",
+        "PostgreSQL",
+        "Prisma",
+        "REST / OpenAPI",
+        "Express",
+        "Redis",
+        "MongoDB",
+        "MySQL",
+        "SQL Server",
+        "Socket.IO",
+        "JWT",
+        "Swagger",
+        "C++",
+        "Wiremock",
+        "Robot Framework"
+      ]
+    },
+    {
+      "x_id": "platform",
+      "name": "Platform & SRE",
+      "level": "Intermediate",
+      "x_core": [
+        "Docker",
+        "GitHub Actions",
+        "Terraform",
+        "AWS",
+        "Prometheus",
+        "Shell"
+      ],
+      "keywords": [
+        "Docker",
+        "GitHub Actions",
+        "Terraform",
+        "AWS",
+        "Prometheus",
+        "Shell",
+        "Kubernetes",
+        "Grafana",
+        "Vercel",
+        "Azure",
+        "Azure Pipelines",
+        "Firebase",
+        "SonarQube",
+        "CI/CD",
+        "Git"
+      ]
+    },
+    {
+      "x_id": "architecture",
+      "name": "Architecture & Quality",
+      "level": "Advanced",
+      "x_core": ["Clean Architecture", "DDD", "MVVM", "Monorepo"],
+      "keywords": [
+        "Clean Architecture",
+        "DDD",
+        "MVVM",
+        "Monorepo",
+        "Micro-frontends",
+        "Module Federation",
+        "Performance"
+      ]
+    },
+    {
+      "x_id": "mobile",
+      "name": "Mobile",
+      "level": "Intermediate",
+      "x_core": ["React Native", "Expo", "React Navigation"],
+      "keywords": [
+        "React Native",
+        "Expo",
+        "React Navigation",
+        "styled-components",
+        "Jest"
+      ]
+    }
+  ],
+  "awards": [
+    {
+      "title": "Santander Award",
+      "awarder": "Santander",
+      "summary": "Aurem — assistive technology for real-time inclusive captioning in education."
+    }
+  ],
+  "languages": [
+    {
+      "language": "Portuguese",
+      "fluency": "Native speaker"
+    },
+    {
+      "language": "English",
+      "fluency": "Professional working proficiency"
+    }
+  ]
+}

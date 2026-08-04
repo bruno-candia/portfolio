@@ -8,22 +8,23 @@ import { routing } from '@/i18n/routing';
 
 import '../globals.css';
 
-import { Geist_Mono } from 'next/font/google';
+import { Geist, Geist_Mono } from 'next/font/google';
 import { ConsentProvider } from '@/features/privacy/ConsentProvider';
+
+const geist = Geist({
+  subsets: ['latin'],
+  variable: '--font-geist',
+});
 
 const geistMono = Geist_Mono({
   subsets: ['latin'],
   variable: '--font-geist-mono',
 });
 
+// Só a logo usa a fonte graffiti.
 const graffiti: NextFontWithVariable = localFont({
   src: '../fonts/adrip1.woff2',
   variable: '--font-graffiti',
-});
-
-const cabinetGrotesk: NextFontWithVariable = localFont({
-  src: '../fonts/CabinetGrotesk.woff2',
-  variable: '--font-cabinet-grotesk',
 });
 
 const BASE_URL = 'https://brunocandia.com';
@@ -148,7 +149,7 @@ export default async function RootLayout({
   return (
     <html lang={locale} className={'dark'}>
       <body
-        className={`${graffiti.variable} ${cabinetGrotesk.variable} ${geistMono.variable} antialiased`}
+        className={`${geist.variable} ${geistMono.variable} ${graffiti.variable} antialiased`}
       >
         <NextIntlClientProvider messages={messages}>
           <ConsentProvider>
