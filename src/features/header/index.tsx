@@ -183,10 +183,7 @@ function AccessibilityDialog({
             {t('description')}
           </Dialog.Description>
 
-          {/*
-           * The heading is `aria-hidden` because the dialog already announces
-           * the same words through its accessible name.
-           */}
+          {/* Aria-hidden: the dialog already announces the same words. */}
           <div className="flex h-16 shrink-0 items-center justify-between gap-4 border-b border-line px-5 py-3 md:h-[84px] md:px-6 md:pt-6 md:pb-5">
             <div>
               <h2

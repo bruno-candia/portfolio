@@ -149,8 +149,37 @@ test.describe('Home Page', () => {
     await canvas.scrollIntoViewIfNeeded();
     await expect(canvas).toHaveAttribute('data-black-hole-ready', 'true');
 
-    const box = await canvas.boundingBox();
-    expect(box?.height).toBe(isMobile ? 300 : 460);
+    // The hole is centred on the fold and spans the screen, which is the whole
+    // point of the band: a fixed height would drift from both at other sizes.
+    const placement = await page.evaluate(() => {
+      const band = document.querySelector('[data-black-hole]')!.parentElement!;
+      const hero = document.querySelector('main section')!;
+      const box = band.getBoundingClientRect();
+      return {
+        centre: Math.round(box.top + box.height / 2),
+        heroBottom: Math.round(hero.getBoundingClientRect().bottom),
+        ratio: +(box.height / box.width).toFixed(2),
+      };
+    });
+    expect(placement.centre).toBe(placement.heroBottom);
+    expect(placement.ratio).toBe(0.32);
+
+    const drawnWidth = await canvas.evaluate((element: HTMLCanvasElement) => {
+      const ctx = element.getContext('2d');
+      const { data } = ctx!.getImageData(0, 0, element.width, element.height);
+      let min = element.width;
+      let max = 0;
+      for (let y = 0; y < element.height; y += 2) {
+        for (let x = 0; x < element.width; x += 2) {
+          if (data[(y * element.width + x) * 4 + 3] > 8) {
+            if (x < min) min = x;
+            if (x > max) max = x;
+          }
+        }
+      }
+      return (max - min) / element.width;
+    });
+    expect(drawnWidth).toBeGreaterThan(0.85);
 
     // Reading the pixels, because an empty canvas has the right box too.
     const litPixels = () =>

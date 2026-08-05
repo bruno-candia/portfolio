@@ -15,11 +15,6 @@ const MAX_STEP = 0.05;
 /** Seconds of simulation baked into the still frame shown without motion. */
 const SETTLE_SECONDS = 6;
 
-/**
- * The canvas only runs while it is on screen. Off screen it is stopped rather
- * than throttled, because a particle system left running costs the same as one
- * being looked at.
- */
 export function useBlackHole() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 

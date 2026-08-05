@@ -78,11 +78,8 @@ export function CareerGraph({
         <circle cx={0} cy={foot} r={3.5} fill="var(--ink-3)" />
       </svg>
 
-      {/*
-       * Anchored to the bottom, not to the trunk foot: the label wraps when a
-       * narrow screen or a larger text size runs it out of room, and a
-       * top-anchored line would grow past the section instead of over it.
-       */}
+      {/* Anchored to the bottom: a wrapped line grows over the section
+          instead of past it. */}
       <span
         className="absolute left-[56px] w-[calc(100vw-76px)] ds-mono-label whitespace-normal text-ink-3 md:left-[92px] md:w-auto md:whitespace-nowrap"
         style={{ bottom: ROOT_FROM_BOTTOM - 8 }}

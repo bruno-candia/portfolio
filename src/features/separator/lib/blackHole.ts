@@ -13,11 +13,10 @@ const HORIZON = 0.31;
 const PHOTON_R = 0.355;
 const DISK_INNER = 0.44;
 const DISK_OUTER = 1.12;
-/** How far the disk stretches sideways before it tapers into the wing. */
 const WING = 0.75;
-/** Discrete bands, not a continuous cloud: bands read as rings, a cloud does not. */
+/** Bands read as rings; a continuous distribution reads as a cloud. */
 const LAYERS = 8;
-/** Infall rate. Without it the disk reads as spinning rather than as falling in. */
+/** Without infall the disk reads as spinning rather than as being pulled in. */
 const INFALL = 0.055;
 const ARC_BAND = 0.34;
 const ARC_SQUASH = 0.92;
@@ -40,10 +39,9 @@ interface Debris {
   a: Float32Array;
 }
 
-/** Bright core dissipating into the background instead of ending on an edge. */
 function emission(r: number) {
   const t = (r - DISK_INNER) / (DISK_OUTER - DISK_INNER);
-  return Math.exp(-t * 2.4) * (1 - t * 0.15);
+  return Math.exp(-t * 2.05) * (1 - t * 0.15);
 }
 
 function makeOrbiting(
@@ -107,7 +105,7 @@ function stepOrbiting(set: Orbiting, dt: number) {
     set.r[i] -= dt * INFALL * Math.pow(set.r[i], -0.6);
 
     if (set.r[i] < DISK_INNER) {
-      // Reborn on the outermost band so the banding survives the infall.
+      // Reborn outermost, so the banding survives the infall.
       set.r[i] =
         DISK_OUTER -
         Math.random() * ((DISK_OUTER - DISK_INNER) / LAYERS) * 0.34;
@@ -172,22 +170,23 @@ export function createViewport(
   const dpr = Math.min(devicePixelRatio || 1, 1.5);
   const width = Math.round(rect.width * dpr);
   const height = Math.round(rect.height * dpr);
-
   return {
     width,
     height,
     dpr,
     centerX: width / 2,
     centerY: height / 2,
-    scale: Math.min(width * 0.155, height * 0.44),
+    // Width drives the size at every breakpoint, so the hole spans the screen
+    // instead of shrinking into a full stop on a phone. The height term only
+    // guards the lensed arcs against clipping if the band aspect changes.
+    scale: Math.min(width * 0.25, height * 0.78),
   };
 }
 
 /**
- * Counts follow the square of the scale rather than a mobile breakpoint. The
- * particles are painted one device pixel each, so a fixed count in a smaller
- * band raises the density per pixel until the photon ring burns out into a
- * solid white line. What has to stay constant is particles per drawn area.
+ * Counts follow the square of the scale, not a breakpoint. Particles are one
+ * device pixel each, so a fixed count in a smaller band raises the density per
+ * pixel until the photon ring burns out into a solid white line.
  */
 const REFERENCE_SCALE = 202;
 const DENSITY = {
@@ -196,20 +195,28 @@ const DENSITY = {
   debris: 340 / (REFERENCE_SCALE * REFERENCE_SCALE),
 };
 
+/** Past these counts the frame budget buys nothing the eye reads. */
+const CEILING = { disk: 17000, ring: 1900, debris: 380 };
+
 export function createScene(scale: number) {
   const area = scale * scale;
-  const count = (density: number, min: number) =>
-    Math.max(min, Math.round(density * area));
+  const count = (density: number, min: number, max: number) =>
+    Math.min(max, Math.max(min, Math.round(density * area)));
 
   return {
-    disk: makeOrbiting(count(DENSITY.disk, 1200), DISK_INNER, DISK_OUTER, 0.5),
+    disk: makeOrbiting(
+      count(DENSITY.disk, 1200, CEILING.disk),
+      DISK_INNER,
+      DISK_OUTER,
+      0.5
+    ),
     ring: makeOrbiting(
-      count(DENSITY.ring, 130),
+      count(DENSITY.ring, 130, CEILING.ring),
       PHOTON_R - 0.014,
       PHOTON_R + 0.034,
       1
     ),
-    debris: makeDebris(count(DENSITY.debris, 30)),
+    debris: makeDebris(count(DENSITY.debris, 30, CEILING.debris)),
   };
 }
 
@@ -260,7 +267,7 @@ function renderOrbiting(
     const beam = 1 + 0.62 * -Math.cos(th);
     // The direct image is the brightest: it is light that arrived undeflected.
     // The lensed arc above and the secondary arc below took longer paths.
-    const lensed = far ? (side < 0 ? 0.85 : 1.25) : 1.75;
+    const lensed = far ? (side < 0 ? 0.95 : 1.4) : 1.95;
     const taper = far ? 1 - 0.72 * norm * norm : 1 - 0.5 * norm * norm;
     const alpha = Math.min(
       1,
@@ -319,7 +326,6 @@ function renderDebris(
   }
 }
 
-/** Advances the simulation by `dt` seconds and paints one frame. */
 export function drawFrame(
   ctx: CanvasRenderingContext2D,
   view: Viewport,
@@ -337,9 +343,9 @@ export function drawFrame(
   stepOrbiting(ring, dt);
 
   renderOrbiting(ctx, view, disk, 1, true, -1);
-  renderOrbiting(ctx, view, ring, 2.6, true, -1);
+  renderOrbiting(ctx, view, ring, 3.1, true, -1);
   renderOrbiting(ctx, view, disk, 1, true, 1);
-  renderOrbiting(ctx, view, ring, 2.6, true, 1);
+  renderOrbiting(ctx, view, ring, 3.1, true, 1);
 
   const shadow = ctx.createRadialGradient(
     view.centerX,
@@ -366,9 +372,8 @@ export function drawFrame(
   // shadow. Discarding those particles inside the horizon radius was the bug
   // in the earlier version: they sit between the observer and the hole.
   renderOrbiting(ctx, view, disk, 1, false, 1);
-  renderOrbiting(ctx, view, ring, 2.6, false, 1);
+  renderOrbiting(ctx, view, ring, 3.1, false, 1);
 
-  // Dissolve the band into the sections above and below it.
   const fade = ctx.createLinearGradient(0, 0, 0, view.height);
   fade.addColorStop(0, '#000');
   fade.addColorStop(0.3, '#0000');
@@ -380,10 +385,7 @@ export function drawFrame(
   ctx.globalCompositeOperation = 'source-over';
 }
 
-/**
- * Advancing the simulation before the first paint: with motion off the still
- * frame would otherwise show a pristine set of rings that never fell in.
- */
+/** Without this the still frame shows pristine rings that never fell in. */
 export function settle(scene: Scene, seconds: number, step = 1 / 60) {
   for (let t = 0; t < seconds; t += step) {
     stepOrbiting(scene.disk, step);

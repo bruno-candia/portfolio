@@ -10,7 +10,7 @@ export function BlackHole() {
       ref={canvasRef}
       data-black-hole
       aria-hidden="true"
-      className="block size-full"
+      className="absolute inset-0 block size-full"
     />
   );
 }
