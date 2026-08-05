@@ -52,6 +52,15 @@ describe('caseLink', () => {
     });
   });
 
+  it('reads the host, not the string', () => {
+    expect(
+      caseLink(project({ url: 'https://evil.example/?ref=github.com' }))
+    ).toEqual({
+      href: 'https://evil.example/?ref=github.com',
+      label: 'live',
+    });
+  });
+
   it('prefers the repository', () => {
     expect(
       caseLink(

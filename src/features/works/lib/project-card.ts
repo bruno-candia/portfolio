@@ -1,4 +1,5 @@
 import type { Project } from '@/lib/resume';
+import { isHost } from '@/lib/utils';
 
 export type SealKey = 'timeline' | 'open' | 'closed';
 
@@ -43,8 +44,8 @@ export function externalLink(project: Project): ExternalLink | null {
 }
 
 function labelForHost(url: string): LinkLabel {
-  if (url.includes('github.com')) return 'repository';
-  if (url.includes('behance.net')) return 'behance';
+  if (isHost(url, 'github.com')) return 'repository';
+  if (isHost(url, 'behance.net')) return 'behance';
   return 'live';
 }
 

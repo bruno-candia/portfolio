@@ -1,4 +1,5 @@
 import type { Locale, Project } from '@/lib/resume';
+import { isHost } from '@/lib/utils';
 
 /**
  * The case page links out even when the project is over, because there the
@@ -9,9 +10,9 @@ export function caseLink(project: Project) {
   const href = project.repository ?? project.url;
   if (!href) return null;
 
-  if (href.includes('github.com')) return { href, label: 'repository' };
-  if (href.includes('behance.net')) return { href, label: 'behance' };
-  if (href.includes('linkedin.com')) return { href, label: 'linkedin' };
+  if (isHost(href, 'github.com')) return { href, label: 'repository' };
+  if (isHost(href, 'behance.net')) return { href, label: 'behance' };
+  if (isHost(href, 'linkedin.com')) return { href, label: 'linkedin' };
   return { href, label: 'live' };
 }
 

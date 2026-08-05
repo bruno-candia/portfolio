@@ -120,4 +120,11 @@ describe('externalLink', () => {
       externalLink(project({ url: 'https://maincore.example' }))?.label
     ).toBe('live');
   });
+
+  it('reads the host, not the string', () => {
+    expect(
+      externalLink(project({ url: 'https://evil.example/?ref=github.com' }))
+        ?.label
+    ).toBe('live');
+  });
 });
