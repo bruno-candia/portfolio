@@ -132,7 +132,10 @@
         "Docker",
         "Azure"
       ],
-      "x_detail": "Live captioning with the Web Speech API, a collaborative whiteboard in Fabric.js, and an Electron client whose transparent overlay captions on top of any software."
+      "x_detail": "Live captioning with the Web Speech API, a collaborative whiteboard in Fabric.js, and an Electron client whose transparent overlay captions on top of any software.",
+      "x_problem": "Hybrid and remote classes assume everyone can hear. Someone with hearing loss depends on an interpreter in the room or on the player's own captions — which do not exist when the teacher presents from PowerPoint, from a PDF, or from any software outside the browser.",
+      "x_built": "An ecosystem on three fronts: an LMS for institutions, a virtual classroom with live captioning, and a desktop client that captions on top of any application.",
+      "x_result": "It served more than a thousand students and won the Santander Award. The company closed in 2023, but the product ran five years in production while I worked on other teams."
     },
     {
       "x_id": "maincore",
@@ -163,7 +166,11 @@
         "react-ga",
         "Vercel"
       ],
-      "x_detail": "Next.js 13 with styled-components on the server, Radix for the interactive components, and lead capture with the captcha verified in the backend."
+      "x_detail": "Next.js 13 with styled-components on the server, Radix for the interactive components, and lead capture with the captcha verified in the backend.",
+      "x_problem": "Maincore sells embedded systems and programmable logic: nothing anyone buys on impulse. The site had to explain two distinct product lines, hold up in Portuguese and English search, and turn a visit into a conversation — with no intermediary holding the lead data.",
+      "x_built": "An institutional site in Next.js with two product pages, a resource centre, a contact form and a newsletter signup behind a captcha.",
+      "x_result": "Live since 2023 on Vercel, two product lines documented, and the form delivering straight to the company mailbox.",
+      "x_retrospective": "The translation is decided on the client by navigator.language, and the html lang attribute is hardcoded to \"en\". A crawler never sees the English version and the declared language does not match the content. Today I would solve it with a route per locale — which is what I did on this portfolio with next-intl."
     },
     {
       "x_id": "portfolio",
@@ -198,7 +205,10 @@
         "Terraform",
         "GitHub Actions"
       ],
-      "x_detail": "Feature-based architecture with MVVM, unit, e2e and a11y tests running in CI, i18n, consent and Sentry. It ships through GitHub Actions with Terraform."
+      "x_detail": "Feature-based architecture with MVVM, unit, e2e and a11y tests running in CI, i18n, consent and Sentry. It ships through GitHub Actions with Terraform.",
+      "x_problem": "An engineer portfolio usually lists technology. Listing proves nothing: the repository is public, so the way to prove it is to leave the process visible.",
+      "x_built": "Next.js with a feature-based architecture and MVVM, i18n by route, consent before any event, and the observability infrastructure described in Terraform.",
+      "x_result": "ADR 0001 recording the threat model of a public repository that deploys; end-to-end suites including accessibility and privacy; CodeQL on pull requests, on master and weekly. The pipeline that ships this site is the same one you can read in the repository."
     },
     {
       "x_id": "wind-energy",

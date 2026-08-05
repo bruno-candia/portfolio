@@ -147,10 +147,10 @@ function toProject(p: BaseProject, locale: Locale): Project {
     type: p.type,
     description: str('description', p.description) ?? p.description,
     detail: str('detail', optional<string>('x_detail')),
-    problem: str('problem'),
-    built: str('built'),
-    result: str('result'),
-    retrospective: str('retrospective'),
+    problem: str('problem', optional<string>('x_problem')),
+    built: str('built', optional<string>('x_built')),
+    result: str('result', optional<string>('x_result')),
+    retrospective: str('retrospective', optional<string>('x_retrospective')),
     highlights: list(
       'highlights',
       'highlights' in p

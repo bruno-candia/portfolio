@@ -39,7 +39,8 @@
     "link": {
       "repository": "repository",
       "behance": "Behance",
-      "live": "live site"
+      "live": "live site",
+      "linkedin": "the company on LinkedIn"
     },
     "seal": {
       "timeline": "also in the timeline",
@@ -161,5 +162,19 @@
       "title": "Your choices",
       "description": "You can reject, select categories, or withdraw permission at any time through Privacy settings in the footer. Withdrawal stops new transmissions and removes local analytics identifiers."
     }
+  },
+  "Case": {
+    "back": "Projects",
+    "problem": "The problem",
+    "built": "What I built",
+    "decisions": "Technical decisions",
+    "result": "Result",
+    "retrospective": "What I would do differently today",
+    "role": "role",
+    "period": "period",
+    "stack": "stack",
+    "crossLink": "See it as a job",
+    "previous": "← previous",
+    "next": "next →"
   }
 }

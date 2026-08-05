@@ -39,7 +39,8 @@
     "link": {
       "repository": "repositório",
       "behance": "Behance",
-      "live": "site no ar"
+      "live": "site no ar",
+      "linkedin": "LinkedIn da empresa"
     },
     "seal": {
       "timeline": "também na trajetória",
@@ -161,5 +162,19 @@
       "title": "Suas escolhas",
       "description": "Você pode recusar, selecionar categorias ou revogar a autorização a qualquer momento em Configurações de privacidade no rodapé. A revogação interrompe novos envios e remove os identificadores analíticos locais."
     }
+  },
+  "Case": {
+    "back": "Projetos",
+    "problem": "O problema",
+    "built": "O que eu construí",
+    "decisions": "Decisões técnicas",
+    "result": "Resultado",
+    "retrospective": "O que eu faria diferente hoje",
+    "role": "papel",
+    "period": "período",
+    "stack": "stack",
+    "crossLink": "Ver como emprego",
+    "previous": "← anterior",
+    "next": "próximo →"
   }
 }
