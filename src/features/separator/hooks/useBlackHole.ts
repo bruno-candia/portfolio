@@ -14,6 +14,8 @@ import {
 const MAX_STEP = 0.05;
 /** Seconds run before the first paint, so the rings never open pristine. */
 const SETTLE_SECONDS = 6;
+/** A drag fires the observer every frame; only the size it lands on matters. */
+const REBUILD_DELAY = 160;
 
 export function useBlackHole() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -35,6 +37,7 @@ export function useBlackHole() {
     let frame = 0;
     let previousTime = 0;
     let visible = false;
+    let rebuild = 0;
 
     const draw = (now: number) => {
       if (!view || !scene) return;
@@ -63,7 +66,12 @@ export function useBlackHole() {
       const rect = canvas.getBoundingClientRect();
       if (rect.width === 0 || rect.height === 0) return;
 
-      view = createViewport(rect, window.devicePixelRatio);
+      const next = createViewport(rect, window.devicePixelRatio);
+      if (view && next.width === view.width && next.height === view.height) {
+        return;
+      }
+
+      view = next;
       canvas.width = view.width;
       canvas.height = view.height;
       scene = createScene(view.scale);
@@ -77,11 +85,15 @@ export function useBlackHole() {
     };
 
     // Reduced motion hides the band in CSS, so this also fires when the
-    // preference is turned off and the canvas gets its size back.
+    // preference is turned off and the canvas gets its size back. Rebuilding
+    // seeds a whole new scene, which is far too much work to do on every frame
+    // of a drag, so it waits for the size to settle.
     const resizeObserver = new ResizeObserver(() => {
-      stop();
-      build();
-      start();
+      window.clearTimeout(rebuild);
+      rebuild = window.setTimeout(() => {
+        build();
+        start();
+      }, REBUILD_DELAY);
     });
 
     const intersectionObserver = new IntersectionObserver(([entry]) => {
@@ -102,6 +114,7 @@ export function useBlackHole() {
 
     return () => {
       delete canvas.dataset.blackHoleReady;
+      window.clearTimeout(rebuild);
       stop();
       resizeObserver.disconnect();
       intersectionObserver.disconnect();
