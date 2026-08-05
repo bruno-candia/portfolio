@@ -197,6 +197,30 @@ test.describe('Home Page', () => {
     expect(await litPixels()).not.toBe(first);
   });
 
+  test('counts the stack a narrow card cannot show', async ({
+    page,
+    isMobile,
+  }) => {
+    await page.goto('/pt');
+    await dismissConsent(page);
+
+    const card = page.locator('#skills article').first();
+    const counter = card.getByRole('button', { name: /\+\d+ outras/ });
+    const chips = card.locator('ul > li:visible');
+
+    if (!isMobile) {
+      await expect(counter).toBeHidden();
+      return;
+    }
+
+    await expect(counter).toBeVisible();
+    const collapsed = await chips.count();
+
+    await counter.click();
+    await expect(card.getByRole('button', { name: /menos/ })).toBeVisible();
+    expect(await chips.count()).toBeGreaterThan(collapsed);
+  });
+
   test('drops the separator when reduced motion is requested', async ({
     page,
   }) => {

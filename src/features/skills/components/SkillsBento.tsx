@@ -19,7 +19,9 @@ export function SkillsBento({ skills }: { skills: Skill[] }) {
     <div className="mt-9 grid grid-cols-1 gap-x-13 gap-y-5 md:grid-cols-2">
       <SkillCard skill={featured} selected={selected} onSelect={setSelected} />
 
+      {/* The frame opens the mobile stack with the terminal, not with a card. */}
       <SkillsTerminal
+        className="max-md:order-first"
         fileName={snippet?.file ?? fileNameFor(selected, snippet?.language)}
         code={snippet?.code}
         language={snippet?.language}

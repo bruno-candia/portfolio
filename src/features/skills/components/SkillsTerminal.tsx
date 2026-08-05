@@ -10,13 +10,17 @@ export function SkillsTerminal({
   fileName,
   code,
   language = 'ts',
+  className,
 }: {
   fileName: string;
   code?: string;
   language?: string;
+  className?: string;
 }) {
   return (
-    <div className="flex flex-col overflow-hidden rounded-xl border border-line bg-code-bg">
+    <div
+      className={`flex flex-col overflow-hidden rounded-xl border border-line bg-code-bg ${className ?? ''}`}
+    >
       <div className="flex items-center gap-2.5 border-b border-line px-4.5 py-3">
         <span aria-hidden className="size-2 rounded-full bg-line-hard" />
         <span aria-hidden className="size-2 rounded-full bg-line-strong" />
