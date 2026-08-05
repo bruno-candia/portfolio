@@ -40,7 +40,7 @@
       "name": "BEES (AB InBev)",
       "position": "Software Architect II",
       "startDate": "2026-07",
-      "summary": "Architecture for Force and Grow across four backend and frontend squads, more than twenty micro-frontends and thirty services behind four BFFs. Multi-text search on Redis as the bridge until Azure AI Search.",
+      "summary": "Architecture for Force and Grow across four backend and frontend squads, more than twenty micro-frontends and thirty services behind four BFFs. Multi-text search on Redis as the bridge until Azure Search.",
       "highlights": ["4 squads", "+20 micro-frontends", "search p95 43ms"]
     },
     {
@@ -51,7 +51,7 @@
       "startDate": "2024-02",
       "endDate": "2026-07",
       "summary": "Standardization of the global platforms (Grow, Force, Control Tower). Architected the BFFs in NestJS with Clean Architecture and scaled the ecosystem with micro-frontends.",
-      "highlights": ["22 countries", "micro-frontends", "NestJS · Clean Arch"]
+      "highlights": ["22 countries", "NestJS · Clean Arch"]
     },
     {
       "x_id": "bees-senior",
@@ -61,7 +61,7 @@
       "startDate": "2023-03",
       "endDate": "2024-02",
       "summary": "Auto Dialer in React with WebSockets to speed up sales interaction. Led the migration to micro-frontends.",
-      "highlights": ["deploy 1h → minutes", "React · WebSockets"]
+      "highlights": ["micro-frontends", "React · WebSockets"]
     },
     {
       "x_id": "aurem",

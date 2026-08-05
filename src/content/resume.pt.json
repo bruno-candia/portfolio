@@ -9,18 +9,18 @@
   "work": {
     "bees-architect": {
       "position": "Software Architect II",
-      "summary": "Arquitetura de Force e Grow em quatro squads de backend e frontend, mais de vinte micro-frontends e trinta serviços atrás de quatro BFFs. Busca multi-texto em Redis como ponte até o Azure AI Search.",
+      "summary": "Arquitetura de Force e Grow em quatro squads de backend e frontend, mais de vinte micro-frontends e trinta serviços atrás de quatro BFFs. Busca multi-texto em Redis como ponte até o Azure Search.",
       "highlights": ["4 squads", "+20 micro-frontends", "busca p95 43ms"]
     },
     "bees-tech-lead": {
       "position": "Tech Lead",
       "summary": "Padronização das plataformas globais (Grow, Force, Control Tower). Arquitetei os BFFs em NestJS com Clean Architecture e escalei o ecossistema com micro-frontends.",
-      "highlights": ["22 países", "micro-frontends", "NestJS · Clean Arch"]
+      "highlights": ["22 países", "NestJS · Clean Arch"]
     },
     "bees-senior": {
       "position": "Engenheiro de Software Sênior",
       "summary": "Auto Dialer em React com WebSockets para acelerar interação de vendas. Liderei a migração para micro-frontends.",
-      "highlights": ["deploy 1h → minutos", "React · WebSockets"]
+      "highlights": ["micro-frontends", "React · WebSockets"]
     },
     "aurem": {
       "position": "Fundador e Engenheiro de Software",
