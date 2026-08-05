@@ -302,12 +302,28 @@ test.describe('Home Page', () => {
         pupil.evaluate((element) => getComputedStyle(element).transform)
       )
       .not.toBe(initial);
-    await page.waitForTimeout(700);
-    const settled = await pupil.evaluate(
-      (element) => getComputedStyle(element).transform
-    );
+    // Settled means it stopped moving, not that it matches a snapshot taken at
+    // a fixed delay: the spring needs longer to converge on a slow machine, and
+    // a sample read mid-flight makes the assertion a race.
+    const transform = () =>
+      pupil.evaluate((element) => getComputedStyle(element).transform);
+
+    let previous = await transform();
+    await expect
+      .poll(
+        async () => {
+          const current = await transform();
+          const held = current === previous;
+          previous = current;
+          return held;
+        },
+        { timeout: 15000 }
+      )
+      .toBe(true);
+
+    const settled = await transform();
     await page.waitForTimeout(500);
-    await expect(pupil).toHaveCSS('transform', settled);
+    expect(await transform()).toBe(settled);
   });
 
   test('centers the eye when reduced motion is requested', async ({
