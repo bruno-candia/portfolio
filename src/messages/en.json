@@ -7,10 +7,45 @@
     "works": "Projects",
     "skills": "Skills",
     "experience": "Career",
-    "contact": "Contact"
+    "contact": "Contact",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "menu": "Menu",
+    "menuDescription": "Main navigation, language and social links.",
+    "navigation": "Main navigation"
   },
   "Header": {
     "title": "Portfolio"
+  },
+  "Accessibility": {
+    "menu": "Accessibility",
+    "open": "Open accessibility preferences",
+    "close": "Close accessibility preferences",
+    "title": "Accessibility preferences",
+    "description": "Changes are applied immediately and saved in this browser.",
+    "textSize": {
+      "title": "Text size",
+      "description": "Adjusts reading content from 100% to 200%."
+    },
+    "motion": {
+      "title": "Motion",
+      "description": "Follows the system or reduces animations.",
+      "system": "System",
+      "reduced": "Reduced"
+    },
+    "readingFont": {
+      "title": "Reading font",
+      "description": "Switches the typeface used in longer text.",
+      "alternative": "Alternative"
+    },
+    "contrast": {
+      "title": "Contrast",
+      "description": "Increases the difference between text, background and borders.",
+      "high": "High"
+    },
+    "standard": "Standard",
+    "reset": "Restore defaults",
+    "done": "Done"
   },
   "Metadata": {
     "title": "Bruno Costa | Full-stack Developer",

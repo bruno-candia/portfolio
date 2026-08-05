@@ -36,7 +36,7 @@ function Row({ project }: { project: Project }) {
 
   const body = (
     <>
-      <span className="flex items-baseline gap-2">
+      <span className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
         <span className="ds-h4 text-ink group-hover:underline">
           {project.name}
         </span>

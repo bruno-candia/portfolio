@@ -7,71 +7,71 @@
  */
 
 @utility ds-display {
-  font-family: var(--font-geist);
+  font-family: var(--font-reading, var(--font-geist));
   font-weight: 500;
-  font-size: 64px;
-  line-height: 68px;
+  font-size: calc(64px * var(--a11y-text-scale, 1));
+  line-height: calc(68px * var(--a11y-text-scale, 1));
   letter-spacing: -2.2px;
 }
 
 @utility ds-h1 {
-  font-family: var(--font-geist);
+  font-family: var(--font-reading, var(--font-geist));
   font-weight: 500;
-  font-size: 44px;
-  line-height: 50px;
+  font-size: calc(44px * var(--a11y-text-scale, 1));
+  line-height: calc(50px * var(--a11y-text-scale, 1));
   letter-spacing: -1.4px;
 }
 
 @utility ds-h2 {
-  font-family: var(--font-geist);
+  font-family: var(--font-reading, var(--font-geist));
   font-weight: 500;
-  font-size: 32px;
-  line-height: 40px;
+  font-size: calc(32px * var(--a11y-text-scale, 1));
+  line-height: calc(40px * var(--a11y-text-scale, 1));
   letter-spacing: -0.9px;
 }
 
 @utility ds-h3 {
-  font-family: var(--font-geist);
+  font-family: var(--font-reading, var(--font-geist));
   font-weight: 500;
-  font-size: 20px;
-  line-height: 28px;
+  font-size: calc(20px * var(--a11y-text-scale, 1));
+  line-height: calc(28px * var(--a11y-text-scale, 1));
   letter-spacing: -0.3px;
 }
 
 @utility ds-h4 {
-  font-family: var(--font-geist);
+  font-family: var(--font-reading, var(--font-geist));
   font-weight: 500;
-  font-size: 16px;
-  line-height: 24px;
+  font-size: calc(16px * var(--a11y-text-scale, 1));
+  line-height: calc(24px * var(--a11y-text-scale, 1));
   letter-spacing: -0.1px;
 }
 
 @utility ds-body-lg {
-  font-family: var(--font-geist);
+  font-family: var(--font-reading, var(--font-geist));
   font-weight: 400;
-  font-size: 17px;
-  line-height: 28px;
+  font-size: calc(17px * var(--a11y-text-scale, 1));
+  line-height: calc(28px * var(--a11y-text-scale, 1));
 }
 
 @utility ds-body {
-  font-family: var(--font-geist);
+  font-family: var(--font-reading, var(--font-geist));
   font-weight: 400;
-  font-size: 15px;
-  line-height: 24px;
+  font-size: calc(15px * var(--a11y-text-scale, 1));
+  line-height: calc(24px * var(--a11y-text-scale, 1));
 }
 
 @utility ds-small {
-  font-family: var(--font-geist);
+  font-family: var(--font-reading, var(--font-geist));
   font-weight: 400;
-  font-size: 14px;
-  line-height: 20px;
+  font-size: calc(14px * var(--a11y-text-scale, 1));
+  line-height: calc(20px * var(--a11y-text-scale, 1));
 }
 
 @utility ds-eyebrow {
-  font-family: var(--font-geist);
+  font-family: var(--font-reading, var(--font-geist));
   font-weight: 500;
-  font-size: 12px;
-  line-height: 16px;
+  font-size: calc(12px * var(--a11y-text-scale, 1));
+  line-height: calc(16px * var(--a11y-text-scale, 1));
   letter-spacing: 1.2px;
   text-transform: uppercase;
 }
@@ -79,22 +79,22 @@
 @utility ds-mono {
   font-family: var(--font-geist-mono);
   font-weight: 400;
-  font-size: 13px;
-  line-height: 22px;
+  font-size: calc(13px * var(--a11y-text-scale, 1));
+  line-height: calc(22px * var(--a11y-text-scale, 1));
 }
 
 @utility ds-mono-sm {
   font-family: var(--font-geist-mono);
   font-weight: 400;
-  font-size: 12px;
-  line-height: 18px;
+  font-size: calc(12px * var(--a11y-text-scale, 1));
+  line-height: calc(18px * var(--a11y-text-scale, 1));
 }
 
 @utility ds-mono-label {
   font-family: var(--font-geist-mono);
   font-weight: 400;
-  font-size: 12px;
-  line-height: 16px;
+  font-size: calc(12px * var(--a11y-text-scale, 1));
+  line-height: calc(16px * var(--a11y-text-scale, 1));
   letter-spacing: 0.2px;
 }
 
@@ -107,32 +107,32 @@
 
 /* 390w */
 @utility ds-m-display {
-  font-family: var(--font-geist);
+  font-family: var(--font-reading, var(--font-geist));
   font-weight: 500;
-  font-size: 36px;
-  line-height: 40px;
+  font-size: calc(36px * var(--a11y-text-scale, 1));
+  line-height: calc(40px * var(--a11y-text-scale, 1));
   letter-spacing: -1.2px;
 }
 
 @utility ds-m-h1 {
-  font-family: var(--font-geist);
+  font-family: var(--font-reading, var(--font-geist));
   font-weight: 500;
-  font-size: 28px;
-  line-height: 32px;
+  font-size: calc(28px * var(--a11y-text-scale, 1));
+  line-height: calc(32px * var(--a11y-text-scale, 1));
   letter-spacing: -0.8px;
 }
 
 @utility ds-m-h2 {
-  font-family: var(--font-geist);
+  font-family: var(--font-reading, var(--font-geist));
   font-weight: 500;
-  font-size: 22px;
-  line-height: 28px;
+  font-size: calc(22px * var(--a11y-text-scale, 1));
+  line-height: calc(28px * var(--a11y-text-scale, 1));
   letter-spacing: -0.4px;
 }
 
 @utility ds-m-mono {
   font-family: var(--font-geist-mono);
   font-weight: 400;
-  font-size: 11px;
-  line-height: 17px;
+  font-size: calc(11px * var(--a11y-text-scale, 1));
+  line-height: calc(17px * var(--a11y-text-scale, 1));
 }

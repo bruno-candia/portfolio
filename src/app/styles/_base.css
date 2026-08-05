@@ -8,6 +8,32 @@
  */
 
 @layer base {
+  [data-reading-content] {
+    --a11y-text-scale: 1;
+    --font-reading: var(--font-geist);
+  }
+
+  html[data-text-scale='125'] [data-reading-content] {
+    --a11y-text-scale: 1.25;
+  }
+
+  html[data-text-scale='150'] [data-reading-content] {
+    --a11y-text-scale: 1.5;
+  }
+
+  html[data-text-scale='175'] [data-reading-content] {
+    --a11y-text-scale: 1.75;
+  }
+
+  html[data-text-scale='200'] [data-reading-content] {
+    --a11y-text-scale: 2;
+  }
+
+  html[data-reading-font='alternative'] [data-reading-content] {
+    --font-reading: Verdana, Arial, sans-serif;
+    font-family: var(--font-reading);
+  }
+
   html {
     scroll-behavior: smooth;
     /* anchor targets must clear the sticky header */
@@ -66,5 +92,18 @@
       transition-duration: 0.01ms !important;
       scroll-behavior: auto !important;
     }
+  }
+
+  html[data-motion='reduced'] {
+    scroll-behavior: auto !important;
+  }
+
+  html[data-motion='reduced'] *,
+  html[data-motion='reduced'] *::before,
+  html[data-motion='reduced'] *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

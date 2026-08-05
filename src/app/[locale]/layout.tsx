@@ -33,6 +33,21 @@ const graffiti: NextFontWithVariable = localFont({
 
 const BASE_URL = 'https://brunocandia.com';
 
+const ACCESSIBILITY_BOOTSTRAP_SCRIPT = `
+(() => {
+  try {
+    const raw = localStorage.getItem('portfolio-accessibility-preferences')
+    if (!raw) return
+    const value = JSON.parse(raw)
+    const root = document.documentElement
+    if (['100', '125', '150', '175', '200'].includes(value.textScale)) root.dataset.textScale = value.textScale
+    if (['system', 'reduced'].includes(value.motion)) root.dataset.motion = value.motion
+    if (['standard', 'alternative'].includes(value.readingFont)) root.dataset.readingFont = value.readingFont
+    if (['standard', 'high'].includes(value.contrast)) root.dataset.contrast = value.contrast
+  } catch {}
+})()
+`;
+
 /**
  * Without this pair the whole tree renders on every request: next-intl falls
  * back to the dynamic locale lookup unless the route is enumerated and the
@@ -162,10 +177,13 @@ export default async function RootLayout({
   };
 
   return (
-    <html lang={locale} className={'dark'}>
+    <html lang={locale} className={'dark'} suppressHydrationWarning>
       <body
         className={`${geist.variable} ${geistMono.variable} ${graffiti.variable} antialiased`}
       >
+        <script
+          dangerouslySetInnerHTML={{ __html: ACCESSIBILITY_BOOTSTRAP_SCRIPT }}
+        />
         <NextIntlClientProvider messages={messages}>
           <ConsentProvider>
             <script

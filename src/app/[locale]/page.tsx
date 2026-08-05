@@ -20,11 +20,13 @@ export default async function Home({
   return (
     <main className="flex min-h-screen w-full flex-col items-center justify-between">
       <Header />
-      <Hero />
-      <About />
-      <Skills />
-      <Works />
-      <Experience />
+      <div data-reading-content className="contents">
+        <Hero />
+        <About />
+        <Skills />
+        <Works />
+        <Experience />
+      </div>
       <Footer />
     </main>
   );

@@ -7,10 +7,45 @@
     "works": "Projetos",
     "skills": "Skills",
     "experience": "Trajetória",
-    "contact": "Contato"
+    "contact": "Contato",
+    "openMenu": "Abrir menu",
+    "closeMenu": "Fechar menu",
+    "menu": "Menu",
+    "menuDescription": "Navegação principal, idioma e redes sociais.",
+    "navigation": "Navegação principal"
   },
   "Header": {
     "title": "Portfólio"
+  },
+  "Accessibility": {
+    "menu": "Acessibilidade",
+    "open": "Abrir preferências de acessibilidade",
+    "close": "Fechar preferências de acessibilidade",
+    "title": "Preferências de acessibilidade",
+    "description": "As alterações são aplicadas na hora e ficam salvas neste navegador.",
+    "textSize": {
+      "title": "Tamanho do texto",
+      "description": "Ajusta o conteúdo de leitura de 100% a 200%."
+    },
+    "motion": {
+      "title": "Movimento",
+      "description": "Segue o sistema ou reduz animações.",
+      "system": "Sistema",
+      "reduced": "Reduzido"
+    },
+    "readingFont": {
+      "title": "Fonte de leitura",
+      "description": "Troca a tipografia usada nos textos longos.",
+      "alternative": "Alternativa"
+    },
+    "contrast": {
+      "title": "Contraste",
+      "description": "Aumenta a diferença entre texto, fundo e bordas.",
+      "high": "Alto"
+    },
+    "standard": "Padrão",
+    "reset": "Restaurar padrão",
+    "done": "Concluir"
   },
   "Metadata": {
     "title": "Bruno Costa | Desenvolvedor Full-stack",

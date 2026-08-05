@@ -53,6 +53,9 @@ export function useParallaxAnimation() {
     const motionPreference = window.matchMedia(
       '(prefers-reduced-motion: reduce)'
     );
+    const prefersReducedMotion = () =>
+      motionPreference.matches ||
+      document.documentElement.dataset.motion === 'reduced';
     const current: Point = { x: 0, y: 0 };
     const velocity: Point = { x: 0, y: 0 };
     const target: Point = { x: 0, y: 0 };
@@ -124,7 +127,7 @@ export function useParallaxAnimation() {
     };
 
     const startAnimation = () => {
-      if (animationFrame || motionPreference.matches || !visible) return;
+      if (animationFrame || prefersReducedMotion() || !visible) return;
       previousTime = performance.now();
       animationFrame = window.requestAnimationFrame(animate);
     };
@@ -162,7 +165,7 @@ export function useParallaxAnimation() {
     };
 
     const onPointerMove = (event: PointerEvent) => {
-      if (event.pointerType === 'touch' || motionPreference.matches) return;
+      if (event.pointerType === 'touch' || prefersReducedMotion()) return;
       lookAt(pointForPointer(event.clientX, event.clientY), true);
     };
 
@@ -170,7 +173,7 @@ export function useParallaxAnimation() {
       if (
         event.pointerType !== 'touch' ||
         !event.isPrimary ||
-        motionPreference.matches
+        prefersReducedMotion()
       ) {
         return;
       }
@@ -204,7 +207,7 @@ export function useParallaxAnimation() {
     };
 
     const onTouchStart = (event: TouchEvent) => {
-      if (event.touches.length !== 1 || motionPreference.matches) {
+      if (event.touches.length !== 1 || prefersReducedMotion()) {
         return;
       }
 
@@ -247,7 +250,7 @@ export function useParallaxAnimation() {
     };
 
     const onMotionPreferenceChange = () => {
-      if (motionPreference.matches) center();
+      if (prefersReducedMotion()) center();
     };
 
     const resizeObserver = new ResizeObserver(() => {
@@ -274,6 +277,10 @@ export function useParallaxAnimation() {
     section.addEventListener('touchcancel', onTouchCancel, { passive: true });
     document.addEventListener('visibilitychange', onVisibilityChange);
     motionPreference.addEventListener('change', onMotionPreferenceChange);
+    window.addEventListener(
+      'accessibility-preferences-change',
+      onMotionPreferenceChange
+    );
     wrapper.dataset.motionReady = 'true';
 
     return () => {
@@ -291,6 +298,10 @@ export function useParallaxAnimation() {
       section.removeEventListener('touchcancel', onTouchCancel);
       document.removeEventListener('visibilitychange', onVisibilityChange);
       motionPreference.removeEventListener('change', onMotionPreferenceChange);
+      window.removeEventListener(
+        'accessibility-preferences-change',
+        onMotionPreferenceChange
+      );
     };
   }, []);
 

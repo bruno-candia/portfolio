@@ -74,6 +74,20 @@
   --ring: var(--line-hard);
 }
 
+html[data-contrast='high'] {
+  --bg: #000000;
+  --bg-subtle: #000000;
+  --surface: #000000;
+  --surface-hi: #0a0a0a;
+  --inset: #000000;
+  --line: rgb(255 255 255 / 42%);
+  --line-strong: rgb(255 255 255 / 58%);
+  --line-hard: rgb(255 255 255 / 78%);
+  --ink: #ffffff;
+  --ink-2: #ffffff;
+  --ink-3: #d1d1d1;
+}
+
 @theme inline {
   --color-bg: var(--bg);
   --color-bg-subtle: var(--bg-subtle);

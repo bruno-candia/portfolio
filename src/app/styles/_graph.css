@@ -78,3 +78,19 @@
     transition: none;
   }
 }
+
+html[data-motion='reduced'] .graph-trunk,
+html[data-motion='reduced'] .graph-branch {
+  stroke-dashoffset: 0;
+}
+
+html[data-motion='reduced'] .graph-branch {
+  transition:
+    opacity 180ms linear,
+    stroke-width 180ms linear;
+}
+
+html[data-motion='reduced'] .graph-node {
+  transform: scale(1);
+  transition: none;
+}

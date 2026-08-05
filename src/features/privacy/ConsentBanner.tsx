@@ -33,7 +33,7 @@ export function ConsentBanner() {
   return (
     <section
       aria-label={t('title')}
-      className="fixed inset-x-4 bottom-4 z-[100] mx-auto max-w-3xl rounded-xl border border-zinc-700 bg-zinc-950 p-5 text-white shadow-2xl md:p-6"
+      className="fixed inset-x-4 bottom-4 z-[90] mx-auto max-w-3xl rounded-xl border border-zinc-700 bg-zinc-950 p-5 text-white shadow-2xl md:p-6"
     >
       <div className="flex flex-col gap-4">
         <div>

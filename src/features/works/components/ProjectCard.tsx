@@ -58,7 +58,7 @@ export function ProjectCard({ project }: { project: Project }) {
           cardKeywords={project.cardKeywords}
         />
 
-        <div className="mt-[22px] flex items-center gap-4 border-t border-line pt-[22px] md:mt-[26px] md:pt-[26px]">
+        <div className="mt-[22px] flex flex-wrap items-center gap-4 border-t border-line pt-[22px] md:mt-[26px] md:pt-[26px]">
           {/*
            * The card is one link, not a div with onClick: `after` stretches
            * this anchor over the whole card so the hit area matches the
