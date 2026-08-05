@@ -141,6 +141,13 @@
         "Docker",
         "Azure"
       ],
+      "x_cardKeywords": [
+        "React",
+        "Redux",
+        "Fabric.js",
+        "Electron",
+        "Socket.io"
+      ],
       "x_detail": "Live captioning with the Web Speech API, a collaborative whiteboard in Fabric.js, and an Electron client whose transparent overlay captions on top of any software.",
       "x_problem": "Hybrid and remote classes assume everyone can hear. Someone with hearing loss depends on an interpreter in the room or on the captions the video player generates, and those are gone the moment the teacher presents from PowerPoint, from a PDF, or from anything outside the browser.",
       "x_built": "An ecosystem on three fronts: an LMS for institutions, a virtual classroom with live captioning, and a desktop client that captions on top of any application.",
@@ -189,6 +196,12 @@
         "reCAPTCHA",
         "react-ga",
         "Vercel"
+      ],
+      "x_cardKeywords": [
+        "Next.js 13",
+        "TypeScript",
+        "Radix UI",
+        "styled-components"
       ],
       "x_detail": "Next.js 13 with styled-components on the server, Radix for the interactive components, and lead capture with the captcha verified in the backend.",
       "x_problem": "Maincore sells embedded systems and programmable logic, which nobody buys on impulse. The site had to explain two separate product lines, hold up in Portuguese and English search, and turn a visit into a conversation without an intermediary holding the lead data.",
@@ -249,6 +262,13 @@
         "Sentry",
         "Terraform",
         "GitHub Actions"
+      ],
+      "x_cardKeywords": [
+        "Next.js 16",
+        "Tailwind 4",
+        "Playwright",
+        "GSAP",
+        "Terraform"
       ],
       "x_detail": "Feature-based architecture with MVVM, unit, e2e and a11y tests running in CI, i18n, consent and Sentry. It ships through GitHub Actions with Terraform.",
       "x_problem": "An engineer portfolio usually lists technology. Listing proves nothing: the repository is public, so the way to prove it is to leave the process visible.",

@@ -3,20 +3,14 @@ import { useTranslations } from 'next-intl';
 
 import { Link } from '@/i18n/routing';
 import type { Project } from '@/lib/resume';
-import {
-  SHOWN_KEYWORDS,
-  externalLink,
-  hiddenKeywordCount,
-  sealFor,
-  yearRange,
-} from '../lib/project-card';
+import { externalLink, sealFor, yearRange } from '../lib/project-card';
+import { ProjectKeywords } from './ProjectKeywords';
 
 export function ProjectCard({ project }: { project: Project }) {
   const t = useTranslations('Works');
 
   const seal = sealFor(project);
   const external = externalLink(project);
-  const hidden = hiddenKeywordCount(project);
 
   return (
     <article className="relative flex flex-col overflow-hidden rounded-[12px] border border-line bg-surface transition-colors hover:border-line-strong">
@@ -59,21 +53,10 @@ export function ProjectCard({ project }: { project: Project }) {
          * copy wraps, and `mt-auto` puts that slack above the block instead
          * of spreading it through the spacing.
          */}
-        <ul className="mt-auto flex flex-wrap gap-1.5 pt-[21px] md:pt-6">
-          {project.keywords.slice(0, SHOWN_KEYWORDS).map((keyword) => (
-            <li
-              key={keyword}
-              className="ds-mono-label rounded-sm border border-line bg-surface px-[9px] py-[5px] text-ink-2"
-            >
-              {keyword}
-            </li>
-          ))}
-          {hidden > 0 && (
-            <li className="ds-mono-label rounded-sm border border-line bg-surface px-[9px] py-[5px] text-ink-2">
-              +{hidden}
-            </li>
-          )}
-        </ul>
+        <ProjectKeywords
+          keywords={project.keywords}
+          cardKeywords={project.cardKeywords}
+        />
 
         <div className="mt-[22px] flex items-center gap-4 border-t border-line pt-[22px] md:mt-[26px] md:pt-[26px]">
           {/*

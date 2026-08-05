@@ -55,6 +55,8 @@ export interface Project {
   retrospective?: string;
   highlights: Decision[];
   keywords: string[];
+  /** Editorial subset ordered for the project card. */
+  cardKeywords: string[];
   startDate?: string;
   endDate?: string;
   url?: string;
@@ -158,6 +160,7 @@ function toProject(p: BaseProject, locale: Locale): Project {
         : []
     ),
     keywords: p.keywords,
+    cardKeywords: optional<string[]>('x_cardKeywords') ?? p.keywords,
     startDate: optional<string>('startDate'),
     endDate: optional<string>('endDate'),
     url: optional<string>('url'),

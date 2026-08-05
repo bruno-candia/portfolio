@@ -1,8 +1,5 @@
 import type { Project } from '@/lib/resume';
 
-/** Keywords shown as chips before the "+N" one. */
-export const SHOWN_KEYWORDS = 5;
-
 export type SealKey = 'timeline' | 'open' | 'closed';
 
 export type LinkLabel = 'repository' | 'behance' | 'live';
@@ -51,6 +48,17 @@ function labelForHost(url: string): LinkLabel {
   return 'live';
 }
 
-export function hiddenKeywordCount(project: Project): number {
-  return Math.max(0, project.keywords.length - SHOWN_KEYWORDS);
+export function hiddenKeywordCount(total: number, shown: number): number {
+  return Math.max(0, total - shown);
+}
+
+/** Number of editorial chips whose right edge fits on the first line. */
+export function fittedKeywordCount(
+  rightEdges: number[],
+  availableWidth: number
+): number {
+  if (rightEdges.length === 0) return 0;
+
+  const firstOverflow = rightEdges.findIndex((edge) => edge > availableWidth);
+  return Math.max(1, firstOverflow === -1 ? rightEdges.length : firstOverflow);
 }

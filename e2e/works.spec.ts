@@ -35,6 +35,53 @@ test.describe('Works Section', () => {
     ).toBeVisible();
   });
 
+  test('project keywords fit the first line before the counter wraps', async ({
+    page,
+  }) => {
+    await page.setViewportSize({ width: 1440, height: 1200 });
+    await page.reload();
+
+    const aurem = page
+      .locator('#works article')
+      .filter({ has: page.getByRole('heading', { name: 'Aurem', level: 3 }) });
+    const chips = aurem.locator('ul > li');
+
+    await expect(chips).toHaveText([
+      'React',
+      'Redux',
+      'Fabric.js',
+      'Electron',
+      'Socket.io',
+      '+9',
+    ]);
+    await expect(
+      aurem.getByLabel(/9 more technologies|mais 9 tecnologias/i)
+    ).toBeVisible();
+
+    const desktopRows = await chips.evaluateAll((items) =>
+      items.map((item) => item.getBoundingClientRect().y)
+    );
+    expect(new Set(desktopRows).size).toBe(1);
+
+    await page.setViewportSize({ width: 390, height: 844 });
+
+    await expect(chips).toHaveText([
+      'React',
+      'Redux',
+      'Fabric.js',
+      'Electron',
+      '+10',
+    ]);
+    await expect(
+      aurem.getByLabel(/10 more technologies|mais 10 tecnologias/i)
+    ).toBeVisible();
+
+    const mobileRows = await chips.evaluateAll((items) =>
+      items.map((item) => item.getBoundingClientRect().y)
+    );
+    expect(mobileRows.at(-1)).toBeGreaterThan(mobileRows[0]);
+  });
+
   test('secondary projects open their external link in a new tab', async ({
     page,
   }) => {

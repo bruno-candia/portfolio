@@ -1,7 +1,13 @@
 import { describe, expect, it } from 'vitest';
 
 import type { Project } from '@/lib/resume';
-import { externalLink, sealFor, yearRange } from './project-card';
+import {
+  externalLink,
+  fittedKeywordCount,
+  hiddenKeywordCount,
+  sealFor,
+  yearRange,
+} from './project-card';
 
 function project(overrides: Partial<Project> = {}): Project {
   return {
@@ -12,6 +18,7 @@ function project(overrides: Partial<Project> = {}): Project {
     description: '',
     highlights: [],
     keywords: [],
+    cardKeywords: [],
     secondary: false,
     ...overrides,
   };
@@ -32,6 +39,34 @@ describe('yearRange', () => {
     expect(yearRange(project({ startDate: '2025-01' }), 'to', 'present')).toBe(
       '2025 to present'
     );
+  });
+});
+
+describe('fittedKeywordCount', () => {
+  it('keeps the largest prefix that fits on the first line', () => {
+    expect(fittedKeywordCount([57, 120, 213, 298, 391], 310)).toBe(4);
+  });
+
+  it('keeps every editorial keyword when they all fit', () => {
+    expect(fittedKeywordCount([72, 172, 257, 409], 480)).toBe(4);
+  });
+
+  it('keeps one keyword when the container is narrower than every chip', () => {
+    expect(fittedKeywordCount([86, 178], 40)).toBe(1);
+  });
+
+  it('returns zero for an empty editorial selection', () => {
+    expect(fittedKeywordCount([], 480)).toBe(0);
+  });
+});
+
+describe('hiddenKeywordCount', () => {
+  it('counts against the complete stack rather than the editorial subset', () => {
+    expect(hiddenKeywordCount(14, 5)).toBe(9);
+  });
+
+  it('never returns a negative count', () => {
+    expect(hiddenKeywordCount(3, 5)).toBe(0);
   });
 });
 

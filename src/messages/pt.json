@@ -35,6 +35,7 @@
     "subtitle": "Contexto, decisão técnica e o que mudou depois.",
     "others": "Outros",
     "case": "Ver case",
+    "moreTechnologies": "{count, plural, one {mais # tecnologia} other {mais # tecnologias}}",
     "present": "hoje",
     "link": {
       "repository": "repositório",

@@ -35,6 +35,7 @@
     "subtitle": "Context, technical decision, and what changed afterwards.",
     "others": "Others",
     "case": "Read the case",
+    "moreTechnologies": "{count, plural, one {# more technology} other {# more technologies}}",
     "present": "present",
     "link": {
       "repository": "repository",

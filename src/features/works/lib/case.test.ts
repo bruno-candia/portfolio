@@ -12,6 +12,7 @@ function project(overrides: Partial<Project> = {}): Project {
     description: '',
     highlights: [],
     keywords: [],
+    cardKeywords: [],
     secondary: false,
     ...overrides,
   };
