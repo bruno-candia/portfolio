@@ -9,7 +9,7 @@ import { TECH_COLORS } from '../data/tech-colors';
 const NEUTRAL = '#8a8f98';
 
 const chipClassName =
-  'inline-flex h-[34px] cursor-pointer items-center gap-2 rounded-[6px] border py-1.5 pr-3 pl-2.5 ds-small transition-colors';
+  'inline-flex min-h-[34px] cursor-pointer items-center gap-2 rounded-[6px] border py-1.5 pr-3 pl-2.5 ds-small transition-colors';
 
 /**
  * Narrow, the card shows the core of the stack and counts the rest. The

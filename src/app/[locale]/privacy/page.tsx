@@ -14,34 +14,34 @@ export default async function PrivacyPage({
   return (
     <main
       data-reading-content
-      className="min-h-screen bg-zinc-950 px-6 py-16 text-zinc-100"
+      className="min-h-screen bg-bg px-6 py-16 text-ink"
     >
       <article className="mx-auto max-w-3xl">
         <Link
           href="/"
-          className="ds-small text-zinc-400 underline underline-offset-4 hover:text-white"
+          className="ds-small text-ink-3 underline underline-offset-4 transition-colors hover:text-ink"
         >
           {t('back')}
         </Link>
         <h1 className="ds-m-display mt-8 md:ds-h1">{t('title')}</h1>
-        <p className="ds-body-lg mt-4 text-zinc-300">{t('intro')}</p>
+        <p className="ds-body-lg mt-4 text-ink-2">{t('intro')}</p>
 
         <div className="mt-10 space-y-8">
           <section>
             <h2 className="ds-h3">{t('controller.title')}</h2>
-            <p className="ds-body-lg mt-2 text-zinc-300">
+            <p className="ds-body-lg mt-2 text-ink-2">
               {t('controller.description')}
             </p>
           </section>
           <section>
             <h2 className="ds-h3">{t('data.title')}</h2>
-            <p className="ds-body-lg mt-2 text-zinc-300">
+            <p className="ds-body-lg mt-2 text-ink-2">
               {t('data.description')}
             </p>
           </section>
           <section>
             <h2 className="ds-h3">{t('providers.title')}</h2>
-            <p className="ds-body-lg mt-2 text-zinc-300">
+            <p className="ds-body-lg mt-2 text-ink-2">
               {t.rich('providers.description', {
                 google: (chunks) => (
                   <a
@@ -68,13 +68,13 @@ export default async function PrivacyPage({
           </section>
           <section>
             <h2 className="ds-h3">{t('retention.title')}</h2>
-            <p className="ds-body-lg mt-2 text-zinc-300">
+            <p className="ds-body-lg mt-2 text-ink-2">
               {t('retention.description')}
             </p>
           </section>
           <section>
             <h2 className="ds-h3">{t('control.title')}</h2>
-            <p className="ds-body-lg mt-2 text-zinc-300">
+            <p className="ds-body-lg mt-2 text-ink-2">
               {t('control.description')}
             </p>
           </section>
