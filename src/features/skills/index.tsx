@@ -1,6 +1,8 @@
 import { useLocale, useTranslations } from 'next-intl';
 
+import { PageRules, pageContent } from '@/components/atoms/page';
 import { getSkills, type Locale } from '@/lib/resume';
+import { cn } from '@/lib/utils';
 import { SkillsBento } from './components/SkillsBento';
 
 export function Skills() {
@@ -9,15 +11,9 @@ export function Skills() {
 
   return (
     <section id="skills" className="relative w-full bg-bg">
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-y-0 left-1/2 hidden w-full max-w-page -translate-x-1/2 md:block"
-      >
-        <span className="absolute inset-y-0 left-0 w-px bg-line" />
-        <span className="absolute inset-y-0 right-0 w-px bg-line" />
-      </div>
+      <PageRules />
 
-      <div className="mx-auto w-full max-w-page px-5 py-20 md:px-8 md:py-28">
+      <div className={cn(pageContent, 'py-20 md:py-28')}>
         <header className="flex flex-col gap-3.5">
           <p className="ds-eyebrow text-ink-3">{t('eyebrow')}</p>
           <h2 className="ds-m-h1 md:ds-h1 max-w-[680px] text-ink">

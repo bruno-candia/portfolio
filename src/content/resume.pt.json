@@ -50,7 +50,7 @@
     },
     "maincore": {
       "description": "Site institucional que precisa vender dois produtos técnicos e capturar lead qualificado.",
-      "detail": "Next.js 13 com styled-components renderizado no servidor, Radix nos componentes interativos e captura de lead com validação de captcha no backend.",
+      "detail": "Next.js 13 com styled-components no servidor, Radix nos componentes interativos e captura de lead com captcha validado no backend.",
       "problem": "A Maincore vende sistemas embarcados e lógica programável: produto que ninguém compra por impulso. O site precisava explicar duas linhas distintas, sustentar a busca em português e inglês, e transformar visita em conversa — sem intermediário guardando o dado do lead.",
       "built": "Site institucional em Next.js com duas páginas de produto, central de recursos, formulário de contato e inscrição em newsletter protegida por captcha.",
       "result": "No ar desde 2023 na Vercel, duas linhas de produto documentadas e formulário entregando direto na caixa corporativa.",
@@ -65,8 +65,8 @@
     },
     "portfolio": {
       "name": "Este portfólio",
-      "description": "Portfólio de dev afirma competência. Este tenta provar.",
-      "detail": "O site é o artefato: ADR, teste de acessibilidade no pipeline, alerta de produção em Terraform e varredura de segredo no histórico inteiro.",
+      "description": "Portfólio que prova em vez de contar.",
+      "detail": "Arquitetura feature-based com MVVM, teste unitário, e2e e a11y rodando no CI, i18n, consentimento e Sentry. Sobe por GitHub Actions com Terraform.",
       "problem": "Portfólio de engenheiro costuma listar tecnologia. Listar não prova nada: o repositório é público, então a forma de provar é deixar o processo visível.",
       "built": "Next.js com arquitetura feature-based e MVVM, i18n por rota, consentimento antes de qualquer evento, e a infraestrutura de observabilidade descrita em Terraform.",
       "result": "ADR 0001 registrando o modelo de ameaça de um repositório público que faz deploy; 6 suítes end-to-end incluindo acessibilidade e privacidade; 10 testes unitários; CodeQL em PR, master e semanal. O pipeline que sobe este site é o mesmo que dá pra ler no repositório.",

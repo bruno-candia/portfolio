@@ -1,4 +1,6 @@
 import { Logo } from '@/components/atoms/logo';
+import { pageContent } from '@/components/atoms/page';
+import { cn } from '@/lib/utils';
 import { Sidebar } from './components/sidebar';
 import { DesktopNav } from './components/DesktopNav';
 import { LanguageSwitcher } from './components/LanguageSwitcher';
@@ -14,7 +16,12 @@ export function Header() {
   return (
     <>
       <header className="group/header sticky top-0 z-50 w-full bg-bg">
-        <div className="mx-auto flex h-[104px] w-full max-w-page items-center justify-between px-5 md:px-8">
+        <div
+          className={cn(
+            pageContent,
+            'flex h-[104px] items-center justify-between'
+          )}
+        >
           <Logo />
 
           <DesktopNav />
