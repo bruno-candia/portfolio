@@ -166,7 +166,7 @@
     {
       "x_id": "portfolio",
       "x_slug": "portfolio",
-      "x_image": "/opengraph-image.png",
+      "x_image": "/portfolio.png",
       "x_visibility": "open-source",
       "name": "This portfolio",
       "type": "personal",

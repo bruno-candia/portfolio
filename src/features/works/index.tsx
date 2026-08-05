@@ -32,12 +32,19 @@ export function Works() {
           </p>
         </header>
 
-        <div className="mt-[82px] grid grid-cols-1 items-start gap-4 md:mt-[106px] md:grid-cols-2 md:gap-6">
+        {/*
+         * The cards stretch so every row ends on the same line — the actions
+         * row is pushed down by `mt-auto` inside the card. "Others" opts out:
+         * it is a list, and stretching it would leave a tall empty box.
+         */}
+        <div className="mt-[82px] grid grid-cols-1 gap-4 md:mt-[106px] md:grid-cols-2 md:gap-6">
           {projects.map((project) => (
             <ProjectCard key={project.id} project={project} />
           ))}
 
-          {others.length > 0 && <OtherProjects projects={others} />}
+          {others.length > 0 && (
+            <OtherProjects className="self-start" projects={others} />
+          )}
         </div>
       </div>
     </section>

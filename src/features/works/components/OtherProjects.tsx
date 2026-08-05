@@ -1,13 +1,22 @@
 import { useTranslations } from 'next-intl';
 
 import type { Project } from '@/lib/resume';
+import { cn } from '@/lib/utils';
 import { externalLink } from '../lib/project-card';
 
-export function OtherProjects({ projects }: { projects: Project[] }) {
+export function OtherProjects({
+  projects,
+  className,
+}: {
+  projects: Project[];
+  className?: string;
+}) {
   const t = useTranslations('Works');
 
   return (
-    <article className="rounded-[12px] border border-line p-5 md:p-6">
+    <article
+      className={cn('rounded-[12px] border border-line p-5 md:p-6', className)}
+    >
       <p className="ds-mono-label text-ink-3">{t('others')}</p>
 
       <ul className="mt-3.5 flex flex-col gap-4 md:mt-4">
