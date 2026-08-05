@@ -32,7 +32,7 @@ export function CaseHeader({
     <header>
       <Link
         href="/#works"
-        className="ds-small inline-flex items-center gap-2 text-ink-3 hover:text-ink"
+        className="ds-small flex w-fit items-center gap-2 text-ink-3 hover:text-ink"
       >
         <span aria-hidden>←</span> {t('back')}
       </Link>
@@ -67,7 +67,7 @@ export function CaseHeader({
       )}
 
       {project.image && (
-        <div className="relative mt-9 aspect-16/9 w-full overflow-hidden rounded-[12px] border border-line bg-inset md:aspect-[1080/500]">
+        <div className="relative mt-[34px] aspect-16/9 w-full overflow-hidden rounded-[12px] border border-line bg-inset md:aspect-[1080/500]">
           <Image
             src={project.image}
             alt={project.name}

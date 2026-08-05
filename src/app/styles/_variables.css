@@ -124,20 +124,19 @@
   --font-mono: var(--font-geist-mono);
   --font-graffiti: var(--font-graffiti);
 
-  /* space/* */
-  --spacing-4: 4px;
-  --spacing-8: 8px;
-  --spacing-12: 12px;
-  --spacing-16: 16px;
-  --spacing-24: 24px;
-  --spacing-32: 32px;
-  --spacing-40: 40px;
-  --spacing-48: 48px;
-  --spacing-64: 64px;
-  --spacing-80: 80px;
-  --spacing-96: 96px;
-  --spacing-128: 128px;
-  --spacing-160: 160px;
+  /*
+   * The Figma "space/*" scale is deliberately NOT declared here.
+   *
+   * `--spacing-24: 24px` does not add a token, it redefines what `p-24`
+   * means: Tailwind reads the key as the utility's own suffix. Declaring the
+   * scale by pixel value turned every class whose number happened to be a
+   * Figma step into a literal pixel value, so `h-16` was 16px and `gap-4`
+   * was 4px while everything else stayed on the 4px multiplier. The two
+   * numbering systems cannot share a namespace.
+   *
+   * Tailwind's default multiplier already expresses the whole Figma scale —
+   * every step is a multiple of 4, so 24px is `-6` and 64px is `-16`.
+   */
 
   /* radius/* */
   --radius-1: var(--radius-1);

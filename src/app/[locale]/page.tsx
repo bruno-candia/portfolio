@@ -1,3 +1,5 @@
+import { setRequestLocale } from 'next-intl/server';
+
 import { Header } from '@/features/header';
 import { Hero } from '@/features/hero';
 import { About } from '@/features/about';
@@ -7,7 +9,14 @@ import { Experience } from '@/features/experience';
 
 import { Footer } from '@/features/footer';
 
-export default function Home() {
+export default async function Home({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
   return (
     <main className="flex min-h-screen w-full flex-col items-center justify-between">
       <Header />

@@ -2,7 +2,11 @@ import type { Metadata } from 'next';
 import { NextFontWithVariable } from 'next/dist/compiled/@next/font';
 import localFont from 'next/font/local';
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages, getTranslations } from 'next-intl/server';
+import {
+  getMessages,
+  getTranslations,
+  setRequestLocale,
+} from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 
@@ -28,6 +32,15 @@ const graffiti: NextFontWithVariable = localFont({
 });
 
 const BASE_URL = 'https://brunocandia.com';
+
+/**
+ * Without this pair the whole tree renders on every request: next-intl falls
+ * back to the dynamic locale lookup unless the route is enumerated and the
+ * locale is handed to it up front.
+ */
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
 
 export async function generateMetadata({
   params,
@@ -112,6 +125,8 @@ export default async function RootLayout({
   if (!routing.locales.includes(locale as (typeof routing.locales)[number])) {
     notFound();
   }
+
+  setRequestLocale(locale);
 
   const messages = await getMessages();
   const t = await getTranslations({ locale, namespace: 'Metadata' });
