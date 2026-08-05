@@ -24,8 +24,8 @@ export function ExperienceEntry({
         {period}
       </p>
 
-      <div className="flex flex-col gap-2">
-        <h3 data-node-anchor className="ds-m-h2 md:ds-h3 text-ink">
+      <div className="flex flex-col gap-1.5 md:gap-2">
+        <h3 data-node-anchor className="ds-h4 md:ds-h3 text-ink">
           {job.company}
         </h3>
         <p className="ds-small text-ink-2">{job.position}</p>
@@ -33,7 +33,7 @@ export function ExperienceEntry({
         <p className="mt-1 max-w-[640px] ds-small text-ink-3">{job.summary}</p>
 
         {job.highlights.length > 0 && (
-          <ul className="mt-1.5 flex flex-wrap gap-2">
+          <ul className="mt-1.5 flex flex-wrap gap-1.5 md:gap-2">
             {job.highlights.map((highlight) => (
               <li
                 key={highlight}
