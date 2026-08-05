@@ -20,9 +20,13 @@ const LAYERS = 8;
 const INFALL = 0.055;
 const ARC_BAND = 0.34;
 const ARC_SQUASH = 0.92;
+/** Where the disk is hottest: the last stable orbits before the plunge. */
+const RIM_OUTER = DISK_INNER + 0.14;
 
 interface Orbiting {
   count: number;
+  rMin: number;
+  rMax: number;
   r: Float32Array;
   th: Float32Array;
   w: Float32Array;
@@ -67,7 +71,7 @@ function makeOrbiting(
     z[i] = (Math.random() - 0.5) * 0.03 * (0.4 + r[i]);
   }
 
-  return { count, r, th, w, a, z };
+  return { count, rMin, rMax, r, th, w, a, z };
 }
 
 function spawnDebris(i: number, d: Debris, initial: boolean) {
@@ -104,11 +108,11 @@ function stepOrbiting(set: Orbiting, dt: number) {
     set.th[i] += set.w[i] * dt;
     set.r[i] -= dt * INFALL * Math.pow(set.r[i], -0.6);
 
-    if (set.r[i] < DISK_INNER) {
-      // Reborn outermost, so the banding survives the infall.
+    if (set.r[i] < set.rMin) {
+      // Reborn at the top of its own band, so a population stays where it was
+      // built: the hot inner orbits recycle instead of draining into the disk.
       set.r[i] =
-        DISK_OUTER -
-        Math.random() * ((DISK_OUTER - DISK_INNER) / LAYERS) * 0.34;
+        set.rMax - Math.random() * ((set.rMax - set.rMin) / LAYERS) * 0.34;
       set.th[i] = Math.random() * TAU;
     }
 
@@ -191,12 +195,13 @@ export function createViewport(
 const REFERENCE_SCALE = 202;
 const DENSITY = {
   disk: 15000 / (REFERENCE_SCALE * REFERENCE_SCALE),
+  rim: 3600 / (REFERENCE_SCALE * REFERENCE_SCALE),
   ring: 1600 / (REFERENCE_SCALE * REFERENCE_SCALE),
   debris: 340 / (REFERENCE_SCALE * REFERENCE_SCALE),
 };
 
 /** Past these counts the frame budget buys nothing the eye reads. */
-const CEILING = { disk: 17000, ring: 1900, debris: 380 };
+const CEILING = { disk: 19000, rim: 4200, ring: 1900, debris: 380 };
 
 export function createScene(scale: number) {
   const area = scale * scale;
@@ -209,6 +214,12 @@ export function createScene(scale: number) {
       DISK_INNER,
       DISK_OUTER,
       0.5
+    ),
+    rim: makeOrbiting(
+      count(DENSITY.rim, 320, CEILING.rim),
+      DISK_INNER,
+      RIM_OUTER,
+      1
     ),
     ring: makeOrbiting(
       count(DENSITY.ring, 130, CEILING.ring),
@@ -230,7 +241,8 @@ function renderOrbiting(
   set: Orbiting,
   gain: number,
   wantFar: boolean,
-  side: number
+  side: number,
+  beamFloor = 0
 ) {
   for (let i = 0; i < set.count; i++) {
     const r = set.r[i];
@@ -263,8 +275,10 @@ function renderOrbiting(
     }
 
     // Continuous Doppler. A binary test here splits the disk into two halves
-    // with different brightness and a straight seam down the middle.
-    const beam = 1 + 0.62 * -Math.cos(th);
+    // with different brightness and a straight seam down the middle. The floor
+    // is what keeps the hot inner orbits lit on the receding side too: they are
+    // the shape of the thing, and beaming alone puts half of them out.
+    const beam = Math.max(beamFloor, 1 + 0.62 * -Math.cos(th));
     // The direct image is the brightest: it is light that arrived undeflected.
     // The lensed arc above and the secondary arc below took longer paths.
     const lensed = far ? (side < 0 ? 0.95 : 1.4) : 1.95;
@@ -332,7 +346,7 @@ export function drawFrame(
   scene: Scene,
   dt: number
 ) {
-  const { disk, ring, debris } = scene;
+  const { disk, rim, ring, debris } = scene;
 
   ctx.clearRect(0, 0, view.width, view.height);
   ctx.fillStyle = '#fff';
@@ -340,12 +354,15 @@ export function drawFrame(
   renderDebris(ctx, view, debris, dt);
 
   stepOrbiting(disk, dt);
+  stepOrbiting(rim, dt);
   stepOrbiting(ring, dt);
 
   renderOrbiting(ctx, view, disk, 1, true, -1);
-  renderOrbiting(ctx, view, ring, 3.1, true, -1);
+  renderOrbiting(ctx, view, rim, 2.2, true, -1, 1.15);
+  renderOrbiting(ctx, view, ring, 3.1, true, -1, 1);
   renderOrbiting(ctx, view, disk, 1, true, 1);
-  renderOrbiting(ctx, view, ring, 3.1, true, 1);
+  renderOrbiting(ctx, view, rim, 2.2, true, 1, 1.15);
+  renderOrbiting(ctx, view, ring, 3.1, true, 1, 1);
 
   const shadow = ctx.createRadialGradient(
     view.centerX,
@@ -372,7 +389,8 @@ export function drawFrame(
   // shadow. Discarding those particles inside the horizon radius was the bug
   // in the earlier version: they sit between the observer and the hole.
   renderOrbiting(ctx, view, disk, 1, false, 1);
-  renderOrbiting(ctx, view, ring, 3.1, false, 1);
+  renderOrbiting(ctx, view, rim, 2.2, false, 1, 1.15);
+  renderOrbiting(ctx, view, ring, 3.1, false, 1, 1);
 
   const fade = ctx.createLinearGradient(0, 0, 0, view.height);
   fade.addColorStop(0, '#000');
@@ -389,6 +407,7 @@ export function drawFrame(
 export function settle(scene: Scene, seconds: number, step = 1 / 60) {
   for (let t = 0; t < seconds; t += step) {
     stepOrbiting(scene.disk, step);
+    stepOrbiting(scene.rim, step);
     stepOrbiting(scene.ring, step);
   }
 }
