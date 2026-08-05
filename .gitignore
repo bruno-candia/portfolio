@@ -62,3 +62,6 @@ node_modules/
 *.tfvars
 *.tfvars.json
 terraform.tfvars
+
+# local preview config for the coding agent
+.claude/launch.json
