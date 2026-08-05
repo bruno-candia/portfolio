@@ -20,7 +20,7 @@ export function SkillsBento({ skills }: { skills: Skill[] }) {
       <SkillCard skill={featured} selected={selected} onSelect={setSelected} />
 
       <SkillsTerminal
-        fileName={fileNameFor(selected, snippet?.language)}
+        fileName={snippet?.file ?? fileNameFor(selected, snippet?.language)}
         code={snippet?.code}
         language={snippet?.language}
       />
