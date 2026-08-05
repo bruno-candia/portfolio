@@ -8,7 +8,7 @@ import { LanguageSwitcher } from './components/LanguageSwitcher';
 /**
  * `sticky` and the background are behaviour, not decoration: a static frame
  * cannot show both states. The frame has a transparent header because nothing
- * scrolls under it there — here the page does, so the bar carries the page
+ * scrolls under it there. Here the page does, so the bar carries the page
  * background. Against pure black it is invisible at rest, which is what the
  * design shows.
  */

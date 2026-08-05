@@ -134,7 +134,7 @@
    * was 4px while everything else stayed on the 4px multiplier. The two
    * numbering systems cannot share a namespace.
    *
-   * Tailwind's default multiplier already expresses the whole Figma scale —
+   * Tailwind's default multiplier already expresses the whole Figma scale:
    * every step is a multiple of 4, so 24px is `-6` and 64px is `-16`.
    */
 

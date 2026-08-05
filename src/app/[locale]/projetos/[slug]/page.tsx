@@ -22,7 +22,7 @@ type Params = Promise<{ locale: string; slug: string }>;
 
 /**
  * `notFound()` inside the page cannot set the status once the shell has
- * started streaming — the response goes out as 200 with a not-found body,
+ * started streaming, so the response goes out as 200 with a not-found body,
  * which reads as a soft 404. Closing the set of params moves the decision
  * before rendering, so an unknown slug is a real 404.
  */

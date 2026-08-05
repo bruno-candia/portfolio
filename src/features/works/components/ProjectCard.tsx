@@ -34,7 +34,8 @@ export function ProjectCard({ project }: { project: Project }) {
 
       <div className="flex flex-1 flex-col p-5 md:p-6">
         <p className="ds-m-mono md:ds-mono-label text-ink-3">
-          {yearRange(project, t('present'))} · {t(`kind.${kindKey(project)}`)}
+          {yearRange(project, t('rangeJoiner'), t('present'))} ·{' '}
+          {t(`kind.${kindKey(project)}`)}
         </p>
 
         <h3 className="mt-[9px] ds-h4 md:mt-2.5 md:ds-h3 text-ink">

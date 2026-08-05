@@ -29,7 +29,7 @@ export function Works() {
         </header>
 
         {/*
-         * The cards stretch so every row ends on the same line — the actions
+         * The cards stretch so every row ends on the same line. The actions
          * row is pushed down by `mt-auto` inside the card. "Others" opts out:
          * it is a list, and stretching it would leave a tall empty box.
          */}

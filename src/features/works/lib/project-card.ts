@@ -12,11 +12,15 @@ export interface ExternalLink {
   label: LinkLabel;
 }
 
-/** "2018 — 2023", or "2025 — present" while it is still running. */
-export function yearRange(project: Project, present: string): string {
+/** "2018 to 2023", or "2025 to present" while it is still running. */
+export function yearRange(
+  project: Project,
+  joiner: string,
+  present: string
+): string {
   const start = project.startDate?.slice(0, 4);
   if (!start) return '';
-  return `${start} — ${project.endDate?.slice(0, 4) ?? present}`;
+  return `${start} ${joiner} ${project.endDate?.slice(0, 4) ?? present}`;
 }
 
 /**

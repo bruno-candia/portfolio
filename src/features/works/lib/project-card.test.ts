@@ -21,15 +21,16 @@ describe('yearRange', () => {
   it('uses the end year when the project is finished', () => {
     const range = yearRange(
       project({ startDate: '2018-02', endDate: '2023-05' }),
+      'to',
       'present'
     );
 
-    expect(range).toBe('2018 — 2023');
+    expect(range).toBe('2018 to 2023');
   });
 
   it('falls back to the present label while it is still running', () => {
-    expect(yearRange(project({ startDate: '2025-01' }), 'present')).toBe(
-      '2025 — present'
+    expect(yearRange(project({ startDate: '2025-01' }), 'to', 'present')).toBe(
+      '2025 to present'
     );
   });
 });

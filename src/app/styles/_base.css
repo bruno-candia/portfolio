@@ -3,7 +3,7 @@
  * Preflight does not.
  *
  * The previous file duplicated Preflight outside any cascade layer, and
- * unlayered rules beat `@layer utilities` — which silently disabled every
+ * unlayered rules beat `@layer utilities`, which silently disabled every
  * Tailwind margin utility in the project.
  */
 

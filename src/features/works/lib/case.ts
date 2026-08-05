@@ -1,33 +1,9 @@
 import type { Locale, Project } from '@/lib/resume';
 
-export interface Decision {
-  label: string;
-  text: string;
-}
-
 /**
- * A highlight is written as "the call — why it was the call". Splitting on
- * the first em dash keeps the two halves in one string in `resume.json`,
- * where they belong together, and lets the case page style them apart.
- */
-export function toDecision(highlight: string): Decision {
-  const separator = highlight.indexOf(' — ');
-  if (separator === -1) return { label: '', text: highlight };
-
-  const text = highlight.slice(separator + 3);
-
-  return {
-    label: highlight.slice(0, separator),
-    // The half after the dash continues a sentence in the source; on its own
-    // line it starts one.
-    text: text.charAt(0).toUpperCase() + text.slice(1),
-  };
-}
-
-/**
- * The case page links out even when the project is over — there the LinkedIn
- * page is the record of it, which is not true on a card that offers a live
- * site.
+ * The case page links out even when the project is over, because there the
+ * LinkedIn page is the record of it, which is not true on a card that
+ * offers a live site.
  */
 export function caseLink(project: Project) {
   const href = project.repository ?? project.url;
@@ -39,16 +15,17 @@ export function caseLink(project: Project) {
   return { href, label: 'live' };
 }
 
-/** "fev 2018 — mai 2023", or an open range while the project runs. */
+/** "fev 2018 a mai 2023", or an open range while the project runs. */
 export function monthRange(
   project: Project,
   locale: Locale,
+  joiner: string,
   present: string
 ): string {
   const start = formatMonth(project.startDate, locale);
   if (!start) return '';
 
-  return `${start} — ${formatMonth(project.endDate, locale) ?? present}`;
+  return `${start} ${joiner} ${formatMonth(project.endDate, locale) ?? present}`;
 }
 
 function formatMonth(value: string | undefined, locale: Locale) {

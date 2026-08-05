@@ -16,7 +16,7 @@ export function CaseSidebar({
   const t = useTranslations('Case');
   const tw = useTranslations('Works');
 
-  const period = monthRange(project, locale, tw('present'));
+  const period = monthRange(project, locale, tw('rangeJoiner'), tw('present'));
 
   return (
     <aside className="h-fit rounded-[12px] border border-line md:sticky md:top-[88px]">

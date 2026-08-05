@@ -36,6 +36,12 @@ export interface Work {
   projectId?: string;
 }
 
+/** A technical call and the reason behind it, shown as two lines. */
+export interface Decision {
+  call: string;
+  why: string;
+}
+
 export interface Project {
   id: string;
   slug: string;
@@ -50,7 +56,7 @@ export interface Project {
   result?: string;
   /** "What I would do differently today". */
   retrospective?: string;
-  highlights: string[];
+  highlights: Decision[];
   keywords: string[];
   startDate?: string;
   endDate?: string;
@@ -88,7 +94,7 @@ const overlay = ptOverlay as {
     string,
     Partial<Record<'position' | 'summary', string>> & { highlights?: string[] }
   >;
-  projects: Record<string, Record<string, string | string[]>>;
+  projects: Record<string, Record<string, string | Decision[] | undefined>>;
   skills: Record<string, { name: string; description: string }>;
 };
 
@@ -133,8 +139,8 @@ function toProject(p: BaseProject, locale: Locale): Project {
     const value = t?.[key];
     return typeof value === 'string' && value.length > 0 ? value : fallback;
   };
-  const list = (key: string, fallback: string[]) => {
-    const value = t?.[key];
+  const decisions = (fallback: Decision[]): Decision[] => {
+    const value = t?.['highlights'];
     return Array.isArray(value) ? value : fallback;
   };
   const optional = <T>(key: string): T | undefined =>
@@ -151,10 +157,9 @@ function toProject(p: BaseProject, locale: Locale): Project {
     built: str('built', optional<string>('x_built')),
     result: str('result', optional<string>('x_result')),
     retrospective: str('retrospective', optional<string>('x_retrospective')),
-    highlights: list(
-      'highlights',
+    highlights: decisions(
       'highlights' in p
-        ? ((p as { highlights: string[] }).highlights ?? [])
+        ? ((p as { highlights: Decision[] }).highlights ?? [])
         : []
     ),
     keywords: p.keywords,

@@ -1,7 +1,6 @@
 import { useTranslations } from 'next-intl';
 
 import type { Project } from '@/lib/resume';
-import { toDecision } from '../../lib/case';
 
 export function CaseBody({ project }: { project: Project }) {
   const t = useTranslations('Case');
@@ -15,18 +14,12 @@ export function CaseBody({ project }: { project: Project }) {
         <section className="flex flex-col gap-3">
           <h2 className="ds-h3 text-ink">{t('decisions')}</h2>
 
-          {project.highlights.map((highlight) => {
-            const decision = toDecision(highlight);
-
-            return (
-              <article key={highlight} className="flex flex-col gap-1">
-                {decision.label && (
-                  <h3 className="ds-mono-label text-ink">{decision.label}</h3>
-                )}
-                <p className="ds-small text-ink-3">{decision.text}</p>
-              </article>
-            );
-          })}
+          {project.highlights.map((decision) => (
+            <article key={decision.call} className="flex flex-col gap-1">
+              <h3 className="ds-mono-label text-ink">{decision.call}</h3>
+              <p className="ds-small text-ink-3">{decision.why}</p>
+            </article>
+          ))}
         </section>
       )}
 

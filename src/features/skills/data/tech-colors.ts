@@ -2,7 +2,7 @@
  * Brand colour per technology, used as the dot on a skill chip.
  *
  * Kept out of resume.json because it is presentation, not career data, and a
- * missing entry is not an error — anything unlisted falls back to neutral grey.
+ * missing entry is not an error. Anything unlisted falls back to neutral grey.
  */
 export const TECH_COLORS: Record<string, string> = {
   TypeScript: '#3178c6',

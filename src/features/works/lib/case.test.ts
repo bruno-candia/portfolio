@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 
 import type { Project } from '@/lib/resume';
-import { caseLink, monthRange, neighbours, toDecision } from './case';
+import { caseLink, monthRange, neighbours } from './case';
 
 function project(overrides: Partial<Project> = {}): Project {
   return {
@@ -17,41 +17,22 @@ function project(overrides: Partial<Project> = {}): Project {
   };
 }
 
-describe('toDecision', () => {
-  it('splits the call from the reason on the first dash', () => {
-    const decision = toDecision(
-      'Redux, não Context — a sala tem estado — compartilhado.'
-    );
-
-    expect(decision).toEqual({
-      label: 'Redux, não Context',
-      text: 'A sala tem estado — compartilhado.',
-    });
-  });
-
-  it('keeps a highlight without a dash whole', () => {
-    expect(toDecision('No separator here')).toEqual({
-      label: '',
-      text: 'No separator here',
-    });
-  });
-});
-
 describe('monthRange', () => {
   it('writes both ends in the reader language', () => {
     const range = monthRange(
       project({ startDate: '2018-02', endDate: '2023-05' }),
       'pt',
+      'a',
       'hoje'
     );
 
-    expect(range).toBe('fev 2018 — mai 2023');
+    expect(range).toBe('fev 2018 a mai 2023');
   });
 
   it('uses the present label for a project still running', () => {
-    expect(monthRange(project({ startDate: '2025-01' }), 'en', 'present')).toBe(
-      'Jan 2025 — present'
-    );
+    expect(
+      monthRange(project({ startDate: '2025-01' }), 'en', 'to', 'present')
+    ).toBe('Jan 2025 to present');
   });
 });
 

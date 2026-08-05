@@ -21,7 +21,7 @@ export function CaseHeader({
 
   // The eyebrow carries the role only when the project was also a job.
   const eyebrow = [
-    yearRange(project, tw('present')),
+    yearRange(project, tw('rangeJoiner'), tw('present')),
     tw(`kind.${project.type.replace(/\s+/g, '-')}`),
     work?.position,
   ]
