@@ -36,7 +36,6 @@
   "work": [
     {
       "x_id": "bees-tech-lead",
-      "x_lane": "bees",
       "x_color": "#ef4444",
       "name": "BEES (AB InBev)",
       "position": "Tech Lead",
@@ -46,7 +45,6 @@
     },
     {
       "x_id": "bees-senior",
-      "x_lane": "bees",
       "x_color": "#ef4444",
       "name": "BEES (AB InBev)",
       "position": "Senior Software Engineer",
@@ -57,9 +55,7 @@
     },
     {
       "x_id": "aurem",
-      "x_lane": "aurem",
       "x_color": "#22c55e",
-      "x_parallel": true,
       "x_project": "aurem",
       "name": "Aurem",
       "position": "Founder & Software Engineer",
@@ -74,7 +70,6 @@
     },
     {
       "x_id": "verzel",
-      "x_lane": "short",
       "x_color": "#f97316",
       "name": "Verzel",
       "position": "UX Designer",
@@ -85,7 +80,6 @@
     },
     {
       "x_id": "neoenergia",
-      "x_lane": "short",
       "x_color": "#22d3ee",
       "name": "Neoenergia",
       "position": "Development Intern",

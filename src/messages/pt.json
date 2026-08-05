@@ -57,29 +57,13 @@
     "rangeJoiner": "a"
   },
   "Experience": {
-    "title": "Explore minha jornada",
-    "experiences": {
-      "bees-tech-lead": {
-        "role": "Tech Lead",
-        "description": "Liderando a padronização de plataformas globais (Grow, Force, Control Tower). Arquitetei BFFs com NestJS/Clean Arch, defini padrões de arquitetura e escalei o ecossistema com Micro-frontends em 22 países."
-      },
-      "bees-senior": {
-        "role": "Engenheiro de Software Sênior",
-        "description": "Impulsionei interações de vendas criando o Auto Dialer com React e WebSockets. Liderei a migração para Micro-frontends, reduzindo o deploy de >1h para minutos."
-      },
-      "aurem": {
-        "role": "Fundador e Engenheiro de Software",
-        "description": "Fundei uma startup de legendagem inclusiva em tempo real (Prêmio Santander). Utilizei a Web Speech API para legendagem de baixa latência e WebSockets para sincronização em tempo real, atendendo 1.000+ alunos e escalando via AWS/Docker."
-      },
-      "verzel": {
-        "role": "UX Designer",
-        "description": "Conectei design e engenharia em projetos internos. Criei interfaces no Figma focadas no desenvolvedor e Design Systems que otimizaram o handoff e garantiram implementação precisa em React."
-      },
-      "neoenergia": {
-        "role": "Estagiário de Desenvolvimento",
-        "description": "Digitalizei fluxos internos criando dashboards em React/TypeScript. Mantive backends Node.js/SQL."
-      }
-    }
+    "eyebrow": "Trajetória",
+    "title": "De estagiário a Tech Lead",
+    "subtitle": "Cinco anos de branches. Um merge de cada vez.",
+    "joiner": "a",
+    "present": "hoje",
+    "root": "{date} · primeira linha",
+    "caseLink": "ver o case"
   },
   "Skills": {
     "title": "Construindo software que resolve problemas reais",

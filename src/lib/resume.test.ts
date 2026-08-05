@@ -28,11 +28,6 @@ describe('resume', () => {
     expect(lead.company).toBe('BEES (AB InBev)');
   });
 
-  it('marks the job that ran in parallel with the others', () => {
-    const parallel = getWork('en').filter((w) => w.parallel);
-    expect(parallel.map((w) => w.id)).toEqual(['aurem']);
-  });
-
   it('splits featured projects from the "others" block', () => {
     expect(getProjects('pt').map((p) => p.id)).toEqual([
       'aurem',

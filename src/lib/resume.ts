@@ -27,11 +27,8 @@ export interface Work {
   highlights: string[];
   startDate: string;
   endDate?: string;
-  /** Lane in the career git graph. */
-  lane: string;
+  /** Colour of this job's branch in the career graph. */
   color: string;
-  /** Ran alongside another job. */
-  parallel: boolean;
   /** Matching project, when there is one. */
   projectId?: string;
 }
@@ -125,9 +122,7 @@ function toWork(w: BaseWork, locale: Locale): Work {
     highlights: t?.highlights ?? w.highlights,
     startDate: w.startDate,
     endDate: 'endDate' in w ? (w as { endDate?: string }).endDate : undefined,
-    lane: w.x_lane,
     color: w.x_color,
-    parallel: 'x_parallel' in w,
     projectId:
       'x_project' in w ? (w as { x_project?: string }).x_project : undefined,
   };

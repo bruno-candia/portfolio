@@ -57,29 +57,13 @@
     "rangeJoiner": "to"
   },
   "Experience": {
-    "title": "Explore my journey",
-    "experiences": {
-      "bees-tech-lead": {
-        "role": "Tech Lead",
-        "description": "Leading global platforms standardization (Grow, Force, Control Tower). Architected BFFs with NestJS/Clean Arch, defined architectural patterns, and scaled the ecosystem with Micro-frontends across 22 countries."
-      },
-      "bees-senior": {
-        "role": "Senior Software Engineer",
-        "description": "Boosted sales interactions by engineering the Auto Dialer with React & WebSockets. Led the migration to Micro-frontends, cutting deployment time from >1h to minutes."
-      },
-      "aurem": {
-        "role": "Founder & Software Engineer",
-        "description": "Founded an inclusive real-time captioning startup (Santander Prize Winner). Leveraged the Web Speech API for low-latency captioning and WebSockets for real-time synchronization, serving 1,000+ students and scaling via AWS/Docker."
-      },
-      "verzel": {
-        "role": "UX Designer",
-        "description": "Bridged design and engineering for internal company projects. Designed developer-friendly Figma interfaces with Auto Layout and created Design Systems to streamline handoff and ensure accurate React implementation."
-      },
-      "neoenergia": {
-        "role": "Software Developer Intern",
-        "description": "Digitized internal workflows by building custom React/TypeScript dashboards. Maintained Node.js/SQL backends."
-      }
-    }
+    "eyebrow": "Career",
+    "title": "From intern to Tech Lead",
+    "subtitle": "Five years of branches. One merge at a time.",
+    "joiner": "to",
+    "present": "present",
+    "root": "{date} · first line",
+    "caseLink": "read the case"
   },
   "Skills": {
     "title": "Building software that solves real problems",
