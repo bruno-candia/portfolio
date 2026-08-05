@@ -44,13 +44,13 @@ export function Content({
 
   return (
     <Dialog.Portal>
-      <Dialog.Content className="fixed inset-0 z-[100] h-dvh w-full overflow-hidden bg-bg text-ink focus:outline-none md:hidden">
+      <Dialog.Content className="fixed inset-0 z-[100] flex h-dvh w-full flex-col overflow-hidden bg-bg text-ink focus:outline-none md:hidden">
         <Dialog.Title className="sr-only">{t('menu')}</Dialog.Title>
         <Dialog.Description className="sr-only">
           {t('menuDescription')}
         </Dialog.Description>
 
-        <div className="flex h-16 items-center justify-between border-b border-line px-5">
+        <div className="flex h-16 shrink-0 items-center justify-between border-b border-line px-5">
           <Logo aria-label="Bruno Costa" />
           <Dialog.Close asChild>
             <button
@@ -63,7 +63,10 @@ export function Content({
           </Dialog.Close>
         </div>
 
-        <nav aria-label={t('navigation')} className="px-5">
+        <nav
+          aria-label={t('navigation')}
+          className="flex-1 overflow-y-auto px-5"
+        >
           <ul className="pt-[34px]">
             {menuItems.map((item, index) => (
               <li key={item.id} className="h-[69px] border-b border-line">
@@ -101,7 +104,7 @@ export function Content({
           </ul>
         </nav>
 
-        <div className="absolute inset-x-0 bottom-0 h-36 border-t border-line px-5">
+        <div className="shrink-0 border-t border-line px-5 pb-4">
           <div className="flex h-[72px] items-center justify-between">
             <div className="flex h-9 overflow-hidden rounded-full border border-line-strong bg-inset p-1">
               {languages.map((lang) => {

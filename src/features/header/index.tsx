@@ -176,7 +176,7 @@ function AccessibilityDialog({
             event.preventDefault();
             onReturnFocus();
           }}
-          className="fixed z-[120] flex flex-col overflow-hidden bg-surface text-ink focus:outline-none max-md:inset-0 max-md:h-dvh md:left-1/2 md:top-1/2 md:h-[684px] md:w-[620px] md:-translate-x-1/2 md:-translate-y-1/2 md:rounded-[14px] md:border md:border-ink-3 md:shadow-[0_24px_64px_rgba(0,0,0,0.45)]"
+          className="fixed z-[120] flex flex-col overflow-hidden bg-surface text-ink focus:outline-none max-md:inset-0 max-md:h-dvh md:left-1/2 md:top-1/2 md:h-[684px] md:max-h-[calc(100dvh-40px)] md:w-[620px] md:-translate-x-1/2 md:-translate-y-1/2 md:rounded-[14px] md:border md:border-ink-3 md:shadow-[0_24px_64px_rgba(0,0,0,0.45)]"
         >
           <Dialog.Title className="sr-only">{t('title')}</Dialog.Title>
           <Dialog.Description className="sr-only">
@@ -210,7 +210,7 @@ function AccessibilityDialog({
             </Dialog.Close>
           </div>
 
-          <div className="flex-1 space-y-5 overflow-y-auto px-5 pt-5 pb-6 md:flex-none md:h-[524px] md:px-6">
+          <div className="flex-1 space-y-5 overflow-y-auto px-5 pt-5 pb-6 md:px-6">
             <SegmentedPreference
               label={t('textSize.title')}
               description={t('textSize.description')}

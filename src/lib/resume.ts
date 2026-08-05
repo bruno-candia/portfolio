@@ -177,7 +177,7 @@ function toSkill(s: BaseSkill, locale: Locale): Skill {
   return {
     id: s.x_id,
     name: t?.name ?? s.name,
-    description: t?.description ?? '',
+    description: t?.description ?? s.description,
     core: s.x_core,
     keywords: s.keywords,
   };

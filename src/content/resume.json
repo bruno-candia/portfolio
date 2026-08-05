@@ -41,7 +41,11 @@
       "position": "Software Architect II",
       "startDate": "2026-07",
       "summary": "Architecture for Force and Grow across four backend and frontend squads, more than twenty micro-frontends and thirty services behind four BFFs. Multi-text search on Redis as the bridge until Azure Search.",
-      "highlights": ["4 squads", "+20 micro-frontends", "search p95 43ms"]
+      "highlights": [
+        "4 squads",
+        "+20 micro-frontends",
+        "search p95 43ms"
+      ]
     },
     {
       "x_id": "bees-tech-lead",
@@ -51,7 +55,10 @@
       "startDate": "2024-02",
       "endDate": "2026-07",
       "summary": "Standardization of the global platforms (Grow, Force, Control Tower). Architected the BFFs in NestJS with Clean Architecture and scaled the ecosystem with micro-frontends.",
-      "highlights": ["22 countries", "NestJS · Clean Arch"]
+      "highlights": [
+        "22 countries",
+        "NestJS · Clean Arch"
+      ]
     },
     {
       "x_id": "bees-senior",
@@ -61,7 +68,10 @@
       "startDate": "2023-03",
       "endDate": "2024-02",
       "summary": "Auto Dialer in React with WebSockets to speed up sales interaction. Led the migration to micro-frontends.",
-      "highlights": ["micro-frontends", "React · WebSockets"]
+      "highlights": [
+        "micro-frontends",
+        "React · WebSockets"
+      ]
     },
     {
       "x_id": "aurem",
@@ -86,7 +96,10 @@
       "startDate": "2021-12",
       "endDate": "2022-08",
       "summary": "Bridge between design and engineering. Figma interfaces designed for whoever implements them, and a Design System that closed the handoff.",
-      "highlights": ["Design System", "Figma → React"]
+      "highlights": [
+        "Design System",
+        "Figma → React"
+      ]
     },
     {
       "x_id": "neoenergia",
@@ -96,7 +109,10 @@
       "startDate": "2021-05",
       "endDate": "2021-11",
       "summary": "Digitized internal flows with React/TypeScript dashboards and maintained Node.js/SQL backends.",
-      "highlights": ["React · TypeScript", "Node · SQL"]
+      "highlights": [
+        "React · TypeScript",
+        "Node · SQL"
+      ]
     }
   ],
   "projects": [
@@ -326,6 +342,7 @@
     {
       "x_id": "frontend",
       "name": "Frontend",
+      "description": "SPAs, SSR, complex state and automated testing on a real product.",
       "level": "Advanced",
       "x_core": [
         "TypeScript",
@@ -363,6 +380,7 @@
     {
       "x_id": "backend",
       "name": "Backend",
+      "description": "Scalable APIs, concurrency and transactional integrity.",
       "level": "Advanced",
       "x_core": [
         "Node.js",
@@ -395,6 +413,7 @@
     {
       "x_id": "platform",
       "name": "Platform & SRE",
+      "description": "Pipeline, infrastructure as code and observability.",
       "level": "Intermediate",
       "x_core": [
         "Docker",
@@ -425,8 +444,14 @@
     {
       "x_id": "architecture",
       "name": "Architecture & Quality",
+      "description": "Decisions recorded in ADRs, explicit module boundaries, coverage that catches regressions.",
       "level": "Advanced",
-      "x_core": ["Clean Architecture", "DDD", "MVVM", "Monorepo"],
+      "x_core": [
+        "Clean Architecture",
+        "DDD",
+        "MVVM",
+        "Monorepo"
+      ],
       "keywords": [
         "Clean Architecture",
         "DDD",
@@ -440,8 +465,13 @@
     {
       "x_id": "mobile",
       "name": "Mobile",
+      "description": "Cross-platform with React Native, without inventing depth.",
       "level": "Intermediate",
-      "x_core": ["React Native", "Expo", "React Navigation"],
+      "x_core": [
+        "React Native",
+        "Expo",
+        "React Navigation"
+      ],
       "keywords": [
         "React Native",
         "Expo",

@@ -18,14 +18,14 @@ export const About = () => {
         <div
           className={cn(
             pageContent,
-            'flex min-h-[510px] flex-col md:grid md:min-h-[578px] md:grid-cols-[600px_1fr]'
+            'flex min-h-[510px] flex-col lg:grid lg:min-h-[578px] lg:grid-cols-[minmax(0,600px)_1fr]'
           )}
         >
-          <div className="order-2 mt-[18px] pb-12 md:order-1 md:mt-0 md:pt-28 md:pb-16">
+          <div className="order-2 mt-[18px] pb-12 lg:order-1 lg:mt-0 lg:pt-28 lg:pb-16">
             <AboutContent />
           </div>
 
-          <div className="order-1 flex justify-center md:order-2 md:translate-x-2.5 md:items-center">
+          <div className="order-1 flex justify-center lg:order-2 lg:translate-x-2.5 lg:items-center">
             <AboutEye />
           </div>
         </div>

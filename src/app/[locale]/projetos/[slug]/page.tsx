@@ -90,7 +90,7 @@ export default async function CasePage({ params }: { params: Params }) {
       <div data-reading-content className={cn(pageContent, 'pt-12 pb-30')}>
         <CaseHeader project={project} work={work} />
 
-        <div className="mt-12 grid grid-cols-1 gap-10 md:grid-cols-[680px_1fr] md:gap-20">
+        <div className="mt-12 grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,680px)_1fr] lg:gap-20">
           <CaseBody project={project} />
           <CaseSidebar
             project={project}
