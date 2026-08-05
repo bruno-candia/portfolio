@@ -1,5 +1,10 @@
 import { test, expect } from '@playwright/test';
 
+import { getWork } from '@/lib/resume';
+
+const jobs = getWork('pt');
+const companies = [...new Set(jobs.map((job) => job.company))];
+
 test.describe('Career timeline', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/pt');
@@ -18,11 +23,15 @@ test.describe('Career timeline', () => {
     const branches = page.locator('main #experience [data-branch]');
     const commits = page.locator('main #experience .graph-node');
 
-    await expect(branches).toHaveCount(4);
-    await expect(commits).toHaveCount(5);
+    // Counted off the résumé: a role added there must not need a test edited.
+    await expect(branches).toHaveCount(companies.length);
+    await expect(commits).toHaveCount(jobs.length);
     await expect(branches.first()).toHaveAttribute(
       'data-jobs',
-      'bees-tech-lead bees-senior'
+      jobs
+        .filter((job) => job.company === jobs[0].company)
+        .map((job) => job.id)
+        .join(' ')
     );
   });
 
@@ -31,13 +40,7 @@ test.describe('Career timeline', () => {
       .locator('main #experience li[data-entry] h3')
       .filter({ hasText: /./ });
 
-    await expect(headings).toHaveText([
-      'BEES (AB InBev)',
-      'BEES (AB InBev)',
-      'Aurem',
-      'Verzel',
-      'Neoenergia',
-    ]);
+    await expect(headings).toHaveText(jobs.map((job) => job.company));
   });
 
   test('the graph is decoration, not information', async ({ page }) => {

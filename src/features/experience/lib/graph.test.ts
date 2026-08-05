@@ -17,20 +17,16 @@ function job(overrides: Partial<Work> & Pick<Work, 'id' | 'startDate'>): Work {
 
 describe('allocateLanes', () => {
   it('reproduces the frame from the real dates', () => {
-    const lanes = allocateLanes(getWork('en')).map((entry) => [
-      entry.id,
-      entry.lane,
-    ]);
+    const lanes = allocateLanes(getWork('en'));
 
     // Aurem is the only one on the outer lane, because it is the only one
-    // that overlaps another job.
-    expect(lanes).toEqual([
-      ['bees-tech-lead', 1],
-      ['bees-senior', 1],
-      ['aurem', 2],
-      ['verzel', 1],
-      ['neoenergia', 1],
-    ]);
+    // that overlaps another job. Asserted as the rule rather than as a list,
+    // so adding a role to the résumé does not rewrite the expectation.
+    expect(lanes.filter((entry) => entry.parallel).map((entry) => entry.id)) //
+      .toEqual(['aurem']);
+    expect(
+      lanes.filter((entry) => entry.id !== 'aurem').map((entry) => entry.lane)
+    ).toEqual(lanes.slice(1).map(() => 1));
   });
 
   it('keeps two jobs that overlap on separate lanes', () => {
@@ -88,12 +84,7 @@ describe('groupRuns', () => {
   it('keeps two roles at the same company on one branch', () => {
     const jobs = getWork('en');
 
-    expect(groupRuns(jobs, allocateLanes(jobs))).toEqual([
-      [0, 1],
-      [2],
-      [3],
-      [4],
-    ]);
+    expect(groupRuns(jobs, allocateLanes(jobs))).toEqual(runsOf(jobs));
   });
 
   it('splits a return to the same company after another job', () => {
@@ -117,6 +108,22 @@ describe('groupRuns', () => {
   });
 });
 
+/** The runs of consecutive roles at one company, as indexes into the list. */
+function runsOf(jobs: Work[]) {
+  const runs: number[][] = [];
+
+  jobs.forEach((job, index) => {
+    const current = runs.at(-1);
+    if (current && jobs[current.at(-1)!].company === job.company) {
+      current.push(index);
+    } else {
+      runs.push([index]);
+    }
+  });
+
+  return runs;
+}
+
 /** Every (x, y) the path visits, in the order it visits them. */
 function pointsOf(d: string) {
   return [...d.matchAll(/[MLC]([^MLC]+)/g)].flatMap((command) => {
@@ -131,26 +138,26 @@ function pointsOf(d: string) {
 
 describe('buildGraph', () => {
   const jobs = getWork('en');
+  const spread = jobs.map((_, index) => index * 214);
   const { branches, nodes } = buildGraph(
     jobs,
     allocateLanes(jobs),
-    [0, 214, 428, 642, 856],
+    spread,
     { laneWidth: 32, corner: 16, mergeGap: 44, tail: 40 },
-    1000
+    spread.at(-1)! + 144
   );
 
   it('draws one branch per company run, not per role', () => {
-    expect(branches.map((b) => b.jobIds)).toEqual([
-      ['bees-tech-lead', 'bees-senior'],
-      ['aurem'],
-      ['verzel'],
-      ['neoenergia'],
-    ]);
+    expect(branches.map((b) => b.jobIds)).toEqual(
+      runsOf(jobs).map((run) => run.map((index) => jobs[index].id))
+    );
   });
 
   it('still gives every role its own commit', () => {
     expect(nodes.map((n) => n.id)).toEqual(jobs.map((j) => j.id));
-    expect(nodes.map((n) => n.x)).toEqual([32, 32, 64, 32, 32]);
+    expect(nodes.map((n) => n.x)).toEqual(
+      allocateLanes(jobs).map((entry) => entry.lane * 32)
+    );
   });
 
   it('merges a finished branch back into the trunk', () => {
@@ -159,7 +166,7 @@ describe('buildGraph', () => {
     expect(aurem?.open).toBe(false);
     expect(aurem?.d.startsWith('M 0 ')).toBe(true);
     // The closing curve ends on the trunk, above the commit it merges past.
-    expect(aurem?.d.endsWith('0 384')).toBe(true);
+    expect(pointsOf(aurem!.d).at(-1)?.x).toBe(0);
   });
 
   it('runs the branch past every commit riding it', () => {
@@ -185,12 +192,13 @@ describe('buildGraph', () => {
 
   it('never lets a short branch cross itself', () => {
     // Entries packed tighter than two full corners would fit.
+    const packed = jobs.map((_, index) => index * 20);
     const tight = buildGraph(
       jobs,
       allocateLanes(jobs),
-      [0, 20, 40, 60, 80],
+      packed,
       { laneWidth: 32, corner: 16, mergeGap: 44, tail: 40 },
-      100
+      packed.at(-1)! + 20
     );
 
     for (const branch of tight.branches) {
@@ -202,8 +210,8 @@ describe('buildGraph', () => {
   });
 
   it('fills the commit of the job still running', () => {
-    expect(nodes.filter((n) => n.filled).map((n) => n.id)).toEqual([
-      'bees-tech-lead',
-    ]);
+    expect(nodes.filter((n) => n.filled).map((n) => n.id)).toEqual(
+      jobs.filter((job) => !job.endDate).map((job) => job.id)
+    );
   });
 });

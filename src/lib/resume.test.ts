@@ -22,7 +22,7 @@ describe('resume', () => {
   });
 
   it('translates prose and leaves the company name alone', () => {
-    const [lead] = getWork('pt');
+    const lead = getWork('pt').find((job) => job.id === 'bees-tech-lead')!;
     expect(lead.position).toBe('Tech Lead');
     expect(lead.summary).toContain('plataformas globais');
     expect(lead.company).toBe('BEES (AB InBev)');

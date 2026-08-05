@@ -35,11 +35,21 @@
   },
   "work": [
     {
+      "x_id": "bees-architect",
+      "x_color": "#ef4444",
+      "name": "BEES (AB InBev)",
+      "position": "Software Architect II",
+      "startDate": "2026-07",
+      "summary": "Architecture for Force and Grow across four backend and frontend squads, more than twenty micro-frontends and thirty services behind four BFFs. Multi-text search on Redis as the bridge until Azure AI Search.",
+      "highlights": ["4 squads", "+20 micro-frontends", "search p95 43ms"]
+    },
+    {
       "x_id": "bees-tech-lead",
       "x_color": "#ef4444",
       "name": "BEES (AB InBev)",
       "position": "Tech Lead",
       "startDate": "2024-02",
+      "endDate": "2026-07",
       "summary": "Standardization of the global platforms (Grow, Force, Control Tower). Architected the BFFs in NestJS with Clean Architecture and scaled the ecosystem with micro-frontends.",
       "highlights": ["22 countries", "micro-frontends", "NestJS · Clean Arch"]
     },
@@ -56,7 +66,6 @@
     {
       "x_id": "aurem",
       "x_color": "#22c55e",
-      "x_project": "aurem",
       "name": "Aurem",
       "position": "Founder & Software Engineer",
       "startDate": "2018-02",
@@ -66,7 +75,8 @@
         "5 years in parallel",
         "1,000+ students",
         "Santander Award"
-      ]
+      ],
+      "x_project": "aurem"
     },
     {
       "x_id": "verzel",

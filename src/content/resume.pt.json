@@ -7,6 +7,11 @@
     "summary": "Engenheiro full stack. Meu foco é escrever código limpo e resolver problema real, seja deixando a aplicação mais rápida ou desenhando o que ainda não existe. Fora da parte técnica, faço mentoria e tento construir time onde as pessoas aprendem."
   },
   "work": {
+    "bees-architect": {
+      "position": "Software Architect II",
+      "summary": "Arquitetura de Force e Grow em quatro squads de backend e frontend, mais de vinte micro-frontends e trinta serviços atrás de quatro BFFs. Busca multi-texto em Redis como ponte até o Azure AI Search.",
+      "highlights": ["4 squads", "+20 micro-frontends", "busca p95 43ms"]
+    },
     "bees-tech-lead": {
       "position": "Tech Lead",
       "summary": "Padronização das plataformas globais (Grow, Force, Control Tower). Arquitetei os BFFs em NestJS com Clean Architecture e escalei o ecossistema com micro-frontends.",
