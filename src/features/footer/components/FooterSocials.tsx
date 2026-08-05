@@ -1,42 +1,41 @@
-'use client';
-
-import { Github, Linkedin, Instagram } from 'lucide-react';
+import { Github, Linkedin } from 'lucide-react';
 import { FaBehance } from 'react-icons/fa';
+import type { Basics } from '@/lib/resume';
 
-export function FooterSocials() {
-  const socials = [
-    {
-      label: 'Behance',
-      href: 'https://www.behance.net/brunocostac3',
-      icon: FaBehance,
-    },
-    {
-      label: 'Instagram',
-      href: 'https://www.instagram.com/brunocandia/',
-      icon: Instagram,
-    },
-    {
-      label: 'LinkedIn',
-      href: 'https://www.linkedin.com/in/bruno-costa-candia/',
-      icon: Linkedin,
-    },
-    { label: 'GitHub', href: 'https://github.com/bruno-candia', icon: Github },
-  ];
+const icons = {
+  LinkedIn: Linkedin,
+  GitHub: Github,
+  Behance: FaBehance,
+};
+
+interface FooterSocialsProps {
+  profiles: Basics['profiles'];
+}
+
+export function FooterSocials({ profiles }: FooterSocialsProps) {
+  const socials = profiles.filter(
+    (profile): profile is typeof profile & { network: keyof typeof icons } =>
+      profile.network in icons
+  );
 
   return (
-    <div className="flex items-center gap-6">
-      {socials.map((social) => (
-        <a
-          key={social.label}
-          href={social.href}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-white hover:text-zinc-400 transition-colors"
-          aria-label={social.label}
-        >
-          <social.icon size={20} strokeWidth={1.5} />
-        </a>
-      ))}
+    <div className="mt-5 flex items-center gap-1 md:mt-0 md:justify-end">
+      {socials.map((social) => {
+        const Icon = icons[social.network];
+
+        return (
+          <a
+            key={social.network}
+            href={social.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex size-11 items-center justify-center text-ink-3 transition-colors hover:text-ink focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-ink"
+            aria-label={social.network}
+          >
+            <Icon aria-hidden size={20} strokeWidth={1.5} />
+          </a>
+        );
+      })}
     </div>
   );
 }

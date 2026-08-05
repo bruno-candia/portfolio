@@ -19,7 +19,7 @@ export function LanguageSwitcher() {
             className={`ds-eyebrow px-3 py-2 transition-colors focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-ink ${
               isActive
                 ? 'bg-ink text-ink-inverse'
-                : 'bg-surface-hi text-ink-3 hover:text-ink'
+                : 'bg-surface-hi text-ink-2 hover:text-ink'
             }`}
           >
             {lang.code}

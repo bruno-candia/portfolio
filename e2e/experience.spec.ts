@@ -6,7 +6,10 @@ test.describe('Career timeline', () => {
     await page
       .getByRole('button', { name: /Recusar opcionais|Reject optional/i })
       .click();
-    await page.locator('main #experience').scrollIntoViewIfNeeded();
+    await page
+      .locator('main section#experience:visible')
+      .last()
+      .scrollIntoViewIfNeeded();
   });
 
   test('draws one branch per company, with a commit per role', async ({
@@ -56,9 +59,14 @@ test.describe('Career timeline', () => {
 
   test('every branch is drawn once its entry has been seen', async ({
     page,
+    isMobile,
   }) => {
     for (let step = 0; step < 12; step += 1) {
-      await page.mouse.wheel(0, 240);
+      if (isMobile) {
+        await page.evaluate(() => window.scrollBy(0, 240));
+      } else {
+        await page.mouse.wheel(0, 240);
+      }
       await page.waitForTimeout(80);
     }
     await page.waitForTimeout(700);
@@ -83,7 +91,10 @@ test.describe('Career timeline without motion', () => {
     await page
       .getByRole('button', { name: /Recusar opcionais|Reject optional/i })
       .click();
-    await page.locator('main #experience').scrollIntoViewIfNeeded();
+    await page
+      .locator('main section#experience:visible')
+      .last()
+      .scrollIntoViewIfNeeded();
 
     const branches = page.locator('main #experience .graph-branch');
     await expect(branches.first()).toBeAttached();

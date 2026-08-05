@@ -23,11 +23,11 @@
     "downloadCV": "Download CV"
   },
   "About": {
-    "title": "Hey, I'm Bruno. I've been building scalable software for over 7 years.",
-    "description": "I'm a Full Stack engineer working with React, Node.js. My focus is on writing clean code and solving real problems, whether that's optimizing application performance or architecting new features. Beyond the tech, I'm passionate about mentorship and creating a collaborative environment where everyone can learn.",
-    "button": "About Me",
-    "scrollToExplore": "Scroll to Explore",
-    "shortStory": "My Short Story"
+    "eyebrow": "About",
+    "title": "I'm Bruno Costa.",
+    "description": "Full-stack engineer and designer. I've been building software with React and Node.js for over 7 years. I'm a tech lead at BEES, part of AB InBev, and mentor other developers. I draw, invent, and take things apart. Sometimes I put them back together.",
+    "scrollToExplore": "Scroll to explore",
+    "shortStory": "My short story"
   },
   "Works": {
     "eyebrow": "Projects",
@@ -74,14 +74,21 @@
     "less": "less"
   },
   "Footer": {
+    "eyebrow": "Contact",
+    "title": "Open to talking.",
+    "description": "A role, mentorship, or an idea you can't stop thinking about. Get in touch.",
+    "linkedin": "LinkedIn",
     "nav": {
+      "label": "Footer navigation",
       "about": "About",
       "skills": "Skills",
       "works": "Projects",
       "experience": "Career",
       "contact": "Contact"
     },
-    "madeBy": "Created by Bruno Costa",
+    "madeByPrefix": "Made with",
+    "madeBySuffix": "by Bruno",
+    "madeByAccessible": "Made with care by Bruno",
     "copyright": "© 2026 Bruno Costa",
     "privacy": "Privacy notice"
   },
