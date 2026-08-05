@@ -106,18 +106,22 @@
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
 
-  /*
-   * Frozen, the black hole loses the one thing it is there to say. It leaves
-   * instead of standing still, and the layout closes over it.
-   */
-  @media (prefers-reduced-motion: reduce) {
-    [data-motion-only] {
-      display: none;
-    }
-  }
-
-  html[data-motion='reduced'] [data-motion-only] {
+/*
+ * Frozen, the black hole loses the one thing it is there to say. It leaves
+ * instead of standing still, and the layout closes over it.
+ *
+ * Outside every layer on purpose: the band carries a responsive display
+ * utility, and a rule inside `@layer base` loses to `@layer utilities` however
+ * specific it is.
+ */
+@media (prefers-reduced-motion: reduce) {
+  [data-motion-only] {
     display: none;
   }
+}
+
+html[data-motion='reduced'] [data-motion-only] {
+  display: none;
 }

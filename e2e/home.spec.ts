@@ -145,26 +145,32 @@ test.describe('Home Page', () => {
     await page.goto('/pt');
     await dismissConsent(page);
 
-    const canvas = page.locator('[data-black-hole]');
+    const band = isMobile ? 'hero' : 'seam';
+    const canvas = page.locator(`[data-separator="${band}"] canvas`);
     await canvas.scrollIntoViewIfNeeded();
     await expect(canvas).toHaveAttribute('data-black-hole-ready', 'true');
 
-    // The hole is centred on the fold and spans the screen, which is the whole
-    // point of the band: a fixed height would drift from both at other sizes.
-    const placement = await page.evaluate(() => {
-      const band = document.querySelector('[data-black-hole]')!.parentElement!;
+    // On a wide screen the hole is centred on the fold. On a phone the social
+    // row owns that edge, so it centres between the call to action and them.
+    const placement = await page.evaluate((placement) => {
+      const box = document
+        .querySelector(`[data-separator="${placement}"]`)!
+        .getBoundingClientRect();
       const hero = document.querySelector('main section')!;
-      const box = band.getBoundingClientRect();
+      const socials = hero.querySelector('ul')!.getBoundingClientRect();
+      const cta = hero.querySelector('a[download]')!.getBoundingClientRect();
       return {
         centre: Math.round(box.top + box.height / 2),
         heroBottom: Math.round(hero.getBoundingClientRect().bottom),
-        ratio: +(box.height / box.width).toFixed(2),
+        above: Math.round(box.top - cta.bottom),
+        below: Math.round(socials.top - box.bottom),
       };
-    });
-    expect(placement.centre).toBe(placement.heroBottom);
-    expect(placement.ratio).toBe(0.32);
+    }, band);
 
-    const drawnWidth = await canvas.evaluate((element: HTMLCanvasElement) => {
+    if (isMobile) expect(placement.above).toBe(placement.below);
+    else expect(placement.centre).toBe(placement.heroBottom);
+
+    const drawn = (element: HTMLCanvasElement) => {
       const ctx = element.getContext('2d');
       const { data } = ctx!.getImageData(0, 0, element.width, element.height);
       let min = element.width;
@@ -178,8 +184,10 @@ test.describe('Home Page', () => {
         }
       }
       return (max - min) / element.width;
-    });
-    expect(drawnWidth).toBeGreaterThan(0.85);
+    };
+
+    // Polled: the scene settles a frame or two after the canvas is sized.
+    await expect.poll(() => canvas.evaluate(drawn)).toBeGreaterThan(0.85);
 
     // Reading the pixels, because an empty canvas has the right box too.
     const litPixels = () =>
@@ -228,7 +236,7 @@ test.describe('Home Page', () => {
     await page.goto('/pt');
     await dismissConsent(page);
 
-    await expect(page.locator('[data-black-hole]')).toBeHidden();
+    await expect(page.locator('[data-black-hole]:visible')).toHaveCount(0);
   });
 
   test('drops the separator when the panel asks for reduced motion', async ({
@@ -247,7 +255,9 @@ test.describe('Home Page', () => {
         .click();
     }
 
-    const canvas = page.locator('[data-black-hole]');
+    const canvas = page.locator(
+      `[data-separator="${isMobile ? 'hero' : 'seam'}"] canvas`
+    );
     const dialog = page.getByRole('dialog', {
       name: /Preferências de acessibilidade/i,
     });
