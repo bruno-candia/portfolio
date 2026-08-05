@@ -199,10 +199,12 @@ test.describe('Home Page', () => {
         return lit;
       });
 
-    expect(await litPixels()).toBeGreaterThan(0);
     const first = await litPixels();
-    await page.waitForTimeout(600);
-    expect(await litPixels()).not.toBe(first);
+    expect(first).toBeGreaterThan(0);
+
+    // Polled, not sampled twice: the count is a coarse proxy for the frame, so
+    // two moments of an animation can land on the same number by accident.
+    await expect.poll(litPixels, { timeout: 10000 }).not.toBe(first);
   });
 
   test('counts the stack a narrow card cannot show', async ({
