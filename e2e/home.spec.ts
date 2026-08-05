@@ -197,30 +197,48 @@ test.describe('Home Page', () => {
     expect(await litPixels()).not.toBe(first);
   });
 
-  test('holds the separator still when reduced motion is requested', async ({
+  test('drops the separator when reduced motion is requested', async ({
     page,
   }) => {
     await page.emulateMedia({ reducedMotion: 'reduce' });
     await page.goto('/pt');
     await dismissConsent(page);
 
+    await expect(page.locator('[data-black-hole]')).toBeHidden();
+  });
+
+  test('drops the separator when the panel asks for reduced motion', async ({
+    page,
+    isMobile,
+  }) => {
+    await page.goto('/pt');
+    await dismissConsent(page);
+
+    if (isMobile) {
+      await page.getByRole('button', { name: /Abrir menu/i }).click();
+      await page.getByRole('button', { name: /Acessibilidade/i }).click();
+    } else {
+      await page
+        .getByRole('button', { name: /Abrir preferências de acessibilidade/i })
+        .click();
+    }
+
     const canvas = page.locator('[data-black-hole]');
-    await canvas.scrollIntoViewIfNeeded();
-    await expect(canvas).toHaveAttribute('data-black-hole-ready', 'true');
+    const dialog = page.getByRole('dialog', {
+      name: /Preferências de acessibilidade/i,
+    });
+    await dialog.getByRole('radio', { name: 'Reduzido' }).check();
+    await expect(canvas).toBeHidden();
 
-    const signature = () =>
-      canvas.evaluate((element: HTMLCanvasElement) => {
-        const ctx = element.getContext('2d');
-        const { data } = ctx!.getImageData(0, 0, element.width, element.height);
-        let lit = 0;
-        for (let i = 3; i < data.length; i += 16) if (data[i] > 10) lit++;
-        return lit;
-      });
-
-    const first = await signature();
-    expect(first).toBeGreaterThan(0);
-    await page.waitForTimeout(600);
-    expect(await signature()).toBe(first);
+    // And it comes back, with a canvas that was rebuilt at the right size.
+    await dialog.getByRole('radio', { name: 'Sistema' }).check();
+    await dialog.getByRole('button', { name: 'Concluir' }).click();
+    await expect(canvas).toBeVisible();
+    await expect
+      .poll(() =>
+        canvas.evaluate((element: HTMLCanvasElement) => element.width)
+      )
+      .toBeGreaterThan(0);
   });
 
   test('moves the eye with pointer intent and holds the fixation', async ({

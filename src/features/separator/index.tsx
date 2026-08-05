@@ -10,6 +10,7 @@ export function Separator() {
   return (
     <div
       aria-hidden="true"
+      data-motion-only
       className="pointer-events-none relative z-10 -mt-[16%] -mb-16 aspect-[100/32] w-full md:-mb-[120px]"
     >
       <BlackHole />

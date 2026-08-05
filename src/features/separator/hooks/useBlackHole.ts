@@ -12,7 +12,7 @@ import {
 } from '../lib/blackHole';
 
 const MAX_STEP = 0.05;
-/** Seconds of simulation baked into the still frame shown without motion. */
+/** Seconds run before the first paint, so the rings never open pristine. */
 const SETTLE_SECONDS = 6;
 
 export function useBlackHole() {
@@ -35,11 +35,6 @@ export function useBlackHole() {
     let frame = 0;
     let previousTime = 0;
     let visible = false;
-
-    const paintStill = () => {
-      if (!view || !scene) return;
-      drawFrame(ctx, view, scene, 0);
-    };
 
     const draw = (now: number) => {
       if (!view || !scene) return;
@@ -73,23 +68,20 @@ export function useBlackHole() {
       canvas.height = view.height;
       scene = createScene(view.scale);
       settle(scene, SETTLE_SECONDS);
-      paintStill();
+      drawFrame(ctx, view, scene, 0);
     };
 
     const onMotionPreferenceChange = () => {
-      if (prefersReducedMotion()) {
-        stop();
-        paintStill();
-        return;
-      }
-      start();
+      if (prefersReducedMotion()) stop();
+      else start();
     };
 
+    // Reduced motion hides the band in CSS, so this also fires when the
+    // preference is turned off and the canvas gets its size back.
     const resizeObserver = new ResizeObserver(() => {
-      const running = frame !== 0;
       stop();
       build();
-      if (running) start();
+      start();
     });
 
     const intersectionObserver = new IntersectionObserver(([entry]) => {
