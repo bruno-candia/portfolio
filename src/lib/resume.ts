@@ -146,7 +146,7 @@ function toProject(p: BaseProject, locale: Locale): Project {
     name: str('name', p.name) ?? p.name,
     type: p.type,
     description: str('description', p.description) ?? p.description,
-    detail: str('detail'),
+    detail: str('detail', optional<string>('x_detail')),
     problem: str('problem'),
     built: str('built'),
     result: str('result'),

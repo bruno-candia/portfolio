@@ -131,7 +131,8 @@
         "AWS",
         "Docker",
         "Azure"
-      ]
+      ],
+      "x_detail": "Live captioning with the Web Speech API, a collaborative whiteboard in Fabric.js, and an Electron client whose transparent overlay captions on top of any software."
     },
     {
       "x_id": "maincore",
@@ -161,7 +162,8 @@
         "reCAPTCHA",
         "react-ga",
         "Vercel"
-      ]
+      ],
+      "x_detail": "Next.js 13 with styled-components on the server, Radix for the interactive components, and lead capture with the captcha verified in the backend."
     },
     {
       "x_id": "portfolio",
@@ -195,7 +197,8 @@
         "Sentry",
         "Terraform",
         "GitHub Actions"
-      ]
+      ],
+      "x_detail": "Feature-based architecture with MVVM, unit, e2e and a11y tests running in CI, i18n, consent and Sentry. It ships through GitHub Actions with Terraform."
     },
     {
       "x_id": "wind-energy",
