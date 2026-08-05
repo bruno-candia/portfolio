@@ -26,15 +26,12 @@ test.describe('Home Page', () => {
       .getByRole('button', { name: /Recusar opcionais|Reject optional/i })
       .click();
 
-    const menuToggle = page.locator('label[for="menu-toggle"]').first();
+    const menuToggle = page.getByRole('button', {
+      name: /Abrir menu|Open menu/i,
+    });
     if (await menuToggle.isVisible()) {
       await menuToggle.click();
-
-      await expect(page.locator('#menu-toggle')).toBeChecked();
-      await expect(page.locator('aside')).toHaveCSS(
-        'transform',
-        /^(none|matrix\(1, 0, 0, 1, 0, 0\))$/
-      );
+      await expect(page.getByRole('dialog', { name: /Menu/i })).toBeVisible();
     }
 
     const skillsLink = page.locator('a[href="#skills"]:visible').first();
@@ -136,6 +133,65 @@ test.describe('Home Page', () => {
     expect(footerBox?.height).toBe(isMobile ? 700 : 580);
     expect(eyeBox?.width).toBe(isMobile ? 224 : 300);
     expect(bodyWidth).toBe(isMobile ? 390 : 1440);
+  });
+
+  test('draws the black hole separator between hero and about', async ({
+    page,
+    isMobile,
+  }) => {
+    await page.setViewportSize(
+      isMobile ? { width: 390, height: 844 } : { width: 1440, height: 900 }
+    );
+    await page.goto('/pt');
+    await dismissConsent(page);
+
+    const canvas = page.locator('[data-black-hole]');
+    await canvas.scrollIntoViewIfNeeded();
+    await expect(canvas).toHaveAttribute('data-black-hole-ready', 'true');
+
+    const box = await canvas.boundingBox();
+    expect(box?.height).toBe(isMobile ? 300 : 460);
+
+    // Reading the pixels, because an empty canvas has the right box too.
+    const litPixels = () =>
+      canvas.evaluate((element: HTMLCanvasElement) => {
+        const ctx = element.getContext('2d');
+        const { data } = ctx!.getImageData(0, 0, element.width, element.height);
+        let lit = 0;
+        for (let i = 3; i < data.length; i += 16) if (data[i] > 10) lit++;
+        return lit;
+      });
+
+    expect(await litPixels()).toBeGreaterThan(0);
+    const first = await litPixels();
+    await page.waitForTimeout(600);
+    expect(await litPixels()).not.toBe(first);
+  });
+
+  test('holds the separator still when reduced motion is requested', async ({
+    page,
+  }) => {
+    await page.emulateMedia({ reducedMotion: 'reduce' });
+    await page.goto('/pt');
+    await dismissConsent(page);
+
+    const canvas = page.locator('[data-black-hole]');
+    await canvas.scrollIntoViewIfNeeded();
+    await expect(canvas).toHaveAttribute('data-black-hole-ready', 'true');
+
+    const signature = () =>
+      canvas.evaluate((element: HTMLCanvasElement) => {
+        const ctx = element.getContext('2d');
+        const { data } = ctx!.getImageData(0, 0, element.width, element.height);
+        let lit = 0;
+        for (let i = 3; i < data.length; i += 16) if (data[i] > 10) lit++;
+        return lit;
+      });
+
+    const first = await signature();
+    expect(first).toBeGreaterThan(0);
+    await page.waitForTimeout(600);
+    expect(await signature()).toBe(first);
   });
 
   test('moves the eye with pointer intent and holds the fixation', async ({

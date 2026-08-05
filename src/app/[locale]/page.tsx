@@ -2,6 +2,7 @@ import { setRequestLocale } from 'next-intl/server';
 
 import { Header } from '@/features/header';
 import { Hero } from '@/features/hero';
+import { Separator } from '@/features/separator';
 import { About } from '@/features/about';
 import { Skills } from '@/features/skills';
 import { Works } from '@/features/works';
@@ -22,6 +23,7 @@ export default async function Home({
       <Header />
       <div data-reading-content className="contents">
         <Hero />
+        <Separator />
         <About />
         <Skills />
         <Works />
