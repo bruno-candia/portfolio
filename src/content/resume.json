@@ -141,7 +141,7 @@
       "name": "Maincore",
       "type": "client work",
       "startDate": "2023-02",
-      "url": "https://maincore-last.vercel.app/",
+      "url": "https://maincore.com.br/",
       "description": "Institutional site that has to sell two technical product lines and capture qualified leads.",
       "highlights": [
         "styled-components with ServerStyleSheet — CSS ships inside the server HTML. Without it the first paint arrives unstyled, and this page is the company's first commercial contact.",

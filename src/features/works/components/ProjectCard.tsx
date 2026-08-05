@@ -37,15 +37,28 @@ export function ProjectCard({ project }: { project: Project }) {
           {yearRange(project, t('present'))} · {t(`kind.${kindKey(project)}`)}
         </p>
 
-        <h3 className="mt-2.5 ds-h4 md:ds-h3 text-ink">{project.name}</h3>
+        <h3 className="mt-[9px] ds-h4 md:mt-2.5 md:ds-h3 text-ink">
+          {project.name}
+        </h3>
 
-        <p className="mt-2.5 ds-small text-ink-2">{project.description}</p>
+        <p className="mt-[9px] ds-small text-ink-2 md:mt-2.5">
+          {project.description}
+        </p>
 
         {project.detail && (
-          <p className="mt-2.5 ds-small text-ink-3">{project.detail}</p>
+          <p className="mt-[9px] ds-small text-ink-3 md:mt-2.5">
+            {project.detail}
+          </p>
         )}
 
-        <ul className="mt-3.5 flex flex-wrap gap-1.5">
+        {/*
+         * The stack, the rule and the actions are one block pinned to the
+         * bottom edge, so the gaps inside it stay at the Figma values on
+         * every card. Rows in the grid are not the same length once real
+         * copy wraps, and `mt-auto` puts that slack above the block instead
+         * of spreading it through the spacing.
+         */}
+        <ul className="mt-auto flex flex-wrap gap-1.5 pt-[21px] md:pt-6">
           {project.keywords.slice(0, SHOWN_KEYWORDS).map((keyword) => (
             <li
               key={keyword}
@@ -61,7 +74,7 @@ export function ProjectCard({ project }: { project: Project }) {
           )}
         </ul>
 
-        <div className="mt-auto flex items-center gap-4 border-t border-line pt-4">
+        <div className="mt-[22px] flex items-center gap-4 border-t border-line pt-[22px] md:mt-[26px] md:pt-[26px]">
           {/*
            * The card is one link, not a div with onClick: `after` stretches
            * this anchor over the whole card so the hit area matches the
