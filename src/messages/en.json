@@ -30,8 +30,29 @@
     "shortStory": "My Short Story"
   },
   "Works": {
-    "title": "My work and studies",
-    "button": "All Projects",
+    "eyebrow": "Projects",
+    "title": "From the problem to the deploy",
+    "subtitle": "Context, technical decision, and what changed afterwards.",
+    "others": "Others",
+    "case": "Read the case",
+    "present": "present",
+    "link": {
+      "repository": "repository",
+      "behance": "Behance",
+      "live": "live site"
+    },
+    "seal": {
+      "timeline": "also in the timeline",
+      "open": "open source",
+      "closed": "closed source"
+    },
+    "kind": {
+      "product": "startup",
+      "client-work": "client work",
+      "personal": "personal",
+      "study": "study",
+      "branding": "branding"
+    },
     "projects": {
       "aurem": {
         "description": "<h>About the Project</h><p>Aurem Genus was an assistive technology startup I co-founded to transform hybrid and distance education. Born from the need for inclusion, the project went beyond a traditional video conferencing platform: it was an ecosystem focused on breaking communication barriers through real-time captioning and interactive pedagogical tools.</p><p>The platform served three educational pillars (Students, Teachers, and Institutions), offering everything from a full LMS (Learning Management System) to an immersive virtual classroom where the teacher's voice was instantly converted to text, ensuring accessibility for hearing-impaired people and cognitive reinforcement for all students.</p><spacer></spacer><h>Architecture and Software Engineering</h><p>The Aurem ecosystem operated under a distributed and scalable architecture, divided into three main fronts:</p><p><b>1. Web Client & Interactive Room (SPA)</b></p><p>The heart of the interaction was a robust Single Page Application developed in React.</p><ul><li><b>State Management:</b> Utilization of Redux to orchestrate complex classroom states (who is speaking, current slide, user permissions).</li><li><b>Interactivity:</b> Implementation of a collaborative Digital Whiteboard using Fabric.js, where drawings and annotations were vectorized and synchronized among all clients.</li><li><b>Multimedia:</b> Manipulation of integrated PDFs and video/audio streams.</li></ul><p><b>2. Desktop Client (Electron)</b></p><p>For scenarios where the user needed captions outside the browser (such as in PowerPoint presentations or external software), a Desktop client was developed with Electron.</p><ul><li><b>Transparent Overlay:</b> The application used frameless windows with transparency and click-through support, allowing captions to float over other applications without obstructing the user's work.</li><li><b>IPC Communication:</b> Architecture of inter-process communication (Main and Renderer) to manage floating windows, chat, and authentication simultaneously.</li></ul><p><b>3. Backend and Infrastructure</b></p><p>The backbone of the system was a RESTful API in Node.js/Express.</p><ul><li><b>Real-Time Communication:</b> Use of Socket.io (WebSockets) to ensure sub-second latency in caption delivery and classroom event synchronization (slide changes, chat, drawings).</li><li><b>Hybrid Persistence:</b> MySQL (Sequelize) for structured data; MongoDB for logs and captions; Redis for caching and queues.</li></ul><spacer></spacer><h>The Artificial Intelligence Core</h><p>The technical differentiator of the project was the audio-to-text processing pipeline.</p><ul><li><b>Capture:</b> Audio was captured on the client (Web or Desktop).</li><li><b>Cloud Processing:</b> Direct integration with Azure Cognitive Services.</li><li><b>Smart Fallback:</b> Automatic switching to native Web Speech API in case of failures.</li><li><b>Broadcast:</b> Immediate distribution via WebSocket.</li></ul><spacer></spacer><h>Challenges and Highlights</h><ul><li><b>Synchronization:</b> Ensuring real-time collaborative drawing.</li><li><b>Desktop UX:</b> Creating windows \"invisible\" to the mouse but visible to the eyes with Electron.</li><li><b>DevOps:</b> Automated CI/CD, Docker, and orchestration on AWS.</li></ul>"

@@ -143,7 +143,7 @@ function toProject(p: BaseProject, locale: Locale): Project {
   return {
     id: p.x_id,
     slug: p.x_slug,
-    name: p.name,
+    name: str('name', p.name) ?? p.name,
     type: p.type,
     description: str('description', p.description) ?? p.description,
     detail: str('detail'),

@@ -64,6 +64,7 @@
       ]
     },
     "portfolio": {
+      "name": "Este portfólio",
       "description": "Portfólio de dev afirma competência. Este tenta provar.",
       "detail": "O site é o artefato: ADR, teste de acessibilidade no pipeline, alerta de produção em Terraform e varredura de segredo no histórico inteiro.",
       "problem": "Portfólio de engenheiro costuma listar tecnologia. Listar não prova nada: o repositório é público, então a forma de provar é deixar o processo visível.",

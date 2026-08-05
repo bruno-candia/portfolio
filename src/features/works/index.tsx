@@ -1,40 +1,43 @@
-import { useTranslations } from 'next-intl';
-import { works } from './data/works';
-import { WorkCard } from './components/WorkCard';
-import { Button } from '@/components/atoms/button';
+import { useLocale, useTranslations } from 'next-intl';
+
+import { getProjects, getSecondaryProjects, type Locale } from '@/lib/resume';
+import { ProjectCard } from './components/ProjectCard';
+import { OtherProjects } from './components/OtherProjects';
 
 export function Works() {
   const t = useTranslations('Works');
+  const locale = useLocale() as Locale;
+
+  const projects = getProjects(locale);
+  const others = getSecondaryProjects(locale);
 
   return (
-    <section
-      id="works"
-      className="relative w-full bg-zinc-950 py-20 md:py-32 flex justify-center"
-    >
-      <div className="w-full max-w-[1080px] px-6">
-        <h2
-          className="text-[30px] font-medium text-white pb-12 max-w-3xl"
-          style={{ fontFamily: 'var(--font-cabin, Cabin, sans-serif)' }}
-        >
-          {t('title')}
-        </h2>
+    <section id="works" className="relative w-full bg-bg">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-y-0 left-1/2 hidden w-full max-w-page -translate-x-1/2 md:block"
+      >
+        <span className="absolute inset-y-0 left-0 w-px bg-line" />
+        <span className="absolute inset-y-0 right-0 w-px bg-line" />
+      </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
-          {works.map((work) => (
-            <WorkCard key={work.id} work={work} />
+      <div className="mx-auto w-full max-w-page px-5 py-18 md:px-0 md:py-28">
+        <header className="flex flex-col gap-3 md:gap-3.5">
+          <p className="ds-eyebrow text-ink-3">{t('eyebrow')}</p>
+          <h2 className="ds-m-h1 md:ds-h1 max-w-[620px] text-ink">
+            {t('title')}
+          </h2>
+          <p className="ds-body md:ds-body-lg max-w-[620px] text-ink-3">
+            {t('subtitle')}
+          </p>
+        </header>
+
+        <div className="mt-[82px] grid grid-cols-1 items-start gap-4 md:mt-[106px] md:grid-cols-2 md:gap-6">
+          {projects.map((project) => (
+            <ProjectCard key={project.id} project={project} />
           ))}
-        </div>
 
-        <div className="flex justify-center pt-16">
-          <Button size="lg" asChild>
-            <a
-              href="https://github.com/bruno-candia"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {t('button')}
-            </a>
-          </Button>
+          {others.length > 0 && <OtherProjects projects={others} />}
         </div>
       </div>
     </section>
