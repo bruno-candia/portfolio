@@ -1,7 +1,28 @@
 set -e
 
+# git feeds "<local ref> <local sha> <remote ref> <remote sha>" on stdin, one
+# line per ref. A deletion arrives with an all-zero local sha and no work to
+# check, so the suite used to run for three minutes to push nothing.
+target=""
+while read -r _local_ref local_sha remote_ref _remote_sha; do
+  case "$local_sha" in
+    *[!0]*) target="${remote_ref#refs/heads/}" ;;
+  esac
+done
+
+if [ -z "$target" ]; then
+  echo "Nothing but deletions to push, skipping the suite."
+  exit 0
+fi
+
 echo "Running unit tests..."
 npx vitest run
 
-echo "Running E2E tests in production mode..."
-CI=true npx playwright test
+# Everything else is a branch that opens a pull request, and CI runs the five
+# browsers there anyway. Repeating it locally costs minutes and proves nothing.
+if [ "$target" = "master" ]; then
+  echo "Running E2E tests in production mode..."
+  CI=true npx playwright test
+else
+  echo "Skipping E2E: CI runs the full matrix on the pull request."
+fi
