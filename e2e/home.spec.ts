@@ -167,8 +167,13 @@ test.describe('Home Page', () => {
       };
     }, band);
 
-    if (isMobile) expect(placement.above).toBe(placement.below);
-    else expect(placement.centre).toBe(placement.heroBottom);
+    // A pixel of tolerance: the band centres on a fractional position and
+    // browsers round it differently.
+    if (isMobile) {
+      expect(Math.abs(placement.above - placement.below)).toBeLessThanOrEqual(
+        1
+      );
+    } else expect(placement.centre).toBe(placement.heroBottom);
 
     const drawn = (element: HTMLCanvasElement) => {
       const ctx = element.getContext('2d');
