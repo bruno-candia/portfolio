@@ -11,8 +11,7 @@ test.describe('Internationalization (i18n)', () => {
     await expect(page.getByText("Hi! I'm Bruno").first()).toBeVisible();
 
     if (isMobile) {
-      const menuToggle = page.locator('label[for="menu-toggle"]').first();
-      await menuToggle.click();
+      await page.getByRole('button', { name: /Open menu|Abrir menu/i }).click();
 
       await page.getByRole('link', { name: /Portuguese|Português/i }).click();
     } else {

@@ -1,16 +1,22 @@
+'use client';
+
+import * as Dialog from '@radix-ui/react-dialog';
 import { Menu } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 export function Toggle() {
-  return (
-    <>
-      <input type="checkbox" id="menu-toggle" className="peer hidden" />
+  const t = useTranslations('Sidebar');
 
-      <label
-        htmlFor="menu-toggle"
-        className="border h-fit p-2 rounded-full bg-transparent shadow-xs hover:bg-accent hover:text-accent-foreground "
+  return (
+    <Dialog.Trigger asChild>
+      <button
+        type="button"
+        aria-label={t('openMenu')}
+        data-sidebar-trigger
+        className="inline-flex size-11 items-center justify-center text-ink transition-colors hover:text-ink-2"
       >
-        <Menu />
-      </label>
-    </>
+        <Menu aria-hidden />
+      </button>
+    </Dialog.Trigger>
   );
 }

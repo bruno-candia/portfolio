@@ -11,7 +11,7 @@ export function PrivacySettingsButton() {
     <button
       type="button"
       onClick={openSettings}
-      className="text-left text-zinc-400 transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+      className="text-left text-ink-3 transition-colors hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink"
     >
       {t('settings')}
     </button>

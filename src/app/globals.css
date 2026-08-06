@@ -1,21 +1,21 @@
 @import 'tailwindcss';
-@import './styles/_reset.css';
+@import './styles/_base.css';
 @import './styles/_variables.css';
+@import './styles/_typography.css';
+@import './styles/_graph.css';
 @import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *));
 
 html,
 body {
-  font-family: var(--font-cabinet-grotesk), Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
 }
 
 @layer base {
+  /* default colour for the bare `border` utility */
   * {
-    @apply border-border outline-ring/50;
-  }
-  body {
-    @apply bg-background text-foreground;
+    @apply border-line;
   }
 }
 @layer utilities {

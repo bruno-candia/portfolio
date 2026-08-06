@@ -1,3 +1,4 @@
+import * as Dialog from '@radix-ui/react-dialog';
 import React, { ReactNode } from 'react';
 
 interface RootProps {
@@ -5,5 +6,5 @@ interface RootProps {
 }
 
 export function Root({ children }: RootProps) {
-  return <>{children}</>;
+  return <Dialog.Root>{children}</Dialog.Root>;
 }

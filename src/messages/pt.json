@@ -4,383 +4,126 @@
     "english": "Inglês",
     "home": "Início",
     "about": "Sobre",
-    "works": "Trabalhos",
-    "skills": "Habilidades",
-    "experience": "Jornada",
-    "contact": "Contato"
+    "works": "Projetos",
+    "skills": "Skills",
+    "experience": "Trajetória",
+    "contact": "Contato",
+    "openMenu": "Abrir menu",
+    "closeMenu": "Fechar menu",
+    "menu": "Menu",
+    "menuDescription": "Navegação principal, idioma e redes sociais.",
+    "navigation": "Navegação principal"
   },
   "Header": {
     "title": "Portfólio"
   },
+  "Accessibility": {
+    "menu": "Acessibilidade",
+    "open": "Abrir preferências de acessibilidade",
+    "close": "Fechar preferências de acessibilidade",
+    "title": "Preferências de acessibilidade",
+    "description": "As alterações são aplicadas na hora e ficam salvas neste navegador.",
+    "textSize": {
+      "title": "Tamanho do texto",
+      "description": "Ajusta o conteúdo de leitura de 100% a 200%."
+    },
+    "motion": {
+      "title": "Movimento",
+      "description": "Segue o sistema ou reduz animações.",
+      "system": "Sistema",
+      "reduced": "Reduzido"
+    },
+    "readingFont": {
+      "title": "Fonte de leitura",
+      "description": "Troca a tipografia usada nos textos longos.",
+      "alternative": "Alternativa"
+    },
+    "contrast": {
+      "title": "Contraste",
+      "description": "Aumenta a diferença entre texto, fundo e bordas.",
+      "high": "Alto"
+    },
+    "standard": "Padrão",
+    "reset": "Restaurar padrão",
+    "done": "Concluir"
+  },
   "Metadata": {
-    "title": "Bruno Costa | Desenvolvedor Full-stack",
-    "description": "Desenvolvedor Full-Stack Sênior especializado em React, Next.js e Aplicações Web de Alta Performance. Ajudo empresas a construir soluções escaláveis e manuteníveis."
+    "title": "Bruno Costa | Engenheiro Full-stack",
+    "description": "Engenheiro Full-Stack Sênior especializado em React, Next.js e Aplicações Web de Alta Performance. Ajudo empresas a construir soluções escaláveis e manuteníveis."
   },
   "Hero": {
     "greeting": "Olá! Eu sou Bruno",
-    "role": "Desenvolvedor Full-stack",
+    "role": "Engenheiro Full-stack",
     "description": "UI & UX Designer.",
     "downloadCV": "Baixar CV"
   },
   "About": {
-    "title": "Oi, eu sou o Bruno. Desenvolvo software escalável há mais de 7 anos.",
-    "description": "Sou engenheiro Full Stack e trabalho com React, Node.js. Meu foco é escrever código limpo e resolver problemas reais—seja otimizando a performance de aplicações ou arquitetando novas funcionalidades. Além da técnica, sou apaixonado por mentoria e por criar um ambiente colaborativo onde todos possam aprender.",
-    "button": "Sobre Mim",
-    "scrollToExplore": "Role para Explorar",
-    "shortStory": "Minha Breve História"
+    "eyebrow": "Sobre",
+    "title": "Eu sou Bruno Costa.",
+    "description": "Engenheiro full stack e designer. Desenvolvo software com React e Node.js há mais de 7 anos. Sou tech lead no BEES, da AB InBev, e mentoro outros devs. Costumo desenhar, inventar e desmontar coisas. Às vezes monto de volta.",
+    "scrollToExplore": "Role para explorar",
+    "shortStory": "Minha breve história"
   },
   "Works": {
-    "title": "Meus trabalhos e estudos",
-    "button": "Todos os Projetos",
-    "projects": {
-      "aurem": {
-        "description": "<h>Sobre o Projeto</h><p>O Aurem Genus foi uma startup de tecnologia assistiva que co-fundei para transformar a educação híbrida e a distância. Nascido da necessidade de inclusão, o projeto foi além de uma plataforma tradicional: era um ecossistema focado em quebrar barreiras de comunicação através de legendagem em tempo real e ferramentas pedagógicas interativas.</p><p>A plataforma atendia três pilares educacionais (Alunos, Professores e Instituições), oferecendo desde um LMS (Learning Management System) completo até uma sala de aula virtual imersiva onde a voz do professor era instantaneamente convertida em texto, garantindo acessibilidade para pessoas com deficiência auditiva e reforço cognitivo para todos os estudantes.</p><spacer></spacer><h>Arquitetura e Engenharia de Software</h><p>O ecossistema Aurem operava sob uma arquitetura distribuída e escalável, dividida em três frentes principais:</p><p><b>1. Web Client & Sala Interativa (SPA)</b></p><p>O coração da interação era uma Single Page Application robusta desenvolvida em React.</p><ul><li><b>Gestão de Estado:</b> Utilização de Redux para orquestrar estados complexos da sala de aula (quem está falando, slide atual, permissões de usuário).</li><li><b>Interatividade:</b> Implementação de um Quadro Branco Digital (Whiteboard) colaborativo utilizando Fabric.js, onde desenhos e anotações eram vetorizados e sincronizados entre todos os clientes.</li><li><b>Multimídia:</b> Manipulação de PDFs e streams de vídeo/áudio integrados.</li></ul><p><b>2. Desktop Client (Electron)</b></p><p>Para cenários onde o usuário precisava de legendas fora do navegador (como em apresentações de PowerPoint ou softwares externos), foi desenvolvido um cliente Desktop com Electron.</p><ul><li><b>Overlay Transparente:</b> O aplicativo utilizava janelas frameless com suporte a transparência e click-through, permitindo que as legendas flutuassem sobre outras aplicações sem obstruir o trabalho do usuário.</li><li><b>IPC Communication:</b> Arquitetura de comunicação entre processos (Main e Renderer) para gerenciar janelas flutuantes, chat e autenticação simultaneamente.</li></ul><p><b>3. Backend e Infraestrutura</b></p><p>A espinha dorsal do sistema era uma API RESTful em Node.js/Express.</p><ul><li><b>Comunicação Real-Time:</b> Uso de Socket.io (WebSockets) para garantir latência sub-segundo na entrega de legendas e sincronização de eventos de aula (mudança de slides, chat, desenhos).</li><li><b>Persistência Híbrida:</b> MySQL (Sequelize) para dados estruturados; MongoDB para logs e legendas; Redis para caching e filas.</li></ul><spacer></spacer><h>O Core de Inteligência Artificial</h><p>O diferencial técnico do projeto era a pipeline de processamento de áudio para texto.</p><ul><li><b>Captura:</b> O áudio era capturado no cliente (Web ou Desktop).</li><li><b>Processamento em Nuvem:</b> Integração direta com Azure Cognitive Services.</li><li><b>Fallback Inteligente:</b> Alternância automática para Web Speech API nativa em caso de falhas.</li><li><b>Broadcast:</b> Distribuição imediata via WebSocket.</li></ul><spacer></spacer><h>Desafios e Destaques</h><ul><li><b>Sincronização:</b> Garantir desenho colaborativo em tempo real.</li><li><b>UX Desktop:</b> Criar janelas \"invisíveis\" ao mouse mas visíveis aos olhos com Electron.</li><li><b>DevOps:</b> CI/CD automatizado, Docker e orquestração na AWS.</li></ul>"
-      },
-      "wind-energy": {
-        "description": "<h>Sobre o Projeto</h><p>Desenvolvido como projeto de estudo universitário em C++, este software foi projetado para realizar estudos de viabilidade e implementação de fazendas eólicas. Atuando como uma ferramenta de engenharia estratégica, o sistema calcula a eficiência energética de diferentes terrenos, focando não apenas em \"onde\" posicionar, mas \"quanto\" o terreno pode render.</p><spacer></spacer><h>Engenharia e Algoritmos</h><p>O projeto resolve problemas de otimização geométrica e física:</p><ul><li><b>Algoritmos de \"Packing\":</b> Implementação matemática para maximizar a quantidade de turbinas em terrenos irregulares (Trapézios e Triângulos).</li><li><b>Física Aplicada:</b> Aplicação fórmulas como o Limite de Betz e cálculos de densidade do ar para transformar dados brutos de vento em previsões precisas de potência elétrica.</li></ul><spacer></spacer><h>Destaques Técnicos</h>"
-      },
-      "scaling-x": {
-        "description": "<h>Sobre o Projeto</h><p>Atuando como Freelancer de Branding Design, desenvolvi a identidade visual completa da Scaling-X. O projeto traduz os valores de <b>Compromisso e Crescimento</b> em uma linguagem gráfica moderna. O design centraliza a missão da empresa: ser o parceiro de cloud que impulsiona seus clientes a alcançarem sua melhor versão.</p><spacer></spacer><h>Identidade Visual & Cores</h><p>A paleta foi cuidadosamente selecionada para equilibrar vibração com profissionalismo minimalista:</p><ul><li><b>ScalingX Blue (#01ACE0):</b> Uma cor vibrante e distinta que evoca inovação.</li><li><b>Deep Black (#01001F) & White:</b> O contraste que traz elegância, seriedade e modernidade.</li></ul><spacer></spacer><h>Tipografia & Logotipo</h><p>Cada detalhe textual foi pensado para comunicar estabilidade e futuro:</p><ul><li><b>Fonte Dubai:</b> Escolhida por sua simetria e traços modernos, enfatizando a natureza inovadora da marca.</li><li><b>Wordmark:</b> Um logotipo forte que simboliza escalabilidade, reafirmando o compromisso com o crescimento contínuo.</li></ul>"
-      },
-      "maincore": {
-        "description": "<h>Sobre o Projeto</h><p>Neste projeto freelance, fui responsável pelo UX/UI Design e Desenvolvimento Web do portal corporativo da Maincore, especialista em hardware de alta performance. O objetivo foi criar uma plataforma digital moderna, rápida e otimizada para SEO, capaz de apresentar produtos complexos e captar leads qualificados.</p><spacer></spacer><h>Minha Atuação</h><p>Atuei como Desenvolvedor Frontend e Designer, responsável pela implementação pixel-perfect da interface e arquitetura do código. O foco foi transformar o design system em uma aplicação web de alta fidelidade e performance.</p><spacer></spacer><h>Destaques da Implementação</h><ul><li><b>Arquitetura:</b> Adoção de padrões de composição (Compound Components) para facilitar reutilização e manutenção.</li><li><b>UX Aprimorada:</b> Feedbacks visuais ricos, notificações via react-toastify e validações de formulário complexas com Formik.</li><li><b>Qualidade e Testes:</b> Cobertura de testes unitários com Jest e React Testing Library.</li></ul>"
-      }
-    }
+    "eyebrow": "Projetos",
+    "title": "Do problema ao deploy",
+    "subtitle": "Contexto, decisão técnica e o que mudou depois.",
+    "others": "Outros",
+    "case": "Ver case",
+    "moreTechnologies": "{count, plural, one {mais # tecnologia} other {mais # tecnologias}}",
+    "present": "hoje",
+    "link": {
+      "repository": "repositório",
+      "behance": "Behance",
+      "live": "site no ar",
+      "linkedin": "LinkedIn da empresa"
+    },
+    "seal": {
+      "timeline": "também na trajetória",
+      "open": "open source",
+      "closed": "código fechado"
+    },
+    "kind": {
+      "product": "startup",
+      "client-work": "cliente",
+      "personal": "pessoal",
+      "study": "estudo",
+      "branding": "branding"
+    },
+    "rangeJoiner": "a"
   },
   "Experience": {
-    "title": "Explore minha jornada",
-    "experiences": {
-      "bees-tech-lead": {
-        "role": "Tech Lead",
-        "description": "Liderando a padronização de plataformas globais (Grow, Force, Control Tower). Arquitetei BFFs com NestJS/Clean Arch, defini padrões de arquitetura e escalei o ecossistema com Micro-frontends em 22 países."
-      },
-      "bees-senior": {
-        "role": "Engenheiro de Software Sênior",
-        "description": "Impulsionei interações de vendas criando o Auto Dialer com React e WebSockets. Liderei a migração para Micro-frontends, reduzindo o deploy de >1h para minutos."
-      },
-      "aurem": {
-        "role": "Fundador e Engenheiro de Software",
-        "description": "Fundei uma startup de legendagem inclusiva em tempo real (Prêmio Santander). Utilizei a Web Speech API para legendagem de baixa latência e WebSockets para sincronização em tempo real, atendendo 1.000+ alunos e escalando via AWS/Docker."
-      },
-      "verzel": {
-        "role": "UX Designer",
-        "description": "Conectei design e engenharia em projetos internos. Criei interfaces no Figma focadas no desenvolvedor e Design Systems que otimizaram o handoff e garantiram implementação precisa em React."
-      },
-      "neoenergia": {
-        "role": "Estagiário de Desenvolvimento",
-        "description": "Digitalizei fluxos internos criando dashboards em React/TypeScript. Mantive backends Node.js/SQL."
-      }
-    }
+    "eyebrow": "Trajetória",
+    "title": "De estagiário a arquiteto",
+    "subtitle": "Oito anos de branches. Um merge de cada vez.",
+    "joiner": "a",
+    "present": "hoje",
+    "root": "{date} · primeira linha",
+    "caseLink": "ver o case"
   },
   "Skills": {
-    "title": "Construindo software que resolve problemas reais com arquitetura limpa e ferramentas modernas",
-    "learning": "estudando",
-    "categories": {
-      "frontend": {
-        "title": "frontend",
-        "description": "Desenvolvimento de interfaces web modernas e responsivas. Experiência com SPAs, SSR, gerenciamento de estado complexo, testes automatizados e integração com APIs.",
-        "stacks": {
-          "javascript": {
-            "name": "javascript",
-            "description": "Linguagem essencial para desenvolvimento web. Usada para criar interatividade, manipular DOM e construir aplicações completas tanto no front-end quanto no back-end."
-          },
-          "typescript": {
-            "name": "typescript",
-            "description": "Superset do JavaScript que adiciona tipagem estática. Melhora qualidade do código, facilita refatoração e previne erros em tempo de desenvolvimento."
-          },
-          "react": {
-            "name": "react",
-            "description": "Biblioteca para construção de interfaces. Utiliza componentes reutilizáveis, virtual DOM, hooks para estado e ciclo de vida. Ideal para SPAs e aplicações complexas."
-          },
-          "nextjs": {
-            "name": "nextjs",
-            "description": "Framework React com renderização híbrida (SSR, SSG, ISR). Otimização de imagens, code splitting, rotas baseadas em arquivo e melhor SEO."
-          },
-          "angular": {
-            "name": "angular",
-            "description": "Framework TypeScript completo para aplicações enterprise. Inclui injeção de dependências, RxJS para programação reativa e CLI robusto."
-          },
-          "redux": {
-            "name": "redux",
-            "description": "Biblioteca de gerenciamento de estado global. Implementa padrão Flux com store centralizada, actions e reducers para aplicações com estado complexo."
-          },
-          "react-query": {
-            "name": "react-query",
-            "description": "Gerenciamento de estado do servidor. Cache inteligente, sincronização automática, refetch em background. Simplifica fetching de dados e reduz boilerplate."
-          },
-          "html": {
-            "name": "html",
-            "description": "Linguagem de marcação para estruturação de conteúdo web. Tags semânticas melhoram acessibilidade e SEO. Base fundamental para qualquer aplicação web."
-          },
-          "css": {
-            "name": "css",
-            "description": "Linguagem de estilização para controle visual de páginas. Domínio de Flexbox e Grid para layouts responsivos, animações e técnicas modernas."
-          },
-          "tailwind": {
-            "name": "tailwind",
-            "description": "Framework CSS utility-first que acelera o desenvolvimento. Classes pré-definidas, design system consistente e purge automático de CSS não utilizado."
-          },
-          "sass": {
-            "name": "sass",
-            "description": "Pré-processador CSS com variáveis, nesting, mixins e funções. Organiza estilos de forma modular e facilita manutenção em projetos grandes."
-          },
-          "styled-components": {
-            "name": "styled-components",
-            "description": "Biblioteca CSS-in-JS para React. Estilos escopados por componente, suporte a temas dinâmicos e TypeScript. Elimina conflitos de classe."
-          },
-          "vite": {
-            "name": "vite",
-            "description": "Build tool moderna baseada em ESM. HMR instantâneo, build otimizado com Rollup e suporte TypeScript nativo. Substitui Webpack por velocidade superior."
-          },
-          "axios": {
-            "name": "axios",
-            "description": "Cliente HTTP baseado em Promises. Oferece interceptors, cancelamento de requests, transformação automática de JSON e tratamento estruturado de erros."
-          },
-          "figma": {
-            "name": "figma",
-            "description": "Ferramenta colaborativa de design de interfaces. Criação de protótipos interativos, design systems e componentes reutilizáveis."
-          },
-          "storybook": {
-            "name": "storybook",
-            "description": "Desenvolvimento e documentação de componentes UI isolados. Testa componentes em diferentes estados e cria guias de estilo vivos."
-          },
-          "jest": {
-            "name": "jest",
-            "description": "Framework de testes JavaScript completo. Assertions, mocks, spies, coverage e snapshot testing. Para testes unitários e de integração."
-          },
-          "vitest": {
-            "name": "vitest",
-            "description": "Framework de testes ultra-rápido compatível com Jest. Integrado com Vite, execução paralela, HMR para testes e configuração zero."
-          },
-          "testing-library": {
-            "name": "testing-library",
-            "description": "Testes focados em comportamento do usuário. Testa componentes como usuários interagem, promove acessibilidade e evita dependência de implementação."
-          },
-          "cypress": {
-            "name": "cypress",
-            "description": "Framework para testes end-to-end em navegador real. Time-travel debugging, screenshots automáticos e API intuitiva. Testa fluxos completos da aplicação."
-          },
-          "msw": {
-            "name": "msw",
-            "description": "Mock Service Worker para interceptar requisições de rede. Simula APIs durante desenvolvimento e testes sem modificar código. Funciona em navegador e Node.js."
-          },
-          "eslint": {
-            "name": "eslint",
-            "description": "Análise estática de código JavaScript/TypeScript. Identifica problemas, enforça padrões, previne bugs e mantém consistência. Integra com editores e CI/CD."
-          },
-          "electron": {
-            "name": "electron",
-            "description": "Framework para aplicações desktop cross-platform usando tecnologias web. Combina Chromium e Node.js, acesso a APIs nativas do sistema operacional."
-          }
-        }
-      },
-      "backend": {
-        "title": "backend",
-        "description": "Desenvolvimento de APIs escaláveis e microsserviços. Experiência com arquitetura RESTful, autenticação, bancos de dados e testes de integração.",
-        "stacks": {
-          "nodejs": {
-            "name": "nodejs",
-            "description": "Runtime JavaScript server-side sobre V8. Execução assíncrona e non-blocking, ideal para APIs RESTful, microserviços e serviços de alta concorrência."
-          },
-          "java": {
-            "name": "java",
-            "description": "Linguagem orientada a objetos para sistemas enterprise. Usado em aplicações corporativas, microserviços Spring Boot e sistemas que exigem performance."
-          },
-          "nestjs": {
-            "name": "nestjs",
-            "description": "Framework Node.js progressivo inspirado em Angular. Arquitetura modular com injeção de dependências e decorators TypeScript. Ideal para APIs escaláveis."
-          },
-          "express": {
-            "name": "express",
-            "description": "Framework web minimalista e flexível para Node.js. Sistema de rotas robusto, middlewares customizáveis. Base para APIs REST rápidas e performáticas."
-          },
-          "prisma": {
-            "name": "prisma",
-            "description": "ORM type-safe de próxima geração com schema declarativo. Migrations automáticas, cliente tipado que previne erros e Prisma Studio para visualização de dados."
-          },
-          "postgresql": {
-            "name": "postgresql",
-            "description": "Banco de dados relacional open-source avançado. Suporte a JSON, full-text search, transações ACID e índices complexos. Ideal para integridade de dados."
-          },
-          "mysql": {
-            "name": "mysql",
-            "description": "Sistema de gerenciamento de banco relacional popular. Performance otimizada para leitura, replicação master-slave. Ideal para aplicações web de alto tráfego."
-          },
-          "sql-server": {
-            "name": "sql-server",
-            "description": "Banco de dados relacional da Microsoft para ambientes enterprise. Integração com Azure, análise avançada, alta disponibilidade e ferramentas de BI integradas."
-          },
-          "mongodb": {
-            "name": "mongodb",
-            "description": "Banco de dados NoSQL orientado a documentos. Esquema flexível com JSON/BSON, escalabilidade horizontal. Ideal para dados não estruturados e rápida iteração."
-          },
-          "rest-api": {
-            "name": "rest-api",
-            "description": "Padrão arquitetural para APIs web usando HTTP. Design de endpoints RESTful, uso correto de verbos HTTP, status codes e versionamento."
-          },
-          "jwt": {
-            "name": "jwt",
-            "description": "Padrão para autenticação stateless baseada em tokens. Encoda claims de usuário em token assinado, autenticação distribuída sem sessão servidor."
-          },
-          "oauth2": {
-            "name": "oauth2",
-            "description": "Framework de autorização para delegação de acesso seguro. Implementação de fluxos, integração com providers externos (Google, GitHub) e proteção de recursos."
-          },
-          "swagger": {
-            "name": "swagger",
-            "description": "Ferramenta para documentação e design de APIs REST. Especificação OpenAPI, geração automática de documentação interativa e validação de contratos."
-          },
-          "jest": {
-            "name": "jest",
-            "description": "Framework de testes para serviços Node.js. Testes unitários de controllers e services, mocking de dependências, testes de integração e coverage reports."
-          },
-          "wiremock": {
-            "name": "wiremock",
-            "description": "Servidor HTTP mock para simular APIs externas. Stub de responses, matching de requests e simulação de delays e falhas. Essencial para testes de integração."
-          },
-          "robot-framework": {
-            "name": "robot-framework",
-            "description": "Framework de automação de testes genérico baseado em keywords. Sintaxe legível, bibliotecas extensíveis, testes de aceitação e relatórios HTML detalhados."
-          }
-        }
-      },
-      "mobile": {
-        "title": "mobile",
-        "description": "Desenvolvimento de aplicações mobile multiplataforma com React Native. Experiência em apps iOS e Android com navegação, APIs nativas e otimização.",
-        "stacks": {
-          "react-native": {
-            "name": "react-native",
-            "description": "Framework para desenvolvimento mobile nativo multiplataforma. Código JavaScript renderiza componentes nativos, acesso a APIs do dispositivo e hot reload."
-          },
-          "expo": {
-            "name": "expo",
-            "description": "Plataforma e ferramentas para React Native. Desenvolvimento sem Xcode/Android Studio, over-the-air updates, bibliotecas nativas pré-configuradas e build na nuvem."
-          },
-          "react-navigation": {
-            "name": "react-navigation",
-            "description": "Biblioteca de navegação para React Native. Stack navigator, tab navigation, drawer, deep linking e transições customizadas. Padrão da indústria para routing mobile."
-          },
-          "styled-components": {
-            "name": "styled-components",
-            "description": "Estilização CSS-in-JS adaptada para React Native. Temas dinâmicos, estilos baseados em props e manutenção de estilos colocalizados com componentes."
-          },
-          "ios": {
-            "name": "ios",
-            "description": "Desenvolvimento e publicação de apps para ecossistema Apple. Configuração de provisioning profiles, App Store Connect e guidelines de interface iOS."
-          },
-          "android": {
-            "name": "android",
-            "description": "Desenvolvimento e publicação de apps Android. Configuração de gradle, geração de APK/AAB assinado, Google Play Console e otimização para diferentes tamanhos de tela."
-          },
-          "jest": {
-            "name": "jest",
-            "description": "Testes unitários e de integração para React Native. Mocking de módulos nativos, snapshot testing de componentes e testes de lógica de negócio e hooks."
-          }
-        }
-      },
-      "arquitetura": {
-        "title": "arquitetura",
-        "description": "Design de sistemas escaláveis e manuteníveis. Experiência em padrões arquiteturais, micro-frontends, DDD e estratégias de modularização para aplicações complexas.",
-        "stacks": {
-          "clean-architecture": {
-            "name": "clean-architecture",
-            "description": "Arquitetura em camadas independentes (Entities, Use Cases, Adapters). Desacoplamento de regras de negócio da infraestrutura, testabilidade e manutenibilidade."
-          },
-          "ddd": {
-            "name": "ddd",
-            "description": "Domain-Driven Design para modelagem de sistemas complexos. Ubiquitous language, bounded contexts, agregados e domain events. Alinhamento entre código e domínio."
-          },
-          "micro-frontends": {
-            "name": "micro-frontends",
-            "description": "Arquitetura que divide aplicação front-end em módulos independentes. Times autônomos, deploy independente e tecnologias heterogêneas."
-          },
-          "module-federation": {
-            "name": "module-federation",
-            "description": "Técnica Webpack 5 para compartilhamento dinâmico de código. Carregamento remoto de módulos, versionamento independente e code splitting avançado."
-          },
-          "monorepo": {
-            "name": "monorepo",
-            "description": "Estratégia de organizar múltiplos projetos em único repositório. Ferramentas como Nx e Turborepo, compartilhamento de código e versionamento unificado."
-          },
-          "design-patterns": {
-            "name": "design-patterns",
-            "description": "Soluções reutilizáveis para problemas comuns de design. Padrões criacionais (Factory), estruturais (Adapter) e comportamentais (Observer, Strategy)."
-          },
-          "performance": {
-            "name": "performance",
-            "description": "Otimização de métricas Core Web Vitals (LCP, FID, CLS). Code splitting, lazy loading, otimização de imagens, cache strategies e Web Workers."
-          },
-          "mvvm": {
-            "name": "mvvm",
-            "description": "Model-View-ViewModel para separação de responsabilidades. Separação entre lógica (ViewModel), interface (View) e dados (Model). Binding bidirecional."
-          }
-        }
-      },
-      "devops": {
-        "title": "devops",
-        "description": "Automação de processos, containerização, CI/CD e cloud computing. Experiência com pipelines automatizados, infraestrutura como código e deploy em múltiplas plataformas.",
-        "stacks": {
-          "git": {
-            "name": "git",
-            "description": "Sistema de controle de versão distribuído. Git Flow para gestão de branches, conventional commits, rebase interativo e resolução de conflitos."
-          },
-          "github-actions": {
-            "name": "github-actions",
-            "description": "Plataforma de CI/CD integrada ao GitHub. Workflows automatizados com YAML, matrix builds, caching de dependências e deploy automático."
-          },
-          "azure-pipelines": {
-            "name": "azure-pipelines",
-            "description": "Serviço de CI/CD da Azure DevOps. Pipelines YAML ou clássicos, multi-stage deployments, aprovações manuais e integração com Azure services."
-          },
-          "docker": {
-            "name": "docker",
-            "description": "Plataforma de containerização de aplicações. Criação de imagens leves, Dockerfile multi-stage, Docker Compose para ambientes locais e isolamento de processos."
-          },
-          "kubernetes": {
-            "name": "kubernetes",
-            "description": "Sistema de orquestração de containers em produção. Deployments, services, ingress, auto-scaling, self-healing e rolling updates via Helm charts."
-          },
-          "terraform": {
-            "name": "terraform",
-            "description": "Ferramenta de Infrastructure as Code declarativa. Provisionamento multi-cloud com HCL, state management, módulos reutilizáveis e plan/apply seguro."
-          },
-          "aws": {
-            "name": "aws",
-            "description": "Plataforma de cloud computing da Amazon. Serviços como EC2, S3, Lambda, RDS, CloudFront e API Gateway. Deploy de aplicações escaláveis e serverless."
-          },
-          "azure": {
-            "name": "azure",
-            "description": "Plataforma de cloud computing da Microsoft. App Service, Functions, Blob Storage, SQL Database, CDN e DevOps. Integração com ecossistema Microsoft."
-          },
-          "vercel": {
-            "name": "vercel",
-            "description": "Plataforma de deploy otimizada para front-end e Next.js. Deploy automático via Git, edge functions, preview deployments, CDN global e analytics."
-          },
-          "firebase": {
-            "name": "firebase",
-            "description": "Backend-as-a-Service do Google para desenvolvimento rápido. Firestore, Authentication, Cloud Functions, Hosting e Storage. Ideal para MVPs e apps real-time."
-          },
-          "sonarqube": {
-            "name": "sonarqube",
-            "description": "Plataforma de análise contínua de qualidade de código. Detecção de bugs, vulnerabilidades, code smells, cobertura de testes. Integração com CI/CD."
-          },
-          "ci-cd": {
-            "name": "ci-cd",
-            "description": "Práticas de integração e entrega contínua. Automação de build, testes e deploy, feedback rápido, rollback seguro e deployment strategies (blue-green, rolling)."
-          }
-        }
-      }
-    }
+    "title": "Construindo software que resolve problemas reais",
+    "eyebrow": "Stack",
+    "subtitle": "Em destaque, o que uso no dia a dia.",
+    "more": "+{count} outras",
+    "less": "menos"
   },
   "Footer": {
+    "eyebrow": "Contato",
+    "title": "Aberto para conversar.",
+    "description": "Vaga, mentoria ou uma ideia que não sai da cabeça. Pode chamar.",
+    "linkedin": "LinkedIn",
     "nav": {
+      "label": "Navegação do rodapé",
       "about": "Sobre",
-      "skills": "Habilidades",
-      "works": "Trabalhos",
-      "experience": "Jornada",
+      "skills": "Skills",
+      "works": "Projetos",
+      "experience": "Trajetória",
       "contact": "Contato"
     },
-    "madeBy": "Criado por Bruno Costa",
+    "madeByPrefix": "Feito com",
+    "madeBySuffix": "por Bruno",
+    "madeByAccessible": "Feito com carinho por Bruno",
     "copyright": "© 2026 Bruno Costa",
     "privacy": "Aviso de privacidade"
   },
@@ -433,5 +176,19 @@
       "title": "Suas escolhas",
       "description": "Você pode recusar, selecionar categorias ou revogar a autorização a qualquer momento em Configurações de privacidade no rodapé. A revogação interrompe novos envios e remove os identificadores analíticos locais."
     }
+  },
+  "Case": {
+    "back": "Projetos",
+    "problem": "O problema",
+    "built": "O que eu construí",
+    "decisions": "Decisões técnicas",
+    "result": "Resultado",
+    "retrospective": "O que eu faria diferente hoje",
+    "role": "papel",
+    "period": "período",
+    "stack": "stack",
+    "crossLink": "Ver como emprego",
+    "previous": "← anterior",
+    "next": "próximo →"
   }
 }

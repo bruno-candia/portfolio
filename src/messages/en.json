@@ -4,383 +4,126 @@
     "english": "English",
     "home": "Home",
     "about": "About",
-    "works": "Works",
+    "works": "Projects",
     "skills": "Skills",
-    "experience": "Journey",
-    "contact": "Contact"
+    "experience": "Career",
+    "contact": "Contact",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "menu": "Menu",
+    "menuDescription": "Main navigation, language and social links.",
+    "navigation": "Main navigation"
   },
   "Header": {
     "title": "Portfolio"
   },
+  "Accessibility": {
+    "menu": "Accessibility",
+    "open": "Open accessibility preferences",
+    "close": "Close accessibility preferences",
+    "title": "Accessibility preferences",
+    "description": "Changes are applied immediately and saved in this browser.",
+    "textSize": {
+      "title": "Text size",
+      "description": "Adjusts reading content from 100% to 200%."
+    },
+    "motion": {
+      "title": "Motion",
+      "description": "Follows the system or reduces animations.",
+      "system": "System",
+      "reduced": "Reduced"
+    },
+    "readingFont": {
+      "title": "Reading font",
+      "description": "Switches the typeface used in longer text.",
+      "alternative": "Alternative"
+    },
+    "contrast": {
+      "title": "Contrast",
+      "description": "Increases the difference between text, background and borders.",
+      "high": "High"
+    },
+    "standard": "Standard",
+    "reset": "Restore defaults",
+    "done": "Done"
+  },
   "Metadata": {
-    "title": "Bruno Costa | Full-stack Developer",
-    "description": "Senior Full-Stack Developer specializing in React, Next.js, and High-Performance Web Apps. Helping companies build scalable and maintainable solutions."
+    "title": "Bruno Costa | Full-stack Engineer",
+    "description": "Senior Full-Stack Engineer specializing in React, Next.js, and High-Performance Web Apps. Helping companies build scalable and maintainable solutions."
   },
   "Hero": {
     "greeting": "Hi! I'm Bruno",
-    "role": "Full-stack Developer",
+    "role": "Full-stack Engineer",
     "description": "UI & UX Designer.",
     "downloadCV": "Download CV"
   },
   "About": {
-    "title": "Hey, I'm Bruno. I've been building scalable software for over 7 years.",
-    "description": "I'm a Full Stack engineer working with React, Node.js. My focus is on writing clean code and solving real problems—whether that's optimizing application performance or architecting new features. Beyond the tech, I'm passionate about mentorship and creating a collaborative environment where everyone can learn.",
-    "button": "About Me",
-    "scrollToExplore": "Scroll to Explore",
-    "shortStory": "My Short Story"
+    "eyebrow": "About",
+    "title": "I'm Bruno Costa.",
+    "description": "Full-stack engineer and designer. I've been building software with React and Node.js for over 7 years. I'm a tech lead at BEES, part of AB InBev, and mentor other developers. I draw, invent, and take things apart. Sometimes I put them back together.",
+    "scrollToExplore": "Scroll to explore",
+    "shortStory": "My short story"
   },
   "Works": {
-    "title": "My work and studies",
-    "button": "All Projects",
-    "projects": {
-      "aurem": {
-        "description": "<h>About the Project</h><p>Aurem Genus was an assistive technology startup I co-founded to transform hybrid and distance education. Born from the need for inclusion, the project went beyond a traditional video conferencing platform: it was an ecosystem focused on breaking communication barriers through real-time captioning and interactive pedagogical tools.</p><p>The platform served three educational pillars (Students, Teachers, and Institutions), offering everything from a full LMS (Learning Management System) to an immersive virtual classroom where the teacher's voice was instantly converted to text, ensuring accessibility for hearing-impaired people and cognitive reinforcement for all students.</p><spacer></spacer><h>Architecture and Software Engineering</h><p>The Aurem ecosystem operated under a distributed and scalable architecture, divided into three main fronts:</p><p><b>1. Web Client & Interactive Room (SPA)</b></p><p>The heart of the interaction was a robust Single Page Application developed in React.</p><ul><li><b>State Management:</b> Utilization of Redux to orchestrate complex classroom states (who is speaking, current slide, user permissions).</li><li><b>Interactivity:</b> Implementation of a collaborative Digital Whiteboard using Fabric.js, where drawings and annotations were vectorized and synchronized among all clients.</li><li><b>Multimedia:</b> Manipulation of integrated PDFs and video/audio streams.</li></ul><p><b>2. Desktop Client (Electron)</b></p><p>For scenarios where the user needed captions outside the browser (such as in PowerPoint presentations or external software), a Desktop client was developed with Electron.</p><ul><li><b>Transparent Overlay:</b> The application used frameless windows with transparency and click-through support, allowing captions to float over other applications without obstructing the user's work.</li><li><b>IPC Communication:</b> Architecture of inter-process communication (Main and Renderer) to manage floating windows, chat, and authentication simultaneously.</li></ul><p><b>3. Backend and Infrastructure</b></p><p>The backbone of the system was a RESTful API in Node.js/Express.</p><ul><li><b>Real-Time Communication:</b> Use of Socket.io (WebSockets) to ensure sub-second latency in caption delivery and classroom event synchronization (slide changes, chat, drawings).</li><li><b>Hybrid Persistence:</b> MySQL (Sequelize) for structured data; MongoDB for logs and captions; Redis for caching and queues.</li></ul><spacer></spacer><h>The Artificial Intelligence Core</h><p>The technical differentiator of the project was the audio-to-text processing pipeline.</p><ul><li><b>Capture:</b> Audio was captured on the client (Web or Desktop).</li><li><b>Cloud Processing:</b> Direct integration with Azure Cognitive Services.</li><li><b>Smart Fallback:</b> Automatic switching to native Web Speech API in case of failures.</li><li><b>Broadcast:</b> Immediate distribution via WebSocket.</li></ul><spacer></spacer><h>Challenges and Highlights</h><ul><li><b>Synchronization:</b> Ensuring real-time collaborative drawing.</li><li><b>Desktop UX:</b> Creating windows \"invisible\" to the mouse but visible to the eyes with Electron.</li><li><b>DevOps:</b> Automated CI/CD, Docker, and orchestration on AWS.</li></ul>"
-      },
-      "wind-energy": {
-        "description": "<h>About the Project</h><p>Developed as a college study project in C++, this software was designed to conduct viability studies and implementation planning for wind farms. Acting as a strategic engineering tool, the system calculates the energy efficiency of different terrains, focusing not just on \"where\" to place turbines, but \"how much\" the land can yield.</p><spacer></spacer><h>Engineering and Algorithms</h><p>The project solves geometric optimization and physics problems:</p><ul><li><b>Packing Algorithms:</b> Mathematical implementation to maximize the number of turbines in irregular terrains (Trapezoids and Triangles).</li><li><b>Applied Physics:</b> Application of formulas such as the Betz Limit and air density calculations to transform raw wind data into precise electrical power predictions.</li></ul><spacer></spacer><h>Technical Highlights</h>"
-      },
-      "scaling-x": {
-        "description": "<h>About the Project</h><p>As a Freelance Brand Designer, I developed the comprehensive visual identity for Scaling-X. The project translates the values of <b>Commitment and Growth</b> into a modern graphic language, centering on the company's mission: to be the cloud partner that empowers clients to reach their best version.</p><spacer></spacer><h>Visual Identity & Colors</h><p>The palette was carefully selected to balance vibrancy with minimalist professionalism:</p><ul><li><b>ScalingX Blue (#01ACE0):</b> A vibrant and distinct color evoking innovation.</li><li><b>Deep Black (#01001F) & White:</b> The contrast that brings elegance, seriousness, and modernity.</li></ul><spacer></spacer><h>Typography & Logotype</h><p>Every textual detail was crafted to communicate stability and future:</p><ul><li><b>Dubai Font:</b> Chosen for its symmetry and modern strokes, emphasizing the brand's innovative nature.</li><li><b>Wordmark:</b> A strong logo that symbolizes scalability, reaffirming the commitment to continuous growth.</li></ul>"
-      },
-      "maincore": {
-        "description": "<h>About the Project</h><p>In this freelance project, I was responsible for the UX/UI Design and Web Development of the corporate portal for Maincore. The goal was to create a modern, fast, and SEO-optimized digital platform capable of showcasing complex products and effectively capturing qualified leads.</p><spacer></spacer><h>My Role</h><p>I served as the Frontend Developer and Designer, responsible for the pixel-perfect interface implementation and code architecture. The focus was on transforming the design system into a high-fidelity, high-performance web application.</p><spacer></spacer><h>Implementation Highlights</h><ul><li><b>Architecture:</b> Adoption of Compound Component patterns to facilitate reuse and maintenance.</li><li><b>Enhanced UX:</b> Rich visual feedback, notifications via react-toastify, and complex form validations with Formik.</li><li><b>Quality & Testing:</b> Unit test coverage using Jest and React Testing Library.</li></ul>"
-      }
-    }
+    "eyebrow": "Projects",
+    "title": "From the problem to the deploy",
+    "subtitle": "Context, technical decision, and what changed afterwards.",
+    "others": "Others",
+    "case": "Read the case",
+    "moreTechnologies": "{count, plural, one {# more technology} other {# more technologies}}",
+    "present": "present",
+    "link": {
+      "repository": "repository",
+      "behance": "Behance",
+      "live": "live site",
+      "linkedin": "the company on LinkedIn"
+    },
+    "seal": {
+      "timeline": "also in the timeline",
+      "open": "open source",
+      "closed": "closed source"
+    },
+    "kind": {
+      "product": "startup",
+      "client-work": "client work",
+      "personal": "personal",
+      "study": "study",
+      "branding": "branding"
+    },
+    "rangeJoiner": "to"
   },
   "Experience": {
-    "title": "Explore my journey",
-    "experiences": {
-      "bees-tech-lead": {
-        "role": "Tech Lead",
-        "description": "Leading global platforms standardization (Grow, Force, Control Tower). Architected BFFs with NestJS/Clean Arch, defined architectural patterns, and scaled the ecosystem with Micro-frontends across 22 countries."
-      },
-      "bees-senior": {
-        "role": "Senior Software Engineer",
-        "description": "Boosted sales interactions by engineering the Auto Dialer with React & WebSockets. Led the migration to Micro-frontends, cutting deployment time from >1h to minutes."
-      },
-      "aurem": {
-        "role": "Founder & Software Engineer",
-        "description": "Founded an inclusive real-time captioning startup (Santander Prize Winner). Leveraged the Web Speech API for low-latency captioning and WebSockets for real-time synchronization, serving 1,000+ students and scaling via AWS/Docker."
-      },
-      "verzel": {
-        "role": "UX Designer",
-        "description": "Bridged design and engineering for internal company projects. Designed developer-friendly Figma interfaces with Auto Layout and created Design Systems to streamline handoff and ensure accurate React implementation."
-      },
-      "neoenergia": {
-        "role": "Software Developer Intern",
-        "description": "Digitized internal workflows by building custom React/TypeScript dashboards. Maintained Node.js/SQL backends."
-      }
-    }
+    "eyebrow": "Career",
+    "title": "From intern to architect",
+    "subtitle": "Eight years of branches. One merge at a time.",
+    "joiner": "to",
+    "present": "present",
+    "root": "{date} · first line",
+    "caseLink": "read the case"
   },
   "Skills": {
-    "title": "Building software that solves real problems with clean architecture and modern tools",
-    "learning": "learning",
-    "categories": {
-      "frontend": {
-        "title": "frontend",
-        "description": "Development of modern and responsive web interfaces. Experience with SPAs, SSR, complex state management, automated testing, and API integration.",
-        "stacks": {
-          "javascript": {
-            "name": "javascript",
-            "description": "Essential language for web development. Used to create interactivity, manipulate the DOM, and build complete applications on both frontend and backend."
-          },
-          "typescript": {
-            "name": "typescript",
-            "description": "JavaScript superset adding static typing. Improves code quality, facilitates refactoring, and prevents errors during development."
-          },
-          "react": {
-            "name": "react",
-            "description": "Library for building interfaces. Uses reusable components, virtual DOM, hooks for state and lifecycle. Ideal for SPAs and complex applications."
-          },
-          "nextjs": {
-            "name": "nextjs",
-            "description": "React framework with hybrid rendering (SSR, SSG, ISR). Image optimization, code splitting, file-system based routing, and better SEO."
-          },
-          "angular": {
-            "name": "angular",
-            "description": "Complete TypeScript framework for enterprise applications. Includes dependency injection, RxJS for reactive programming, and robust CLI."
-          },
-          "redux": {
-            "name": "redux",
-            "description": "Global state management library. Implements Flux pattern with centralized store, actions, and reducers for applications with complex state."
-          },
-          "react-query": {
-            "name": "react-query",
-            "description": "Server state management. Intelligent caching, automatic synchronization, background refetching. Simplifies data fetching and reduces boilerplate."
-          },
-          "html": {
-            "name": "html",
-            "description": "Markup language for web content structuring. Semantic tags improve accessibility and SEO. Fundamental base for any web application."
-          },
-          "css": {
-            "name": "css",
-            "description": "Styling language for visual page control. Mastery of Flexbox and Grid for responsive layouts, animations, and modern techniques."
-          },
-          "tailwind": {
-            "name": "tailwind",
-            "description": "Utility-first CSS framework speeding up development. Pre-defined classes, consistent design system, and automatic purging of unused CSS."
-          },
-          "sass": {
-            "name": "sass",
-            "description": "CSS preprocessor with variables, nesting, mixins, and functions. Organizes styles loosely and facilitates maintenance in large projects."
-          },
-          "styled-components": {
-            "name": "styled-components",
-            "description": "CSS-in-JS library for React. Scoped styles per component, dynamic theme support, and TypeScript. Eliminates class name conflicts."
-          },
-          "vite": {
-            "name": "vite",
-            "description": "Modern ESM-based build tool. Instant HMR, optimized build with Rollup, and native TypeScript support. Replaces Webpack for superior speed."
-          },
-          "axios": {
-            "name": "axios",
-            "description": "Promise-based HTTP client. Offers interceptors, request cancellation, automatic JSON transformation, and structured error handling."
-          },
-          "figma": {
-            "name": "figma",
-            "description": "Collaborative interface design tool. Creation of interactive prototypes, design systems, and reusable components."
-          },
-          "storybook": {
-            "name": "storybook",
-            "description": "Development and documentation of isolated UI components. Tests components in different states and creates living style guides."
-          },
-          "jest": {
-            "name": "jest",
-            "description": "Complete JavaScript testing framework. Assertions, mocks, spies, coverage, and snapshot testing. For unit and integration tests."
-          },
-          "vitest": {
-            "name": "vitest",
-            "description": "Ultra-fast testing framework compatible with Jest. Integrated with Vite, parallel execution, HMR for tests, and zero config."
-          },
-          "testing-library": {
-            "name": "testing-library",
-            "description": "Testing focused on user behavior. Tests components as users interact, promotes accessibility, and avoids implementation dependence."
-          },
-          "cypress": {
-            "name": "cypress",
-            "description": "End-to-end testing framework in real browser. Time-travel debugging, automatic screenshots, and intuitive API. Tests complete application flows."
-          },
-          "msw": {
-            "name": "msw",
-            "description": "Mock Service Worker for intercepting network requests. Simulates APIs during development and tests without modifying code. Works in browser and Node.js."
-          },
-          "eslint": {
-            "name": "eslint",
-            "description": "Static code analysis for JavaScript/TypeScript. Identifies problems, enforces standards, prevents bugs, and maintains consistency. Integrates with editors and CI/CD."
-          },
-          "electron": {
-            "name": "electron",
-            "description": "Framework for cross-platform desktop applications using web technologies. Combines Chromium and Node.js, access to native OS APIs."
-          }
-        }
-      },
-      "backend": {
-        "title": "backend",
-        "description": "Development of scalable APIs and microservices. Experience with RESTful architecture, authentication, databases, and integration tests.",
-        "stacks": {
-          "nodejs": {
-            "name": "nodejs",
-            "description": "JavaScript server-side runtime on V8. Asynchronous and non-blocking execution, ideal for RESTful APIs, microservices, and high concurrency services."
-          },
-          "java": {
-            "name": "java",
-            "description": "Object-oriented language for enterprise systems. Used in corporate applications, Spring Boot microservices, and systems requiring performance."
-          },
-          "nestjs": {
-            "name": "nestjs",
-            "description": "Progressive Node.js framework inspired by Angular. Modular architecture with dependency injection and TypeScript decorators. Ideal for scalable APIs."
-          },
-          "express": {
-            "name": "express",
-            "description": "Minimalist and flexible web framework for Node.js. Robust routing system, customizable middlewares. Base for fast and performant REST APIs."
-          },
-          "prisma": {
-            "name": "prisma",
-            "description": "Next-gen type-safe ORM with declarative schema. Automatic migrations, typed client preventing errors, and Prisma Studio for data visualization."
-          },
-          "postgresql": {
-            "name": "postgresql",
-            "description": "Advanced open-source relational database. Support for JSON, full-text search, ACID transactions, and complex indexes. Ideal for data integrity."
-          },
-          "mysql": {
-            "name": "mysql",
-            "description": "Popular relational database management system. Optimized performance for reading, master-slave replication. Ideal for high-traffic web applications."
-          },
-          "sql-server": {
-            "name": "sql-server",
-            "description": "Microsoft relational database for enterprise environments. Integration with Azure, advanced analytics, high availability, and integrated BI tools."
-          },
-          "mongodb": {
-            "name": "mongodb",
-            "description": "Document-oriented NoSQL database. Flexible schema with JSON/BSON, horizontal scalability. Ideal for unstructured data and rapid iteration."
-          },
-          "rest-api": {
-            "name": "rest-api",
-            "description": "Architectural style for web APIs using HTTP. Design of RESTful endpoints, correct use of HTTP verbs, status codes, and versioning."
-          },
-          "jwt": {
-            "name": "jwt",
-            "description": "Standard for stateless authentication based on tokens. Encodes user claims in signed token, distributed authentication without server session."
-          },
-          "oauth2": {
-            "name": "oauth2",
-            "description": "Authorization framework for secure access delegation. Implementation of flows, integration with external providers (Google, GitHub), and resource protection."
-          },
-          "swagger": {
-            "name": "swagger",
-            "description": "Tool for documentation and design of REST APIs. OpenAPI specification, automatic generation of interactive documentation, and contract validation."
-          },
-          "jest": {
-            "name": "jest",
-            "description": "Testing framework for Node.js services. Unit tests of controllers and services, dependency mocking, integration tests, and coverage reports."
-          },
-          "wiremock": {
-            "name": "wiremock",
-            "description": "Mock HTTP server to simulate external APIs. Response stubbing, request matching, and simulation of delays and failures. Essential for integration tests."
-          },
-          "robot-framework": {
-            "name": "robot-framework",
-            "description": "Generic test automation framework based on keywords. Readable syntax, extensible libraries, acceptance testing, and detailed HTML reports."
-          }
-        }
-      },
-      "mobile": {
-        "title": "mobile",
-        "description": "Development of cross-platform mobile applications with React Native. Experience in iOS and Android apps with navigation, native APIs, and optimization.",
-        "stacks": {
-          "react-native": {
-            "name": "react-native",
-            "description": "Framework for cross-platform native mobile development. JavaScript code renders native components, device API access, and hot reload."
-          },
-          "expo": {
-            "name": "expo",
-            "description": "Platform and tools for React Native. Development without Xcode/Android Studio, over-the-air updates, pre-configured native libraries, and cloud build."
-          },
-          "react-navigation": {
-            "name": "react-navigation",
-            "description": "Navigation library for React Native. Stack navigator, tab navigation, drawer, deep linking, and custom transitions. Industry standard for mobile routing."
-          },
-          "styled-components": {
-            "name": "styled-components",
-            "description": "CSS-in-JS styling adapted for React Native. Dynamic themes, prop-based styles, and maintenance of styles co-located with components."
-          },
-          "ios": {
-            "name": "ios",
-            "description": "Development and publication of apps for Apple ecosystem. Provisioning profiles configuration, App Store Connect, and iOS interface guidelines."
-          },
-          "android": {
-            "name": "android",
-            "description": "Development and publication of Android apps. Gradle configuration, signed APK/AAB generation, Google Play Console, and optimization for different screen sizes."
-          },
-          "jest": {
-            "name": "jest",
-            "description": "Unit and integration testing for React Native. Native module mocking, component snapshot testing, and business logic/hooks testing."
-          }
-        }
-      },
-      "arquitetura": {
-        "title": "arquitetura",
-        "description": "Design of scalable and maintainable systems. Experience in architectural patterns, micro-frontends, DDD, and modularization strategies for complex applications.",
-        "stacks": {
-          "clean-architecture": {
-            "name": "clean-architecture",
-            "description": "Architecture in independent layers (Entities, Use Cases, Adapters). Decoupling of business rules from infrastructure, testability, and maintainability."
-          },
-          "ddd": {
-            "name": "ddd",
-            "description": "Domain-Driven Design for complex system modeling. Ubiquitous language, bounded contexts, aggregates, and domain events. Alignment between code and domain."
-          },
-          "micro-frontends": {
-            "name": "micro-frontends",
-            "description": "Architecture dividing frontend application into independent modules. Autonomous teams, independent deploy, and heterogeneous technologies."
-          },
-          "module-federation": {
-            "name": "module-federation",
-            "description": "Webpack 5 technique for dynamic code sharing. Remote module loading, independent versioning, and advanced code splitting."
-          },
-          "monorepo": {
-            "name": "monorepo",
-            "description": "Strategy of organizing multiple projects in a single repository. Tools like Nx and Turborepo, code sharing, and unified versioning."
-          },
-          "design-patterns": {
-            "name": "design-patterns",
-            "description": "Reusable solutions to common design problems. Creational (Factory), structural (Adapter), and behavioral (Observer, Strategy) patterns."
-          },
-          "performance": {
-            "name": "performance",
-            "description": "Optimization of Core Web Vitals metrics (LCP, FID, CLS). Code splitting, lazy loading, image optimization, cache strategies, and Web Workers."
-          },
-          "mvvm": {
-            "name": "mvvm",
-            "description": "Model-View-ViewModel for separation of concerns. Separation between logic (ViewModel), interface (View), and data (Model). Bidirectional binding."
-          }
-        }
-      },
-      "devops": {
-        "title": "devops",
-        "description": "Process automation, containerization, CI/CD, and cloud computing. Experience with automated pipelines, infrastructure as code, and multi-platform deployment.",
-        "stacks": {
-          "git": {
-            "name": "git",
-            "description": "Distributed version control system. Git Flow for branch management, conventional commits, interactive rebase, and conflict resolution."
-          },
-          "github-actions": {
-            "name": "github-actions",
-            "description": "CI/CD platform integrated with GitHub. Automated workflows with YAML, matrix builds, dependency caching, and automatic deploy."
-          },
-          "azure-pipelines": {
-            "name": "azure-pipelines",
-            "description": "Azure DevOps CI/CD service. YAML or classic pipelines, multi-stage deployments, manual approvals, and integration with Azure services."
-          },
-          "docker": {
-            "name": "docker",
-            "description": "Application containerization platform. Creation of lightweight images, multi-stage Dockerfile, Docker Compose for local environments, and process isolation."
-          },
-          "kubernetes": {
-            "name": "kubernetes",
-            "description": "Container orchestration system in production. Deployments, services, ingress, auto-scaling, self-healing, and rolling updates via Helm charts."
-          },
-          "terraform": {
-            "name": "terraform",
-            "description": "Declarative Infrastructure as Code tool. Multi-cloud provisioning with HCL, state management, reusable modules, and secure plan/apply."
-          },
-          "aws": {
-            "name": "aws",
-            "description": "Amazon cloud computing platform. Services like EC2, S3, Lambda, RDS, CloudFront, and API Gateway. Scalable and serverless application deployment."
-          },
-          "azure": {
-            "name": "azure",
-            "description": "Microsoft cloud computing platform. App Service, Functions, Blob Storage, SQL Database, CDN, and DevOps. Integration with Microsoft ecosystem."
-          },
-          "vercel": {
-            "name": "vercel",
-            "description": "Deploy platform optimized for frontend and Next.js. Automatic deploy via Git, edge functions, preview deployments, global CDN, and analytics."
-          },
-          "firebase": {
-            "name": "firebase",
-            "description": "Google Backend-as-a-Service for rapid development. Firestore, Authentication, Cloud Functions, Hosting, and Storage. Ideal for MVPs and real-time apps."
-          },
-          "sonarqube": {
-            "name": "sonarqube",
-            "description": "Continuous code quality analysis platform. Bug detection, vulnerabilities, code smells, test coverage. Integration with CI/CD."
-          },
-          "ci-cd": {
-            "name": "ci-cd",
-            "description": "Continuous integration and delivery practices. Build, test, and deploy automation, rapid feedback, secure rollback, and deployment strategies (blue-green, rolling)."
-          }
-        }
-      }
-    }
+    "title": "Building software that solves real problems",
+    "eyebrow": "Stack",
+    "subtitle": "Highlighted is what I use day to day.",
+    "more": "+{count} more",
+    "less": "less"
   },
   "Footer": {
+    "eyebrow": "Contact",
+    "title": "Open to talking.",
+    "description": "A role, mentorship, or an idea you can't stop thinking about. Get in touch.",
+    "linkedin": "LinkedIn",
     "nav": {
+      "label": "Footer navigation",
       "about": "About",
       "skills": "Skills",
-      "works": "Works",
-      "experience": "Journey",
+      "works": "Projects",
+      "experience": "Career",
       "contact": "Contact"
     },
-    "madeBy": "Created by Bruno Costa",
+    "madeByPrefix": "Made with",
+    "madeBySuffix": "by Bruno",
+    "madeByAccessible": "Made with care by Bruno",
     "copyright": "© 2026 Bruno Costa",
     "privacy": "Privacy notice"
   },
@@ -433,5 +176,19 @@
       "title": "Your choices",
       "description": "You can reject, select categories, or withdraw permission at any time through Privacy settings in the footer. Withdrawal stops new transmissions and removes local analytics identifiers."
     }
+  },
+  "Case": {
+    "back": "Projects",
+    "problem": "The problem",
+    "built": "What I built",
+    "decisions": "Technical decisions",
+    "result": "Result",
+    "retrospective": "What I would do differently today",
+    "role": "role",
+    "period": "period",
+    "stack": "stack",
+    "crossLink": "See it as a job",
+    "previous": "← previous",
+    "next": "next →"
   }
 }

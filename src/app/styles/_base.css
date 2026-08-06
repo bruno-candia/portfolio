@@ -1,0 +1,127 @@
+/*
+ * Document base. Tailwind Preflight is the reset; this file only carries what
+ * Preflight does not.
+ *
+ * The previous file duplicated Preflight outside any cascade layer, and
+ * unlayered rules beat `@layer utilities`, which silently disabled every
+ * Tailwind margin utility in the project.
+ */
+
+@layer base {
+  [data-reading-content] {
+    --a11y-text-scale: 1;
+    --font-reading: var(--font-geist);
+  }
+
+  html[data-text-scale='125'] [data-reading-content] {
+    --a11y-text-scale: 1.25;
+  }
+
+  html[data-text-scale='150'] [data-reading-content] {
+    --a11y-text-scale: 1.5;
+  }
+
+  html[data-text-scale='175'] [data-reading-content] {
+    --a11y-text-scale: 1.75;
+  }
+
+  html[data-text-scale='200'] [data-reading-content] {
+    --a11y-text-scale: 2;
+  }
+
+  html[data-reading-font='alternative'] [data-reading-content] {
+    --font-reading: Verdana, Arial, sans-serif;
+    font-family: var(--font-reading);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    /* anchor targets must clear the sticky header */
+    scroll-padding-top: var(--header-offset, 104px);
+    /* allows animating height to and from `auto` */
+    interpolate-size: allow-keywords;
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    overflow-wrap: break-word;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-wrap: balance;
+  }
+
+  ::selection {
+    background-color: var(--ink);
+    color: var(--ink-inverse);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 3px;
+  }
+
+  /* Covers anything added later, not just today's decorative loops. */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  html[data-motion='reduced'] {
+    scroll-behavior: auto !important;
+  }
+
+  html[data-motion='reduced'] *,
+  html[data-motion='reduced'] *::before,
+  html[data-motion='reduced'] *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/*
+ * Frozen, the black hole loses the one thing it is there to say. It leaves
+ * instead of standing still, and the layout closes over it.
+ *
+ * Outside every layer on purpose: the band carries a responsive display
+ * utility, and a rule inside `@layer base` loses to `@layer utilities` however
+ * specific it is.
+ */
+@media (prefers-reduced-motion: reduce) {
+  [data-motion-only] {
+    display: none;
+  }
+}
+
+html[data-motion='reduced'] [data-motion-only] {
+  display: none;
+}

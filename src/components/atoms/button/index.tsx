@@ -9,6 +9,11 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
+        // design system pair
+        primary:
+          'bg-ink text-ink-inverse hover:bg-white transition-colors duration-200',
+        surface:
+          'bg-surface text-ink border border-line-strong hover:bg-surface-hi transition-colors duration-200',
         default:
           'border border-white text-white font-medium rounded-full hover:bg-white hover:text-black transition-colors duration-300',
         destructive:
@@ -22,6 +27,7 @@ const buttonVariants = cva(
         link: 'text-primary underline-offset-4 hover:underline',
       },
       size: {
+        ds: 'h-11 px-6 py-3 rounded-md ds-small',
         default: 'h-9 px-4 py-2 has-[>svg]:px-3',
         sm: 'h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5',
         lg: 'h-10 rounded-md px-6 has-[>svg]:px-4',

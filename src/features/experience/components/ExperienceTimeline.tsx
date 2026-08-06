@@ -1,47 +1,66 @@
 'use client';
 
-import { useRef } from 'react';
-import { experiences } from '../data/experience';
-import { ExperienceCard } from './ExperienceCard';
-import { useExperienceScroll } from '../hooks/useExperienceScroll';
+import { useCallback, useRef } from 'react';
 
-export function ExperienceTimeline() {
-  const lineEndRef = useRef<HTMLDivElement>(null);
-  const { containerRef, progressRef, visibleCards } = useExperienceScroll(
-    experiences.length,
-    lineEndRef
-  );
+import type { Work } from '@/lib/resume';
+import { CareerGraph } from './CareerGraph';
+import { ExperienceEntry } from './ExperienceEntry';
+import { useCareerGraph } from '../hooks/useCareerGraph';
+import { useGraphDraw } from '../hooks/useGraphDraw';
+
+export function ExperienceTimeline({
+  jobs,
+  periods,
+  rootLabel,
+}: {
+  jobs: Work[];
+  periods: string[];
+  rootLabel: string;
+}) {
+  const figure = useRef<HTMLDivElement>(null);
+  const { branches, nodes, height } = useCareerGraph(jobs, figure);
+  useGraphDraw(figure);
+
+  // Pointer handling writes attributes instead of state, so hovering the list
+  // never re-renders it while the graph is drawing.
+  const light = useCallback((id?: string) => {
+    const element = figure.current;
+    if (!element) return;
+
+    element.dataset.dimmed = id ? 'true' : 'false';
+    for (const group of element.querySelectorAll<SVGGElement>(
+      '[data-branch]'
+    )) {
+      // Matched on the jobs riding the branch, not on its name: the second
+      // BEES role is on the branch named after the first one.
+      const carries = group.dataset.jobs?.split(' ').includes(id ?? '');
+      group.dataset.lit = carries ? 'true' : 'false';
+    }
+  }, []);
 
   return (
-    <div ref={containerRef} className="relative w-full flex justify-center">
-      <div className="relative w-full max-w-[1080px] px-6">
-        <div
-          ref={lineEndRef}
-          className="absolute left-1/2 top-0 bottom-[30vh] w-px -translate-x-1/2"
-        >
-          <div className="absolute inset-0 bg-zinc-800" />
-          <div
-            ref={progressRef}
-            className="absolute top-0 left-0 w-full bg-white transition-none"
-            style={{ height: '0%' }}
-          />
-        </div>
+    <div
+      ref={figure}
+      className="graph-figure relative mt-14 pb-16 pl-[56px] md:mt-[106px] md:pb-20 md:pl-[100px]"
+      onPointerLeave={() => light(undefined)}
+    >
+      <CareerGraph
+        branches={branches}
+        nodes={nodes}
+        height={height}
+        rootLabel={rootLabel}
+      />
 
-        <div className="relative flex flex-col">
-          {experiences.map((experience, index) => (
-            <div
-              key={experience.id}
-              className="min-h-[60vh] flex items-center justify-center"
-            >
-              <ExperienceCard
-                experience={experience}
-                index={index}
-                isVisible={visibleCards[index]}
-              />
-            </div>
-          ))}
-        </div>
-      </div>
+      <ol className="flex flex-col gap-9 md:gap-12">
+        {jobs.map((job, index) => (
+          <ExperienceEntry
+            key={job.id}
+            job={job}
+            period={periods[index]}
+            onPointerEnter={() => light(job.id)}
+          />
+        ))}
+      </ol>
     </div>
   );
 }

@@ -2,31 +2,60 @@ import type { Metadata } from 'next';
 import { NextFontWithVariable } from 'next/dist/compiled/@next/font';
 import localFont from 'next/font/local';
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages, getTranslations } from 'next-intl/server';
+import {
+  getMessages,
+  getTranslations,
+  setRequestLocale,
+} from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 
 import '../globals.css';
 
-import { Geist_Mono } from 'next/font/google';
+import { Geist, Geist_Mono } from 'next/font/google';
 import { ConsentProvider } from '@/features/privacy/ConsentProvider';
+
+const geist = Geist({
+  subsets: ['latin'],
+  variable: '--font-geist',
+});
 
 const geistMono = Geist_Mono({
   subsets: ['latin'],
   variable: '--font-geist-mono',
 });
 
+// Só a logo usa a fonte graffiti.
 const graffiti: NextFontWithVariable = localFont({
   src: '../fonts/adrip1.woff2',
   variable: '--font-graffiti',
 });
 
-const cabinetGrotesk: NextFontWithVariable = localFont({
-  src: '../fonts/CabinetGrotesk.woff2',
-  variable: '--font-cabinet-grotesk',
-});
-
 const BASE_URL = 'https://brunocandia.com';
+
+const ACCESSIBILITY_BOOTSTRAP_SCRIPT = `
+(() => {
+  try {
+    const raw = localStorage.getItem('portfolio-accessibility-preferences')
+    if (!raw) return
+    const value = JSON.parse(raw)
+    const root = document.documentElement
+    if (['100', '125', '150', '175', '200'].includes(value.textScale)) root.dataset.textScale = value.textScale
+    if (['system', 'reduced'].includes(value.motion)) root.dataset.motion = value.motion
+    if (['standard', 'alternative'].includes(value.readingFont)) root.dataset.readingFont = value.readingFont
+    if (['standard', 'high'].includes(value.contrast)) root.dataset.contrast = value.contrast
+  } catch {}
+})()
+`;
+
+/**
+ * Without this pair the whole tree renders on every request: next-intl falls
+ * back to the dynamic locale lookup unless the route is enumerated and the
+ * locale is handed to it up front.
+ */
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
 
 export async function generateMetadata({
   params,
@@ -112,6 +141,8 @@ export default async function RootLayout({
     notFound();
   }
 
+  setRequestLocale(locale);
+
   const messages = await getMessages();
   const t = await getTranslations({ locale, namespace: 'Metadata' });
 
@@ -131,7 +162,7 @@ export default async function RootLayout({
     description: t('description'),
     sameAs: [
       'https://github.com/bruno-candia',
-      'https://www.linkedin.com/in/bruno-candia',
+      'https://www.linkedin.com/in/bruno-costa-candia',
       'https://www.instagram.com/brunocandia/',
       'https://www.behance.net/brunocostac3',
     ],
@@ -146,10 +177,13 @@ export default async function RootLayout({
   };
 
   return (
-    <html lang={locale} className={'dark'}>
+    <html lang={locale} className={'dark'} suppressHydrationWarning>
       <body
-        className={`${graffiti.variable} ${cabinetGrotesk.variable} ${geistMono.variable} antialiased`}
+        className={`${geist.variable} ${geistMono.variable} ${graffiti.variable} antialiased`}
       >
+        <script
+          dangerouslySetInnerHTML={{ __html: ACCESSIBILITY_BOOTSTRAP_SCRIPT }}
+        />
         <NextIntlClientProvider messages={messages}>
           <ConsentProvider>
             <script

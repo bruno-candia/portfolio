@@ -1,10 +1,7 @@
-'use client';
-
 import { useTranslations } from 'next-intl';
 
 export function FooterNav() {
   const t = useTranslations('Footer.nav');
-
   const links = [
     { label: t('about'), href: '#about' },
     { label: t('skills'), href: '#skills' },
@@ -14,12 +11,15 @@ export function FooterNav() {
   ];
 
   return (
-    <nav className="flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-12">
+    <nav
+      aria-label={t('label')}
+      className="flex flex-wrap items-center gap-x-6 gap-y-3 md:justify-center md:gap-8"
+    >
       {links.map((link) => (
         <a
-          key={link.label}
+          key={link.href}
           href={link.href}
-          className="text-zinc-400 hover:text-white transition-colors text-base font-light"
+          className="ds-small inline-flex min-h-11 items-center text-ink-3 transition-colors hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink"
         >
           {link.label}
         </a>

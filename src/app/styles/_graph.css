@@ -1,0 +1,96 @@
+/*
+ * The career graph draws itself with two inputs and no JavaScript per frame:
+ * `--draw`, written once per animation frame while the section scrolls, and
+ * `data-drawn`, set once per entry when it has been seen.
+ *
+ * Every path carries `pathLength="1"`, so a dash offset is a fraction of the
+ * path and the same rule works for a branch of any length.
+ */
+
+.graph-trunk,
+.graph-branch {
+  stroke-dasharray: 1;
+}
+
+.graph-trunk {
+  stroke-dashoffset: calc(1 - var(--draw, 0));
+  opacity: 0.5;
+}
+
+.graph-branch {
+  stroke-dashoffset: 1;
+  opacity: 0.5;
+  transition:
+    stroke-dashoffset 620ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    opacity 180ms linear,
+    stroke-width 180ms linear;
+}
+
+.graph-node {
+  transform: scale(0);
+  transform-origin: center;
+  transform-box: fill-box;
+  transition: transform 140ms cubic-bezier(0.2, 0.8, 0.2, 1) 420ms;
+}
+
+[data-branch][data-drawn='true'] .graph-branch {
+  stroke-dashoffset: 0;
+}
+
+.graph-node[data-drawn='true'] {
+  transform: scale(1);
+}
+
+/* The current job never closes at the top: it fades out of the section. */
+.graph-open {
+  mask-image: linear-gradient(to bottom, transparent 0, black 72px);
+}
+
+/*
+ * Hover raises the entry being read and drops the rest. Matching the entry to
+ * its branch cannot be done in CSS alone, since they are in different
+ * subtrees, so the pointer handler writes `data-lit` on the branch. It writes
+ * an attribute rather than React state: nothing here re-renders.
+ */
+.graph-figure[data-dimmed='true'] .graph-branch {
+  opacity: 0.15;
+}
+
+.graph-figure [data-lit='true'] .graph-branch {
+  opacity: 1;
+  stroke-width: 3;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .graph-trunk {
+    stroke-dashoffset: 0;
+  }
+
+  .graph-branch {
+    stroke-dashoffset: 0;
+    transition:
+      opacity 180ms linear,
+      stroke-width 180ms linear;
+  }
+
+  .graph-node {
+    transform: scale(1);
+    transition: none;
+  }
+}
+
+html[data-motion='reduced'] .graph-trunk,
+html[data-motion='reduced'] .graph-branch {
+  stroke-dashoffset: 0;
+}
+
+html[data-motion='reduced'] .graph-branch {
+  transition:
+    opacity 180ms linear,
+    stroke-width 180ms linear;
+}
+
+html[data-motion='reduced'] .graph-node {
+  transform: scale(1);
+  transition: none;
+}

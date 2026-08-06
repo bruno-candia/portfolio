@@ -11,6 +11,9 @@ export default defineConfig({
     alias: {
       '@': resolve(__dirname, './src'),
     },
-    exclude: ['**/node_modules/**', '**/dist/**', '**/e2e/**'],
+    // A background agent checks out a worktree under .claude, which carries
+    // its own copy of the suite. Without this the run scores the other
+    // branch's code as if it were this one.
+    exclude: ['**/node_modules/**', '**/dist/**', '**/e2e/**', '**/.claude/**'],
   },
 });

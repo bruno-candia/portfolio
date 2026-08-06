@@ -28,6 +28,11 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Playwright writes these on a failed run, and linting a bundled report
+    // fails the whole command locally while CI never sees it.
+    "playwright-report/**",
+    "test-results/**",
+    ".claude/**",
   ]),
 ]);
 

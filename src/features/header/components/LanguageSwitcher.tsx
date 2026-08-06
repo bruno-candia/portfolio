@@ -7,21 +7,25 @@ export function LanguageSwitcher() {
   const { languages, locale, pathname } = useSidebarViewModel();
 
   return (
-    <div className="hidden md:flex fixed right-0 top-1/2 -translate-y-1/2 z-50 flex-col">
-      {languages.map((lang) => (
-        <Link
-          key={lang.code}
-          href={pathname}
-          locale={lang.code as 'pt' | 'en'}
-          className={`px-3 py-2 text-xs font-bold uppercase tracking-wider transition-all ${
-            locale === lang.code
-              ? 'bg-white text-black'
-              : 'bg-zinc-900/80 text-zinc-400 hover:text-white hover:bg-zinc-800'
-          }`}
-        >
-          {lang.code}
-        </Link>
-      ))}
+    <div className="fixed top-1/2 right-0 z-50 hidden -translate-y-1/2 flex-col md:flex">
+      {languages.map((lang) => {
+        const isActive = locale === lang.code;
+        return (
+          <Link
+            key={lang.code}
+            href={pathname}
+            locale={lang.code as 'pt' | 'en'}
+            aria-current={isActive ? 'true' : undefined}
+            className={`ds-eyebrow px-3 py-2 transition-colors focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-ink ${
+              isActive
+                ? 'bg-ink text-ink-inverse'
+                : 'bg-surface-hi text-ink-2 hover:text-ink'
+            }`}
+          >
+            {lang.code}
+          </Link>
+        );
+      })}
     </div>
   );
 }
