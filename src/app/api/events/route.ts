@@ -68,6 +68,19 @@ export async function POST(request: NextRequest) {
     session_id: event.sessionId,
     engagement_time_msec: 1,
   };
+
+  if (process.env.NODE_ENV === 'development') {
+    params.debug_mode = 1;
+  }
+
+  if (event.name === 'download_cv') {
+    params.value = 50;
+    params.currency = 'BRL';
+  } else if (event.name === 'click_social') {
+    params.value = 10;
+    params.currency = 'BRL';
+  }
+
   if (event.name === 'page_view') {
     params.page_location = `https://brunocandia.com${event.params.path}`;
   }
