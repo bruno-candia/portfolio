@@ -50,7 +50,12 @@ export function useCareerGraph(
       const laneWidth =
         element.clientWidth < 768 ? LANE_WIDTH.mobile : LANE_WIDTH.desktop;
 
-      const full = element.scrollHeight;
+      // The border box, never `scrollHeight`. The graph is absolutely
+      // positioned inside this element, so `scrollHeight` counts the SVG this
+      // measurement just sized: once the section shrinks, the stale tall SVG
+      // keeps the number up and the branches hang below the footer until a
+      // reload. The box height comes from the entries alone.
+      const full = Math.round(element.getBoundingClientRect().height);
       const graph = buildGraph(
         jobs,
         allocateLanes(jobs),
