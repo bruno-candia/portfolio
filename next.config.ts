@@ -30,7 +30,9 @@ const contentSecurityPolicy = [
   "font-src 'self' data:",
   "connect-src 'self'",
   "manifest-src 'self'",
-  'upgrade-insecure-requests',
+  // No upgrade-insecure-requests: HSTS already forces HTTPS on the domain, and
+  // the directive breaks HTTP-only environments (CI, preview, local prod builds)
+  // because WebKit and Firefox — unlike Chromium — upgrade localhost too.
 ].join('; ');
 
 const securityHeaders = [
