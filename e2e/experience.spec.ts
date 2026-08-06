@@ -43,6 +43,40 @@ test.describe('Career timeline', () => {
     await expect(headings).toHaveText(jobs.map((job) => job.company));
   });
 
+  // It grew every time the section shrank: the measurement counted the SVG it
+  // had just sized, so the branches hung past the footer until a reload.
+  test('the graph follows the section back down', async ({ page }) => {
+    const size = () =>
+      page.evaluate(() => {
+        const figure = document.querySelector('.graph-figure')!;
+        const svg = figure.querySelector('svg')!;
+        return {
+          figure: Math.round(figure.getBoundingClientRect().height),
+          svg: Number(svg.getAttribute('height')),
+        };
+      });
+
+    const scale = (value: string) =>
+      page.evaluate((next) => {
+        document.documentElement.dataset.textScale = next;
+        window.dispatchEvent(
+          new CustomEvent('accessibility-preferences-change')
+        );
+      }, value);
+
+    const start = await size();
+    expect(start.svg).toBe(start.figure);
+
+    await scale('200');
+    await expect
+      .poll(async () => (await size()).svg)
+      .toBeGreaterThan(start.svg);
+
+    await scale('100');
+    await expect.poll(async () => (await size()).svg).toBe(start.svg);
+    expect((await size()).figure).toBe(start.figure);
+  });
+
   test('the graph is decoration, not information', async ({ page }) => {
     const figure = page.locator(
       'main #experience .graph-figure > [aria-hidden]'
