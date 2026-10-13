@@ -27,7 +27,7 @@ resource "sentry_alert" "critical_errors" {
     "existing_high_priority_issue",
   ]
   action_filters = [{
-    logic_type = "any"
+    logic_type = "all"
     actions = [{
       email = {
         target_type      = "issue_owners"
