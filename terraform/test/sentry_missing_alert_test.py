@@ -17,6 +17,10 @@ lock = Path(__file__).resolve().parents[1].joinpath('.terraform.lock.hcl').read_
 selected = re.search(r'provider "registry.terraform.io/jianyuan/sentry"\s*\{\s*version\s*=\s*"([^"\n]+)"', lock)
 assert selected, 'Missing locked Sentry provider'
 version = sys.argv[1] if len(sys.argv) > 1 else selected.group(1)
+# Terraform enumerates saved credential hosts even with a CLI config override.
+# Refuse that environment before launching it; inspect existence only.
+if Path.home().joinpath('.terraform.d/credentials.tfrc.json').exists():
+    raise SystemExit('Run this fixture on a clean runner without saved Terraform credentials')
 requests = []
 
 
