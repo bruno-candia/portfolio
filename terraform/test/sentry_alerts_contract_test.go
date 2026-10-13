@@ -43,6 +43,7 @@ func TestSentryMetricAlertContract(t *testing.T) {
 	assertMatches(t, critical, `"new_high_priority_issue"`, "preserve new high priority trigger")
 	assertMatches(t, critical, `"existing_high_priority_issue"`, "preserve existing high priority trigger")
 	assertMatches(t, critical, `frequency_minutes\s*=\s*30`, "preserve 30 minute frequency")
+	assertMatches(t, critical, `logic_type\s*=\s*"all"`, "empty action filters must permit critical notifications")
 	assertMatches(t, critical, `target_type\s*=\s*"issue_owners"`, "preserve owner notification")
 	assertMatches(t, availability, `comparison\s*=\s*100`, "preserve availability critical threshold")
 	assertMatches(t, availability, `comparison\s*=\s*10`, "preserve availability resolve threshold")
