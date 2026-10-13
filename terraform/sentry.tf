@@ -84,8 +84,9 @@ resource "sentry_metric_monitor" "error_budget_latency" {
 }
 
 resource "sentry_alert" "error_budgets" {
-  organization = var.sentry_org
-  name         = "SLO: Error Budgets"
+  organization      = var.sentry_org
+  name              = "SLO: Error Budgets"
+  frequency_minutes = 60
   monitor_ids = [
     sentry_metric_monitor.error_budget_availability.id,
     sentry_metric_monitor.error_budget_latency.id,
