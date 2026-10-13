@@ -11,87 +11,94 @@ data "sentry_team" "personal" {
   slug         = "personal"
 }
 
-resource "sentry_issue_alert" "critical_errors" {
+# Classic issue rules now use the project's default issue monitor.
+data "sentry_project_error_monitor" "portfolio" {
   organization = var.sentry_org
-  project      = sentry_project.portfolio.id
-  name         = "Alerta: Erros Críticos de Produção"
-  action_match = "any"
-  filter_match = "any"
-  frequency    = 30 # minutos de intervalo entre alertas idênticos
-
-  conditions = jsonencode([
-    {
-      id = "sentry.rules.conditions.high_priority_issue.NewHighPriorityIssueCondition"
-    },
-    {
-      id = "sentry.rules.conditions.high_priority_issue.ExistingHighPriorityIssueCondition"
-    }
-  ])
-
-  actions = jsonencode([
-    {
-      id               = "sentry.mail.actions.NotifyEmailAction"
-      targetType       = "IssueOwners"
-      targetIdentifier = ""
-    }
-  ])
+  project      = sentry_project.portfolio.slug
 }
 
-# ------------------------------------------------------------------------------
-# SLOs & Error Budgets (Fase 2)
-# ------------------------------------------------------------------------------
-
-# Alerta de Disponibilidade (Error Budget)
-# Esgota se a contagem de erros for muito alta nos últimos 60 minutos.
-resource "sentry_metric_alert" "error_budget_availability" {
+resource "sentry_alert" "critical_errors" {
   organization      = var.sentry_org
-  project           = sentry_project.portfolio.id
-  name              = "SLO: Error Budget de Disponibilidade"
-  dataset           = "events"
-  event_types       = ["error"]
-  query             = "event.type:error"
-  aggregate         = "count()"
-  time_window       = 60
-  threshold_type    = 0 # 0 para "above"
-  resolve_threshold = 10
+  name              = "Alerta: Erros Críticos de Produção"
+  monitor_ids       = [data.sentry_project_error_monitor.portfolio.id]
+  frequency_minutes = 30
+  legacy_trigger_conditions = [
+    "new_high_priority_issue",
+    "existing_high_priority_issue",
+  ]
+  action_filters = [{
+    logic_type = "all"
+    actions = [{
+      email = {
+        target_type      = "issue_owners"
+        fallthrough_type = "AllMembers"
+      }
+    }]
+  }]
+}
 
-  trigger {
-    action {
-      type              = "email"
-      target_type       = "team"
-      target_identifier = data.sentry_team.personal.internal_id
-    }
-
-    alert_threshold   = 100
-    resolve_threshold = 10
-    label             = "critical"
-    threshold_type    = 0
+resource "sentry_metric_monitor" "error_budget_availability" {
+  organization = var.sentry_org
+  project      = sentry_project.portfolio.slug
+  name         = "SLO: Error Budget de Disponibilidade"
+  owner = {
+    team_id = data.sentry_team.personal.internal_id
+  }
+  dataset             = "events"
+  event_types         = ["error"]
+  query               = "event.type:error"
+  query_type          = "error"
+  aggregate           = "count()"
+  time_window_seconds = 3600
+  issue_detection     = { type = "static" }
+  condition_group = {
+    logic_type = "any"
+    conditions = [
+      { type = "gt", comparison = 100, condition_result = 75 },
+      { type = "lte", comparison = 10, condition_result = 0 },
+    ]
   }
 }
 
-# Alerta de Performance (Error Budget de Latência / LCP)
-# Esgota se o tempo de P95 de LCP exceder 2500ms (Core Web Vitals - Needs Improvement / Poor limit)
-resource "sentry_metric_alert" "error_budget_latency" {
-  organization      = var.sentry_org
-  project           = sentry_project.portfolio.id
-  name              = "SLO: Error Budget de Latência (LCP)"
-  dataset           = "events_analytics_platform"
-  query             = "is_transaction:true transaction.op:pageload has:measurements.lcp"
-  aggregate         = "p95(measurements.lcp)"
-  time_window       = 60
-  threshold_type    = 0
-  resolve_threshold = 2000
-
-  trigger {
-    action {
-      type              = "email"
-      target_type       = "team"
-      target_identifier = data.sentry_team.personal.internal_id
-    }
-
-    alert_threshold   = 2500
-    resolve_threshold = 2000
-    label             = "critical"
-    threshold_type    = 0
+resource "sentry_metric_monitor" "error_budget_latency" {
+  organization = var.sentry_org
+  project      = sentry_project.portfolio.slug
+  name         = "SLO: Error Budget de Latência (LCP)"
+  owner = {
+    team_id = data.sentry_team.personal.internal_id
   }
+  dataset             = "events_analytics_platform"
+  event_types         = ["transaction"]
+  query               = "is_transaction:true transaction.op:pageload has:measurements.lcp"
+  query_type          = "performance"
+  aggregate           = "p95(measurements.lcp)"
+  time_window_seconds = 3600
+  issue_detection     = { type = "static" }
+  condition_group = {
+    logic_type = "any"
+    conditions = [
+      { type = "gt", comparison = 2500, condition_result = 75 },
+      { type = "lte", comparison = 2000, condition_result = 0 },
+    ]
+  }
+}
+
+resource "sentry_alert" "error_budgets" {
+  organization      = var.sentry_org
+  name              = "SLO: Error Budgets"
+  frequency_minutes = 60
+  monitor_ids = [
+    sentry_metric_monitor.error_budget_availability.id,
+    sentry_metric_monitor.error_budget_latency.id,
+  ]
+  trigger_conditions = [{ first_seen_event = {} }, { reappeared_event = {} }, { regression_event = {} }]
+  action_filters = [{
+    logic_type = "all"
+    actions = [{
+      email = {
+        target_type = "team"
+        target_id   = data.sentry_team.personal.internal_id
+      }
+    }]
+  }]
 }
