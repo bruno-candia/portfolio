@@ -91,7 +91,7 @@ resource "sentry_alert" "error_budgets" {
     sentry_metric_monitor.error_budget_availability.id,
     sentry_metric_monitor.error_budget_latency.id,
   ]
-  trigger_conditions = [{ first_seen_event = {} }, { reappeared_event = {} }]
+  trigger_conditions = [{ first_seen_event = {} }, { reappeared_event = {} }, { regression_event = {} }]
   action_filters = [{
     logic_type = "all"
     actions = [{

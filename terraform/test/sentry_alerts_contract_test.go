@@ -37,6 +37,7 @@ func TestSentryMetricAlertContract(t *testing.T) {
 	alerts := resourceBlock(t, string(config), `resource "sentry_alert" "error_budgets"`)
 	assertMatches(t, alerts, `sentry_metric_monitor\.error_budget_availability\.id`, "alert must connect availability")
 	assertMatches(t, alerts, `sentry_metric_monitor\.error_budget_latency\.id`, "alert must connect latency")
+	assertMatches(t, alerts, `regression_event`, "notify again after a recovered monitor breaches its threshold")
 	assertMatches(t, alerts, `target_type\s*=\s*"team"`, "alert must email team")
 	assertMatches(t, alerts, `target_id\s*=\s*data\.sentry_team\.personal\.internal_id`, "alert must target personal team")
 	critical := resourceBlock(t, string(config), `resource "sentry_alert" "critical_errors"`)
