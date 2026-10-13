@@ -74,6 +74,9 @@ resource "sentry_issue_alert" "fixture" {
                             instances=[dict(schema_version=2, attributes=attrs)])])))
         env = {k: v for k, v in os.environ.items()
                if not k.startswith(('TF_', 'SENTRY_'))}
+        root.joinpath('fixture.tfrc').write_text('')
+        # Explicit override also suppresses the default CLI config directory.
+        env['TF_CLI_CONFIG_FILE'] = str(root / 'fixture.tfrc')
         env['TF_IN_AUTOMATION'] = '1'
         def run(*args):
             return subprocess.run(['terraform', *args], cwd=root, env=env,
